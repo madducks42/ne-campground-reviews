@@ -30,6 +30,10 @@ const CampgroundIndexContainer = (props) => {
         key={campground.id}
         id={campground.id}
         name={campground.name}
+        description={campground.description}
+        location={campground.location}
+        amenities={campground.amenities}
+
       />
     )
   })
