@@ -26,7 +26,7 @@ const CampgroundShowContainer = (props) => {
 
   return (
     < CampgroundShowTile 
-      id={campgroundShow.id}
+      key={campgroundShow.id}
       name={campgroundShow.name}
       description={campgroundShow.description}
       location={campgroundShow.location}
