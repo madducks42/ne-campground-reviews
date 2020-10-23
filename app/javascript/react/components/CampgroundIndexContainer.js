@@ -27,17 +27,33 @@ const CampgroundIndexContainer = (props) => {
   let campgroundTiles = campgrounds.map((campground) => {
     return(
       < CampgroundIndexTile
-        key = {campground.id}
-        id = {campground.id}
-        name = {campground.name}
+        key={campground.id}
+        id={campground.id}
+        name={campground.name}
+        description={campground.description}
+        location={campground.location}
+        amenities={campground.amenities}
+
       />
     )
   })
 
   return(
-    <div>
+    <div className = 'grid-container'>
       <h4>Campgrounds</h4>
-      {campgroundTiles}
+      <table>
+        <thead>
+          <tr>
+            <th width="200">Campground Name:</th>
+            <th>Description:</th>
+            <th width="150">Amenities:</th>
+            <th width="150">Location:</th>
+          </tr>
+        </thead>
+        <tbody>
+          {campgroundTiles}
+        </tbody>
+      </table>    
     </div>
   )
 }
