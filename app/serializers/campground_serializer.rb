@@ -1,3 +1,3 @@
-class Api::V1::CampgroundSerializer < ActiveModel::Serializer
+class CampgroundSerializer < ActiveModel::Serializer
   attributes :id, :name, :description, :location, :amenities
 end

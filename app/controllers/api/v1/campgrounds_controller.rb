@@ -1,6 +1,6 @@
 class Api::V1::CampgroundsController < ApiController
   def index
-    render json: Campground.all, each_serializer: CampgroundSerializer
+    render json: Campground.all
   end
   
   def show
