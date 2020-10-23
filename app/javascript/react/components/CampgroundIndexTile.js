@@ -7,8 +7,8 @@ const CampgroundIndexTile = (props) => {
     <tr>
       <td><Link to={`/campgrounds/${props.id}`}>{props.name}</Link></td>
       <td>{props.description}</td>
-      <td>{props.location}</td>
       <td>{props.amenities}</td>
+      <td>{props.location}</td>
     </tr>
   )
 }
