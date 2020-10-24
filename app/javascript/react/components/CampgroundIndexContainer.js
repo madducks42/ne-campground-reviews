@@ -39,21 +39,25 @@ const CampgroundIndexContainer = (props) => {
   })
 
   return(
-    <div className = 'grid-container'>
-      <h4>Campgrounds</h4>
-      <table>
-        <thead>
-          <tr>
-            <th width="200">Campground Name:</th>
-            <th>Description:</th>
-            <th width="150">Amenities:</th>
-            <th width="150">Location:</th>
-          </tr>
-        </thead>
-        <tbody>
-          {campgroundTiles}
-        </tbody>
-      </table>    
+    <div>
+      {/* <img src={require('../../../assets/images/sunset_boat.jpg')} /> */}
+      <div className='landing_image_index'></div>
+      <div className ='grid-container'>
+        <h4>Campgrounds</h4>
+        <table>
+          <thead>
+            <tr>
+              <th width="200">Campground Name:</th>
+              <th>Description:</th>
+              <th width="150">Amenities:</th>
+              <th width="150">Location:</th>
+            </tr>
+          </thead>
+          <tbody>
+            {campgroundTiles}
+          </tbody>
+        </table>
+      </div>    
     </div>
   )
 }
