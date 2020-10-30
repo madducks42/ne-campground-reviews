@@ -15,3 +15,7 @@
  *= require foundation_and_overrides
 
  */
+
+ .bg-color-blue {
+  background-color: blue;
+}
