@@ -1,0 +1,60 @@
+.color-scheme-green {
+  color: #687864;
+}
+.color-scheme-dark-blue {
+  color: #31708E;
+}
+.color-scheme-medium-blue {
+  color: #5085A5;
+}
+.color-scheme-light-blue {
+  color: #8FC1E3;
+}
+.color-scheme-white {
+  color: #F7F9FB;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #F7F9FB;
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.4rem;
+  color: black;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 2.0rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+}
+
+h5 {
+  font-size: 1.6rem;
+}
+
+h6 {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.button {
+  font-size: 1.8rem;
+  height: 40px;
+  width: fit-content;
+  border-radius: 2px;
+  background-color: #31708E;
+}
+

@@ -5,23 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,900;1,200;1,300;1,400;1,600;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-  
-  <nav class="top-bar">
-    <h1><a href="/">Campground Reviews</a></h1>
 
-    <section class="top-bar-section">
-      <ul class="right">
+  <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle="example-menu"></button>
+    <div class="title-bar-title">Menu</div>
+  </div>
+
+  <div class="top-bar" id="example-menu">
+    <div class="top-bar-left">
+      <ul class="menu nav-flex">
+        <img class="logo" src='/images/logo.png'>
+        <div class="menu-title"><a href="/">Campground Reviews</a></div>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><input class="size" type="search" placeholder="Search"></li>
+        <li><button type="button" class="button">Search</button></li>
         <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'devise-links' %></li>
         <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <li><%= link_to 'Sign In', new_user_session_path, class: 'devise-links' %></li>
+          <li><%= link_to 'Sign Up', new_user_registration_path, class: 'devise-links' %></li>
         <%- end -%>
       </ul>
-    </section>
-  </nav>
+    </div>
+  </div>
 
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
