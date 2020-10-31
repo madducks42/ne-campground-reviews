@@ -20,17 +20,10 @@
   background-color: #F7F9FB;
 }
 
-.menu {
-  background-color: #F7F9FB;
-  font-family: 'Source Serif Pro', serif;
-  color:  #31708E;
-  font-weight: 400;
-}
-
 .menu-title a {
   background-color: #F7F9FB;
   font-family: 'Source Serif Pro', serif;
-  color:  #31708E;
+  color:  #476C9B;
   font-weight: 400;
   font-size: 3vw;
 }
@@ -52,20 +45,13 @@ li {
   justify-items: flex-start;
 }
 
-ul.menu.nav-flex {
-  background-color: #F7F9FB;
-  display: flex;
-  flex-direction: row;
-  background-color: #F7F9FB;
-}
-
 input.size {
   font-size: 1.8rem;
   height: 40px;
 }
 
 div#example-menu.top-bar {
-  margin-right: 10px;
+  border-bottom: 5px black solid;
 }
 
 a::after {
@@ -79,7 +65,7 @@ a::after {
   height: 40px;
   width: fit-content;
   border-radius: 2px;
-  background-color: #31708E;
+  background-color: #476C9B;
   color: white;
   margin-left: 10px;
   margin-right: 5px;
@@ -87,7 +73,7 @@ a::after {
 }
 
 .devise-links:hover, a.devise-links.focus {
-  background-color: #14679e;
+  background-color: #984447;
   color: #fefefe;
 }
 
@@ -95,8 +81,4 @@ a.devise-links {
   padding: 10px;
   display: inline-flex;
   align-items: center;
-}
-
-button.button {
-  font-size: 1.8rem;
 }

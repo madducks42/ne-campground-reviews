@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const CampgroundIndexTile = (props) => {
 
   return (
-    <div class='cell'>
-      <div class='card'>
+    <div className='cell small-3 campground-tile'>
+      <div className='card'>
         <img src='images/test_image.jpg' />
-        <div class='card-section'>
+        <div className='card-section'>
           <h4><Link to={`/campgrounds/${props.id}`}>{props.name}</Link></h4>
           <p>{props.location}</p>
         </div>
@@ -17,3 +17,7 @@ const CampgroundIndexTile = (props) => {
 }
 
 export default CampgroundIndexTile
+
+
+
+
