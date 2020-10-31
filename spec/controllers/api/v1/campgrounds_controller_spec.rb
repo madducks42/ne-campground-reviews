@@ -2,16 +2,32 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::CampgroundsController, type: :controller do
   let!(:campground_1) { Campground.create(
-    name: 'Forked Lake Campground',  
-    description: 'Nice campground on lake',
-    location: 'New York',
-    amenities: 'Dogs allowed'
+  name: 'Forked Lake Campground', 
+  caption: 'Rustic and remote campground. Almost all sites directly on lake. Many boat-in only.',
+  description: "Nice campground",
+  location: 'New York', 
+  campground_link: 'https://www.dec.ny.gov/outdoor/24467.html',
+  dogs_allowed: true,
+  electric_hookups: false,
+  water_hookups: false,
+  potable_water: true,
+  dump_station: false,
+  bathrooms: true,
+  showers: false
   )}
   let!(:campground_2) { Campground.create(
-    name: 'Little River State Park', 
+    name: 'Little River State Park',
+    caption: 'Nice campground', 
     description: 'Well maintained campground in Vermont.',
     location: 'Vermont',
-    amenities: 'Dogs allowed'
+    campground_link: 'https://www.dec.ny.gov/outdoor/24467.html',
+    dogs_allowed: true,
+    electric_hookups: false,
+    water_hookups: false,
+    potable_water: true,
+    dump_station: false,
+    bathrooms: true,
+    showers: true
   )}
 
   let!(:user_1) { User.create(
@@ -59,13 +75,11 @@ RSpec.describe Api::V1::CampgroundsController, type: :controller do
         expect(returned_response.length).to eq 2
         
         expect(returned_response[0]['name']).to eq campground_1.name
-        expect(returned_response[0]['description']).to eq campground_1.description
+        expect(returned_response[0]['caption']).to eq campground_1.caption
         expect(returned_response[0]['location']).to eq campground_1.location
-        expect(returned_response[0]['amenities']).to eq campground_1.amenities
         expect(returned_response[1]['name']).to eq campground_2.name
-        expect(returned_response[1]['description']).to eq campground_2.description
+        expect(returned_response[1]['caption']).to eq campground_2.caption
         expect(returned_response[1]['location']).to eq campground_2.location
-        expect(returned_response[1]['amenities']).to eq campground_2.amenities
       end
     end
     
@@ -80,7 +94,13 @@ RSpec.describe Api::V1::CampgroundsController, type: :controller do
       expect(returned_response['name']).to eq campground_1.name
       expect(returned_response['description']).to eq campground_1.description
       expect(returned_response['location']).to eq campground_1.location
-      expect(returned_response['amenities']).to eq campground_1.amenities
+      expect(returned_response['dogs_allowed']).to eq campground_1.dogs_allowed
+      expect(returned_response['electric_hookups']).to eq campground_1.electric_hookups
+      expect(returned_response['water_hookups']).to eq campground_1.water_hookups
+      expect(returned_response['potable_water']).to eq campground_1.potable_water
+      expect(returned_response['dump_station']).to eq campground_1.dump_station
+      expect(returned_response['bathrooms']).to eq campground_1.bathrooms
+      expect(returned_response['showers']).to eq campground_1.showers
 
       expect(returned_response['reviews'][0]['title']).to eq campground_1.reviews[0]['title']
       expect(returned_response['reviews'][0]['body']).to eq campground_1.reviews[0]['body']
