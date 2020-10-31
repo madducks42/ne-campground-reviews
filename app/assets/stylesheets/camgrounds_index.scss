@@ -1,10 +1,56 @@
+// Flex-container
+.flex-index {
+  display: flex;
+}
 
-// .landing_image_index {
-//   background-image: url('/images/sunset_boat.jpg');
-//   background-size: cover;
-//   background-position: center;
-//   height: 90vh;
-//   width: 100%;
-//   border-top: 10px solid black;
-//   border-bottom: 10px solid black;
-// }
+// Left nav-bar container
+div.cell.small-4.medium-3.left-nav-bar {
+  background-color: #A0C1B9;
+  padding: 10px;
+}
+
+ul.menu.left-nav-bar {
+  display: flex;
+  flex-direction: row;
+  background-color: #A0C1B9;
+}
+
+ul.menu.left-nav-bar li{
+  background-color: #A0C1B9;
+}
+
+div.menu.filter-section {
+  display: flex;
+  flex-direction: row;
+  background-color: #A0C1B9;
+  margin-top: 10px;
+}
+
+div.menu.filter-section li {
+  background-color: #A0C1B9;
+  color: #F7F9FB;
+  list-style: none;
+}
+
+// Campground Tiles container
+div.cell.small-8.auto {
+  padding: 40px;
+  background-color: #F7F9FB;
+}
+
+// Campground Tiles
+div.cell.small-3.campground-tile {
+  min-width: 200px;
+}
+
+div.card {
+  min-height: 250px;
+  min-width: 200px;
+}
+
+div.card a {
+  text-decoration: underline;
+}
+div.card a:hover {
+  color: #984447;
+}

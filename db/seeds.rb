@@ -1,8 +1,22 @@
 # Seed Data
 
+Campground.destroy_all
+User.destroy_all
+Review.destroy_all
+
+# New Hampshire
 campground_1 = Campground.create(name: 'Pawtuckaway State Park', description: 'Large campground with well-spaced campsites. Lots of waterfront campsites.', location: 'New Hampshire', amenities: 'No dogs allowed')
+
+# New York
 campground_2 = Campground.create(name: 'Forked Lake Campground', description: 'Rustic and remote campground. Almost all sites directly on lake. Many boat-in only.', location: 'New York', amenities: 'Dogs allowed')
+campground_6 = Campground.create(name: 'Letchworth State Park', description: 'Gorgeous state park with large campgrounds.', location: 'New York', amenities: 'Dogs allowed')
+
+# Vermont
 campground_3 = Campground.create(name: 'Little River State Park', description: 'Pretty campground next to reservoir.', location: 'Vermont', amenities: 'Dogs allowed')
+
+# Massachusetts
+campground_4 = Campground.create(name: 'Mohawk Trail State Forest', description: 'Convenient campground off Route 2', location: 'Massachusetts', amenities: 'Dogs allowed')
+campground_5 = Campground.create(name: 'Savoy State Forest', description: 'Quiet, small campground.', location: 'Massachusetts', amenities: 'Dogs allowed')
 
 user_1 = User.create(first_name: 'Maddox', last_name: 'Grey', email: 'maddoxgrey42@gmail.com', username: 'madducks42', password: 'password')
 user_2 = User.create(first_name: 'Kylo', last_name: 'Ren', email: 'kyloren@gmail.com', username: 'sad_boi', password: 'password')
