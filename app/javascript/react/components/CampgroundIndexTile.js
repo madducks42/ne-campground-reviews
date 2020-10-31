@@ -10,6 +10,7 @@ const CampgroundIndexTile = (props) => {
         <div className='card-section'>
           <h4><Link to={`/campgrounds/${props.id}`}>{props.name}</Link></h4>
           <p>{props.location}</p>
+          <p>{props.caption}</p>
         </div>
       </div>
     </div>

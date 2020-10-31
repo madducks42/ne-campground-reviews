@@ -1,3 +1,3 @@
 class CampgroundSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :location, :amenities
+  attributes :id, :name, :caption, :location
 end
