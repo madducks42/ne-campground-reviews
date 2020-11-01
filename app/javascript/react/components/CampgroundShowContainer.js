@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react'
 
 import CampgroundShowDescriptionTile from './CampgroundShowDescriptionTile'
 import CampgroundShowAmenitiesTile from './CampgroundShowAmenitiesTile'
+import CampgroundReviewFormContainer from './CampgroundReviewFormContainer'
 import CampgroundShowReviewTile from './CampgroundShowReviewTile'
 
 const CampgroundShowContainer = (props) => {
   const[campgroundShow, setCampgroundShow] = useState("")
+  const[reviews, setReviews] = useState([])
 
   useEffect(() => {
     let id = props.match.params.id
@@ -24,7 +26,38 @@ const CampgroundShowContainer = (props) => {
         setCampgroundShow(body)
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`))
-  }, [])
+  }, []);
+
+  const addNewReview = (formData) => {
+    fetch(`/api/v1/campgrounds/${props.match.params.id}/reviews`, {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      credentials: 'same-origin',
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      setReviews([...reviews, body]);
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  };
+
+  let reviewForm
+  if (campgroundShow.user_signed_in) {
+    reviewForm = <CampgroundReviewFormContainer addNewReview={addNewReview}/>
+  }
 
   let campgroundReviews = []
   let noReviewsMessage = ""
@@ -87,6 +120,11 @@ const CampgroundShowContainer = (props) => {
         </div>
       </div>
       <div className='grid-x grid-margin-x'>
+        <div className='cell'>
+          {reviewForm}
+        </div>
+      </div>
+      <div className='grid-x grid-margin-x reviews-container'>
         <div className='cell'>
           <h3>Average Rating: {getAvgRating()}</h3>
           <h3>Reviews: {noReviewsMessage}</h3>
