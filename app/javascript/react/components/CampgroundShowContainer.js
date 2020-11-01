@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react'
 
-import CampgroundShowTile from './CampgroundShowTile'
-import ReviewShowTile from './ReviewShowTile'
+import CampgroundShowDescriptionTile from './CampgroundShowDescriptionTile'
+import CampgroundShowAmenitiesTile from './CampgroundShowAmenitiesTile'
+import CampgroundShowReviewTile from './CampgroundShowReviewTile'
 
 const CampgroundShowContainer = (props) => {
   const[campgroundShow, setCampgroundShow] = useState("")
 
   useEffect(() => {
     let id = props.match.params.id
-    fetch(`/api/v1/campgrounds/${id}.json`)
+    fetch(`/api/v1/campgrounds/${id}`)
       .then(response => {
         if (response.ok) {
           return response
@@ -30,10 +31,10 @@ const CampgroundShowContainer = (props) => {
   if (campgroundShow.reviews) {
     campgroundReviews = campgroundShow.reviews.map((review) => {
       return(
-        < ReviewShowTile
+        < CampgroundShowReviewTile
           key={review.id}
           title={review.title}
-          comment={review.comment}
+          body={review.body}
           rating={review.rating}
         />
       )
@@ -55,19 +56,43 @@ const CampgroundShowContainer = (props) => {
     }
     return avgReviewRating
   }
-
+  
   return (
-    <div>
-      < CampgroundShowTile 
-        key={campgroundShow.id}
-        name={campgroundShow.name}
-        description={campgroundShow.description}
-        location={campgroundShow.location}
-        amenities={campgroundShow.amenities}
-      />
-      <h3>Average Rating: {getAvgRating()}</h3>
-      <h3>Reviews: {noReviewsMessage}</h3>
-      {campgroundReviews}
+    <div className='grid-container fluid show-container'>
+      <div className='grid-x grid-margin-x'>
+        <div className='cell small-4'>Placeholder for picture</div>
+        <div className='cell auto'>
+          < CampgroundShowDescriptionTile 
+            key={campgroundShow.id}
+            name={campgroundShow.name}
+            description={campgroundShow.description}
+            location={campgroundShow.location}
+          />
+        </div>
+      </div>
+      <div className='grid-x grid-margin-x amenities-container'>
+        <div className='cell small-4'>Placeholder for map</div>
+        <div className='cell auto'>
+        < CampgroundShowAmenitiesTile 
+            key={campgroundShow.id}
+            campgroundLink={campgroundShow.campground_link}
+            dogsAllowed={campgroundShow.dogs_allowed}
+            electronicHookups={campgroundShow.electronic_hookups}
+            waterHookups={campgroundShow.water_hookups}
+            potableWater={campgroundShow.potable_water}
+            dumpStation={campgroundShow.dump_station}
+            bathrooms={campgroundShow.bathrooms}
+            showers={campgroundShow.showers}
+          />
+        </div>
+      </div>
+      <div className='grid-x grid-margin-x'>
+        <div className='cell'>
+          <h3>Average Rating: {getAvgRating()}</h3>
+          <h3>Reviews: {noReviewsMessage}</h3>
+          {campgroundReviews}
+        </div>
+      </div>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ReviewShowTile = (props) => {
+const CampgroundShowReviewTile = (props) => {
   return (
     <div className='callout'>
       <h6>{props.title}</h6>
@@ -10,4 +10,4 @@ const ReviewShowTile = (props) => {
   )
 }
 
-export default ReviewShowTile
+export default CampgroundShowReviewTile

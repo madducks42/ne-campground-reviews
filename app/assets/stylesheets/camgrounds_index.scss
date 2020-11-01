@@ -44,13 +44,25 @@ div.cell.small-3.campground-tile {
 }
 
 div.card {
-  min-height: 250px;
+  min-height: 300px;
   min-width: 200px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+div.card h6 {
+  font-weight: 600;
+  padding-top: 10px;
+  }
+
+div.card p {
+  text-align: justify;
 }
 
 div.card a {
   text-decoration: underline;
 }
+
 div.card a:hover {
   color: #984447;
 }

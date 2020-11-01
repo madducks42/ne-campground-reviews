@@ -8,8 +8,8 @@ const CampgroundIndexTile = (props) => {
       <div className='card'>
         <img src='images/test_image.jpg' />
         <div className='card-section'>
-          <h4><Link to={`/campgrounds/${props.id}`}>{props.name}</Link></h4>
-          <p>{props.location}</p>
+          <h5><Link to={`/campgrounds/${props.id}`}>{props.name}</Link></h5>
+          <h6>{props.location}</h6>
           <p>{props.caption}</p>
         </div>
       </div>
