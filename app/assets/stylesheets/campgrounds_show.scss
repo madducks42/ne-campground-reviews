@@ -2,6 +2,7 @@ div.grid-container.fluid.show-container {
   padding: 20px 100px 20px 100px;
 }
 
+// Amenities Section
 div.grid-x.grid-margin-x.amenities-container {
   background-color: #A0C1B9;
   margin-top: 20px;
@@ -12,4 +13,32 @@ div.grid-x.grid-margin-x.amenities-container {
 
 div.grid-x.grid-margin-x.amenities-container li {
   background-color: #A0C1B9;
+}
+
+
+// Review Form Section
+form.new-review-form.callout {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.4rem;
+  border-radius: 10px;
+}
+
+form.new-review-form.callout label, form.new-review-form.callout input {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.4rem;
+}
+
+// Reviews Section
+div.grid-x.grid-margin-x.reviews-container {
+  background-color: #ADD9F4;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+//Errors
+div.callout.alert, div.callout.alert li {
+  background-color: #984447;
+  border-radius: 5px;
 }
