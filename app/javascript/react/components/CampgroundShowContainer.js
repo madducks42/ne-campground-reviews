@@ -8,21 +8,21 @@ import CampgroundShowReviewTile from './CampgroundShowReviewTile'
 const CampgroundShowContainer = (props) => {
   const[campgroundShow, setCampgroundShow] = useState("")
   const[reviews, setReviews] = useState([])
-
+  
   useEffect(() => {
     let id = props.match.params.id
     fetch(`/api/v1/campgrounds/${id}`)
-      .then(response => {
-        if (response.ok) {
-          return response
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Errror(errorMessage)
-          throw error
-        }
-      })
-      .then(response => response.json())
-      .then(body => {
+    .then(response => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Errror(errorMessage)
+        throw error
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
         setCampgroundShow(body)
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`))
@@ -76,19 +76,6 @@ const CampgroundShowContainer = (props) => {
     noReviewsMessage = "No reviews yet."
   }
 
-  let avgReviewRating = ""
-  const getAvgRating = () => {
-    if (campgroundShow.reviews) {
-      let counter = 0
-      campgroundShow.reviews.forEach((review) => {
-        counter += review.rating
-      })
-      avgReviewRating = counter / campgroundShow.reviews.length
-    } else {
-      avgReviewRating = "No ratings yet."
-    }
-    return avgReviewRating
-  }
   
   return (
     <div className='grid-container fluid show-container'>
@@ -97,6 +84,7 @@ const CampgroundShowContainer = (props) => {
         <div className='cell auto'>
           < CampgroundShowDescriptionTile 
             key={campgroundShow.id}
+            campgroundLink={campgroundShow.campground_link}
             name={campgroundShow.name}
             description={campgroundShow.description}
             location={campgroundShow.location}
@@ -126,7 +114,7 @@ const CampgroundShowContainer = (props) => {
       </div>
       <div className='grid-x grid-margin-x reviews-container'>
         <div className='cell'>
-          <h3>Average Rating: {getAvgRating()}</h3>
+          <h3>Average Rating: {campgroundShow.average_rating}</h3>
           <h3>Reviews: {noReviewsMessage}</h3>
           {campgroundReviews}
         </div>

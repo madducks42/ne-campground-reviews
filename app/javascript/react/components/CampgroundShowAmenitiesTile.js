@@ -1,18 +1,68 @@
 import React from 'react'
 
 const CampgroundShowAmenitiesTile = (props) => {
+  let dogsAllowedStatus
+  let electronicHookupsStatus
+  let waterHookupsStatus
+  let potableWaterStatus
+  let dumpStationStatus
+  let bathroomsStatus
+  let showersStatus
+
+  if (props.dogsAllowed == true) {
+    dogsAllowedStatus = "Yes"
+  } else {
+    dogsAllowedStatus = "No"
+  }
+
+  if (props.electronicHookups == true) {
+    electronicHookupsStatus = "Yes"
+  } else {
+    electronicHookupsStatus = "No"
+  }
+
+  if (props.waterHookups == true) {
+    waterHookupsStatus = "Yes"
+  } else {
+    waterHookupsStatus = "No"
+  }
+
+  if (props.potableWater == true) {
+    potableWaterStatus = "Yes"
+  } else {
+    potableWaterStatus = "No"
+  }
+
+  if (props.dumpStation == true) {
+    dumpStationStatus = "Yes"
+  } else {
+    dumpStationStatus = "No"
+  }
+
+  if (props.bathrooms == true) {
+    bathroomsStatus = "Yes"
+  } else {
+    bathroomsStatus = "No"
+  }
+
+  if (props.showers == true) {
+    showersStatus = "Yes"
+  } else {
+    showersStatus = "No"
+  }
+
   return (
     <div>
       <h3>Campground Info:</h3>
         <ul>
-          <li>Official Website - {props.campgroundLink}</li>
-          <li>Dogs Allowed - {props.dogsAllowed}</li>
-          <li>Electronic Hookups - {props.electronicHookups}</li>
-          <li>Water Hookups - {props.waterHookups}</li>
-          <li>Potable Water - {props.potableWater}</li>
-          <li>Dump Station - {props.dumpStation}</li>
-          <li>Bathrooms - {props.bathrooms}</li>
-          <li>Showers - {props.showers}</li>
+          <li><a href={props.campgroundLink} target="_blank">Official Website</a></li>
+          <li>Dogs Allowed - {dogsAllowedStatus}</li>
+          <li>Electronic Hookups - {electronicHookupsStatus}</li>
+          <li>Water Hookups - {waterHookupsStatus}</li>
+          <li>Potable Water - {potableWaterStatus}</li>
+          <li>Dump Station - {dumpStationStatus}</li>
+          <li>Bathrooms - {bathroomsStatus}</li>
+          <li>Showers - {showersStatus}</li>
         </ul>
     </div>
   )

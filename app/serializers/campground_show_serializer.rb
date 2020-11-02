@@ -1,5 +1,19 @@
 class CampgroundShowSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :location, :dogs_allowed, :electric_hookups, :water_hookups, :potable_water, :dump_station, :bathrooms, :showers, :user_signed_in, :currentUser
+  attributes  :id, 
+              :name, 
+              :description, 
+              :location,
+              :campground_link,
+              :dogs_allowed, 
+              :electric_hookups, 
+              :water_hookups, 
+              :potable_water, 
+              :dump_station, 
+              :bathrooms, 
+              :showers, 
+              :user_signed_in, 
+              :currentUser,
+              :average_rating
 
   has_many :reviews
 
@@ -13,5 +27,9 @@ class CampgroundShowSerializer < ActiveModel::Serializer
 
   def currentUser
     current_user
+  end
+
+  def averageRating 
+    average_rating
   end
 end
