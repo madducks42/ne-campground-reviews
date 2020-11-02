@@ -122,10 +122,10 @@ campground_5 = Campground.create(
   showers: true
 )
 
-user_1 = User.create(first_name: 'Maddox', last_name: 'Grey', email: 'maddoxgrey42@gmail.com', username: 'madducks42', password: 'password')
-user_2 = User.create(first_name: 'Kylo', last_name: 'Ren', email: 'kyloren@gmail.com', username: 'sad_boi', password: 'password')
-user_3 = User.create(first_name: 'Buffy', last_name: 'Summer', email: 'buffy@gmail.com', username: 'og_slayer', password: 'password')
-user_4 = User.create(first_name: 'Zoe', last_name: 'Washbourne', email: 'zoe@gmail.com', username: 'shouldabeencaptain', password: 'password')
+user_1 = User.create(first_name: 'Maddox', last_name: 'Grey', email: 'maddoxgrey42@gmail.com', username: 'madducks42', password: 'password', role: 'admin')
+user_2 = User.create(first_name: 'Kylo', last_name: 'Ren', email: 'kyloren@gmail.com', username: 'sad_boi', password: 'password', role: 'member')
+user_3 = User.create(first_name: 'Buffy', last_name: 'Summer', email: 'buffy@gmail.com', username: 'og_slayer', password: 'password', role: 'member')
+user_4 = User.create(first_name: 'Zoe', last_name: 'Washbourne', email: 'zoe@gmail.com', username: 'shouldabeencaptain', password: 'password', role: 'member')
 
 review_1 = Review.create(title: 'Not bad', body: 'Overall okay campground.', rating: 4, campground: campground_1, user: user_2 )
 review_2 = Review.create(title: 'Awesome campground', body: 'Really enjoyed our stay! Campground was super clean and well-maintained!', rating: 5, campground: campground_3, user: user_1 )
