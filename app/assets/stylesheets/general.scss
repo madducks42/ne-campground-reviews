@@ -1,25 +1,29 @@
+.color-scheme-white {
+  color: #F7F9FB;
+}
+.color-scheme-black {
+  color: #101419;
+}
 .color-scheme-red {
   color: #984447;
-}
-.color-scheme-dark-green {
-  color: #A0C1B9;
 }
 .color-scheme-medium-blue {
   color: #476C9B;
 }
+.color-scheme-green {
+  color: #468C98;
+}
+.color-scheme-yellow {
+  color: #ED9905;
+}
 .color-scheme-light-blue {
   color: #ADD9F4;
-}
-.color-scheme-white {
-  color: #F7F9FB;
-}
-
-.color-scheme-black {
-  color: #101419;
 }
 
 html {
   font-size: 62.5%;
+  
+  margin: 0px;
 }
 
 body {
@@ -27,6 +31,7 @@ body {
   font-family: 'Source Serif Pro', serif;
   font-size: 1.4rem;
   color: black;
+  margin: 0px;
 }
 
 h1 {
@@ -64,10 +69,14 @@ h6 {
 input.button {
   font-family: 'Source Serif Pro', serif;
   font-size: 1.8rem;
+  margin: 0px;
+  padding: 10px;
   height: 40px;
   width: fit-content;
   border-radius: 2px;
-  background-color: #476C9B;
+  background-color: #984447;
+  color: #F7F9FB;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out
 }
 
 button.button {
@@ -76,13 +85,13 @@ button.button {
   height: 40px;
   width: fit-content;
   border-radius: 2px;
-  background-color: #476C9B;
+  background-color: #984447;
   margin-left: 5px;
 }
 
 input.button:hover, input.button.focus, button.button:hover, button.button.focus {
-  background-color: #984447;
+  background-color: #ED9905;
   color: #F7F9FB;
   font-family: 'Source Serif Pro', serif;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }

@@ -41,6 +41,10 @@
 
   <%= yield %>
 
+  <div class="footer">
+    <h3>&copy; Campground Reviews</h3>
+  </div>
+
   <%= javascript_include_tag 'application' %>
   
   <%- if Rails.env.development? || Rails.env.test? -%> 
