@@ -15,6 +15,15 @@ div.grid-x.grid-margin-x.amenities-container li {
   background-color: #A0C1B9;
 }
 
+div.grid-x.grid-margin-x.amenities-container a {
+  text-decoration: underline;
+  color: #476C9B;
+}
+
+div.grid-x.grid-margin-x.amenities-container a:hover {
+  color: #984447;
+}
+
 
 // Review Form Section
 form.new-review-form.callout {
