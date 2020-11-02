@@ -1,16 +1,16 @@
 <div class='grid-container wrapper'>
   <div class='devise-bg callout'>
-    <h2>Log in</h2>
+    <h2 class='devise-style'>Log in</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email, class: 'devise-style' %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'devise-form' %>
       </div>
 
       <div class="field">
         <%= f.label :password, class: 'devise-style' %><br />
-        <%= f.password_field :password, autocomplete: "current-password", class: 'test' %>
+        <%= f.password_field :password, autocomplete: "current-password", class: 'devise-form' %>
       </div>
 
       <% if devise_mapping.rememberable? %>

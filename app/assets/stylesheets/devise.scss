@@ -4,6 +4,7 @@ div.grid-container {
 
 div.devise-bg.callout {
   background-color: #476C9B;
+  padding: 30px;
 }
 
 div.field {
@@ -15,16 +16,18 @@ input#user_password.devise-new-password {
   margin-top: 10px;
 }
 
-// input.button {
-//   margin: 0px;
-//   padding: 10px;
-//   color: #F7F9FB;
-//   transition: background-color 0.25s ease-out, color 0.25s ease-out
-// }
-
 h2.devise-style {
-  color: black;
+  font-family: 'Source Serif Pro', serif;
+  font-size: 2.2rem;
+  color: #F7F9FB;
   
+}
+
+// Devise form input fields
+input.devise-form {
+  height: 40px;
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
 }
 
 // remember me section on login page
@@ -33,8 +36,18 @@ div.field.devise-style {
   margin: 0px;
 }
 
-label.devise-style {
+label.devise-style, label.devise-style em {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
+  color: #F7F9FB;
+  margin: 0px;
+}
+
+// Message about password requirements
+em {
+  font-family: 'Source Serif Pro', serif;
   font-size: 1.4rem;
+  color: #F7F9FB;
   margin: 0px;
 }
 

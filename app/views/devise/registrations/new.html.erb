@@ -7,7 +7,7 @@
 
       <div class="field">
         <%= f.label :email, class: 'devise-style' %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'devise-form' %>
       </div>
 
       <div class="field">
@@ -15,27 +15,27 @@
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password", class: 'devise-new-password' %>
+        <%= f.password_field :password, autocomplete: "new-password", class: 'devise-new-password devise-form' %>
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation, class: 'devise-style' %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'devise-form' %>
       </div>
 
       <div class="field">
         <%= f.label :username, class: 'devise-style' %><br />
-        <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", class: 'devise-form' %>
       </div>
 
       <div class="field">
         <%= f.label :first_name, class: 'devise-style' %><br />
-        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: 'devise-form' %>
       </div>
 
       <div class="field">
         <%= f.label :last_name, class: 'devise-style' %><br />
-        <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+        <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: 'devise-form' %>
       </div>
 
       <div class="actions">

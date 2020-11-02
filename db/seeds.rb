@@ -27,7 +27,7 @@ campground_1 = Campground.create!(
 # New York
 campground_2 = Campground.create(
   name: 'Forked Lake Campground', 
-  caption: 'Rustic and remote campground. Almost all sites directly on lake. Many boat-in only.',
+  caption: 'Rustic and remote campground. Almost all sites directly on lake.',
   description: "<p>Bear Brook State Park is located in southern New Hampshire just over an hour drive from the Boston area and about 30 minutes north of Manchester. The proximity to Boston makes this an extremely popular campground, especially for those with young children. If you’re looking for a quiet camping getaway, this isn’t it. But if you’re looking for somewhere where you can let your kids run wild…then this is the campground for you.</p>
   <br>
   <p>This is the largest developed state park in New Hampshire and has 101 campsites plus some cabins. The first two loops are the most tightly packed and offer the least privacy, these are sites 76-93, 1-11, and 35-45. Sites 12-30 are a little quieter because they’re away from the mayhem of the other loops. Sites 49-94 are somewhere in-between with certain sites like 55, 56, 94, 95 offering more privacy. None of the sites have electric/water hookups but there is a dump station with potable water and there are water outlets scattered around the camping loops (I can’t confirm if you can hook a hose up to these). Bathrooms are central located in each loop and have showers.</p>
@@ -86,7 +86,7 @@ campground_3 = Campground.create(
 # Massachusetts
 campground_4 = Campground.create(
   name: 'Mohawk Trail State Forest',
-  caption: 'A convenient campground in western Mass located alongside a creek.',
+  caption: 'A convenient campground off Route 2, located alongside a creek.',
   description: "Mohawk Trail State Forest is located in western Massachusetts about a two hour drive from the Boston area. It’s literally right off Route 2 which makes it convenient and easy to find. Being off Route 2 there are several small towns nearby if you need supplies or want to go to a restaurant. It’s also very close to Savoy Mountain State Forest which is about 30 minutes away and a little more remote. We like Mohawk because it’s a relatively short drive for us which makes it great for a quick camping trip. But the tradeoff is that you can both see and hear Route 2 from the campground.
 
   There are 56 campsites spread out over three areas and 6 cabins. There are two main loops with most of the sites and then there is another section with sites 17-22 that are tent only and you do have to walk to, the parking for those sites isn’t far. We stayed at site 49 and that’s probably where we should stay again. The sites on this loop are close to the creek but only half of them have a view/access to it. Most of the sites are fairly close together and the ones that are on the opposite side of the creek are almost completely open. I’d stick with sites 45-50, these give you a little bit more space and privacy. None of the sites have electric/water hookups but there is a dump station located at the campground that has potable water. There are bathrooms located in each camping area but none of them have showers.
