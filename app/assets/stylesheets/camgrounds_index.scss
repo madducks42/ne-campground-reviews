@@ -1,35 +1,60 @@
+div.grid-container.full {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 // Flex-container
 .flex-index {
   display: flex;
 }
 
-// Left nav-bar container
+// Left nav-bar
 div.cell.small-4.medium-3.left-nav-bar {
-  background-color: #A0C1B9;
+  background-color: #476C9B;
   padding: 10px;
 }
 
 ul.menu.left-nav-bar {
   display: flex;
   flex-direction: row;
-  background-color: #A0C1B9;
+  background-color: #476C9B;
 }
 
 ul.menu.left-nav-bar li{
-  background-color: #A0C1B9;
+  background-color: #476C9B;
 }
 
 div.menu.filter-section {
   display: flex;
   flex-direction: row;
-  background-color: #A0C1B9;
-  margin-top: 10px;
+  background-color: #476C9B;
+  
 }
 
 div.menu.filter-section li {
-  background-color: #A0C1B9;
+  background-color: #476C9B;
   color: #F7F9FB;
   list-style: none;
+}
+
+button.index-button {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
+  color: #F7F9FB;
+  height: 40px;
+  width: fit-content;
+  border-radius: 2px;
+  background-color: #984447;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  margin-left: 5px;
+  padding: 10px;
+}
+
+.index-button:hover {
+  background-color: #ED9905;
+  color: #F7F9FB;
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
 }
 
 // Campground Tiles container
@@ -48,6 +73,7 @@ div.card {
   min-width: 200px;
   text-align: center;
   border-radius: 5px;
+  box-shadow: inset 2px 2px 15px #101419;
 }
 
 div.card h6 {

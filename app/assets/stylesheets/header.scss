@@ -28,6 +28,10 @@
   font-size: 3vw;
 }
 
+ul.menu.nav-flex {
+  background-color: #F7F9FB;
+}
+
 img.logo {
   width: 100px;
   height: auto;
@@ -65,15 +69,15 @@ a::after {
   height: 40px;
   width: fit-content;
   border-radius: 2px;
-  background-color: #476C9B;
-  color: white;
+  background-color: #984447;
+  color: #F7F9FB;
   margin-left: 10px;
   margin-right: 5px;
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
 }
 
 .devise-links:hover, a.devise-links.focus {
-  background-color: #984447;
+  background-color: #ED9905;
   color: #fefefe;
 }
 
