@@ -14,20 +14,20 @@ const CampgroundShowContainer = (props) => {
     fetch(`/api/v1/campgrounds/${id}`)
     .then(response => {
       if (response.ok) {
-        return response
+        return response.json()
       } else {
         let errorMessage = `${response.status} (${response.statusText})`,
         error = new Errror(errorMessage)
         throw error
       }
     })
-    .then(response => response.json())
     .then(body => {
-        setCampgroundShow(body)
-      })
-      .catch(error => console.error(`Error in fetch: ${error.message}`))
+      setCampgroundShow(body)
+      setReviews(body.reviews)
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, []);
-
+  
   const addNewReview = (formData) => {
     fetch(`/api/v1/campgrounds/${props.match.params.id}/reviews`, {
       method: 'POST',
@@ -40,14 +40,13 @@ const CampgroundShowContainer = (props) => {
     })
     .then(response => {
       if (response.ok) {
-        return response;
+        return response.json();
       } else {
         let errorMessage = `${response.status} (${response.statusText})`,
         error = new Error(errorMessage);
         throw(error);
       }
     })
-    .then(response => response.json())
     .then(body => {
       setReviews([...reviews, body]);
     })
@@ -59,23 +58,20 @@ const CampgroundShowContainer = (props) => {
     reviewForm = <CampgroundReviewFormContainer addNewReview={addNewReview}/>
   }
 
-  let campgroundReviews = []
   let noReviewsMessage = ""
-  if (campgroundShow.reviews) {
-    campgroundReviews = campgroundShow.reviews.map((review) => {
-      return(
-        < CampgroundShowReviewTile
-          key={review.id}
-          title={review.title}
-          body={review.body}
-          rating={review.rating}
-        />
-      )
-    })
-  } else {
+  const campgroundReviews = reviews.map((review) => {
+    return(
+      < CampgroundShowReviewTile
+        key={review.id}
+        title={review.title}
+        body={review.body}
+        rating={review.rating}
+      />
+    )
+  })
+  if (reviews.length === 0) {
     noReviewsMessage = "No reviews yet."
   }
-
   
   return (
     <div className='grid-container fluid show-container wrapper'>
