@@ -69,10 +69,16 @@ const CampgroundShowContainer = (props) => {
       />
     )
   })
+
   if (reviews.length === 0) {
     noReviewsMessage = "No reviews yet."
   }
-  
+
+  let averageRatingMessage = campgroundShow.average_rating
+  if (averageRatingMessage === null) {
+    averageRatingMessage = "No ratings yet."
+  }
+
   return (
     <div className='grid-container fluid show-container wrapper'>
       <div className='grid-x grid-margin-x'>
@@ -110,7 +116,7 @@ const CampgroundShowContainer = (props) => {
       </div>
       <div className='grid-x grid-margin-x reviews-container'>
         <div className='cell'>
-          <h3>Average Rating: {campgroundShow.average_rating}</h3>
+          <h3>Average Rating: {averageRatingMessage}</h3>
           <h3>Reviews: {noReviewsMessage}</h3>
           {campgroundReviews}
         </div>
