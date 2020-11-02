@@ -20,10 +20,48 @@ ul.menu.left-nav-bar {
   background-color: #476C9B;
 }
 
-ul.menu.left-nav-bar li{
+// Left nav-bar - Search section
+ul.menu.left-nav-bar.nav-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
   background-color: #476C9B;
+  width: 100%;
 }
 
+ul.menu.left-nav-bar.nav-flex li{
+  background-color: #476C9B;
+  width: 100%;
+}
+
+input.nav-search-input {
+  height: 40px;
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
+}
+
+button.search-button {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
+  color: #F7F9FB;
+  height: 40px;
+  width: fit-content;
+  border-radius: 2px;
+  background-color: #984447;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  margin-top: 5px;
+  padding: 10px;
+}
+
+.search-button:hover {
+  background-color: #ED9905;
+  color: #F7F9FB;
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
+}
+
+// Left nav-bar Filter Section
 div.menu.filter-section {
   display: flex;
   flex-direction: row;
@@ -35,26 +73,6 @@ div.menu.filter-section li {
   background-color: #476C9B;
   color: #F7F9FB;
   list-style: none;
-}
-
-button.index-button {
-  font-family: 'Source Serif Pro', serif;
-  font-size: 1.8rem;
-  color: #F7F9FB;
-  height: 40px;
-  width: fit-content;
-  border-radius: 2px;
-  background-color: #984447;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
-  margin-left: 5px;
-  padding: 10px;
-}
-
-.index-button:hover {
-  background-color: #ED9905;
-  color: #F7F9FB;
-  font-family: 'Source Serif Pro', serif;
-  font-size: 1.8rem;
 }
 
 // Campground Tiles container

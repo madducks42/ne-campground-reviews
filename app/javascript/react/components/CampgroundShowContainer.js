@@ -78,7 +78,7 @@ const CampgroundShowContainer = (props) => {
 
   
   return (
-    <div className='grid-container fluid show-container'>
+    <div className='grid-container fluid show-container wrapper'>
       <div className='grid-x grid-margin-x'>
         <div className='cell small-4'>Placeholder for picture</div>
         <div className='cell auto'>
