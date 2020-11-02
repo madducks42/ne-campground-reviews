@@ -52,7 +52,7 @@ const CampgroundIndexContainer = (props) => {
   };
   
   < NewCampgroundForm 
-    addNewCampground = {addNewCampground()}
+    addNewCampground={addNewCampground}
   />
 
   let campgroundTiles = campgrounds.map((campground) => {
