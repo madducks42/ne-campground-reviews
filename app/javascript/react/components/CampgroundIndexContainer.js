@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 
 import CampgroundIndexTile from './CampgroundIndexTile'
-import NewCampgroundForm from './NewCampgroundForm'
+// import NewCampgroundForm from './NewCampgroundForm'
 
 const CampgroundIndexContainer = (props) => {
   const [campgrounds, setCampgrounds] = useState([])
@@ -24,36 +24,6 @@ const CampgroundIndexContainer = (props) => {
       setCampgrounds(body)
     }).catch(error => console.error(`Error in fetch: ${error.message}`))
   }, []);
-
-  const addNewCampground = (formData) => {
-    fetch("/api/v1/campgrounds"), {
-      method: 'POST',
-      body: JSON.stringify(formData),
-      credentials: 'same-origin',
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      }
-    }
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`,
-        error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then(response => response.json())
-    .then(body => {
-      setCampgrounds([...campgrounds, body]);
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
-  };
-  
-  < NewCampgroundForm 
-    addNewCampground={addNewCampground}
-  />
 
   let campgroundTiles = campgrounds.map((campground) => {
     return(

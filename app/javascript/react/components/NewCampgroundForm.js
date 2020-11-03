@@ -1,25 +1,60 @@
 import React, { useState } from 'react'
 import ErrorList from './ErrorList'
+import { Redirect } from "react-router-dom"
 
 const NewCampgroundForm = (props) => {
-  debugger
   let defaultFields = {
     name: '',
     caption: '',
     description: '',
     location: '',
     campground_link: '',
-    dogs_allowed: '',
-    electronic_hookups: '',
-    water_hookups: '',
-    potable_water: '',
-    dump_station: '',
-    bathrooms: '',
-    showers: ''
+    dogs_allowed: true,
+    electric_hookups: true,
+    water_hookups: true,
+    potable_water: true,
+    dump_station: true,
+    bathrooms: true,
+    showers: true
   };
 
   const [newCampground, setNewCampground] = useState(defaultFields);
   const [errors, setErrors] = useState({})
+  const [shouldRedirect, setShouldRedirect] = useState(false)
+
+  if (shouldRedirect) {
+    return <Redirect to='/campgrounds' />
+  }
+
+  const addNewCampground = (formData) => {
+    fetch("/api/v1/campgrounds", {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      credentials: 'same-origin',
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      if (body.errors) {
+        // handle errors
+      } else {
+        setShouldRedirect(true)
+      }
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  };
 
   const handleChange = event => {
     setNewCampground({
@@ -30,17 +65,15 @@ const NewCampgroundForm = (props) => {
 
   const validForSubmission = () => {
     let submitErrors = {}
-    const requiredFields = [defaultFields]
-    
-    // requiredFields.forEach(field => {
-    //   debugger
-    //   if (newCampground[field].trim() === '') {
-    //     submitErrors = {
-    //       ...submitErrors,
-    //       [field]: 'is blank'
-    //     }
-    //   }
-    // })
+    const requiredFields = ['name', 'caption', 'description', 'location']
+    requiredFields.forEach(field => {
+      if ((newCampground[field].trim() === '') || (newCampground[field].trim() === '') || (newCampground[field].trim() === '') || (newCampground[field].trim() === '')) {
+        submitErrors = {
+          ...submitErrors,
+          [field]: 'is blank'
+        }
+      }
+    })
 
     setErrors(submitErrors)
     return _.isEmpty(submitErrors)
@@ -49,7 +82,7 @@ const NewCampgroundForm = (props) => {
   const handleSubmit = event => {
     event.preventDefault();
     if (validForSubmission()) {
-      props.addNewCampground(newCampground);
+      addNewCampground(newCampground);
       setNewCampground(defaultFields);
     }
   };
@@ -117,51 +150,51 @@ const NewCampgroundForm = (props) => {
         </label>
         <label>
           Dogs Allowed:
-          <select>
-            <option name='dogs_allowed' id='dogs_allowed' onChange={handleChange} className='campground-form' value={true}>Yes</option>
-            <option name='dogs_allowed' id='dogs_allowed' onChange={handleChange} className='campground-form' value={false}>No</option>
+          <select name='dogs_allowed' value={newCampground.dogs_allowed} onChange={handleChange}>
+            <option className='campground-form' value={true}>Yes</option>
+            <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
-          Electronic Hookups:
-          <select>
-            <option name='electronic_hookups' id='electronic_hookups' onChange={handleChange} className='campground-form' value={true}>Yes</option>
-            <option name='electronic_hookups' id='electronic_hookups' onChange={handleChange} className='campground-form' value={false}>No</option>
+          Electric Hookups:
+          <select name='electric_hookups' value={newCampground.electric_hookups} onChange={handleChange}>
+            <option className='campground-form' value={true}>Yes</option>
+            <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Water Hookups:
-          <select>
-            <option name='water_hookups' id='water_hookups' onChange={handleChange} className='campground-form' value={true}>Yes</option>
-            <option name='water_hookups' id='water_hookups' onChange={handleChange} className='campground-form' value={false}>No</option>
+          <select name='water_hookups' value={newCampground.water_hookups} onChange={handleChange}>
+            <option className='campground-form' value={true}>Yes</option>
+            <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Potable Water:
-          <select>
-            <option name='potable_water' id='potable_water' onChange={handleChange} className='campground-form' value={true}>Yes</option>
-            <option name='potable_water' id='potable_water' onChange={handleChange} className='campground-form' value={false}>No</option>
+          <select name='potable_water' value={newCampground.potable_water} onChange={handleChange}>
+            <option className='campground-form' value={true}>Yes</option>
+            <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Dump Station:
-          <select>
-            <option name='dump_station' id='dump_station' onChange={handleChange} className='campground-form' value={true}>Yes</option>
-            <option name='dump_station' id='dump_station' onChange={handleChange} className='campground-form' value={false}>No</option>
+          <select name='dump_station' value={newCampground.dump_station} onChange={handleChange}>
+            <option className='campground-form' value={true}>Yes</option>
+            <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Bathrooms:
-          <select>
-            <option name='bathrooms' id='bathrooms' onChange={handleChange} className='campground-form' value={true}>Yes</option>
-            <option name='bathrooms' id='bathrooms' onChange={handleChange} className='campground-form' value={false}>No</option>
+          <select name='bathrooms' value={newCampground.bathrooms} onChange={handleChange}>
+            <option className='campground-form' value={true}>Yes</option>
+            <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Showers:
-          <select>
-            <option name='showers' id='showers' onChange={handleChange} className='campground-form' value={true}>Yes</option>
-            <option name='showers' id='showers' onChange={handleChange} className='campground-form' value={false}>Yes</option>
+          <select name='showers' value={newCampground.showers} onChange={handleChange}>
+            <option className='campground-form' value={true}>Yes</option>
+            <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <div className='button-group'>
