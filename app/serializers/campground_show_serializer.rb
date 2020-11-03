@@ -11,13 +11,14 @@ class CampgroundShowSerializer < ActiveModel::Serializer
               :dump_station, 
               :bathrooms, 
               :showers, 
-              :user_signed_in, 
-              :currentUser,
-              :average_rating
+              :userSignedIn, 
+              :currentUser
+              
+  attribute :average_rating, key: :averageRating
 
   has_many :reviews
-
-  def user_signed_in
+  
+  def userSignedIn
     if !current_user
       return false
     else
@@ -28,8 +29,5 @@ class CampgroundShowSerializer < ActiveModel::Serializer
   def currentUser
     current_user
   end
-
-  def averageRating 
-    average_rating
-  end
+  
 end

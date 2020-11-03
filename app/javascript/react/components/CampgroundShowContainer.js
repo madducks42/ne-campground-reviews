@@ -54,7 +54,7 @@ const CampgroundShowContainer = (props) => {
   };
 
   let reviewForm
-  if (campgroundShow.user_signed_in) {
+  if (campgroundShow.userSignedIn) {
     reviewForm = <CampgroundReviewFormContainer addNewReview={addNewReview}/>
   }
 
@@ -74,7 +74,7 @@ const CampgroundShowContainer = (props) => {
     noReviewsMessage = "No reviews yet."
   }
 
-  let averageRatingMessage = campgroundShow.average_rating
+  let averageRatingMessage = campgroundShow.averageRating
   if (averageRatingMessage === null) {
     averageRatingMessage = "No ratings yet."
   }

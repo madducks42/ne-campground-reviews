@@ -6,4 +6,5 @@ class Api::V1::CampgroundsController < ApiController
   def show
     render json: Campground.find(params[:id]), serializer: CampgroundShowSerializer
   end
+
 end
