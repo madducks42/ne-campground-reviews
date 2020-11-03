@@ -100,7 +100,9 @@ div.card h6 {
   }
 
 div.card p {
-  text-align: justify;
+  text-align: left;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 div.card a {

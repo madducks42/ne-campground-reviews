@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 
 import CampgroundIndexTile from './CampgroundIndexTile'
+// import NewCampgroundForm from './NewCampgroundForm'
 
 const CampgroundIndexContainer = (props) => {
   const [campgrounds, setCampgrounds] = useState([])
@@ -22,8 +23,8 @@ const CampgroundIndexContainer = (props) => {
     .then(body => {
       setCampgrounds(body)
     }).catch(error => console.error(`Error in fetch: ${error.message}`))
-  }, [])
-  
+  }, []);
+
   let campgroundTiles = campgrounds.map((campground) => {
     return(
       < CampgroundIndexTile
