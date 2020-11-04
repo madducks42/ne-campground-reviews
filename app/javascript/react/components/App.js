@@ -4,6 +4,7 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import CampgroundIndexContainer from './CampgroundIndexContainer'
 import CampgroundShowContainer from './CampgroundShowContainer'
 import NewCampgroundForm from './NewCampgroundForm'
+import UpdateCampgroundForm from './UpdateCampgroundForm'
 
 export const App = (props) => {
   return (
@@ -12,6 +13,7 @@ export const App = (props) => {
         <Route exact path='/' component={CampgroundIndexContainer}/>
         <Route exact path='/campgrounds' component={CampgroundIndexContainer} />
         <Route exact path='/campgrounds/new' component={NewCampgroundForm} />
+        <Route exact path='/campgrounds/update' component={UpdateCampgroundForm} />
         <Route exact path='/campgrounds/:id' component={CampgroundShowContainer} />
       </Switch>
     </BrowserRouter>

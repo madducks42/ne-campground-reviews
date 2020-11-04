@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from "react-router-dom"
 
 import CampgroundShowDescriptionTile from './CampgroundShowDescriptionTile'
 import CampgroundShowAmenitiesTile from './CampgroundShowAmenitiesTile'
@@ -81,6 +82,7 @@ const CampgroundShowContainer = (props) => {
 
   return (
     <div className='grid-container fluid show-container wrapper'>
+      <h2><Link to='/campgrounds/update'>Update Campground</Link></h2>
       <div className='grid-x grid-margin-x'>
         <div className='cell small-4'>Placeholder for picture</div>
         <div className='cell auto'>

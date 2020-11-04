@@ -10,13 +10,15 @@ class Api::V1::CampgroundsController < ApiController
   end
 
   def update
-    campground = Campground.find(params[:id])
+    # render json: Campground.find(params[:id]), serializer: CampgroundShowSerializer
 
-    if campground.save
-      render json: campground
-    else
-      render json: { errors: campground.errors.full_messages }
-    end 
+    # campground = Campground.find(params[:id]
+
+    # if campground.save
+    #   render json: campground
+    # else
+    #   render json: { errors: campground.errors.full_messages }
+    # end 
     
   end
 
