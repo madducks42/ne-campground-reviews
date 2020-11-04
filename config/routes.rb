@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get '/campgrounds', to: 'homes#index'
   get '/campgrounds/new', to: 'homes#authenticated'
+  get '/campgrounds/delete', to: 'homes#authenticated'
   get '/campgrounds/:id/update', to: 'homes#authenticated'
   get '/campgrounds/:id', to: 'homes#index'
   
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :campgrounds, only: [:index, :show, :create, :update] do
+      resources :campgrounds, only: [:index, :show, :create, :edit, :update, :delete] do
         resources :reviews, only: [:create]
       end
     end

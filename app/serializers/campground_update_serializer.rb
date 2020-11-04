@@ -1,4 +1,4 @@
-class CampgroundShowSerializer < ActiveModel::Serializer
+class CampgroundUpdateSerializer < ActiveModel::Serializer
   attributes  :id, 
               :name, 
               :description,
@@ -14,10 +14,6 @@ class CampgroundShowSerializer < ActiveModel::Serializer
               :showers, 
               :userSignedIn, 
               :currentUser
-              
-  attribute :average_rating, key: :averageRating
-
-  has_many :reviews
   
   def userSignedIn
     if !current_user

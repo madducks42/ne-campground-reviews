@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ErrorList from './ErrorList'
 import { Redirect } from "react-router-dom"
 
-const UpdateCampgroundForm = () => {
-  debugger
+const UpdateCampgroundForm = (props) => {
   let defaultFields = {
     name: '',
     caption: '',
@@ -23,9 +22,23 @@ const UpdateCampgroundForm = () => {
   const [errors, setErrors] = useState({})
   const [shouldRedirect, setShouldRedirect] = useState(false)
 
-  if (shouldRedirect) {
-    return <Redirect to='/campgrounds/:id' />
-  }
+  useEffect(() => {
+    let id = props.match.params.id
+    fetch(`/api/v1/campgrounds/${id}`)
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Errror(errorMessage)
+        throw error
+      }
+    })
+    .then(body => {
+      setUpdatedCampground(body)
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }, []);
 
   const updateCampground = (formData) => {
     let id = props.match.params.id
@@ -52,7 +65,7 @@ const UpdateCampgroundForm = () => {
       if (body.errors) {
         // handle errors
       } else {
-        setShouldRedirect(true)
+        setShouldRedirect(body.id)
       }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -85,9 +98,12 @@ const UpdateCampgroundForm = () => {
     event.preventDefault();
     if (validForSubmission()) {
       updateCampground(updatedCampground);
-      setUpdatedCampground(defaultFields);
     }
   };
+
+  if (shouldRedirect) {
+    return <Redirect to={`/campgrounds/${shouldRedirect}`} />
+  }
 
   return (
     <div className='grid-container wrapper'>
@@ -119,7 +135,7 @@ const UpdateCampgroundForm = () => {
         </label>
         <label>
           Description:
-          <input
+          <textarea
             name='description'
             id='description'
             type='text'

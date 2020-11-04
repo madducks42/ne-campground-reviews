@@ -18,3 +18,10 @@ form.new-campground-form.callout input {
   font-size: 1.8rem;
 }
 
+textarea#description.campground-form {
+  min-height: 400px;
+  max-height: 500px;
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
+}
+

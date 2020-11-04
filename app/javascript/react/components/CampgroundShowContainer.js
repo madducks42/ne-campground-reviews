@@ -7,7 +7,7 @@ import CampgroundReviewFormContainer from './CampgroundReviewFormContainer'
 import CampgroundShowReviewTile from './CampgroundShowReviewTile'
 
 const CampgroundShowContainer = (props) => {
-  const[campgroundShow, setCampgroundShow] = useState("")
+  const[campgroundShow, setCampgroundShow] = useState({})
   const[reviews, setReviews] = useState([])
   
   useEffect(() => {
@@ -82,7 +82,10 @@ const CampgroundShowContainer = (props) => {
 
   return (
     <div className='grid-container fluid show-container wrapper'>
-      {/* <h2><Link to='/campgrounds/:id/update'>Update Campground</Link></h2>  */}
+      <div className='grid-x grid-margin-x admin-flex'>
+        <Link className='admin-link' to={`/campgrounds/${campgroundShow.id}/update`}>Update Campground</Link>
+        <Link className='admin-link' to={`/campgrounds/${campgroundShow.id}/destroy`}>Delete Campground</Link>
+      </div>
       <div className='grid-x grid-margin-x'>
         <div className='cell small-4'>Placeholder for picture</div>
         <div className='cell auto'>

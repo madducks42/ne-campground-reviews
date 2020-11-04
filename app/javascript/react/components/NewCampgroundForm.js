@@ -117,7 +117,7 @@ const NewCampgroundForm = (props) => {
         </label>
         <label>
           Description:
-          <input
+          <textarea
             name='description'
             id='description'
             type='text'

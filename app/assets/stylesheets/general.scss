@@ -106,3 +106,29 @@ input.button:hover, input.button.focus, button.button:hover, button.button.focus
   font-family: 'Source Serif Pro', serif;
   font-size: 1.8rem;
 }
+
+// Admin related links (i.e. Update/Delete Campground)
+div.grid-x.grid-margin-x.admin-flex {
+  display: flex;
+  justify-content: flex-end;
+}
+
+a.admin-link {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
+  margin-left: 10px;
+  padding: 10px;
+  height: 40px;
+  width: fit-content;
+  border-radius: 2px;
+  background-color: #984447;
+  color: #F7F9FB;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+}
+
+a.admin-link:hover {
+  background-color: #ED9905;
+  color: #F7F9FB;
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
+}

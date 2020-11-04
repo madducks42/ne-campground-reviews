@@ -9,16 +9,19 @@ class Api::V1::CampgroundsController < ApiController
     render json: Campground.find(params[:id]), serializer: CampgroundShowSerializer
   end
 
+  def edit
+    render json: Campground.find(params[:id]), serializer: CampgroundUpdateSerializer
+  end
+
   def update
-    # render json: Campground.find(params[:id]), serializer: CampgroundShowSerializer
 
-    # campground = Campground.find(params[:id]
+    campground = Campground.find(params[:id])
 
-    # if campground.save
-    #   render json: campground
-    # else
-    #   render json: { errors: campground.errors.full_messages }
-    # end 
+    if campground.update(campground_params)
+      render json: campground
+    else
+      render json: { errors: campground.errors.full_messages }
+    end 
     
   end
 
@@ -31,6 +34,14 @@ class Api::V1::CampgroundsController < ApiController
     end 
   end
 
+  def destroy
+    campground = Campground.find(params[:id])
+
+    if campground.destroy
+      redirect_to root_path
+    end
+  end
+
   protected
 
   def campground_params
@@ -38,7 +49,6 @@ class Api::V1::CampgroundsController < ApiController
   end
 
   def authorize_user
-    binding.pry
     if !user_signed_in? || !current_user.admin?
       redirect_to root_path
     end
