@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   root 'homes#index'
 
   get '/campgrounds', to: 'homes#index'
+  get '/campgrounds/new', to: 'homes#authenticated'
   get '/campgrounds/:id', to: 'homes#index'
-  get '/campgrounds/new', to: 'homes#index'
   
   devise_for :users
 
