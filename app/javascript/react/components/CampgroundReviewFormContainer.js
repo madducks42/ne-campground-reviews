@@ -1,12 +1,13 @@
-import React, { useState } from "react"
-import ErrorList from "./ErrorList"
+import React, { useState } from 'react'
+import ErrorList from './ErrorList'
 import _ from 'lodash'
 
 const CampgroundReviewFormContainer = (props) => {
   const [newReview, setNewReview] = useState({
-    title: "",
-    body: "",
-    rating: "",
+    title: '',
+    body: '',
+    rating: '',
+    image: ''
   });
 
   const [errors, setErrors] = useState({})
@@ -19,21 +20,21 @@ const CampgroundReviewFormContainer = (props) => {
 
   const validForSubmission = () => {
     let submitErrors = {}
-    const requiredFields = ["title", "body", "rating"]
+    const requiredFields = ['title', 'body', 'rating']
     
     requiredFields.forEach(field => {
-      if (newReview[field].trim() === "") {
+      if (newReview[field].trim() === '') {
         submitErrors = {
           ...submitErrors,
-          [field]: "is blank"
+          [field]: 'is blank'
         }
       }
     })
     
-    if (newReview["rating"] < 1 || newReview["rating"] > 5){
+    if (newReview['rating'] < 1 || newReview['rating'] > 5){
       submitErrors = {
         ...submitErrors,
-        ["rating"]: "must be number between 1-5"
+        ['rating']: 'must be number between 1-5'
       }
     }
 
@@ -41,28 +42,35 @@ const CampgroundReviewFormContainer = (props) => {
     return _.isEmpty(submitErrors)
   }
 
+  const handleFileUpload = (acceptedFiles) => {
+    setNewReview({
+      ...newReview,
+      image: acceptedFiles[0]
+    })
+  }
+
   const handleSubmit = event => {
     event.preventDefault();
     if (validForSubmission()) {
       props.addNewReview(newReview);
       setNewReview({
-        title: "",
-        body: "",
-        rating: "",
+        title: '',
+        body: '',
+        rating: '',
       });
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}className="new-review-form callout">
+    <form onSubmit={handleSubmit}className='new-review-form callout'>
       <h3>Leave A Review!</h3>
       <ErrorList errors={errors} />
       <label>
         Title:
         <input
-          name="title"
-          id="title"
-          type="text"
+          name='title'
+          id='title'
+          type='text'
           onChange={handleChange}
           value={newReview.title}
         />
@@ -70,9 +78,9 @@ const CampgroundReviewFormContainer = (props) => {
       <label>
         Body:
         <input
-          name="body"
-          id="body"
-          type="text"
+          name='body'
+          id='body'
+          type='text'
           onChange={handleChange}
           value={newReview.body}
         />
@@ -80,15 +88,25 @@ const CampgroundReviewFormContainer = (props) => {
       <label>
         Rating:
         <input
-          name="rating"
-          id="rating"
-          type="text"
+          name='rating'
+          id='rating'
+          type='text'
           onChange={handleChange}
           value={newReview.rating}
         />
       </label>
-      <div className="button-group">
-        <input className="button" type="submit" value="Submit" />
+      <Dropzone onDrop={handleFileUpload}>
+        {({getRootProps, getInputProps}) => (
+          <section>
+            <div {...getRootProps()}>
+              <input {...getInputProps()} />
+              <p>Drag 'n' drop some files here, or click to select files</p>
+            </div>
+          </section>
+        )}
+      </Dropzone>
+      <div className='button-group'>
+        <input className='button' type='submit' value='Submit' />
       </div>
     </form>
   )
