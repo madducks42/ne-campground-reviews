@@ -46,6 +46,7 @@
   </div>
 
   <%= javascript_include_tag 'application' %>
+  <%# <%= javascript_include_tag 'application', 'lightbox' %> %>
   
   <%- if Rails.env.development? || Rails.env.test? -%> 
     <%= javascript_tag do %>
@@ -55,5 +56,6 @@
   <%= javascript_pack_tag 'application' %>
   
   <%= yield :extra_footer %>
+  
 </body>
 </html>
