@@ -17,6 +17,11 @@ class Api::V1::CampgroundsController < ApiController
     end 
   end
 
+  def search
+    campgrounds = Campground.where("name ILIKE ? OR description ILIKE ?", "%#{params['search_string']}%", "%#{params['search_string']}%")
+    render json: campgrounds
+  end
+
   protected
 
   def campground_params

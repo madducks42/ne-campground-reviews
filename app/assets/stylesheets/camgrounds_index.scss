@@ -35,26 +35,42 @@ ul.menu.left-nav-bar.nav-flex li{
   width: 100%;
 }
 
+label.nav-search, li.nav-search, h6.nav-search {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
+  color: #F7F9FB;
+}
+
+li.nav-search {
+  list-style: none;
+}
+
+input.search-field {
+  height: 40px;
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
+}
+
 input.nav-search-input {
   height: 40px;
   font-family: 'Source Serif Pro', serif;
   font-size: 1.8rem;
 }
 
-button.search-button {
+input.search-button {
   font-family: 'Source Serif Pro', serif;
   font-size: 1.8rem;
-  color: #F7F9FB;
+  margin-top: 5px;
+  padding: 10px;
   height: 40px;
   width: fit-content;
   border-radius: 2px;
   background-color: #984447;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
-  margin-top: 5px;
-  padding: 10px;
+  color: #F7F9FB;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out
 }
 
-.search-button:hover {
+input.search-button:hover {
   background-color: #ED9905;
   color: #F7F9FB;
   font-family: 'Source Serif Pro', serif;
