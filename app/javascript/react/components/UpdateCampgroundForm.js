@@ -168,49 +168,49 @@ const UpdateCampgroundForm = (props) => {
         </label>
         <label>
           Dogs Allowed:
-          <select name='dogs_allowed' value={updatedCampground.dogs_allowed} onChange={handleChange}>
+          <select className='campground-form' name='dogs_allowed' value={updatedCampground.dogs_allowed} onChange={handleChange}>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Electric Hookups:
-          <select name='electric_hookups' value={updatedCampground.electric_hookups} onChange={handleChange}>
+          <select className='campground-form' name='electric_hookups' value={updatedCampground.electric_hookups} onChange={handleChange}>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Water Hookups:
-          <select name='water_hookups' value={updatedCampground.water_hookups} onChange={handleChange}>
+          <select className='campground-form' name='water_hookups' value={updatedCampground.water_hookups} onChange={handleChange}>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Potable Water:
-          <select name='potable_water' value={updatedCampground.potable_water} onChange={handleChange}>
+          <select className='campground-form' name='potable_water' value={updatedCampground.potable_water} onChange={handleChange}>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Dump Station:
-          <select name='dump_station' value={updatedCampground.dump_station} onChange={handleChange}>
+          <select className='campground-form' name='dump_station' value={updatedCampground.dump_station} onChange={handleChange}>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Bathrooms:
-          <select name='bathrooms' value={updatedCampground.bathrooms} onChange={handleChange}>
+          <select className='campground-form' name='bathrooms' value={updatedCampground.bathrooms} onChange={handleChange}>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Showers:
-          <select name='showers' value={updatedCampground.showers} onChange={handleChange}>
+          <select className='campground-form' name='showers' value={updatedCampground.showers} onChange={handleChange}>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
           </select>

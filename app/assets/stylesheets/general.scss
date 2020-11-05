@@ -110,7 +110,8 @@ input.button:hover, input.button.focus, button.button:hover, button.button.focus
 // Admin related links (i.e. Update/Delete Campground)
 div.grid-x.grid-margin-x.admin-flex {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 a.admin-link {

@@ -1,12 +1,33 @@
 import React, { useEffect, useState } from 'react'
 
 const DestroyCampground = (props) => {
+  const [currentCampground, setCurrentCampground] = useState({});
+  const [shouldRedirect, setShouldRedirect] = useState(false);
+
+  useEffect(() => {
+    let id = props.match.params.id
+    fetch(`/api/v1/campgrounds/${id}`)
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Errror(errorMessage)
+        throw error
+      }
+    })
+    .then(body => {
+      setCurrentCampground(body)
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }, []);
   
-  const deleteCampground = () => {
+  const onClickDelete = event => {
+    event.preventDefault()
     let id = props.match.params.id
     fetch(`/api/v1/campgrounds/${id}`, {
       method: 'DELETE',
-      body: JSON.stringify(formData),
+      body: JSON.stringify(),
       credentials: 'same-origin',
       headers: {
         Accept: "application/json",
@@ -24,26 +45,24 @@ const DestroyCampground = (props) => {
     })
     .then(response => response.json())
     .then(body => {
-      debugger
       if (body.errors) {
         // handle errors
       } else {
-        setShouldRedirect(body.id)
+        setShouldRedirect(true)
       }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   };
 
-  const handleSubmit = event => {
-    event.preventDefault();
-    deleteCampground()
-  };
+  if (shouldRedirect) {
+    return <Redirect to='/campgrounds' />
+  }
 
   return (
     <div className='grid-container wrapper'>
-      <h4>Are you sure you want to delete this campground?</h4>
+      <h4>Are you sure you want to delete {currentCampground.name}?</h4>
       <div className='button-group'>
-          <input onSubmit={handleSubmit} className='button' type='submit' value='Delete Campground' />
+          <input onClick={onClickDelete} className='button' type='submit' value='Delete Campground' />
         </div>
     </div>
   )

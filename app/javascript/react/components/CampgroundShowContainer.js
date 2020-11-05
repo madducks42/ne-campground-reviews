@@ -9,6 +9,7 @@ import CampgroundShowReviewTile from './CampgroundShowReviewTile'
 
 const CampgroundShowContainer = (props) => {
   const[campgroundShow, setCampgroundShow] = useState({})
+  const[currentUser, setCurrentUser] = useState({})
   const[reviews, setReviews] = useState([])
   
   useEffect(() => {
@@ -26,6 +27,9 @@ const CampgroundShowContainer = (props) => {
     .then(body => {
       setCampgroundShow(body)
       setReviews(body.reviews)
+      if (body.currentUser != null) {
+        setCurrentUser(body.currentUser)
+      }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, []);
@@ -83,10 +87,6 @@ const CampgroundShowContainer = (props) => {
 
   return (
     <div className='grid-container fluid show-container wrapper'>
-      <div className='grid-x grid-margin-x admin-flex'>
-        <Link className='admin-link' to={`/campgrounds/${campgroundShow.id}/update`}>Update Campground</Link>
-        <Link className='admin-link' to={`/campgrounds/${campgroundShow.id}/destroy`}>Delete Campground</Link>
-      </div>
       <div className='grid-x grid-margin-x'>
         <div className='cell auto'>
           < CampgroundShowPhotoTile />
@@ -119,6 +119,10 @@ const CampgroundShowContainer = (props) => {
           />
         </div>
       </div>
+      {currentUser.role === 'admin' && <div className='grid-x grid-margin-x admin-flex'>
+        <Link className='admin-link' to={`/campgrounds/${campgroundShow.id}/update`}>Update Campground</Link>
+        <Link className='admin-link' to={`/campgrounds/${campgroundShow.id}/destroy`}>Delete Campground</Link>
+      </div>}
       <div className='grid-x grid-margin-x'>
         <div className='cell'>
           {reviewForm}

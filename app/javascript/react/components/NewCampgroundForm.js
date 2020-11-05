@@ -9,13 +9,13 @@ const NewCampgroundForm = (props) => {
     description: '',
     location: '',
     campground_link: '',
-    dogs_allowed: true,
-    electric_hookups: true,
-    water_hookups: true,
-    potable_water: true,
-    dump_station: true,
-    bathrooms: true,
-    showers: true
+    dogs_allowed: undefined,
+    electric_hookups: undefined,
+    water_hookups: undefined,
+    potable_water: undefined,
+    dump_station: undefined,
+    bathrooms: undefined,
+    showers: undefined
   };
 
   const [newCampground, setNewCampground] = useState(defaultFields);
@@ -150,49 +150,56 @@ const NewCampgroundForm = (props) => {
         </label>
         <label>
           Dogs Allowed:
-          <select name='dogs_allowed' value={newCampground.dogs_allowed} onChange={handleChange}>
+          <select className='campground-form' name='dogs_allowed' value={newCampground.dogs_allowed} onChange={handleChange}>
+            <option className='campground-form' value={null}>--</option>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Electric Hookups:
-          <select name='electric_hookups' value={newCampground.electric_hookups} onChange={handleChange}>
+          <select className='campground-form' name='electric_hookups' value={newCampground.electric_hookups} onChange={handleChange}>
+            <option className='campground-form' value={null}>--</option>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Water Hookups:
-          <select name='water_hookups' value={newCampground.water_hookups} onChange={handleChange}>
+          <select className='campground-form' name='water_hookups' value={newCampground.water_hookups} onChange={handleChange}>
+            <option className='campground-form' value={null}>--</option>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Potable Water:
-          <select name='potable_water' value={newCampground.potable_water} onChange={handleChange}>
+          <select className='campground-form' name='potable_water' value={newCampground.potable_water} onChange={handleChange}>
+            <option className='campground-form' value={null}>--</option>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Dump Station:
-          <select name='dump_station' value={newCampground.dump_station} onChange={handleChange}>
+          <select className='campground-form' name='dump_station' value={newCampground.dump_station} onChange={handleChange}>
+            <option className='campground-form' value={null}>--</option>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Bathrooms:
-          <select name='bathrooms' value={newCampground.bathrooms} onChange={handleChange}>
+          <select className='campground-form' name='bathrooms' value={newCampground.bathrooms} onChange={handleChange}>
+            <option className='campground-form' value={null}>--</option>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
           </select>
         </label>
         <label>
           Showers:
-          <select name='showers' value={newCampground.showers} onChange={handleChange}>
+          <select className='campground-form' name='showers' value={newCampground.showers} onChange={handleChange}>
+            <option className='campground-form' value={null}>--</option>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
           </select>
