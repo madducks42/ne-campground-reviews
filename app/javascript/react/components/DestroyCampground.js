@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { Redirect } from "react-router-dom"
+import ErrorList from './ErrorList'
+import _ from 'lodash'
 
 const DestroyCampground = (props) => {
   const [currentCampground, setCurrentCampground] = useState({});
@@ -36,20 +39,17 @@ const DestroyCampground = (props) => {
     })
     .then(response => {
       if (response.ok) {
-        return response;
+        return response.json();
       } else {
         let errorMessage = `${response.status} (${response.statusText})`,
         error = new Error(errorMessage);
         throw(error);
       }
     })
-    .then(response => response.json())
     .then(body => {
-      if (body.errors) {
-        // handle errors
-      } else {
+      if (body.destroyed === true) {
         setShouldRedirect(true)
-      }
+      } 
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   };
@@ -61,7 +61,7 @@ const DestroyCampground = (props) => {
   return (
     <div className='grid-container wrapper'>
       <h4>Are you sure you want to delete {currentCampground.name}?</h4>
-      <div className='button-group'>
+      <div>
           <input onClick={onClickDelete} className='button' type='submit' value='Delete Campground' />
         </div>
     </div>

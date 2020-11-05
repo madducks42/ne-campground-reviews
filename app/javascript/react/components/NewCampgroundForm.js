@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ErrorList from './ErrorList'
 import { Redirect } from "react-router-dom"
+import _ from 'lodash'
 
 const NewCampgroundForm = (props) => {
   let defaultFields = {

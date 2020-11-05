@@ -38,7 +38,9 @@ class CampgroundSearchBar extends Component {
   render() {
     const campgrounds = this.state.campgrounds.map(campground => {
       return(
-        <li className='nav-search'><Link to={`/campgrounds/${campground.id}`}>{campground.name}</Link></li>
+        <div>
+          <li className='nav-search'><Link to={`/campgrounds/${campground.id}`}>{campground.name}</Link></li>
+        </div>
       )
     })
   
@@ -56,7 +58,7 @@ class CampgroundSearchBar extends Component {
             <input className='search-field' type='text' name='searchString' value={this.state.searchString} onChange={this.handleChange} />
           </label>
   
-          <input className='search-button' type='submit' value='Search' />
+          <input className='search-button button' type='submit' value='Search' />
         </form>
         <div className='nav-search'>
           {isResultsAvailable && <h6 className='nav-search'>Search Results:</h6>}
