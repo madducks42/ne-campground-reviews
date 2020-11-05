@@ -14,7 +14,6 @@ class Api::V1::CampgroundsController < ApiController
   end
 
   def update
-
     campground = Campground.find(params[:id])
 
     if campground.update(campground_params)
