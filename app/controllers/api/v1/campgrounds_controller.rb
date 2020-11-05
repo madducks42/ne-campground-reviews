@@ -36,7 +36,7 @@ class Api::V1::CampgroundsController < ApiController
 
   def destroy
     campground = Campground.find(params[:id])
-
+    binding.pry
     if campground.destroy
       redirect_to root_path
     end
