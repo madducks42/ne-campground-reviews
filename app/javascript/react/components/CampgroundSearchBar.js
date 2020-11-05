@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class CampgroundSearchBar extends Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class CampgroundSearchBar extends Component {
   render() {
     const campgrounds = this.state.campgrounds.map(campground => {
       return(
-        <li className='nav-search'>{campground.name}</li>
+        <li className='nav-search'><Link to={`/campgrounds/${campground.id}`}>{campground.name}</Link></li>
       )
     })
   
@@ -58,7 +59,7 @@ class CampgroundSearchBar extends Component {
           <input className='search-button' type='submit' value='Search' />
         </form>
         <div className='nav-search'>
-          {isResultsAvailable && <h6>Search Results:</h6>}
+          {isResultsAvailable && <h6 className='nav-search'>Search Results:</h6>}
         </div> 
         <ul className='nav-search'>{campgrounds}</ul>
       </div>

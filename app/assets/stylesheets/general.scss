@@ -76,6 +76,17 @@ h6 {
   font-family: 'Source Serif Pro', serif;
 }
 
+a {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
+  color: #F7F9FB;
+}
+
+a:hover {
+  color: #F7F9FB;
+  text-decoration: underline;
+}
+
 // Button styles
 input.button {
   font-family: 'Source Serif Pro', serif;

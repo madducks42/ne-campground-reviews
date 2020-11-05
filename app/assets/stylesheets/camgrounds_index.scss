@@ -41,6 +41,10 @@ label.nav-search, li.nav-search, h6.nav-search {
   color: #F7F9FB;
 }
 
+li.nav-search {
+  list-style: none;
+}
+
 input.search-field {
   height: 40px;
   font-family: 'Source Serif Pro', serif;
