@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      post 'campgrounds/search', to: 'campgrounds#search'
+
       resources :campgrounds, only: [:index, :show, :create, :edit, :update, :destroy] do
         resources :reviews, only: [:create]
       end
