@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ErrorList from './ErrorList'
-import _ from 'lodash'
+import Dropzone from 'react-dropzone'
 
 const CampgroundReviewFormContainer = (props) => {
   const [newReview, setNewReview] = useState({
@@ -29,25 +29,25 @@ const CampgroundReviewFormContainer = (props) => {
           [field]: 'is blank'
         }
       }
-    })
+    });
     
     if (newReview['rating'] < 1 || newReview['rating'] > 5){
       submitErrors = {
         ...submitErrors,
         ['rating']: 'must be number between 1-5'
       }
-    }
+    };
 
     setErrors(submitErrors)
     return _.isEmpty(submitErrors)
-  }
+  };
 
   const handleFileUpload = (acceptedFiles) => {
     setNewReview({
       ...newReview,
       image: acceptedFiles[0]
     })
-  }
+  };
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -57,7 +57,7 @@ const CampgroundReviewFormContainer = (props) => {
         title: '',
         body: '',
         rating: '',
-      });
+      })
     }
   };
 
@@ -110,6 +110,6 @@ const CampgroundReviewFormContainer = (props) => {
       </div>
     </form>
   )
-}
+};
 
 export default CampgroundReviewFormContainer
