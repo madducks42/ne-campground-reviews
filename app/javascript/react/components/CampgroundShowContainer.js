@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 
+import CampgroundShowPhotoTile from './CampgroundShowPhotoTile'
 import CampgroundShowDescriptionTile from './CampgroundShowDescriptionTile'
 import CampgroundShowAmenitiesTile from './CampgroundShowAmenitiesTile'
 import CampgroundReviewFormContainer from './CampgroundReviewFormContainer'
@@ -87,7 +88,11 @@ const CampgroundShowContainer = (props) => {
         <Link className='admin-link' to={`/campgrounds/${campgroundShow.id}/destroy`}>Delete Campground</Link>
       </div>
       <div className='grid-x grid-margin-x'>
-        <div className='cell small-4'>Placeholder for picture</div>
+        <div className='cell auto'>
+          < CampgroundShowPhotoTile />
+        </div>
+      </div>
+      <div className='grid-x grid-margin-x'>
         <div className='cell auto'>
           < CampgroundShowDescriptionTile 
             key={campgroundShow.id}
