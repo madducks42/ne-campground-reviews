@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 
 import CampgroundIndexTile from './CampgroundIndexTile'
-// import NewCampgroundForm from './NewCampgroundForm'
+import CampgroundSearchBar from './CampgroundSearchBar'
 
 const CampgroundIndexContainer = (props) => {
   const [campgrounds, setCampgrounds] = useState([])
@@ -42,8 +42,7 @@ const CampgroundIndexContainer = (props) => {
       <div className="grid-x grid-margin-x">
         <div className="cell small-4 medium-3 left-nav-bar">
           <ul className='menu left-nav-bar nav-flex'>
-            <li><input className="nav-search-input" type="search" placeholder="Search" /></li>
-            <li><button type="button" className="search-button">Search</button></li>
+            <CampgroundSearchBar />
           </ul>
           <div className='menu filter-section'>
             <ul>

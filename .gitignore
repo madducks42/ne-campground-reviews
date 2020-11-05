@@ -20,6 +20,9 @@
 /public/assets
 .byebug_history
 
+# Ignore uploaded files in test/development
+/public/uploads
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 .env

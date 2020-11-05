@@ -59,3 +59,4 @@ gem 'active_model_serializers'
 gem 'activemodel-serializers-xml'
 gem 'mongo_mapper'
 gem 'bson_ext'
+gem "carrierwave"
