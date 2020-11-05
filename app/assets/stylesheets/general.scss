@@ -88,7 +88,7 @@ a:hover {
 }
 
 // Button styles
-input.button {
+.button {
   font-family: 'Source Serif Pro', serif;
   font-size: 1.8rem;
   margin: 0px;
@@ -101,22 +101,29 @@ input.button {
   transition: background-color 0.25s ease-out, color 0.25s ease-out
 }
 
-button.button {
-  font-family: 'Source Serif Pro', serif;
-  font-size: 1.8rem;
-  height: 40px;
-  width: fit-content;
-  border-radius: 2px;
-  background-color: #984447;
-  margin-left: 5px;
-}
-
-input.button:hover, input.button.focus, button.button:hover, button.button.focus {
+.button:hover, .button.focus {
   background-color: #ED9905;
   color: #F7F9FB;
   font-family: 'Source Serif Pro', serif;
   font-size: 1.8rem;
 }
+
+// button.button {
+//   font-family: 'Source Serif Pro', serif;
+//   font-size: 1.8rem;
+//   height: 40px;
+//   width: fit-content;
+//   border-radius: 2px;
+//   background-color: #984447;
+//   margin-left: 5px;
+// }
+
+// input.button:hover, input.button.focus, button.button:hover, button.button.focus {
+//   background-color: #ED9905;
+//   color: #F7F9FB;
+//   font-family: 'Source Serif Pro', serif;
+//   font-size: 1.8rem;
+// }
 
 // Admin related links (i.e. Update/Delete Campground)
 div.grid-x.grid-margin-x.admin-flex {

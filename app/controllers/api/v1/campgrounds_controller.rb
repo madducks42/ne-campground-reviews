@@ -35,12 +35,11 @@ class Api::V1::CampgroundsController < ApiController
 
   def destroy
     campground = Campground.find(params[:id])
-    binding.pry
     if campground.destroy
-      redirect_to root_path
+      render json: {destroyed: true}
     end
   end
-
+  
   def search
     campgrounds = Campground.where("name ILIKE ? OR description ILIKE ?", "%#{params['search_string']}%", "%#{params['search_string']}%")
     render json: campgrounds

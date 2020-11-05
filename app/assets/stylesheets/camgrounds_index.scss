@@ -58,23 +58,7 @@ input.nav-search-input {
 }
 
 input.search-button {
-  font-family: 'Source Serif Pro', serif;
-  font-size: 1.8rem;
   margin-top: 5px;
-  padding: 10px;
-  height: 40px;
-  width: fit-content;
-  border-radius: 2px;
-  background-color: #984447;
-  color: #F7F9FB;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out
-}
-
-input.search-button:hover {
-  background-color: #ED9905;
-  color: #F7F9FB;
-  font-family: 'Source Serif Pro', serif;
-  font-size: 1.8rem;
 }
 
 // Left nav-bar Filter Section
