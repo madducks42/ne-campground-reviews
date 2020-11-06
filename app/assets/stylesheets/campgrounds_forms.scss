@@ -1,6 +1,6 @@
 form.new-campground-form.callout {
   font-family: 'Source Serif Pro', serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   border-radius: 10px;
   background-color: #476C9B;
   color: #F7F9FB;
@@ -9,12 +9,24 @@ form.new-campground-form.callout {
 
 form.new-campground-form.callout label {
   font-family: 'Source Serif Pro', serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #F7F9FB;
 }
 
 form.new-campground-form.callout input {
   font-family: 'Source Serif Pro', serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+}
+
+textarea#description.campground-form {
+  min-height: 400px;
+  max-height: 500px;
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.6rem;
+}
+
+select.campground-form {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.6rem;
 }
 
