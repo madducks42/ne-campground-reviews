@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Redirect } from "react-router-dom"
-import ErrorList from './ErrorList'
+import ErrorList from '../ErrorList'
 import _ from 'lodash'
 
 const DestroyCampground = (props) => {
