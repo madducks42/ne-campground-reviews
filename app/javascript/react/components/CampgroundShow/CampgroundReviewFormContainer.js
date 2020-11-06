@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ErrorList from './ErrorList'
+import ErrorList from '../ErrorList'
 import Dropzone from 'react-dropzone'
 
 const CampgroundReviewFormContainer = (props) => {

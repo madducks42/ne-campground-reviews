@@ -1,9 +1,9 @@
 import React from 'react'
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
-import CampgroundIndexContainer from './CampgroundIndexContainer'
-import CampgroundShowContainer from './CampgroundShowContainer'
-import NewCampgroundForm from './NewCampgroundForm'
+import CampgroundIndexContainer from './CampgroundIndex/CampgroundIndexContainer'
+import CampgroundShowContainer from './CampgroundShow/CampgroundShowContainer'
+import NewCampgroundForm from './AdminFeatures/NewCampgroundForm'
 
 export const App = (props) => {
   return (
