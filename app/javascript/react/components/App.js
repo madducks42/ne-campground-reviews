@@ -15,10 +15,10 @@ export const App = (props) => {
         <Route exact path='/' component={CampgroundIndexContainer}/>
         <Route exact path='/campgrounds' component={CampgroundIndexContainer} />
         <Route exact path='/campgrounds/new' component={NewCampgroundForm} />
-        <Route exact path='/campgrounds/addimages' component={AddCampgroundImages} />
         <Route exact path='/campgrounds/:id' component={CampgroundShowContainer} />
         <Route exact path='/campgrounds/:id/destroy' component={DestroyCampground} />
         <Route exact path='/campgrounds/:id/update' component={UpdateCampgroundForm} />
+        <Route exact path='/campgrounds/id/addimages' component={AddCampgroundImages} />
       </Switch>
     </BrowserRouter>
   )

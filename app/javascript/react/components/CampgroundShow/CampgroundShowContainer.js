@@ -123,6 +123,7 @@ const CampgroundShowContainer = (props) => {
       {currentUser.role === 'admin' && <div className='grid-x grid-margin-x admin-flex'>
         <Link className='admin-link' to={`/campgrounds/${campgroundShow.id}/update`}>Update Campground</Link>
         <Link className='admin-link' to={`/campgrounds/${campgroundShow.id}/destroy`}>Delete Campground</Link>
+        <Link className='admin-link' to={`/campgrounds/${campgroundShow.id}/addimages`}>Add Images</Link>
       </div>}
       <div className='grid-x grid-margin-x'>
         <div className='cell'>
