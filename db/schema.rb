@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_04_183126) do
+ActiveRecord::Schema.define(version: 2020_11_06_234337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "campground_images", force: :cascade do |t|
+    t.string "image"
+    t.bigint "campground_id", null: false
+    t.index ["campground_id"], name: "index_campground_images_on_campground_id"
+  end
 
   create_table "campgrounds", force: :cascade do |t|
     t.string "name", null: false
@@ -40,7 +46,6 @@ ActiveRecord::Schema.define(version: 2020_11_04_183126) do
     t.bigint "campground_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photos"
     t.index ["campground_id"], name: "index_reviews_on_campground_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end

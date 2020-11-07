@@ -1,5 +1,6 @@
 class Campground < ApplicationRecord
   has_many :reviews
+  has_many :campground_images
   
   validates :name, presence: true
   validates :caption, presence: true
