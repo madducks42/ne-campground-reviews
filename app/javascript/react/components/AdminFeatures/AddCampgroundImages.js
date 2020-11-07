@@ -7,6 +7,37 @@ import _ from 'lodash'
 
 const AddCampgroundImages = (props) => {
   const [campgroundImages, setCampgroundImages] = useState([])
+  const [shouldRedirect, setShouldRedirect] = useState(false)
+
+  
+  const addImages = (event) => {
+    let body = new FormData()
+    body.append("image", campgroundImages)
+    let id = props.match.params.id
+
+    fetch(`/api/v1/campgrounds/${id}/campground_images`, {
+      method: 'POST',
+      body: body,
+      credentials: 'same-origin',
+      headers: {
+        "Accept": "application/json",
+        "Accept": "image/jpeg"
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      if (body.errors) {
+        // handle errors
+      } else {
+        setShouldRedirect(true)
+      }
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+  
+  if (shouldRedirect) {
+    return <Redirect to='/campgrounds' />
+  }
 
   const handleFileUpload = (acceptedFiles) => {
     setCampgroundImages([
@@ -16,28 +47,10 @@ const AddCampgroundImages = (props) => {
   };
 
   const handleSubmit = event => {
-    event.preventDefault();
-    let body = new FormData()
-    body.append("campground_image", campgroundImages.image)   
-    
-    addImages(body);
+    event.preventDefault(); 
+    addImages(campgroundImages);
     setCampgroundImages([])
   };
-
-  const addImages = (event) => {
-    fetch('/api/v1/ducks', {
-      method: 'POST',
-      body: body,
-      credentials: "same-origin",
-    })
-    .then(response => response.json())
-    .then(newDuck => {
-      setDucks([
-        ...ducks,
-        newDuck])
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
 
   return (
     <div className='grid-container wrapper'>

@@ -18,6 +18,7 @@ class CampgroundShowSerializer < ActiveModel::Serializer
   attribute :average_rating, key: :averageRating
 
   has_many :reviews
+  has_many :campground_images
   
   def userSignedIn
     if !current_user
