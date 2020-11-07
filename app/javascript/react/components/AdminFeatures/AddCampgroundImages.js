@@ -3,91 +3,69 @@ import Dropzone from 'react-dropzone'
 import { Redirect } from "react-router-dom"
 import _ from 'lodash'
 
-import ErrorList from '../ErrorList'
+// import ErrorList from '../ErrorList'
 
 const AddCampgroundImages = (props) => {
-  // const [newCampground, setNewCampground] = useState(defaultFields);
-  // const [errors, setErrors] = useState({})
-  // const [shouldRedirect, setShouldRedirect] = useState(false)
+  const [campgroundImages, setCampgroundImages] = useState([])
 
-  // if (shouldRedirect) {
-  //   return <Redirect to='/campgrounds' />
-  // }
+  const handleFileUpload = (acceptedFiles) => {
+    setCampgroundImages([
+      ...campgroundImages,
+      acceptedFiles[0]
+    ])
+  };
 
-  // const addImages = (formData) => {
-  //   fetch("/api/v1/campgrounds", {
-  //     method: 'POST',
-  //     body: JSON.stringify(formData),
-  //     credentials: 'same-origin',
-  //     headers: {
-  //       Accept: "application/json",
-  //       "Content-Type": "application/json"
-  //     }
-  //   })
-  //   .then(response => {
-  //     if (response.ok) {
-  //       return response;
-  //     } else {
-  //       let errorMessage = `${response.status} (${response.statusText})`,
-  //       error = new Error(errorMessage);
-  //       throw(error);
-  //     }
-  //   })
-  //   .then(response => response.json())
-  //   .then(body => {
-  //     if (body.errors) {
-  //       // handle errors
-  //     } else {
-  //       setShouldRedirect(true)
-  //     }
-  //   })
-  //   .catch(error => console.error(`Error in fetch: ${error.message}`));
-  // };
+  const handleSubmit = event => {
+    event.preventDefault();
+    let body = new FormData()
+    body.append("campground_image", campgroundImages.image)   
+    
+    addImages(body);
+    setCampgroundImages([])
+  };
 
-  // const handleChange = event => {
-  //   setNewCampground({
-  //     ...newCampground,
-  //     [event.currentTarget.name]: event.currentTarget.value
-  //   });
-  // };
-
-  // const validForSubmission = () => {
-  //   let submitErrors = {}
-  //   const requiredFields = ['name', 'caption', 'description', 'location']
-  //   requiredFields.forEach(field => {
-  //     if ((newCampground[field].trim() === '') || (newCampground[field].trim() === '') || (newCampground[field].trim() === '') || (newCampground[field].trim() === '')) {
-  //       submitErrors = {
-  //         ...submitErrors,
-  //         [field]: 'is blank'
-  //       }
-  //     }
-  //   })
-
-  //   setErrors(submitErrors)
-  //   return _.isEmpty(submitErrors)
-  // }
-
-  // const handleSubmit = event => {
-  //   event.preventDefault();
-  //   if (validForSubmission()) {
-  //     addImages(newCampground);
-  //     setNewCampground(defaultFields);
-  //   }
-  // };
+  const addImages = (event) => {
+    fetch('/api/v1/ducks', {
+      method: 'POST',
+      body: body,
+      credentials: "same-origin",
+    })
+    .then(response => response.json())
+    .then(newDuck => {
+      setDucks([
+        ...ducks,
+        newDuck])
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
 
   return (
- <div>
-  <Dropzone onDrop={acceptedFiles => console.log(acceptedFiles)}>
-    {({getRootProps, getInputProps}) => (
-      <section>
-        <div {...getRootProps()}>
-          <input {...getInputProps()} />
-          <p>Drag 'n' drop some files here, or click to select files</p>
-        </div>
-      </section>
-    )}
-  </Dropzone>
- </div>
+    <div className='grid-container wrapper'>
+        <h4>Add images</h4>
+        <form onSubmit={handleSubmit}>
+          <Dropzone onDrop={handleFileUpload} multiple={true}>
+          {({getRootProps, getInputProps}) => (
+            <section>
+              <div className='dropzone-box' {...getRootProps()}>
+                <input {...getInputProps()} />
+                <p>Drag 'n' drop some files here, or click to select files</p>
+              </div>
+            </section>
+          )}
+          </Dropzone>
+          <div>
+            <h6>Uploaded Images:</h6>
+            <ul>
+            {campgroundImages.map(campgroundImage => (
+              <li key={campgroundImage.id}>{campgroundImage.name}</li>
+            ))}
+          </ul>
+          </div>
+          <div className='button-group'>
+            <input className='button' type='submit' value='Submit' />
+          </div>
+        </form>
+    </div>
   )
 }
   
