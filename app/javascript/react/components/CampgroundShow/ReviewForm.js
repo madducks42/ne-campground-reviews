@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ErrorList from '../ErrorList'
 import Dropzone from 'react-dropzone'
 
-const CampgroundReviewFormContainer = (props) => {
+const ReviewForm = (props) => {
   const [newReview, setNewReview] = useState({
     title: '',
     body: '',
@@ -112,4 +112,4 @@ const CampgroundReviewFormContainer = (props) => {
   )
 };
 
-export default CampgroundReviewFormContainer
+export default ReviewForm

@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 import _ from 'lodash'
 
-import CampgroundShowPhotoTile from './CampgroundShowPhotoTile'
-import CampgroundShowDescriptionTile from './CampgroundShowDescriptionTile'
-import CampgroundShowAmenitiesTile from './CampgroundShowAmenitiesTile'
-import CampgroundReviewFormContainer from './CampgroundReviewFormContainer'
-import CampgroundShowReviewTile from './CampgroundShowReviewTile'
+import ImagesTile from './ShowComponents/ImagesTile'
+import DescriptionTile from './ShowComponents/DescriptionTile'
+import AmenitiesTile from './ShowComponents/AmenitiesTile'
+import ReviewForm from './ReviewForm'
+import ReviewsContainer from './ShowComponents/ReviewsContainer'
 
 const CampgroundShowContainer = (props) => {
   const[campgroundShow, setCampgroundShow] = useState({})
@@ -60,24 +60,95 @@ const CampgroundShowContainer = (props) => {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   };
 
+  // const editReview = (message) => {
+  //   let reviewId = message.id;
+  //   let payload = message.review;
+  //   fetch(`/api/v1/giraffes/${id}/reviews/${reviewId}`, {
+  //     credentials: "same-origin",
+  //     method: "PATCH",
+  //     body: JSON.stringify(payload),
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         return response;
+  //       } else {
+  //         let errorMessage = `${response.status} (${response.statusText})`,
+  //           error = new Error(errorMessage);
+  //         throw error;
+  //       }
+  //     })
+  //     .then((response) => response.json())
+  //     .then((updatedReview) => {
+  //       if (!updatedReview.errors) {
+  //         let reviewIndex = giraffe.reviews.findIndex(
+  //           (review) => review.id === updatedReview.id
+  //         );
+
+  //         let tempReviews = [...giraffe.reviews];
+  //         tempReviews.splice(reviewIndex, 1, updatedReview);
+
+  //         setGiraffe({
+  //           ...giraffe,
+  //           reviews: tempReviews,
+  //         });
+  //       } else if (review.errors) {
+  //         setErrors(review.errors);
+  //       }
+  //     })
+  //     .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  // };
+
+  // const deleteReview = (message) => {
+  //   let reviewId = message.id;
+
+  //   fetch(`/api/v1/giraffes/${id}/reviews/${reviewId}`, {
+  //     credentials: "same-origin",
+  //     method: "DELETE",
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         return response;
+  //       } else {
+  //         let errorMessage = `${response.status} (${response.statusText})`,
+  //           error = new Error(errorMessage);
+  //         throw error;
+  //       }
+  //     })
+  //     .then((response) => response.json())
+  //     .then((removeReview) => {
+  //       if (!removeReview.errors) {
+  //         let reviewIndex = giraffe.reviews.findIndex(
+  //           (review) => review.id === removeReview.id
+  //         );
+
+  //         let tempReviews = [...giraffe.reviews];
+  //         tempReviews.splice(reviewIndex, 1);
+
+  //         setGiraffe({
+  //           ...giraffe,
+  //           reviews: tempReviews,
+  //         });
+  //       } else if (review.errors) {
+  //         setErrors(review.errors);
+  //       }
+  //     })
+  //     .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  // };
+
   let reviewForm
   if (campgroundShow.userSignedIn) {
-    reviewForm = <CampgroundReviewFormContainer addNewReview={addNewReview}/>
+    reviewForm = <ReviewForm addNewReview={addNewReview}/>
   }
 
   let noReviewsMessage = ""
-  const campgroundReviews = reviews.map((review) => {
-    debugger
-    return(
-      < CampgroundShowReviewTile
-        key={review.id}
-        title={review.title}
-        body={review.body}
-        rating={review.rating}
-        currentUser={review.currentUser}
-      />
-    )
-  })
 
   if (reviews.length === 0) {
     noReviewsMessage = "No reviews yet."
@@ -92,12 +163,12 @@ const CampgroundShowContainer = (props) => {
     <div className='grid-container fluid show-container wrapper'>
       <div className='grid-x grid-margin-x'>
         <div className='cell auto'>
-          < CampgroundShowPhotoTile />
+          < ImagesTile />
         </div>
       </div>
       <div className='grid-x grid-margin-x'>
         <div className='cell auto'>
-          < CampgroundShowDescriptionTile 
+          < DescriptionTile 
             key={campgroundShow.id}
             campgroundLink={campgroundShow.campground_link}
             name={campgroundShow.name}
@@ -109,7 +180,7 @@ const CampgroundShowContainer = (props) => {
       <div className='grid-x grid-margin-x amenities-container'>
         <div className='cell small-4'>Placeholder for map</div>
         <div className='cell auto'>
-        < CampgroundShowAmenitiesTile 
+        < AmenitiesTile 
             key={campgroundShow.id}
             campgroundLink={campgroundShow.campground_link}
             dogsAllowed={campgroundShow.dogs_allowed}
@@ -135,7 +206,12 @@ const CampgroundShowContainer = (props) => {
         <div className='cell'>
           <h3>Average Rating: {averageRatingMessage}</h3>
           <h3>Reviews: {noReviewsMessage}</h3>
-          {campgroundReviews}
+          <ReviewsContainer
+            reviews={reviews}
+            currentUser={currentUser}
+            // editReview={editReview}
+            // deleteReview={deleteReview}
+          />
         </div>
       </div>
     </div>
