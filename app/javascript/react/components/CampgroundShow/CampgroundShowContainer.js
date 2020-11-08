@@ -67,12 +67,14 @@ const CampgroundShowContainer = (props) => {
 
   let noReviewsMessage = ""
   const campgroundReviews = reviews.map((review) => {
+    debugger
     return(
       < CampgroundShowReviewTile
         key={review.id}
         title={review.title}
         body={review.body}
         rating={review.rating}
+        currentUser={review.currentUser}
       />
     )
   })
