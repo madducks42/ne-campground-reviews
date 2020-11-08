@@ -12,8 +12,9 @@ class CampgroundUpdateSerializer < ActiveModel::Serializer
               :dump_station, 
               :bathrooms, 
               :showers, 
-              :userSignedIn, 
-              :currentUser
+              :userSignedIn
+
+attribute :current_user, key: :currentUser
   
   def userSignedIn
     if !current_user
@@ -23,8 +24,8 @@ class CampgroundUpdateSerializer < ActiveModel::Serializer
     end
   end
 
-  def currentUser
-    current_user
-  end
+  # def currentUser
+  #   current_user
+  # end
   
 end

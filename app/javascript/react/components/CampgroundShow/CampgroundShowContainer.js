@@ -10,8 +10,9 @@ import ReviewsContainer from './ShowComponents/ReviewsContainer'
 
 const CampgroundShowContainer = (props) => {
   const[campgroundShow, setCampgroundShow] = useState({})
-  const[currentUser, setCurrentUser] = useState({})
   const[reviews, setReviews] = useState([])
+  const[currentUser, setCurrentUser] = useState({})
+  const[userIsAdmin, setUserIsAdmin] = useState({})
   
   useEffect(() => {
     let id = props.match.params.id
@@ -28,6 +29,7 @@ const CampgroundShowContainer = (props) => {
     .then(body => {
       setCampgroundShow(body)
       setReviews(body.reviews)
+      setUserIsAdmin(body.userIsAdmin)
       if (body.currentUser != null) {
         setCurrentUser(body.currentUser)
       }
@@ -208,7 +210,7 @@ const CampgroundShowContainer = (props) => {
           <h3>Reviews: {noReviewsMessage}</h3>
           <ReviewsContainer
             reviews={reviews}
-            currentUser={currentUser}
+            userIsAdmin={userIsAdmin}
             // editReview={editReview}
             // deleteReview={deleteReview}
           />

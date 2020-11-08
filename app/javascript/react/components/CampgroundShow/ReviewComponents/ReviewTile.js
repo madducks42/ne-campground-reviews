@@ -56,7 +56,7 @@ const ReviewTile = (props) => {
     displayTile = (
       <ShowReviewTile
         review={props.review}
-        currentUser={props.currentUser}
+        userIsAdmin={props.userIsAdmin}
         onEditClickHandler={onEditClickHandler}
         onDeleteClickHandler={onDeleteClickHandler}
       />

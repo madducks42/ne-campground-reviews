@@ -5,27 +5,15 @@ import _ from 'lodash'
 import ErrorList from '../../ErrorList'
 
 const ShowReviewTile = (props) => {
-
-  let commentDiv = null;
   let buttonChangeGroup = null;
 
-  if (props.review.comment !== "" && props.review.comment !== null) {
-    commentDiv = (
-      <div className="grid-x">
-        <h5 id="comment-label" className="cell shrink">
-          Comment:
-        </h5>
-        <div className="cell auto callout">{props.review.comment}</div>
-      </div>
-    );
-  }
-
-  if (props.review.userIsOwner || props.review.userIsAdmin) {
+  if (props.review.userIsAdmin) {
     buttonChangeGroup = (
       <>
         <button
           type="button"
-          className="button cell shrink"
+          value='Edit'
+          className="button"
           id="edit-review"
           onClick={props.onEditClickHandler}
         >
@@ -33,7 +21,7 @@ const ShowReviewTile = (props) => {
         </button>
         <button
           type="button"
-          className="button cell shrink"
+          className="button"
           id="delete-review"
           onClick={props.onDeleteClickHandler}
         >
@@ -48,6 +36,7 @@ const ShowReviewTile = (props) => {
       <h6>{props.review.title}</h6>
       <p>{props.review.body}</p>
       <p>Rating: {props.review.rating}</p>
+      {buttonChangeGroup}
     </div>
   );
 };

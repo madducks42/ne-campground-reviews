@@ -1,5 +1,11 @@
 class ReviewSerializer < ActiveModel::Serializer
-  attributes :id, :campground, :title, :body, :rating, :currentUser
+  attributes  :id, 
+              :campground, 
+              :title, 
+              :body, 
+              :rating, 
+              :currentUser,
+              :userIsAdmin
 
   belongs_to :user
   belongs_to :campground
@@ -14,6 +20,22 @@ class ReviewSerializer < ActiveModel::Serializer
 
   def currentUser
     current_user
+  end
+
+  # def userIsOwner
+  #   current_user == object.owner
+  # end
+
+  # def ownerName
+  #   object.owner.username
+  # end
+
+  def userIsAdmin
+    if current_user.nil?
+      false
+    else
+      current_user.role == "admin"
+    end
   end
 
 end

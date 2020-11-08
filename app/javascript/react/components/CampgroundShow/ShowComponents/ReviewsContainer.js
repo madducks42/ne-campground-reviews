@@ -9,7 +9,7 @@ const ReviewsContainer = (props) => {
       <ReviewTile
         key={review.id}
         review={review}
-        currentUser={review.currentUser}
+        userIsAdmin={review.userIsAdmin}
         editReview={props.editReview}
         deleteReview={props.deleteReview}
       />
