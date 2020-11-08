@@ -95,16 +95,6 @@ const ReviewForm = (props) => {
           value={newReview.rating}
         />
       </label>
-      <Dropzone onDrop={handleFileUpload}>
-        {({getRootProps, getInputProps}) => (
-          <section>
-            <div {...getRootProps()}>
-              <input {...getInputProps()} />
-              <p>Drag 'n' drop some files here, or click to select files</p>
-            </div>
-          </section>
-        )}
-      </Dropzone>
       <div className='button-group'>
         <input className='button' type='submit' value='Submit' />
       </div>

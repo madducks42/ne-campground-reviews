@@ -9,7 +9,7 @@ import ReviewForm from './ReviewForm'
 import ReviewsContainer from './ShowComponents/ReviewsContainer'
 
 const CampgroundShowContainer = (props) => {
-  const[campgroundShow, setCampgroundShow] = useState({})
+  const[campground, setCampground] = useState({})
   const[reviews, setReviews] = useState([])
   const[currentUser, setCurrentUser] = useState({})
   const[userIsAdmin, setUserIsAdmin] = useState({})
@@ -27,7 +27,7 @@ const CampgroundShowContainer = (props) => {
       }
     })
     .then(body => {
-      setCampgroundShow(body)
+      setCampground(body)
       setReviews(body.reviews)
       setUserIsAdmin(body.userIsAdmin)
       if (body.currentUser != null) {
@@ -62,47 +62,47 @@ const CampgroundShowContainer = (props) => {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   };
 
-  // const editReview = (message) => {
-  //   let reviewId = message.id;
-  //   let payload = message.review;
-  //   fetch(`/api/v1/giraffes/${id}/reviews/${reviewId}`, {
-  //     credentials: "same-origin",
-  //     method: "PATCH",
-  //     body: JSON.stringify(payload),
-  //     headers: {
-  //       Accept: "application/json",
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         return response;
-  //       } else {
-  //         let errorMessage = `${response.status} (${response.statusText})`,
-  //           error = new Error(errorMessage);
-  //         throw error;
-  //       }
-  //     })
-  //     .then((response) => response.json())
-  //     .then((updatedReview) => {
-  //       if (!updatedReview.errors) {
-  //         let reviewIndex = giraffe.reviews.findIndex(
-  //           (review) => review.id === updatedReview.id
-  //         );
+  const editReview = (banana) => {
+    // let reviewId = payload.id;
+    debugger
+    let payload = payload.review;
+    fetch(`/api/v1/campgrounds/${props.match.params.id}/reviews`, {
+      credentials: "same-origin",
+      method: "PATCH",
+      body: JSON.stringify(payload),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then((updatedReview) => {
+        if (!updatedReview.errors) {
+          let reviewIndex = campground.reviews.findIndex(
+            (review) => review.id === updatedReview.id
+          );
 
-  //         let tempReviews = [...giraffe.reviews];
-  //         tempReviews.splice(reviewIndex, 1, updatedReview);
+          let tempReviews = [...campground.reviews];
+          tempReviews.splice(reviewIndex, 1, updatedReview);
 
-  //         setGiraffe({
-  //           ...giraffe,
-  //           reviews: tempReviews,
-  //         });
-  //       } else if (review.errors) {
-  //         setErrors(review.errors);
-  //       }
-  //     })
-  //     .catch((error) => console.error(`Error in fetch: ${error.message}`));
-  // };
+          setReview({
+            ...review,
+            reviews: tempReviews,
+          });
+        } else if (review.errors) {
+          setErrors(review.errors);
+        }
+      })
+      .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  };
 
   // const deleteReview = (message) => {
   //   let reviewId = message.id;
@@ -146,7 +146,7 @@ const CampgroundShowContainer = (props) => {
   // };
 
   let reviewForm
-  if (campgroundShow.userSignedIn) {
+  if (campground.userSignedIn) {
     reviewForm = <ReviewForm addNewReview={addNewReview}/>
   }
 
@@ -156,7 +156,7 @@ const CampgroundShowContainer = (props) => {
     noReviewsMessage = "No reviews yet."
   }
 
-  let averageRatingMessage = campgroundShow.averageRating
+  let averageRatingMessage = campground.averageRating
   if (averageRatingMessage === null) {
     averageRatingMessage = "No ratings yet."
   }
@@ -171,11 +171,11 @@ const CampgroundShowContainer = (props) => {
       <div className='grid-x grid-margin-x'>
         <div className='cell auto'>
           < DescriptionTile 
-            key={campgroundShow.id}
-            campgroundLink={campgroundShow.campground_link}
-            name={campgroundShow.name}
-            description={campgroundShow.description}
-            location={campgroundShow.location}
+            key={campground.id}
+            campgroundLink={campground.campground_link}
+            name={campground.name}
+            description={campground.description}
+            location={campground.location}
           />
         </div>
       </div>
@@ -183,21 +183,21 @@ const CampgroundShowContainer = (props) => {
         <div className='cell small-4'>Placeholder for map</div>
         <div className='cell auto'>
         < AmenitiesTile 
-            key={campgroundShow.id}
-            campgroundLink={campgroundShow.campground_link}
-            dogsAllowed={campgroundShow.dogs_allowed}
-            electronicHookups={campgroundShow.electronic_hookups}
-            waterHookups={campgroundShow.water_hookups}
-            potableWater={campgroundShow.potable_water}
-            dumpStation={campgroundShow.dump_station}
-            bathrooms={campgroundShow.bathrooms}
-            showers={campgroundShow.showers}
+            key={campground.id}
+            campgroundLink={campground.campground_link}
+            dogsAllowed={campground.dogs_allowed}
+            electronicHookups={campground.electronic_hookups}
+            waterHookups={campground.water_hookups}
+            potableWater={campground.potable_water}
+            dumpStation={campground.dump_station}
+            bathrooms={campground.bathrooms}
+            showers={campground.showers}
           />
         </div>
       </div>
       {currentUser.role === 'admin' && <div className='grid-x grid-margin-x admin-flex'>
-        <Link className='admin-link' to={`/campgrounds/${campgroundShow.id}/update`}>Update Campground</Link>
-        <Link className='admin-link' to={`/campgrounds/${campgroundShow.id}/destroy`}>Delete Campground</Link>
+        <Link className='admin-link' to={`/campgrounds/${campground.id}/update`}>Update Campground</Link>
+        <Link className='admin-link' to={`/campgrounds/${campground.id}/destroy`}>Delete Campground</Link>
       </div>}
       <div className='grid-x grid-margin-x'>
         <div className='cell'>
@@ -211,7 +211,7 @@ const CampgroundShowContainer = (props) => {
           <ReviewsContainer
             reviews={reviews}
             userIsAdmin={userIsAdmin}
-            // editReview={editReview}
+            editReview={editReview}
             // deleteReview={deleteReview}
           />
         </div>
