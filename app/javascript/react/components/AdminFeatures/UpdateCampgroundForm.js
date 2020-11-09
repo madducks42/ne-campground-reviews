@@ -63,7 +63,7 @@ const UpdateCampgroundForm = (props) => {
     .then(response => response.json())
     .then(body => {
       if (body.errors) {
-        // handle errors
+        setErrors(body.errors)
       } else {
         setShouldRedirect(body.id)
       }

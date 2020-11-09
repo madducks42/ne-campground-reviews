@@ -19,51 +19,34 @@ const EditReviewTile = (props) => {
     });
   };
 
-  // const validForSubmission = () => {
-  //   let submitErrors = {}
-  //   const requiredFields = ['title', 'body', 'rating']
+  const validForSubmission = () => {
+    let submitErrors = {}
     
-  //   requiredFields.forEach(field => {
-  //     debugger
-  //     if (review[field].trim() === '') {
-  //       submitErrors = {
-  //         ...submitErrors,
-  //         [field]: 'is blank'
-  //       }
-  //     }
-  //   });
+    const requiredFields = ['title', 'body']
     
-  //   if (review['rating'] < 1 || review['rating'] > 5){
-  //     submitErrors = {
-  //       ...submitErrors,
-  //       ['rating']: 'must be number between 1-5'
-  //     }
-  //   };
+    requiredFields.forEach(field => {
+      if (review[field].trim() === '') {
+        submitErrors = {
+          ...submitErrors,
+          [field]: 'is blank'
+        }
+      }
+    });
 
-  //   setErrors(submitErrors)
-  //   return _.isEmpty(submitErrors)
-  // };
-
-  // const handleSubmit = event => {
-  //   event.preventDefault();
-  //   if (validForSubmission()) {
-  //     props.editReview(review);
-  //     setReview({
-  //       title: '',
-  //       body: '',
-  //       rating: '',
-  //     })
-  //   }
-  // };
+    setErrors(submitErrors)
+    return _.isEmpty(submitErrors)
+  };
 
   const handleSubmit = event => {
     event.preventDefault();
-    props.editReview(review);
-    setReview({
-      title: '',
-      body: '',
-      rating: '',
-    })
+    if (validForSubmission()) {
+      props.editReview(review);
+      setReview({
+        title: '',
+        body: '',
+        rating: '',
+      })
+    }
   };
 
   return (
@@ -91,15 +74,15 @@ const EditReviewTile = (props) => {
         />
       </label>
       <label>
-        Rating:
-        <input
-          name='rating'
-          id='rating'
-          type='text'
-          onChange={handleChange}
-          value={review.rating}
-        />
-      </label>
+          Rating:
+          <select className='campground-form' name='rating' value={review.rating} onChange={handleChange}>
+            <option className='campground-form' value='1'>1</option>
+            <option className='campground-form' value='2'>2</option>
+            <option className='campground-form' value='3'>3</option>
+            <option className='campground-form' value='4'>4</option>
+            <option className='campground-form' value='5'>5</option>
+          </select>
+        </label>
       <div className='button-group'>
         <input className='button' type='submit' value='Submit' />
       </div>

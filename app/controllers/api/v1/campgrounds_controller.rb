@@ -1,5 +1,5 @@
 class Api::V1::CampgroundsController < ApiController
-  before_action :authorize_user, except: [:index, :show]
+  before_action :authorize_user, except: [:index, :show, :search]
 
   def index
     render json: Campground.all

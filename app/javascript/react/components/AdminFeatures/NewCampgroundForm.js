@@ -50,7 +50,7 @@ const NewCampgroundForm = (props) => {
     .then(response => response.json())
     .then(body => {
       if (body.errors) {
-        // handle errors
+        setErrors(body.errors)
       } else {
         setShouldRedirect(true)
       }
@@ -91,7 +91,6 @@ const NewCampgroundForm = (props) => {
 
   return (
     <div className='grid-container wrapper'>
-
       <form onSubmit={handleSubmit}className='new-campground-form callout'>
         <h3>Add a New Campground</h3>
         <ErrorList errors={errors} />
