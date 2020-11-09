@@ -3,11 +3,12 @@ import React, { useState } from "react";
 import ErrorList from '../../ErrorList'
 
 const EditReviewTile = (props) => {
-  
   const [review, setReview] = useState({
     title: props.review.title,
     body: props.review.body,
-    rating: props.review.rating
+    rating: props.review.rating,
+    campgroundId: props.review.campground.id,
+    reviewId: props.review.id
   });
 
   const [errors, setErrors] = useState({})

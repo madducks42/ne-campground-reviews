@@ -2,7 +2,6 @@ import React from "react";
 import ReviewTile from "../ReviewComponents/ReviewTile";
 
 const ReviewsContainer = (props) => {
-  
   const reviewsArray = props.reviews.map((review) => {
     
     return (

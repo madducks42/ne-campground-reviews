@@ -13,9 +13,8 @@ class Api::V1::ReviewsController < ApiController
   end
 
   def update
-    binding.pry
     review = Review.find(params[:id])
-    biding.pry
+    
     if review.update(review_params)
       render json: review
     else

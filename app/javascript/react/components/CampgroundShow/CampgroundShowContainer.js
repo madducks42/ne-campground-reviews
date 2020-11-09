@@ -62,11 +62,10 @@ const CampgroundShowContainer = (props) => {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   };
 
-  const editReview = (banana) => {
-    // let reviewId = payload.id;
-    debugger
-    let payload = payload.review;
-    fetch(`/api/v1/campgrounds/${props.match.params.id}/reviews`, {
+  const editReview = (payload) => {
+    const campgroundId = payload.campgroundId
+    const reviewId = payload.reviewId
+    fetch(`/api/v1/campgrounds/${campgroundId}/reviews/${reviewId}`, {
       credentials: "same-origin",
       method: "PATCH",
       body: JSON.stringify(payload),
@@ -86,19 +85,15 @@ const CampgroundShowContainer = (props) => {
       })
       .then((updatedReview) => {
         if (!updatedReview.errors) {
-          let reviewIndex = campground.reviews.findIndex(
+          let reviewIndex = reviews.findIndex(
             (review) => review.id === updatedReview.id
           );
-
-          let tempReviews = [...campground.reviews];
+          let tempReviews = [...reviews];
           tempReviews.splice(reviewIndex, 1, updatedReview);
-
-          setReview({
-            ...review,
-            reviews: tempReviews,
-          });
-        } else if (review.errors) {
-          setErrors(review.errors);
+          setReviews(tempReviews);
+  
+        } else if (updatedReview.errors) {
+          setErrors(updatedReview.errors);
         }
       })
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
