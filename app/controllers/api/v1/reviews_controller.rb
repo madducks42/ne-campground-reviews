@@ -19,8 +19,14 @@ class Api::V1::ReviewsController < ApiController
       render json: review
     else
       render json: { errors: review.errors.full_messages }
-    end 
-    
+    end  
+  end
+
+  def destroy
+    review = Review.find(params[:id])
+    if review.destroy
+      render json: {destroyed: true}
+    end
   end
 
   protected

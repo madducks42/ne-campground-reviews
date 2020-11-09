@@ -1,8 +1,5 @@
-import React, { useState } from 'react'
-import { Redirect } from "react-router-dom"
+import React from 'react'
 import _ from 'lodash'
-
-import ErrorList from '../../ErrorList'
 
 const ShowReviewTile = (props) => {
   let buttonChangeGroup = null;

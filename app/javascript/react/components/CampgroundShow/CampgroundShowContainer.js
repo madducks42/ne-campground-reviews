@@ -99,46 +99,42 @@ const CampgroundShowContainer = (props) => {
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   };
 
-  // const deleteReview = (message) => {
-  //   let reviewId = message.id;
+  const deleteReview = (payload) => {
+    const campgroundId = payload.campgroundId
+    const reviewId = payload.reviewId
 
-  //   fetch(`/api/v1/giraffes/${id}/reviews/${reviewId}`, {
-  //     credentials: "same-origin",
-  //     method: "DELETE",
-  //     headers: {
-  //       Accept: "application/json",
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         return response;
-  //       } else {
-  //         let errorMessage = `${response.status} (${response.statusText})`,
-  //           error = new Error(errorMessage);
-  //         throw error;
-  //       }
-  //     })
-  //     .then((response) => response.json())
-  //     .then((removeReview) => {
-  //       if (!removeReview.errors) {
-  //         let reviewIndex = giraffe.reviews.findIndex(
-  //           (review) => review.id === removeReview.id
-  //         );
-
-  //         let tempReviews = [...giraffe.reviews];
-  //         tempReviews.splice(reviewIndex, 1);
-
-  //         setGiraffe({
-  //           ...giraffe,
-  //           reviews: tempReviews,
-  //         });
-  //       } else if (review.errors) {
-  //         setErrors(review.errors);
-  //       }
-  //     })
-  //     .catch((error) => console.error(`Error in fetch: ${error.message}`));
-  // };
+    fetch(`/api/v1/campgrounds/${campgroundId}/reviews/${reviewId}`, {
+      credentials: "same-origin",
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then((removeReview) => {
+        if (!removeReview.errors) {
+          let reviewIndex = reviews.findIndex(
+            (review) => review.id === removeReview.id
+          );
+          let tempReviews = [...reviews];
+          tempReviews.splice(reviewIndex, 1);
+          setReviews(tempReviews);
+  
+        } else if (removeReview.errors) {
+          setErrors(removeReview.errors);
+        }
+      })
+      .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  };
 
   let reviewForm
   if (campground.userSignedIn) {
@@ -207,7 +203,7 @@ const CampgroundShowContainer = (props) => {
             reviews={reviews}
             userIsAdmin={userIsAdmin}
             editReview={editReview}
-            // deleteReview={deleteReview}
+            deleteReview={deleteReview}
           />
         </div>
       </div>
