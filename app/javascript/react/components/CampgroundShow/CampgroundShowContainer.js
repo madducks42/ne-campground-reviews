@@ -5,6 +5,7 @@ import _ from 'lodash'
 import ImagesTile from './ShowComponents/ImagesTile'
 import DescriptionTile from './ShowComponents/DescriptionTile'
 import AmenitiesTile from './ShowComponents/AmenitiesTile'
+import OpenWeatherContainer from './ShowComponents/OpenWeatherContainer'
 import ReviewForm from './ReviewForm'
 import ReviewsContainer from './ShowComponents/ReviewsContainer'
 
@@ -188,10 +189,14 @@ const CampgroundShowContainer = (props) => {
             showers={campground.showers}
           />
         </div>
-        <div className='grid-x grid-margin-x weather-container'>
+        < OpenWeatherContainer
+         key={campground.id}
+         campgroundZip={campground.zip_code}
+        />
+        {/* <div className='grid-x grid-margin-x weather-container'>
           <img className='weather-image' src='/images/CurrentWeather.jpg' />
           <img className='weather-image' src='/images/Forecast.jpg' />
-      </div>
+      </div> */}
       {currentUser.role === 'admin' && <div className='grid-x grid-margin-x admin-flex'>
         <Link className='admin-link' to={`/campgrounds/${campground.id}/update`}>Update Campground</Link>
         <Link className='admin-link' to={`/campgrounds/${campground.id}/destroy`}>Delete Campground</Link>
