@@ -45,8 +45,6 @@ class Api::V1::CampgroundsController < ApiController
     render json: campgrounds
   end
 
-
-
   protected
 
   def campground_params

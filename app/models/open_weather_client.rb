@@ -31,7 +31,6 @@ class OpenWeatherClient
   private
 
   def fetch_weather_by_zip
-    # binding.pry
     domain = "https://api.openweathermap.org/data/2.5/"
     query = "weather?units=imperial&zip=#{@campground_zip}&appid=#{ENV["OPEN_WEATHER_KEY"]}"
     url = domain + query
