@@ -8,28 +8,15 @@ div.description-tile {
   margin-top: 20px;
 }
 
-// Amenities Section
-div.grid-x.grid-margin-x.amenities-container {
-  background-color: #A0C1B9;
+// Info Section
+.info-container {
+  background-color: #476C9B;
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
-}
-
-div.grid-x.grid-margin-x.amenities-container li {
-  background-color: #A0C1B9;
-}
-
-div.grid-x.grid-margin-x.amenities-container a {
-  text-decoration: underline;
-  color: #476C9B;
-}
-
-div.grid-x.grid-margin-x.amenities-container a:hover {
-  color: #984447;
 }
 
 img.map-image {
@@ -37,20 +24,43 @@ img.map-image {
   height: auto;
 }
 
-// Weather Section
-div.grid-x.grid-margin-x.weather-container {
+.amenities-container {
   background-color: #F7F9FB;
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-  margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: inset 2px 2px 15px #984447;
 }
 
-img.weather-image {
-  max-width: 350px;
-  height: auto;
+.amenities-container ul {
+  list-style: none;
+}
+.amenities-container li {
+  background-color: #F7F9FB;
+}
+
+.amenities-container a {
+  text-decoration: underline;
+  color: #476C9B;
+}
+
+.amenities-container a:hover {
+  color: #984447;
+}
+
+div.callout.weather-container {
+  background-color: #F7F9FB;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: inset 2px 2px 15px #ED9905;
+}
+
+div.callout.weather-container ul {
+  background-color: #F7F9FB;
+  list-style: none;
+}
+
+li.weather {
+  background-color: #F7F9FB;
 }
 
 // Review Form Section
@@ -99,3 +109,4 @@ button#delete-review.button {
 button.delete-button.button {
   margin-left: 5px;
 }
+

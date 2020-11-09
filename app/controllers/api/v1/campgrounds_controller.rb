@@ -48,7 +48,7 @@ class Api::V1::CampgroundsController < ApiController
   protected
 
   def campground_params
-    params.require(:campground).permit([:name, :caption, :description, :location, :campground_link, :dogs_allowed, :electric_hookups, :water_hookups, :potable_water, :dump_station, :bathrooms, :showers])
+    params.require(:campground).permit([:name, :caption, :description, :location, :zip_code, :campground_link, :dogs_allowed, :electric_hookups, :water_hookups, :potable_water, :dump_station, :bathrooms, :showers])
   end
 
   def authorize_user

@@ -4,6 +4,7 @@ class CampgroundShowSerializer < ActiveModel::Serializer
               :description,
               :caption, 
               :location,
+              :zip_code,
               :campground_link,
               :dogs_allowed, 
               :electric_hookups, 
@@ -14,12 +15,20 @@ class CampgroundShowSerializer < ActiveModel::Serializer
               :showers, 
               :userSignedIn, 
               :currentUser,
-              :userIsAdmin
+              :userIsAdmin,
+              :weather
               
   attribute :average_rating, key: :averageRating
   attribute :current_user, key: :currentUser
 
   has_many :reviews
+
+  def weather
+    client = OpenWeatherClient.new(object.zip_code)
+    weather = client.format_weather_api_response
+
+    return weather
+  end
   
   def userSignedIn
     if !current_user
