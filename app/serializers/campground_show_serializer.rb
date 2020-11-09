@@ -13,9 +13,11 @@ class CampgroundShowSerializer < ActiveModel::Serializer
               :bathrooms, 
               :showers, 
               :userSignedIn, 
-              :currentUser
+              :currentUser,
+              :userIsAdmin
               
   attribute :average_rating, key: :averageRating
+  attribute :current_user, key: :currentUser
 
   has_many :reviews
   
@@ -27,8 +29,20 @@ class CampgroundShowSerializer < ActiveModel::Serializer
     end
   end
 
-  def currentUser
-    current_user
+  # def currentUser
+  #   current_user
+  # end
+
+  # def userIsOwner
+  #   current_user == object.user
+  # end
+
+  def userIsAdmin
+    if current_user.nil?
+      false
+    else
+      current_user.role == "admin"
+    end
   end
   
 end

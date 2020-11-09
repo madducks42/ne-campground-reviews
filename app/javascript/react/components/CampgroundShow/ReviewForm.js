@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ErrorList from '../ErrorList'
 import Dropzone from 'react-dropzone'
 
-const CampgroundReviewFormContainer = (props) => {
+const ReviewForm = (props) => {
   const [newReview, setNewReview] = useState({
     title: '',
     body: '',
@@ -95,16 +95,6 @@ const CampgroundReviewFormContainer = (props) => {
           value={newReview.rating}
         />
       </label>
-      <Dropzone onDrop={handleFileUpload}>
-        {({getRootProps, getInputProps}) => (
-          <section>
-            <div {...getRootProps()}>
-              <input {...getInputProps()} />
-              <p>Drag 'n' drop some files here, or click to select files</p>
-            </div>
-          </section>
-        )}
-      </Dropzone>
       <div className='button-group'>
         <input className='button' type='submit' value='Submit' />
       </div>
@@ -112,4 +102,4 @@ const CampgroundReviewFormContainer = (props) => {
   )
 };
 
-export default CampgroundReviewFormContainer
+export default ReviewForm

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CampgroundShowPhotoTile = () => {
+const ImagesTile = () => {
   
   return (
     // Still need to get lightbox or a carousel working
@@ -12,4 +12,4 @@ const CampgroundShowPhotoTile = () => {
   )
 }
 
-export default CampgroundShowPhotoTile
+export default ImagesTile

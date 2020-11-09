@@ -12,6 +12,25 @@ class Api::V1::ReviewsController < ApiController
     end
   end
 
+  def update
+    review = Review.find(params[:id])
+    
+    if review.update(review_params)
+      render json: review
+    else
+      render json: { errors: review.errors.full_messages }
+    end  
+  end
+
+  def destroy
+    review = Review.find(params[:id])
+    if review.destroy
+      render json: {destroyed: true}
+    end
+  end
+
+  protected
+
   def review_params
     params.require(:review).permit([:title, :body, :rating])
   end
