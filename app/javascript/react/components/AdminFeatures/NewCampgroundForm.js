@@ -129,14 +129,14 @@ const NewCampgroundForm = (props) => {
         </label>
         <label>
           Location:
-          <input
-            name='location'
-            id='location'
-            type='text'
-            onChange={handleChange}
-            value={newCampground.location}
-            className='campground-form'
-          />
+          <select className='campground-form' name='location' value={newCampground.location} onChange={handleChange}>
+            <option className='campground-form' value={null}>--</option>
+            <option className='campground-form' value='Vermont'>Vermont</option>
+            <option className='campground-form' value='Massachusetts'>Massachusetts</option>
+            <option className='campground-form' value='New Hampshire'>New Hampshire</option>
+            <option className='campground-form' value='Maine'>Maine</option>
+            <option className='campground-form' value='New York'>New York</option>
+          </select>
         </label>
         <label>
           Campground Link:
