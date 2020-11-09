@@ -5,7 +5,7 @@ import _ from 'lodash'
 import ImagesTile from './ShowComponents/ImagesTile'
 import DescriptionTile from './ShowComponents/DescriptionTile'
 import AmenitiesTile from './ShowComponents/AmenitiesTile'
-import OpenWeatherContainer from './ShowComponents/OpenWeatherContainer'
+import OpenWeatherTile from './ShowComponents/OpenWeatherTile'
 import ReviewForm from './ReviewForm'
 import ReviewsContainer from './ShowComponents/ReviewsContainer'
 
@@ -14,6 +14,19 @@ const CampgroundShowContainer = (props) => {
   const[reviews, setReviews] = useState([])
   const[currentUser, setCurrentUser] = useState({})
   const[userIsAdmin, setUserIsAdmin] = useState({})
+  const [weather, setWeather] = useState({
+    name: '',
+    description: '',
+    icon: '',
+    conditions:  '',
+    currentTemp: '',
+    highTemp: '',
+    lowTemp: '',
+    humidity: '',
+    wind: '',
+    location: '',
+    date: ''
+  })
   
   useEffect(() => {
     let id = props.match.params.id
@@ -34,6 +47,19 @@ const CampgroundShowContainer = (props) => {
       if (body.currentUser != null) {
         setCurrentUser(body.currentUser)
       }
+      setWeather({
+        name: body.name,
+        description: body.weather.description,
+        icon: body.weather.icon,
+        conditions: body.weather.conditions,
+        currentTemp: body.weather.temp,
+        highTemp: body.weather.high,
+        lowTemp: body.weather.low,
+        humidity: body.weather.humidity,
+        wind: body.weather.wind,
+        location: body.weather.location,
+        date: body.weather.date
+      })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, []);
@@ -175,28 +201,30 @@ const CampgroundShowContainer = (props) => {
           />
         </div>
       </div>
-      <div className='grid-x grid-margin-x amenities-container'>
-        <img className='map-image' src='/images/map.jpg' />
-        < AmenitiesTile 
+      <div className='grid-x grid-margin-x info-container'>
+        <div>
+          <img className='map-image' src='/images/map.jpg' />
+        </div>
+        <div className='amenities-container'>
+          < AmenitiesTile 
+              key={campground.id}
+              campgroundLink={campground.campground_link}
+              dogsAllowed={campground.dogs_allowed}
+              electronicHookups={campground.electronic_hookups}
+              waterHookups={campground.water_hookups}
+              potableWater={campground.potable_water}
+              dumpStation={campground.dump_station}
+              bathrooms={campground.bathrooms}
+              showers={campground.showers}
+            />
+        </div>
+        <div className='weather-container'>
+          < OpenWeatherTile
             key={campground.id}
-            campgroundLink={campground.campground_link}
-            dogsAllowed={campground.dogs_allowed}
-            electronicHookups={campground.electronic_hookups}
-            waterHookups={campground.water_hookups}
-            potableWater={campground.potable_water}
-            dumpStation={campground.dump_station}
-            bathrooms={campground.bathrooms}
-            showers={campground.showers}
+            weather={weather}
           />
         </div>
-        < OpenWeatherContainer
-         key={campground.id}
-         campgroundZip={campground.zip_code}
-        />
-        {/* <div className='grid-x grid-margin-x weather-container'>
-          <img className='weather-image' src='/images/CurrentWeather.jpg' />
-          <img className='weather-image' src='/images/Forecast.jpg' />
-      </div> */}
+      </div>
       {currentUser.role === 'admin' && <div className='grid-x grid-margin-x admin-flex'>
         <Link className='admin-link' to={`/campgrounds/${campground.id}/update`}>Update Campground</Link>
         <Link className='admin-link' to={`/campgrounds/${campground.id}/destroy`}>Delete Campground</Link>

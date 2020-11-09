@@ -33,7 +33,7 @@ class OpenWeatherClient
   def fetch_weather_by_zip
     # binding.pry
     domain = "https://api.openweathermap.org/data/2.5/"
-    query = "weather?zip=#{@campground_zip}&appid=#{ENV["OPEN_WEATHER_KEY"]}"
+    query = "weather?units=imperial&zip=#{@campground_zip}&appid=#{ENV["OPEN_WEATHER_KEY"]}"
     url = domain + query
 
     weather_api_response = Faraday.get(url)
