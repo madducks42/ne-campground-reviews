@@ -3,11 +3,6 @@ div.grid-container.full {
   margin-bottom: 0px;
 }
 
-// Flex-container
-.flex-index {
-  display: flex;
-}
-
 // Left nav-bar
 div.cell.small-4.medium-3.left-nav-bar {
   background-color: #476C9B;
@@ -76,19 +71,21 @@ div.menu.filter-section li {
 }
 
 // Campground Tiles container
-div.cell.small-8.auto {
-  padding: 40px;
+
+.flex-index {
+  display: flex;
   background-color: #F7F9FB;
 }
 
 // Campground Tiles
-div.cell.small-3.campground-tile {
-  min-width: 200px;
+div.campground-tile {
+  margin: 10px;
 }
 
 div.card {
   min-height: 300px;
-  min-width: 200px;
+  min-width: 250px;
+  max-width: 300px;
   text-align: center;
   border-radius: 5px;
   box-shadow: inset 2px 2px 15px #101419;

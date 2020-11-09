@@ -160,7 +160,7 @@ const CampgroundShowContainer = (props) => {
         </div>
       </div>
       <div className='grid-x grid-margin-x'>
-        <div className='cell auto'>
+        <div className='cell auto description-tile'>
           < DescriptionTile 
             key={campground.id}
             campgroundLink={campground.campground_link}
@@ -171,8 +171,7 @@ const CampgroundShowContainer = (props) => {
         </div>
       </div>
       <div className='grid-x grid-margin-x amenities-container'>
-        <div className='cell small-4'>Placeholder for map</div>
-        <div className='cell auto'>
+        <img className='map-image' src='/images/map.jpg' />
         < AmenitiesTile 
             key={campground.id}
             campgroundLink={campground.campground_link}
@@ -185,6 +184,9 @@ const CampgroundShowContainer = (props) => {
             showers={campground.showers}
           />
         </div>
+        <div className='grid-x grid-margin-x weather-container'>
+          <img className='weather-image' src='/images/CurrentWeather.jpg' />
+          <img className='weather-image' src='/images/Forecast.jpg' />
       </div>
       {currentUser.role === 'admin' && <div className='grid-x grid-margin-x admin-flex'>
         <Link className='admin-link' to={`/campgrounds/${campground.id}/update`}>Update Campground</Link>
@@ -197,8 +199,8 @@ const CampgroundShowContainer = (props) => {
       </div>
       <div className='grid-x grid-margin-x reviews-container'>
         <div className='cell'>
-          <h3>Average Rating: {averageRatingMessage}</h3>
-          <h3>Reviews: {noReviewsMessage}</h3>
+          <h2>Average User Rating: {averageRatingMessage}</h2>
+          <h2>User Reviews: {noReviewsMessage}</h2>
           <ReviewsContainer
             reviews={reviews}
             userIsAdmin={userIsAdmin}
