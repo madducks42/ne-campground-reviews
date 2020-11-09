@@ -2,9 +2,17 @@ div.grid-container.fluid.show-container {
   padding: 20px 100px 20px 100px;
 }
 
+// Description Section
+
+div.description-tile {
+  margin-top: 20px;
+}
+
 // Amenities Section
 div.grid-x.grid-margin-x.amenities-container {
   background-color: #A0C1B9;
+  display: flex;
+  justify-content: space-around;
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 20px;
@@ -24,8 +32,33 @@ div.grid-x.grid-margin-x.amenities-container a:hover {
   color: #984447;
 }
 
+img.map-image {
+  max-width: 300px;
+  height: auto;
+}
+
+// Weather Section
+div.grid-x.grid-margin-x.weather-container {
+  background-color: #F7F9FB;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+img.weather-image {
+  max-width: 350px;
+  height: auto;
+}
 
 // Review Form Section
+
+div.reviews-container {
+  color: #F7F9FB;
+}
+
 form.new-review-form.callout {
   font-family: 'Source Serif Pro', serif;
   font-size: 1.8rem;
