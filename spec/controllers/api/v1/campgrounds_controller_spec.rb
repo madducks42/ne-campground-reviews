@@ -98,6 +98,7 @@ RSpec.describe Api::V1::CampgroundsController, type: :controller do
       expect(returned_response['name']).to eq campground_1.name
       expect(returned_response['description']).to eq campground_1.description
       expect(returned_response['location']).to eq campground_1.location
+      expect(returned_response['zip_code']).to eq campground_1.zip_code
       expect(returned_response['dogs_allowed']).to eq campground_1.dogs_allowed
       expect(returned_response['electric_hookups']).to eq campground_1.electric_hookups
       expect(returned_response['water_hookups']).to eq campground_1.water_hookups
