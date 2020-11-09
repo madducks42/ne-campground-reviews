@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CampgroundShowAmenitiesTile = (props) => {
+const AmenitiesTile = (props) => {
   let dogsAllowedStatus
   let electronicHookupsStatus
   let waterHookupsStatus
@@ -68,4 +68,4 @@ const CampgroundShowAmenitiesTile = (props) => {
   )
 }
 
-export default CampgroundShowAmenitiesTile
+export default AmenitiesTile

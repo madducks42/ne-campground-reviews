@@ -1,8 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :campground
   belongs_to :user
-
-  mount_uploader :photos, ReviewPhotosUploader
   
   validates :title, presence: true
   validates :body, presence: true

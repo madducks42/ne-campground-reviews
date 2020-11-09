@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CampgroundShowDescriptionTile = (props) => {
+const DescriptionTile = (props) => {
   
   return (
     <div>
@@ -10,4 +10,4 @@ const CampgroundShowDescriptionTile = (props) => {
   )
 }
 
-export default CampgroundShowDescriptionTile
+export default DescriptionTile
