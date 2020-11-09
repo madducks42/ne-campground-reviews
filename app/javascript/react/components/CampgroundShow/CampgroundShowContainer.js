@@ -57,7 +57,11 @@ const CampgroundShowContainer = (props) => {
       }
     })
     .then(body => {
-      setReviews([...reviews, body]);
+      if (body.errors) {
+        setErrors(body.errors)
+      } else {
+        setReviews([...reviews, body])
+      }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   };

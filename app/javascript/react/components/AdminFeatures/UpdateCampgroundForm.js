@@ -63,7 +63,7 @@ const UpdateCampgroundForm = (props) => {
     .then(response => response.json())
     .then(body => {
       if (body.errors) {
-        // handle errors
+        setErrors(body.errors)
       } else {
         setShouldRedirect(body.id)
       }
@@ -146,14 +146,13 @@ const UpdateCampgroundForm = (props) => {
         </label>
         <label>
           Location:
-          <input
-            name='location'
-            id='location'
-            type='text'
-            onChange={handleChange}
-            value={updatedCampground.location}
-            className='campground-form'
-          />
+          <select className='campground-form' name='location' value={updatedCampground.location} onChange={handleChange}>
+            <option className='campground-form' value='Vermont'>Vermont</option>
+            <option className='campground-form' value='Massachusetts'>Massachusetts</option>
+            <option className='campground-form' value='New Hampshire'>New Hampshire</option>
+            <option className='campground-form' value='Maine'>Maine</option>
+            <option className='campground-form' value='New York'>New York</option>
+          </select>
         </label>
         <label>
           Campground Link:

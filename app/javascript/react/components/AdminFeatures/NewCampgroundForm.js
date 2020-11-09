@@ -50,7 +50,7 @@ const NewCampgroundForm = (props) => {
     .then(response => response.json())
     .then(body => {
       if (body.errors) {
-        // handle errors
+        setErrors(body.errors)
       } else {
         setShouldRedirect(true)
       }
@@ -91,7 +91,6 @@ const NewCampgroundForm = (props) => {
 
   return (
     <div className='grid-container wrapper'>
-
       <form onSubmit={handleSubmit}className='new-campground-form callout'>
         <h3>Add a New Campground</h3>
         <ErrorList errors={errors} />
@@ -130,14 +129,14 @@ const NewCampgroundForm = (props) => {
         </label>
         <label>
           Location:
-          <input
-            name='location'
-            id='location'
-            type='text'
-            onChange={handleChange}
-            value={newCampground.location}
-            className='campground-form'
-          />
+          <select className='campground-form' name='location' value={newCampground.location} onChange={handleChange}>
+            <option className='campground-form' value={null}>--</option>
+            <option className='campground-form' value='Vermont'>Vermont</option>
+            <option className='campground-form' value='Massachusetts'>Massachusetts</option>
+            <option className='campground-form' value='New Hampshire'>New Hampshire</option>
+            <option className='campground-form' value='Maine'>Maine</option>
+            <option className='campground-form' value='New York'>New York</option>
+          </select>
         </label>
         <label>
           Campground Link:
