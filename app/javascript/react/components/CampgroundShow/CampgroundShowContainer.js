@@ -4,6 +4,7 @@ import _ from 'lodash'
 
 import ImagesTile from './ShowComponents/ImagesTile'
 import DescriptionTile from './ShowComponents/DescriptionTile'
+import MapTile from './ShowComponents/MapTile'
 import AmenitiesTile from './ShowComponents/AmenitiesTile'
 import OpenWeatherTile from './ShowComponents/OpenWeatherTile'
 import ReviewForm from './ReviewForm'
@@ -36,7 +37,7 @@ const CampgroundShowContainer = (props) => {
         return response.json()
       } else {
         let errorMessage = `${response.status} (${response.statusText})`,
-        error = new Errror(errorMessage)
+        error = new Error(errorMessage)
         throw error
       }
     })
@@ -202,8 +203,14 @@ const CampgroundShowContainer = (props) => {
         </div>
       </div>
       <div className='grid-x grid-margin-x info-container'>
-        <div>
-          <img className='map-image' src='/images/map.jpg' />
+        <div className='weather-container'>
+          < OpenWeatherTile
+            key={campground.id}
+            weather={weather}
+          />
+        </div>
+        <div className='map-container'>
+          < MapTile />
         </div>
         <div className='amenities-container'>
           < AmenitiesTile 
@@ -217,12 +224,6 @@ const CampgroundShowContainer = (props) => {
               bathrooms={campground.bathrooms}
               showers={campground.showers}
             />
-        </div>
-        <div className='weather-container'>
-          < OpenWeatherTile
-            key={campground.id}
-            weather={weather}
-          />
         </div>
       </div>
       {currentUser.role === 'admin' && <div className='grid-x grid-margin-x admin-flex'>

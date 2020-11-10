@@ -6,7 +6,7 @@ const CampgroundIndexTile = (props) => {
   return (
     <div className='campground-tile'>
       <div className='card'>
-        <img src='images/test_image.jpg' />
+        <img src='images/test-image-2.jpg' />
         <div className='card-section'>
           <h5><Link to={`/campgrounds/${props.id}`}>{props.name}</Link></h5>
           <h6>{props.location}</h6>
