@@ -10,7 +10,7 @@ div.description-tile {
 
 // Info Section
 .info-container {
-  background-color: #476C9B;
+  background-color: #413C58;
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
@@ -18,9 +18,13 @@ div.description-tile {
   padding: 20px;
   border-radius: 10px;
 }
+.map-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 img.map-image {
-  max-width: 300px;
+  max-width: 500px;
   height: auto;
 }
 
@@ -28,7 +32,9 @@ img.map-image {
   background-color: #F7F9FB;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: inset 2px 2px 15px #984447;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 10px #101419;
 }
 
 .amenities-container ul {
@@ -50,8 +56,10 @@ img.map-image {
 div.callout.weather-container {
   background-color: #F7F9FB;
   border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 20px;
-  box-shadow: inset 2px 2px 15px #ED9905;
+  box-shadow: 2px 2px 10px #101419;
 }
 
 div.callout.weather-container ul {
@@ -61,6 +69,12 @@ div.callout.weather-container ul {
 
 li.weather {
   background-color: #F7F9FB;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+li.weather img {
+  padding-left: 20px;
 }
 
 // Review Form Section

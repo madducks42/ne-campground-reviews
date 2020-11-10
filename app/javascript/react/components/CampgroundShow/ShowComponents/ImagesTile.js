@@ -3,7 +3,6 @@ import React from 'react'
 const ImagesTile = () => {
   
   return (
-    // Still need to get lightbox or a carousel working
     <div className="lightbox-container">
       <a href="/images/test-image-1.jpg" data-lightbox="carousel" data-title="Test Image">
         <img className ="galleryimage" src="/images/test-image-1.jpg" />
