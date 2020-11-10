@@ -4,11 +4,14 @@ const ImagesTile = () => {
   
   return (
     // Still need to get lightbox or a carousel working
-    <div>
-      {/* <a href='/images/test_image.jpg' data-lightbox='Test' data-title='Test'> */}
-        <img src='/images/test_image.jpg'/>
-      {/* </a> */}
-    </div>
+    <div className="lightbox-container">
+      <a href="/images/test-image-1.jpg" data-lightbox="carousel" data-title="Test Image">
+        <img className ="galleryimage" src="/images/test-image-1.jpg" />
+      </a>
+      <a href="/images/test-image-2.jpg" data-lightbox="carousel" data-title="Test Image">
+        
+      </a>
+      </div>
   )
 }
 
