@@ -1,5 +1,5 @@
 class Api::V1::CampgroundsController < ApiController
-  before_action :authorize_user, except: [:index, :show, :search]
+  before_action :authorize_user, except: [:index, :show, :search, :filter]
 
   def index
     render json: Campground.all
@@ -38,6 +38,10 @@ class Api::V1::CampgroundsController < ApiController
     if campground.destroy
       render json: {destroyed: true}
     end
+  end
+
+  def filter
+    binding.pry
   end
   
   def search

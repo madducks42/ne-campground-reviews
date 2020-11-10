@@ -67,15 +67,3 @@ const ReviewTile = (props) => {
 };
 
 export default ReviewTile;
-
-  // return (
-    // <div className='callout'>
-    //   <h6>{props.review.title}</h6>
-    //   <p>{props.review.body}</p>
-    //   <p>Rating: {props.review.rating}</p>
-    //   {props.currentUser.role === 'admin' && <div className='grid-x grid-margin-x admin-flex'>
-    //     <input onClick={onClickShowEdit} className='button' type='submit' value='Edit Review' />
-    //     { showEditComponent ? <EditReview /> : null }
-    //   </div>}
-    // </div>
-  // )

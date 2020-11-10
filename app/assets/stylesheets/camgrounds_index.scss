@@ -57,18 +57,22 @@ input.search-button {
 }
 
 // Left nav-bar Filter Section
-div.menu.filter-section {
+div.callout.filter-container {
   display: flex;
-  flex-direction: row;
-  background-color: #476C9B;
-  
+  flex-direction: column;
+  padding: 20px;
+  margin-top: 20px;
 }
 
-div.menu.filter-section li {
-  background-color: #476C9B;
-  color: #F7F9FB;
-  list-style: none;
+label.checkbox-label {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
 }
+
+input.checkbox-input {
+  margin-left: 10px;
+}
+
 
 // Campground Tiles container
 

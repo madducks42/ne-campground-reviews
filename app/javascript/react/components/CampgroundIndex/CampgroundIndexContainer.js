@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 
 import CampgroundIndexTile from './CampgroundIndexTile'
 import CampgroundSearchBar from './CampgroundSearchBar'
+import CampgroundFilter from './CampgroundFilter'
 
 const CampgroundIndexContainer = (props) => {
   const [campgrounds, setCampgrounds] = useState([])
@@ -37,6 +38,35 @@ const CampgroundIndexContainer = (props) => {
     )
   })
 
+  const filterCampgrounds = (filterObjects) => {
+
+    fetch('/api/v1/campgrounds/filter', {
+      method: 'POST',
+      body: JSON.stringify(filterObjects),
+      credentials: 'same-origin',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(body => {
+      debugger
+      if (body.errors) {
+        setErrors(body.errors)
+      } else {
+        debugger
+        setCampgrounds([...campgrounds, body])
+      }
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  };
+
   return(
     <div className='grid-container full wrapper'>
       <div className="grid-x grid-margin-x">
@@ -46,10 +76,9 @@ const CampgroundIndexContainer = (props) => {
           </ul>
           <div className='menu filter-section'>
             <ul>
-              <li>Filter</li>
-              <li>feature</li>
-              <li>for</li>
-              <li>campgrounds</li>
+              <CampgroundFilter
+                filterCampgrounds={filterCampgrounds}
+              />
             </ul>
           </div>
         </div>
