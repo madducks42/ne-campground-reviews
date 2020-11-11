@@ -39,7 +39,7 @@ const CampgroundIndexContainer = (props) => {
   })
 
   const filterCampgrounds = (filterObjects) => {
-
+    // debugger
     fetch('/api/v1/campgrounds/filter', {
       method: 'POST',
       body: JSON.stringify(filterObjects),

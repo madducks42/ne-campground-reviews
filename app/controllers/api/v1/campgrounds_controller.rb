@@ -41,7 +41,9 @@ class Api::V1::CampgroundsController < ApiController
   end
 
   def filter
-    binding.pry
+    # binding.pry
+    # states = []
+    # if params[:vermont]
   end
   
   def search

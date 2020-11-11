@@ -11,15 +11,22 @@ const CampgroundFilter = (props) => {
   });
 
   const handleInputChange = (event) => {
+    debugger
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    let value
+    if (target.type === 'checkbox' ? target.checked : target.value = true) {
+      value = true
+    } else {
+      value = false
+    }
+    // const value = target.type === 'checkbox' ? target.checked : target.value = true;
     const name = target.name;
-
+    debugger
     setFilterObjects({
       ...filterObjects,
       [name]: value
     });
-
+    debugger
     props.filterCampgrounds(filterObjects)
   }
 
