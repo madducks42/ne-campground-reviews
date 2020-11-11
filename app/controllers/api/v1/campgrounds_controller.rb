@@ -41,9 +41,21 @@ class Api::V1::CampgroundsController < ApiController
   end
 
   def filter
-    # binding.pry
-    # states = []
-    # if params[:vermont]
+    states = [
+      'massachusetts',
+      'vermont',
+      'newHampshire',
+      'newYork',
+      'maine'
+    ]
+
+    filtered_campgrounds = states.map do |state| 
+      if params["massachusetts"] == false
+        # binding.pry
+        Campground.where(location: "Massachusetts")
+      end
+    end
+    render json: filtered_campgrounds
   end
   
   def search

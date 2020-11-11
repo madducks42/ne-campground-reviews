@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 const CampgroundFilter = (props) => {
   // const [locations, setLocations] = useState([]);
-  const [filterObjects, setFilterObjects] = useState ({
+  const [filterItems, setFilterItems] = useState ({
     massachusetts: false,
     newHampshire: false,
     vermont: false,
@@ -11,23 +11,22 @@ const CampgroundFilter = (props) => {
   });
 
   const handleInputChange = (event) => {
-    debugger
     const target = event.target;
     let value
-    if (target.type === 'checkbox' ? target.checked : target.value = true) {
+    if (target.type === 'checkbox' ? target.checked : target.value) {
       value = true
     } else {
       value = false
     }
-    // const value = target.type === 'checkbox' ? target.checked : target.value = true;
+    // const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
     debugger
-    setFilterObjects({
-      ...filterObjects,
+    setFilterItems({
+      ...filterItems,
       [name]: value
     });
     debugger
-    props.filterCampgrounds(filterObjects)
+    props.filterCampgrounds(filterItems)
   }
 
 
@@ -36,48 +35,48 @@ const CampgroundFilter = (props) => {
         <h2>Filter By Location:</h2>
         <div className='filter-items'>  
           <label className='checkbox-label'>
-            Massachusetts:
+            MA:
             <input
               className='checkbox-input'
               name="massachusetts"
               type="checkbox"
-              checked={filterObjects.massachusetts}
+              checked={filterItems.massachusetts}
               onChange={handleInputChange} />
           </label>
           <label className='checkbox-label'>
-            New Hampshire:
+            NH:
             <input
               className='checkbox-input'
               name="newHampshire"
               type="checkbox"
-              checked={filterObjects.newHampshire}
+              checked={filterItems.newHampshire}
               onChange={handleInputChange} />
           </label>
           <label className='checkbox-label'>
-            Vermont:
+            VT:
             <input
               className='checkbox-input'
               name="vermont"
               type="checkbox"
-              checked={filterObjects.vermont}
+              checked={filterItems.vermont}
               onChange={handleInputChange} />
           </label>
           <label className='checkbox-label'>
-            Maine:
+            ME:
             <input
               className='checkbox-input'
               name="maine"
               type="checkbox"
-              checked={filterObjects.maine}
+              checked={filterItems.maine}
               onChange={handleInputChange} />
           </label>
           <label className='checkbox-label'>
-            New York:
+            NY:
             <input
               className='checkbox-input'
               name="newYork"
               type="checkbox"
-              checked={filterObjects.newYork}
+              checked={filterItems.newYork}
               onChange={handleInputChange} />
           </label>
         </div>
