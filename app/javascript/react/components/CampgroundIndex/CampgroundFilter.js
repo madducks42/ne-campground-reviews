@@ -11,17 +11,18 @@ const CampgroundFilter = (props) => {
   });
 
   const handleInputChange = (event) => {
+    debugger
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-  
-    setFilterItems({
-      ...filterItems,
+
+    setFilterObjects({
+      ...filterObjects,
       [name]: value
     });
-    props.filterCampgrounds(filterItems)
   }
-
+  
+  props.filterCampgrounds(filterObjects)
 
     return (
       <div className='callout filter-container'>
