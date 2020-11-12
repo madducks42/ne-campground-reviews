@@ -33,3 +33,6 @@ yarn-debug.log*
 .yarn-integrity
 
 /config/secrets.yml
+
+# Ignore uploaded files in test/development
+/public/uploads

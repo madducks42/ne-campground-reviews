@@ -22,6 +22,7 @@ class CampgroundShowSerializer < ActiveModel::Serializer
   attribute :current_user, key: :currentUser
 
   has_many :reviews
+  has_many :campground_images
 
   def weather
     client = OpenWeatherClient.new(object.zip_code)
