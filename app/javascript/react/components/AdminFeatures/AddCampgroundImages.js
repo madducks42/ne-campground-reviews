@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Dropzone from 'react-dropzone'
 import { Redirect } from "react-router-dom"
 import _ from 'lodash'
-
 import ErrorList from '../ErrorList'
 
 const AddCampgroundImages = (props) => {
@@ -59,7 +58,7 @@ const AddCampgroundImages = (props) => {
     <div className='grid-container wrapper'>
         <h4>Add images</h4>
         <form onSubmit={handleSubmit}>
-        <ErrorList errors={errors} />
+        {/* <ErrorList errors={errors} /> */}
           <Dropzone onDrop={handleFileUpload} multiple={true}>
           {({getRootProps, getInputProps}) => (
             <section>
