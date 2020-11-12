@@ -3,21 +3,20 @@ import Dropzone from 'react-dropzone'
 import { Redirect } from "react-router-dom"
 import _ from 'lodash'
 
-// import ErrorList from '../ErrorList'
+import ErrorList from '../ErrorList'
 
 const AddCampgroundImages = (props) => {
   const [campgroundImages, setCampgroundImages] = useState([])
   const [shouldRedirect, setShouldRedirect] = useState(false)
 
   
-  const addImages = (event) => {
-    let body = new FormData()
-    body.append("image", campgroundImages)
+  const addImages = (newImages) => {
+    
     let id = props.match.params.id
 
     fetch(`/api/v1/campgrounds/${id}/campground_images`, {
       method: 'POST',
-      body: body,
+      body: newImages,
       credentials: 'same-origin',
       headers: {
         "Accept": "application/json",
@@ -47,8 +46,12 @@ const AddCampgroundImages = (props) => {
   };
 
   const handleSubmit = event => {
-    event.preventDefault(); 
-    addImages(campgroundImages);
+    event.preventDefault();
+    let body = new FormData()
+    campgroundImages.forEach((image) => {
+      body.append('name', image)    
+    })
+    addImages(body);
     setCampgroundImages([])
   };
 
@@ -56,6 +59,7 @@ const AddCampgroundImages = (props) => {
     <div className='grid-container wrapper'>
         <h4>Add images</h4>
         <form onSubmit={handleSubmit}>
+        <ErrorList errors={errors} />
           <Dropzone onDrop={handleFileUpload} multiple={true}>
           {({getRootProps, getInputProps}) => (
             <section>

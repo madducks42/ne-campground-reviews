@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_11_06_234337) do
   enable_extension "plpgsql"
 
   create_table "campground_images", force: :cascade do |t|
-    t.string "image"
+    t.string "image", null: false
     t.bigint "campground_id", null: false
     t.index ["campground_id"], name: "index_campground_images_on_campground_id"
   end
