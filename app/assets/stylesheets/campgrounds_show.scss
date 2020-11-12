@@ -2,6 +2,19 @@ div.grid-container.fluid.show-container {
   padding: 20px 100px 20px 100px;
 }
 
+// Images Section
+.lightbox-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.galleryimage {
+  max-width: 800px;
+}
+
 // Description Section
 
 div.description-tile {
