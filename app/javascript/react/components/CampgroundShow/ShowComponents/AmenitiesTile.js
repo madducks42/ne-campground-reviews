@@ -2,7 +2,7 @@ import React from 'react'
 
 const AmenitiesTile = (props) => {
   let dogsAllowedStatus
-  let electronicHookupsStatus
+  let electricHookupsStatus
   let waterHookupsStatus
   let potableWaterStatus
   let dumpStationStatus
@@ -15,10 +15,10 @@ const AmenitiesTile = (props) => {
     dogsAllowedStatus = "No"
   }
 
-  if (props.electronicHookups == true) {
-    electronicHookupsStatus = "Yes"
+  if (props.electricHookups == true) {
+    electricHookupsStatus = "Yes"
   } else {
-    electronicHookupsStatus = "No"
+    electricHookupsStatus = "No"
   }
 
   if (props.waterHookups == true) {
@@ -57,7 +57,7 @@ const AmenitiesTile = (props) => {
         <ul>
           <li><a href={props.campgroundLink} target="_blank">Official Website</a></li>
           <li>Dogs Allowed - {dogsAllowedStatus}</li>
-          <li>Electronic Hookups - {electronicHookupsStatus}</li>
+          <li>Electric Hookups - {electricHookupsStatus}</li>
           <li>Water Hookups - {waterHookupsStatus}</li>
           <li>Potable Water - {potableWaterStatus}</li>
           <li>Dump Station - {dumpStationStatus}</li>
