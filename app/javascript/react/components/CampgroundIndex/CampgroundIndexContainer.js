@@ -46,15 +46,15 @@ const CampgroundIndexContainer = (props) => {
           </ul>
           <div className='menu filter-section'>
             <ul>
-              <li>Filter</li>
-              <li>feature</li>
-              <li>for</li>
-              <li>campgrounds</li>
+              <li>Coming Soon!</li>
+              <li>Filter Campgrounds</li>
+              <li>by location</li>
+              <li>& amenities</li>
             </ul>
           </div>
         </div>
         <div className="cell small-8 auto">
-          <div className='grid-x grid-margin-x flex-index'>
+          <div className='grid-x grid-margin-x flex-index index-scrollable'>
             {campgroundTiles}
           </div>
         </div>
