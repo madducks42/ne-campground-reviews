@@ -81,6 +81,11 @@ input.checkbox-input {
   background-color: #F7F9FB;
 }
 
+.index-scrollable {
+  height: 100vh; /* or any value */
+  overflow-y: auto;
+}
+
 // Campground Tiles
 div.campground-tile {
   margin: 10px;

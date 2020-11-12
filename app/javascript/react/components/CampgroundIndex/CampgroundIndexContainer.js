@@ -75,15 +75,13 @@ const CampgroundIndexContainer = (props) => {
             <CampgroundSearchBar />
           </ul>
           <div className='menu filter-section'>
-            <ul>
-              <CampgroundFilter
-                filterCampgrounds={filterCampgrounds}
-              />
-            </ul>
+            <CampgroundFilter
+              filterCampgrounds={filterCampgrounds}
+            />
           </div>
         </div>
         <div className="cell small-8 auto">
-          <div className='grid-x grid-margin-x flex-index'>
+          <div className='grid-x grid-margin-x flex-index index-scrollable'>
             {campgroundTiles}
           </div>
         </div>

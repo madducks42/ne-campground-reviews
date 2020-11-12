@@ -35,18 +35,14 @@ body {
   background-color: #F7F9FB;
   font-family: 'Source Serif Pro', serif;
   font-size: 1.4rem;
-  color: black;
-  margin: 0px;
+  color: #101419;
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  position: relative;
 }
 
-.wrapper {
-  min-height: 100vh; /* will cover the 100% of viewport */
-  overflow: hidden;
-  display: block;
-  position: relative;
-  padding-bottom: 100px; /* height of your footer */
+.content {
+  flex: 1 0 auto;
 }
 
 h1 {
@@ -92,7 +88,7 @@ a:hover {
 }
 
 // Button styles
-.button {
+.button, .button:active {
   font-family: 'Source Serif Pro', serif;
   font-size: 1.8rem;
   margin: 0px;
@@ -105,7 +101,7 @@ a:hover {
   transition: background-color 0.25s ease-out, color 0.25s ease-out
 }
 
-.button:hover, .button.focus {
+.button:hover {
   background-color: #ED9905;
   color: #F7F9FB;
   font-family: 'Source Serif Pro', serif;
