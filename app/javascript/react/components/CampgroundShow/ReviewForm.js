@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import ErrorList from '../ErrorList'
-import Dropzone from 'react-dropzone'
 
-const CampgroundReviewFormContainer = (props) => {
+const ReviewForm = (props) => {
   const [newReview, setNewReview] = useState({
     title: '',
     body: '',
@@ -30,23 +29,9 @@ const CampgroundReviewFormContainer = (props) => {
         }
       }
     });
-    
-    if (newReview['rating'] < 1 || newReview['rating'] > 5){
-      submitErrors = {
-        ...submitErrors,
-        ['rating']: 'must be number between 1-5'
-      }
-    };
 
     setErrors(submitErrors)
     return _.isEmpty(submitErrors)
-  };
-
-  const handleFileUpload = (acceptedFiles) => {
-    setNewReview({
-      ...newReview,
-      image: acceptedFiles[0]
-    })
   };
 
   const handleSubmit = event => {
@@ -86,25 +71,16 @@ const CampgroundReviewFormContainer = (props) => {
         />
       </label>
       <label>
-        Rating:
-        <input
-          name='rating'
-          id='rating'
-          type='text'
-          onChange={handleChange}
-          value={newReview.rating}
-        />
-      </label>
-      <Dropzone onDrop={handleFileUpload}>
-        {({getRootProps, getInputProps}) => (
-          <section>
-            <div {...getRootProps()}>
-              <input {...getInputProps()} />
-              <p>Drag 'n' drop some files here, or click to select files</p>
-            </div>
-          </section>
-        )}
-      </Dropzone>
+          Rating:
+          <select className='campground-form' name='rating' value={newReview.rating} onChange={handleChange}>
+            <option className='campground-form' value={null}>--</option>
+            <option className='campground-form' value='1'>1</option>
+            <option className='campground-form' value='2'>2</option>
+            <option className='campground-form' value='3'>3</option>
+            <option className='campground-form' value='4'>4</option>
+            <option className='campground-form' value='5'>5</option>
+          </select>
+        </label>
       <div className='button-group'>
         <input className='button' type='submit' value='Submit' />
       </div>
@@ -112,4 +88,4 @@ const CampgroundReviewFormContainer = (props) => {
   )
 };
 
-export default CampgroundReviewFormContainer
+export default ReviewForm

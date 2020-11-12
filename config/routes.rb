@@ -13,10 +13,13 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post 'campgrounds/search', to: 'campgrounds#search'
-      
+      post 'campgrounds/filter', to: 'campgrounds#filter'
+    
       resources :campgrounds, only: [:index, :show, :create, :edit, :update, :destroy] do
         resources :reviews, only: [:create]
         resources :campground_images, only: [:create, :edit, :update, :destroy]
+        
+        resources :reviews, only: [:create, :update, :destroy]
       end
     end
   end

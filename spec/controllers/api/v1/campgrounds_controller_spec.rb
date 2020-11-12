@@ -5,7 +5,8 @@ RSpec.describe Api::V1::CampgroundsController, type: :controller do
   name: 'Forked Lake Campground', 
   caption: 'Rustic and remote campground. Almost all sites directly on lake. Many boat-in only.',
   description: "Nice campground",
-  location: 'New York', 
+  location: 'New York',
+  zip_code: '12847', 
   campground_link: 'https://www.dec.ny.gov/outdoor/24467.html',
   dogs_allowed: true,
   electric_hookups: false,
@@ -20,6 +21,7 @@ RSpec.describe Api::V1::CampgroundsController, type: :controller do
     caption: 'Nice campground', 
     description: 'Well maintained campground in Vermont.',
     location: 'Vermont',
+    zip_code: '05676',
     campground_link: 'https://www.dec.ny.gov/outdoor/24467.html',
     dogs_allowed: true,
     electric_hookups: false,
@@ -35,7 +37,8 @@ RSpec.describe Api::V1::CampgroundsController, type: :controller do
     last_name: 'Ren', 
     email: 'kyloren@gmail.com', 
     username: 'sad_boi', 
-    password: 'password'
+    password: 'password',
+    role: 'member'
   )}
   
   let!(:user_2) { User.create(
@@ -43,7 +46,8 @@ RSpec.describe Api::V1::CampgroundsController, type: :controller do
     last_name: 'Summer', 
     email: 'buffy@gmail.com', 
     username: 'og_slayer', 
-    password: 'password'
+    password: 'password',
+    role: 'admin'
   )}
 
   let!(:review_1) { Review.create(
@@ -94,6 +98,7 @@ RSpec.describe Api::V1::CampgroundsController, type: :controller do
       expect(returned_response['name']).to eq campground_1.name
       expect(returned_response['description']).to eq campground_1.description
       expect(returned_response['location']).to eq campground_1.location
+      expect(returned_response['zip_code']).to eq campground_1.zip_code
       expect(returned_response['dogs_allowed']).to eq campground_1.dogs_allowed
       expect(returned_response['electric_hookups']).to eq campground_1.electric_hookups
       expect(returned_response['water_hookups']).to eq campground_1.water_hookups

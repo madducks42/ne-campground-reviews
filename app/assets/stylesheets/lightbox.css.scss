@@ -49,7 +49,7 @@ body.lb-disable-scrolling {
 
   /* Background color behind image.
      This is visible during transitions. */
-  background-color: white;
+  background-color: #101419;
 }
 
 .lb-outerContainer:after {
@@ -74,7 +74,7 @@ body.lb-disable-scrolling {
   height: 32px;
   margin: 0 auto;
   // background: url(../images/loading.gif) no-repeat;
-  background: image-url('loading.gif') no-repeat;
+  // background: image-url('loading.gif') no-repeat;
 }
 
 .lb-nav {

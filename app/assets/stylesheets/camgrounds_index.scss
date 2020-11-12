@@ -3,11 +3,6 @@ div.grid-container.full {
   margin-bottom: 0px;
 }
 
-// Flex-container
-.flex-index {
-  display: flex;
-}
-
 // Left nav-bar
 div.cell.small-4.medium-3.left-nav-bar {
   background-color: #476C9B;
@@ -30,6 +25,10 @@ ul.menu.left-nav-bar.nav-flex {
   width: 100%;
 }
 
+.search-container {
+  min-width: 100%;
+}
+
 ul.menu.left-nav-bar.nav-flex li{
   background-color: #476C9B;
   width: 100%;
@@ -47,6 +46,7 @@ li.nav-search {
 
 input.search-field {
   height: 40px;
+  width: 100%;
   font-family: 'Source Serif Pro', serif;
   font-size: 1.8rem;
 }
@@ -62,36 +62,64 @@ input.search-button {
 }
 
 // Left nav-bar Filter Section
+div.callout.filter-container {
+  background-color: #F7F9FB;
+  padding: 20px;
+  margin-top: 20px;
+}
+
 div.menu.filter-section {
   display: flex;
-  flex-direction: row;
-  background-color: #476C9B;
-  
+  flex-direction: column;
 }
 
-div.menu.filter-section li {
-  background-color: #476C9B;
-  color: #F7F9FB;
-  list-style: none;
+label.checkbox-label {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
 }
+
+input.checkbox-input {
+  margin-left: 10px;
+}
+
 
 // Campground Tiles container
-div.cell.small-8.auto {
-  padding: 40px;
+
+.flex-index {
+  display: flex;
   background-color: #F7F9FB;
 }
 
+.index-scrollable {
+  height: 100vh; /* or any value */
+  overflow-y: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.index-scrollable::-webkit-scrollbar {
+  display: none;
+}
+
 // Campground Tiles
-div.cell.small-3.campground-tile {
-  min-width: 200px;
+div.campground-tile {
+  margin: 10px;
 }
 
 div.card {
-  min-height: 300px;
+  min-height: 350px;
   min-width: 200px;
+  max-width: 300px;
+  max-height: 350px;
   text-align: center;
   border-radius: 5px;
-  box-shadow: inset 2px 2px 15px #101419;
+  box-shadow: 2px 2px 5px #101419;
+}
+
+img.tile-image {
+  max-height: 200px;
+  overflow: hidden;
 }
 
 div.card h6 {

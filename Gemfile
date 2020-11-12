@@ -61,3 +61,4 @@ gem 'mongo_mapper'
 gem 'bson_ext'
 gem "carrierwave"
 gem "fog-aws"
+gem 'lightbox2-rails'

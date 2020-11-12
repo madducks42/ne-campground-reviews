@@ -6,6 +6,7 @@ class Campground < ApplicationRecord
   validates :caption, presence: true
   validates :description, presence: true
   validates :location, presence: true
+  validates :zip_code, presence: true
   validates :dogs_allowed, inclusion: { in: [ true, false ] }
   validates :electric_hookups, inclusion: { in: [ true, false ] }
   validates :water_hookups, inclusion: { in: [ true, false ] }

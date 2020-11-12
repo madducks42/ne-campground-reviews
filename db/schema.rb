@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_06_234337) do
+ActiveRecord::Schema.define(version: 2020_11_09_180453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_11_06_234337) do
     t.boolean "showers", default: false, null: false
     t.string "caption", default: "enter caption info", null: false
     t.string "campground_link"
+    t.string "zip_code"
   end
 
   create_table "reviews", force: :cascade do |t|

@@ -52,7 +52,7 @@ class CampgroundSearchBar extends Component {
   };
 
     return(
-      <div>
+      <div className='search-container'>
         <form onSubmit={this.handleSubmit}>
           <label className='nav-search'>
             <input className='search-field' type='text' name='searchString' value={this.state.searchString} onChange={this.handleChange} />

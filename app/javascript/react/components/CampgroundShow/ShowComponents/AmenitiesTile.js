@@ -1,8 +1,8 @@
 import React from 'react'
 
-const CampgroundShowAmenitiesTile = (props) => {
+const AmenitiesTile = (props) => {
   let dogsAllowedStatus
-  let electronicHookupsStatus
+  let electricHookupsStatus
   let waterHookupsStatus
   let potableWaterStatus
   let dumpStationStatus
@@ -15,10 +15,10 @@ const CampgroundShowAmenitiesTile = (props) => {
     dogsAllowedStatus = "No"
   }
 
-  if (props.electronicHookups == true) {
-    electronicHookupsStatus = "Yes"
+  if (props.electricHookups == true) {
+    electricHookupsStatus = "Yes"
   } else {
-    electronicHookupsStatus = "No"
+    electricHookupsStatus = "No"
   }
 
   if (props.waterHookups == true) {
@@ -53,11 +53,11 @@ const CampgroundShowAmenitiesTile = (props) => {
 
   return (
     <div>
-      <h3>Campground Info:</h3>
+      <h3>General Info:</h3>
         <ul>
           <li><a href={props.campgroundLink} target="_blank">Official Website</a></li>
           <li>Dogs Allowed - {dogsAllowedStatus}</li>
-          <li>Electronic Hookups - {electronicHookupsStatus}</li>
+          <li>Electric Hookups - {electricHookupsStatus}</li>
           <li>Water Hookups - {waterHookupsStatus}</li>
           <li>Potable Water - {potableWaterStatus}</li>
           <li>Dump Station - {dumpStationStatus}</li>
@@ -68,4 +68,4 @@ const CampgroundShowAmenitiesTile = (props) => {
   )
 }
 
-export default CampgroundShowAmenitiesTile
+export default AmenitiesTile
