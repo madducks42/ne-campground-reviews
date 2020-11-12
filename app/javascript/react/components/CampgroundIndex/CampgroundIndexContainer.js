@@ -38,11 +38,10 @@ const CampgroundIndexContainer = (props) => {
     )
   })
 
-  const filterCampgrounds = (filterObjects) => {
-    debugger
+  const filterCampgrounds = (filterItems) => {
     fetch('/api/v1/campgrounds/filter', {
       method: 'POST',
-      body: JSON.stringify(filterObjects),
+      body: JSON.stringify(filterItems),
       credentials: 'same-origin',
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
     })
@@ -55,17 +54,34 @@ const CampgroundIndexContainer = (props) => {
         throw(error);
       }
     })
-    .then(body => {
-      debugger
-      if (body.errors) {
-        setErrors(body.errors)
+    .then(filteredCampgrounds => {
+      if (filteredCampgrounds.errors) {
+        setErrors(filteredCampgrounds.errors)
       } else {
-        debugger
-        setCampgrounds([...campgrounds, body])
+        setCampgrounds(filteredCampgrounds)
       }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
-  };
+  }
+
+  const handleReset = (event) => {
+    fetch("/api/v1/campgrounds")
+    .then(response => {
+      if(response.ok){
+        return response
+      } else{
+        let errorMessage = `${response.status}(${response.statusText})`,
+        error = new Error(errorMessage)
+        throw(error)
+      }
+    })
+    .then(response => {
+      return response.json()
+    })
+    .then(body => {
+      setCampgrounds(body)
+    }).catch(error => console.error(`Error in fetch: ${error.message}`))
+  }
 
   return(
     <div className='grid-container full wrapper'>
@@ -78,6 +94,7 @@ const CampgroundIndexContainer = (props) => {
             <CampgroundFilter
               filterCampgrounds={filterCampgrounds}
             />
+            <input className='button' type='button' value='Reset Filter' onClick={handleReset} />
           </div>
         </div>
         <div className="cell small-8 auto">

@@ -217,7 +217,7 @@ const CampgroundShowContainer = (props) => {
               key={campground.id}
               campgroundLink={campground.campground_link}
               dogsAllowed={campground.dogs_allowed}
-              electronicHookups={campground.electronic_hookups}
+              electricHookups={campground.electronic_hookups}
               waterHookups={campground.water_hookups}
               potableWater={campground.potable_water}
               dumpStation={campground.dump_station}
