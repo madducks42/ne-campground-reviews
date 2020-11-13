@@ -1,7 +1,7 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 const CampgroundFilter = (props) => {
-  const [filterItems, setFilterItems] = useState ({
+  const [filterItems, setFilterItems] = useState({
     massachusetts: false,
     newHampshire: false,
     vermont: false,
@@ -15,6 +15,10 @@ const CampgroundFilter = (props) => {
     bathrooms: false,
     showers: false
   });
+  
+  useEffect(() => {
+    props.filterCampgrounds(filterItems);
+  }, [filterItems]); // Only re-run the effect if count changes
 
   const handleInputChange = (event) => {
     const target = event.target;
@@ -25,10 +29,7 @@ const CampgroundFilter = (props) => {
       ...filterItems,
       [name]: value
     });
-  }
-  
-  if (Object.values(filterItems).includes(true)) {
-    props.filterCampgrounds(filterItems)
+ 
   }
 
     return (

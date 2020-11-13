@@ -1,5 +1,23 @@
 class Api::V1::CampgroundsController < ApiController
   before_action :authorize_user, except: [:index, :show, :search, :filter]
+  
+  AMENITIES = [
+    {js: 'dogsAllowed', ruby: 'dogs_allowed'},
+    {js: 'electricHookups', ruby: 'electric_hookups'},
+    {js: 'waterHookups', ruby: 'water_hookups'},
+    {js: 'potableWater', ruby: 'potable_water'},
+    {js: 'dumpStation', ruby: 'dump_station'},
+    {js: 'bathrooms', ruby: 'bathrooms'},
+    {js: 'showers', ruby: 'showers'}
+  ]
+
+  STATES = [
+    {js: 'massachusetts', ruby: 'Massachusetts'},
+    {js: 'vermont', ruby: 'Vermont'},
+    {js: 'newHampshire', ruby: 'New Hampshire'},
+    {js: 'newYork', ruby: 'New York'},
+    {js: 'maine', ruby: 'Maine'}
+  ]
 
   def index
     render json: Campground.all
@@ -41,13 +59,32 @@ class Api::V1::CampgroundsController < ApiController
   end
 
   def filter
-    if params['massachusetts'] == true
-      campgrounds = Campground.where(location: 'Massachusetts')
+    filtered_campgrounds = Campground.none
+    campgrounds = Campground.none
+    no_states_checked = true
+    no_amenities_checked = true
+    query = ''
+
+    STATES.each do |state| 
+      if params[state[:js]] == true
+        no_states_checked = false
+        campgrounds = Campground.where(location: state[:ruby])
+        filtered_campgrounds = filtered_campgrounds.or(campgrounds)
+      end
     end
 
-    # if params['vermont'] == true
+    if no_states_checked == true
+      filtered_campgrounds = Campground.all
+    end
+
+    AMENITIES.each do |amenity|
+      if params[amenity[:js]] == true
+        query = amenity[:ruby] + ' = true'
+        filtered_campgrounds = filtered_campgrounds.where(query)
+      end
+    end
     
-    render json: campgrounds
+    render json: filtered_campgrounds
   end
   
   def search
