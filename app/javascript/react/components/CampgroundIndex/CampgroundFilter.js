@@ -1,7 +1,8 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 const CampgroundFilter = (props) => {
-  const [filterItems, setFilterItems] = useState ({
+  const [trackState, setTrackState] = useState([])
+  const [filterItems, setFilterItems] = useState({
     massachusetts: false,
     newHampshire: false,
     vermont: false,
@@ -16,6 +17,7 @@ const CampgroundFilter = (props) => {
     showers: false
   });
 
+
   const handleInputChange = (event) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -25,11 +27,18 @@ const CampgroundFilter = (props) => {
       ...filterItems,
       [name]: value
     });
+    setTrackState(['updated'])
+    // debugger
+    // props.filterCampgrounds(filterItems)
   }
+
+  useEffect(() => {
+    props.filterCampgrounds(filterItems);
+  }, [trackState]); // Only re-run the effect if count changes
   
-  if (Object.values(filterItems).includes(true)) {
-    props.filterCampgrounds(filterItems)
-  }
+  // if (Object.values(filterItems).includes(true)) {
+  //   props.filterCampgrounds(filterItems)
+  // }
 
     return (
       <div className='callout filter-container'>
