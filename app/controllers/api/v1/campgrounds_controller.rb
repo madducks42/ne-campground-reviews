@@ -1,5 +1,23 @@
 class Api::V1::CampgroundsController < ApiController
   before_action :authorize_user, except: [:index, :show, :search, :filter]
+  
+  AMENITIES = [
+    {js: 'dogsAllowed', ruby: 'dogs_allowed'},
+    {js: 'electricHookups', ruby: 'electric_hookups'},
+    {js: 'waterHookups', ruby: 'water_hookups'},
+    {js: 'potableWater', ruby: 'potable_water'},
+    {js: 'dumpStation', ruby: 'dump_station'},
+    {js: 'bathrooms', ruby: 'bathrooms'},
+    {js: 'showers', ruby: 'showers'}
+  ]
+
+  STATES = [
+    {js: 'massachusetts', ruby: 'Massachusetts'},
+    {js: 'vermont', ruby: 'Vermont'},
+    {js: 'newHampshire', ruby: 'new_hampshire'},
+    {js: 'newYork', ruby: 'new_york'},
+    {js: 'maine', ruby: 'Maine'}
+  ]
 
   def index
     render json: Campground.all
@@ -41,14 +59,41 @@ class Api::V1::CampgroundsController < ApiController
   end
 
   def filter
-    if params['massachusetts'] == true
-      campgrounds = Campground.where(location: 'Massachusetts')
-    end
-
-    # if params['vermont'] == true
+    filtered_campgrounds = []
     
-    render json: campgrounds
+    STATES.each do |state| 
+      if params[state[:js]] == true
+        campgrounds = Campground.where(location: state[:ruby])
+        filtered_campgrounds = filtered_campgrounds + campgrounds
+      end
+    end
+    
+    render json: filtered_campgrounds
   end
+
+  # def filter
+  #   filtered_campgrounds = []
+    
+  #   AMENITIES.each do |amenity|
+  #     if params[amenity[:js]] == true
+  #       STATES.each do |state| 
+  #        if params[state[:js]] == true
+  #          campgrounds = Campground.where(location: state[:ruby])
+  #          filtered_campgrounds = filtered_campgrounds + campgrounds
+  #        end
+  #      end
+  #     else
+  #       STATES.each do |state| 
+  #         if params[state[:js]] == true
+  #           campgrounds = Campground.where(location: state[:ruby])
+  #           filtered_campgrounds = filtered_campgrounds + campgrounds
+  #         end
+  #       end
+  #     end
+  #   end
+    
+  #   render json: filtered_campgrounds
+  # end
   
   def search
     campgrounds = Campground.where("name ILIKE ? OR description ILIKE ?", "%#{params['search_string']}%", "%#{params['search_string']}%")
