@@ -28,10 +28,26 @@ const CampgroundFilter = (props) => {
     setFilterItems({
       ...filterItems,
       [name]: value
-    });
- 
+    }); 
   }
-
+  
+  const handleReset = (event) => {
+    setFilterItems({
+      massachusetts: false,
+      newHampshire: false,
+      vermont: false,
+      maine: false,
+      newYork: false,
+      dogsAllowed: false,
+      electricHookups: false,
+      waterHookups: false,
+      potableWater: false,
+      dumpStation: false,
+      bathrooms: false,
+      showers: false
+    })
+  }
+  
     return (
       <div className='callout filter-container'>
         <h2>Filter By Location:</h2>
@@ -148,6 +164,7 @@ const CampgroundFilter = (props) => {
               onChange={handleInputChange} />
           </label>
         </div>
+        <input className='button' type='button' value='Reset Filter' onClick={handleReset} />
       </div>
     );
   }

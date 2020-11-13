@@ -64,25 +64,6 @@ const CampgroundIndexContainer = (props) => {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  const handleReset = (event) => {
-    fetch("/api/v1/campgrounds")
-    .then(response => {
-      if(response.ok){
-        return response
-      } else{
-        let errorMessage = `${response.status}(${response.statusText})`,
-        error = new Error(errorMessage)
-        throw(error)
-      }
-    })
-    .then(response => {
-      return response.json()
-    })
-    .then(body => {
-      setCampgrounds(body)
-    }).catch(error => console.error(`Error in fetch: ${error.message}`))
-  }
-
   return(
     <div className='grid-container full wrapper'>
       <div className="grid-x grid-margin-x">
@@ -94,7 +75,6 @@ const CampgroundIndexContainer = (props) => {
             <CampgroundFilter
               filterCampgrounds={filterCampgrounds}
             />
-            <input className='button' type='button' value='Reset Filter' onClick={handleReset} />
           </div>
         </div>
         <div className="cell small-8 auto">
