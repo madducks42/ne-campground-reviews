@@ -31,7 +31,7 @@ const CampgroundFilter = (props) => {
     }); 
   }
   
-  const handleReset = (event) => {
+  const handleReset = () => {
     setFilterItems({
       massachusetts: false,
       newHampshire: false,
