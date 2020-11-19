@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   get '/campgrounds/:id/addimages', to: 'homes#authenticated'
   get '/campgrounds/:id', to: 'homes#index'
   get '/users', to: 'homes#index'
-  # get '/users/sign_in', to: 'homes#index'
-  get '/users/:id', to: "homes#index"
+  get '/users/sign_in', to: 'homes#index'
+  get '/users/:id', to: "homes#authenticated"
   
   devise_for :users
 

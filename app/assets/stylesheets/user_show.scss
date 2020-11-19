@@ -1,14 +1,42 @@
 .user-show-container {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .user-info-container {
   display: flex;
   flex-direction: column;
-  background-color: #476C9B;
-  color: #F7F9FB;
+  background-color: #98B9AB;
+  color: #101419;
   padding: 20px;
   border-radius: 5px;
   min-height: fit-content;
+}
+
+.user-reviews-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #476C9B;
+  color: #101419;
+  padding: 20px;
+  border-radius: 5px;
+  min-height: fit-content;
+}
+
+.user-reviews-container h2 {
+  font-weight: 400;
+}
+
+.campround-link {
+  background-color: inherit;
+  color: #984447;
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+
+.campround-link:hover {
+  background-color: inherit;
+  font-weight: bold;
+  color: #ED9905;
 }

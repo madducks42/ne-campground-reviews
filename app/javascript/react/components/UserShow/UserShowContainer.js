@@ -34,36 +34,41 @@ const UserShowContainer = (props) => {
           username: body.username,
           email: body.email,
         });
+
         setUserReviews(body.reviews);
       })
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }, []);
 
-  let userReviewArray = [];
-  let userNoReviewMessage = "";
-  if (userInfo.reviews) {
-    userReviewArray = userInfo.reviews.map((review) => {
+  let userReviewsArray = [];
+  let reviewMessage = "Here are the reviews you've posted so far!";
+
+  if (userReviews) {
+    userReviewsArray = userReviews.map((review) => {
       return (
         <UserReviewTile
           key={review.id}
           title={review.title}
           body={review.body}
           rating={review.rating}
-          current_user={review.currentUser}
+          campgroundID={review.campground.id}
+          campgroundName={review.campground.name}
         />
       );
     });
   } else {
-    userNoReviewMessage = "You have not posted any reviews yet.";
+    reviewMessage = "You have not posted any reviews yet.";
   }
 
   return (
     <div className="grid-container show-style">
       <div className="user-show-container">
         <UserShowTile userInfo={userInfo} />
-
-        <h3>Reviews: {userNoReviewMessage}</h3>
-        {userReviewArray}
+      </div>
+      <h2 className="center-text">{reviewMessage}</h2>
+      <div className="user-reviews-container">
+        <br />
+        {userReviewsArray}
       </div>
     </div>
   );
