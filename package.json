@@ -32,13 +32,15 @@
     "enzyme-adapter-react-16": "~1.14.0",
     "fetch-mock": "~5.13.1",
     "jest": "^24.9.0",
+    "prettier": "^2.1.2",
     "webpack-cli": "^2.0.10",
     "webpack-dev-server": "^2.11.1"
   },
   "scripts": {
     "start": "./bin/webpack-dev-server",
-    "test": "node_modules/.bin/jest",
-    "test:dev": "node_modules/.bin/jest --notify --watch"
+    "test": "jest",
+    "test:dev": "jest --notify --watch",
+    "format": "prettier \"src/*.{js,html}\" --write"
   },
   "jest": {
     "automock": false,
@@ -54,5 +56,21 @@
       "./spec/javascript/support/enzyme.js"
     ],
     "testURL": "http://localhost/"
-  }
+  },
+  "description": "https://app.codeship.com/projects/5e5cbf0c-0437-4df4-9c53-e2430ba317c6/status?branch=master",
+  "version": "1.0.0",
+  "main": "babel.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madducks42/ne-campground-reviews.git"
+  },
+  "author": "Maddox Grey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madducks42/ne-campground-reviews/issues"
+  },
+  "homepage": "https://github.com/madducks42/ne-campground-reviews#readme"
 }
