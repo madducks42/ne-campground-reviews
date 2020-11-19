@@ -1,0 +1,14 @@
+.user-show-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #476C9B;
+  color: #F7F9FB;
+  padding: 20px;
+  border-radius: 5px;
+  min-height: fit-content;
+}

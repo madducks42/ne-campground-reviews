@@ -7,8 +7,9 @@ import AddCampgroundImages from './AdminFeatures/AddCampgroundImages'
 import NewCampgroundForm from './AdminFeatures/NewCampgroundForm'
 import UpdateCampgroundForm from './AdminFeatures/UpdateCampgroundForm'
 import DestroyCampground from './AdminFeatures/DestroyCampground'
+import UserShowContainer from './UserShow/UserShowContainer'
 
-export const App = (props) => {
+export const App = () => {
   return (
     <BrowserRouter>
       <Switch>
@@ -19,6 +20,7 @@ export const App = (props) => {
         <Route exact path='/campgrounds/:id/destroy' component={DestroyCampground} />
         <Route exact path='/campgrounds/:id/update' component={UpdateCampgroundForm} />
         <Route exact path='/campgrounds/:id/addimages' component={AddCampgroundImages} />
+        <Route exact path="/users/:id" component={UserShowContainer} />
       </Switch>
     </BrowserRouter>
   )
