@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import UserShowTile from "./UserShowTile";
 import UserReviewTile from "./UserReviewTile";
+import CampgroundIndexTile from "../CampgroundIndex/CampgroundIndexTile";
 
 const UserShowContainer = (props) => {
   const [userInfo, setUserInfo] = useState({
@@ -12,6 +13,7 @@ const UserShowContainer = (props) => {
     email: "",
   });
   const [userReviews, setUserReviews] = useState([]);
+  const [userFavorites, setUserFavorites] = useState([]);
 
   useEffect(() => {
     let id = props.match.params.id;
@@ -36,9 +38,23 @@ const UserShowContainer = (props) => {
         });
 
         setUserReviews(body.reviews);
+
+        setUserFavorites(body.campgrounds);
       })
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }, []);
+
+  let campgroundTiles = userFavorites.map((campground) => {
+    return (
+      <CampgroundIndexTile
+        key={campground.id}
+        id={campground.id}
+        name={campground.name}
+        location={campground.location}
+        caption={campground.caption}
+      />
+    );
+  });
 
   let userReviewsArray = [];
   let reviewMessage = "Here are the reviews you've posted so far!";
@@ -65,6 +81,8 @@ const UserShowContainer = (props) => {
       <div className="user-show-container">
         <UserShowTile userInfo={userInfo} />
       </div>
+      <h2 className="center-text">Favorite Campgrounds</h2>
+      <div className="user-favorites-container">{campgroundTiles}</div>
       <h2 className="center-text">{reviewMessage}</h2>
       <div className="user-reviews-container">
         <br />
