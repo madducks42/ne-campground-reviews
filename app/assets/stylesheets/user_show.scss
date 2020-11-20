@@ -14,6 +14,10 @@
   min-height: fit-content;
 }
 
+.user-favorites-container {
+  display: flex;
+}
+
 .user-reviews-container {
   display: flex;
   flex-direction: column;
