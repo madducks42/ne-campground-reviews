@@ -62,3 +62,4 @@ gem 'bson_ext'
 gem "carrierwave"
 gem "fog-aws"
 gem 'lightbox2-rails'
+gem 'rubocop', '~> 1.3', require: false, group: [:development, :test]

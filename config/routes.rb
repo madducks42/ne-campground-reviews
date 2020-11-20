@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'homes#index'
+  devise_for :users
 
   get '/campgrounds', to: 'homes#index'
   get '/campgrounds/new', to: 'homes#authenticated'
@@ -7,14 +8,16 @@ Rails.application.routes.draw do
   get '/campgrounds/:id/update', to: 'homes#authenticated'
   get '/campgrounds/:id/addimages', to: 'homes#authenticated'
   get '/campgrounds/:id', to: 'homes#index'
+  get '/users/:id', to: "homes#authenticated"
   
-  devise_for :users
+  resources :users
 
   namespace :api do
     namespace :v1 do
       post 'campgrounds/search', to: 'campgrounds#search'
       post 'campgrounds/filter', to: 'campgrounds#filter'
-    
+      
+      resources :users, only: [:show]
       resources :campgrounds, only: [:index, :show, :create, :edit, :update, :destroy] do
         resources :reviews, only: [:create]
         resources :campground_images, only: [:create, :edit, :update, :destroy]
@@ -24,4 +27,5 @@ Rails.application.routes.draw do
     end
   end
   
+  get '*page', to: 'homes#index'
 end

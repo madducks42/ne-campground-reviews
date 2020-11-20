@@ -46,32 +46,32 @@ body {
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   font-family: 'Source Serif Pro', serif;
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   font-family: 'Source Serif Pro', serif;
 }
 
 h3 {
-  font-size: 2.0rem;
+  font-size: 2.4rem;
   font-family: 'Source Serif Pro', serif;
 }
 
 h4 {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-family: 'Source Serif Pro', serif;
 }
 
 h5 {
-  font-size: 1.6rem;
+  font-size: 2.0rem;
   font-family: 'Source Serif Pro', serif;
 }
 
 h6 {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 800;
   font-family: 'Source Serif Pro', serif;
 }
@@ -85,6 +85,10 @@ a {
 a:hover {
   color: #F7F9FB;
   text-decoration: underline;
+}
+
+.center-text {
+  text-align: center;
 }
 
 // Button styles
