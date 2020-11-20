@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :reviews
+  has_many :favorites
+  has_many :campgrounds, through: :favorites
 
   validates :first_name, presence: true
   validates :last_name, presence: true

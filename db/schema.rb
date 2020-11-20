@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_180453) do
+ActiveRecord::Schema.define(version: 2020_11_20_203558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 2020_11_09_180453) do
     t.string "caption", default: "enter caption info", null: false
     t.string "campground_link"
     t.string "zip_code"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "campground_id", null: false
+    t.index ["campground_id"], name: "index_favorites_on_campground_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|

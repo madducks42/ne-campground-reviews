@@ -207,10 +207,11 @@ campground_7 = Campground.create(
   showers: false
 )
 
-user_1 = User.create(first_name: 'Maddox', last_name: 'Grey', email: 'maddoxgrey42@gmail.com', username: 'madducks42', password: 'password', role: 'admin')
+user_1 = User.create(first_name: 'Maddox', last_name: 'Grey', email: 'maddoxgrey42@gmail.com', username: 'madducks42', password: 'password', role: 'member')
 user_2 = User.create(first_name: 'Kylo', last_name: 'Ren', email: 'kyloren@gmail.com', username: 'sad_boi', password: 'password', role: 'member')
 user_3 = User.create(first_name: 'Buffy', last_name: 'Summer', email: 'buffy@gmail.com', username: 'og_slayer', password: 'password', role: 'member')
 user_4 = User.create(first_name: 'Zoe', last_name: 'Washbourne', email: 'zoe@gmail.com', username: 'shouldabeencaptain', password: 'password', role: 'member')
+user_5 = User.create(first_name: 'Maddox', last_name: 'Grey', email: 'maddoxgrey42+admin@gmail.com', password: 'password', role: 'admin')
 
 review_1 = Review.create(title: 'Not bad', body: 'Overall okay campground.', rating: 4, campground: campground_1, user: user_2 )
 review_2 = Review.create(title: 'Awesome campground', body: 'Really enjoyed our stay! Campground was super clean and well-maintained!', rating: 5, campground: campground_3, user: user_1 )
@@ -220,3 +221,7 @@ review_5 = Review.create(title: 'Great for kids', body: 'Great campground for ki
 review_6 = Review.create(title: 'Terrible campground', body: 'Dirt and bugs everywhere. Nature is the worst.', rating: 1, campground: campground_1, user: user_2 )
 review_7 = Review.create(title: 'Awesome campground', body: 'Really enjoyed our stay! Campground was super clean and well-maintained!', rating: 5, campground: campground_2, user: user_3 )
 review_8 = Review.create(title: 'Awesome campground', body: 'Really enjoyed our stay! Campground was super clean and well-maintained!', rating: 5, campground: campground_1, user: user_4 )
+
+favorite_1 = Favorite.create(user: user_1, campground: campground_2)
+favorite_2 = Favorite.create(user: user_1, campground: campground_3)
+favorite_1 = Favorite.create(user: user_1, campground: campground_6)
