@@ -183,73 +183,75 @@ const CampgroundShowContainer = (props) => {
   }
 
   return (
-    <div className="grid-container fluid show-container wrapper">
-      <div className="grid-x grid-margin-x">
-        <div className="cell auto">
-          <ImagesTile />
+    <div className="grid-container full flex-column">
+      <div className="show-container">
+        <div className="grid-x grid-margin-x">
+          <div className="cell auto">
+            <ImagesTile />
+          </div>
         </div>
-      </div>
-      <div className="grid-x grid-margin-x">
-        <div className="cell auto description-tile">
-          <DescriptionTile
-            key={campground.id}
-            campgroundLink={campground.campground_link}
-            name={campground.name}
-            description={campground.description}
-            location={campground.location}
-          />
+        <div className="grid-x grid-margin-x">
+          <div className="cell auto description-tile">
+            <DescriptionTile
+              key={campground.id}
+              campgroundLink={campground.campground_link}
+              name={campground.name}
+              description={campground.description}
+              location={campground.location}
+            />
+          </div>
         </div>
-      </div>
-      <div className="grid-x grid-margin-x info-container">
-        <div className="weather-container">
-          <OpenWeatherTile key={campground.id} weather={weather} />
+        <div className="grid-x grid-margin-x info-container">
+          <div className="weather-container">
+            <OpenWeatherTile key={campground.id} weather={weather} />
+          </div>
+          <div className="map-container">
+            <MapTile />
+          </div>
+          <div className="amenities-container">
+            <AmenitiesTile
+              key={campground.id}
+              campgroundLink={campground.campground_link}
+              dogsAllowed={campground.dogs_allowed}
+              electricHookups={campground.electronic_hookups}
+              waterHookups={campground.water_hookups}
+              potableWater={campground.potable_water}
+              dumpStation={campground.dump_station}
+              bathrooms={campground.bathrooms}
+              showers={campground.showers}
+            />
+          </div>
         </div>
-        <div className="map-container">
-          <MapTile />
+        {currentUser.role === "admin" && (
+          <div className="grid-x grid-margin-x admin-flex">
+            <Link
+              className="admin-link"
+              to={`/campgrounds/${campground.id}/update`}
+            >
+              Update Campground
+            </Link>
+            <Link
+              className="admin-link"
+              to={`/campgrounds/${campground.id}/destroy`}
+            >
+              Delete Campground
+            </Link>
+          </div>
+        )}
+        <div className="grid-x grid-margin-x">
+          <div className="cell">{reviewForm}</div>
         </div>
-        <div className="amenities-container">
-          <AmenitiesTile
-            key={campground.id}
-            campgroundLink={campground.campground_link}
-            dogsAllowed={campground.dogs_allowed}
-            electricHookups={campground.electronic_hookups}
-            waterHookups={campground.water_hookups}
-            potableWater={campground.potable_water}
-            dumpStation={campground.dump_station}
-            bathrooms={campground.bathrooms}
-            showers={campground.showers}
-          />
-        </div>
-      </div>
-      {currentUser.role === "admin" && (
-        <div className="grid-x grid-margin-x admin-flex">
-          <Link
-            className="admin-link"
-            to={`/campgrounds/${campground.id}/update`}
-          >
-            Update Campground
-          </Link>
-          <Link
-            className="admin-link"
-            to={`/campgrounds/${campground.id}/destroy`}
-          >
-            Delete Campground
-          </Link>
-        </div>
-      )}
-      <div className="grid-x grid-margin-x">
-        <div className="cell">{reviewForm}</div>
-      </div>
-      <div className="grid-x grid-margin-x reviews-container">
-        <div className="cell">
-          <h2>Average User Rating: {averageRatingMessage}</h2>
-          <h2>User Reviews: {noReviewsMessage}</h2>
-          <ReviewsContainer
-            reviews={reviews}
-            userIsAdmin={userIsAdmin}
-            editReview={editReview}
-            deleteReview={deleteReview}
-          />
+        <div className="grid-x grid-margin-x reviews-container">
+          <div className="cell">
+            <h2>Average User Rating: {averageRatingMessage}</h2>
+            <h2>User Reviews: {noReviewsMessage}</h2>
+            <ReviewsContainer
+              reviews={reviews}
+              userIsAdmin={userIsAdmin}
+              editReview={editReview}
+              deleteReview={deleteReview}
+            />
+          </div>
         </div>
       </div>
     </div>

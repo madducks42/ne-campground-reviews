@@ -145,3 +145,16 @@ a.admin-link:hover {
   padding: 20px;
   margin-bottom: 5px;
 }
+
+// Generic Flexblox Style
+
+.flex-row {
+  display: flex;
+  width: 100%;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

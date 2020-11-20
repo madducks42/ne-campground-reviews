@@ -4,7 +4,7 @@ div.grid-container.full {
 }
 
 // Left nav-bar
-div.cell.small-4.medium-3.left-nav-bar {
+.left-nav-bar {
   background-color: #476C9B;
   padding: 10px;
 }
@@ -63,6 +63,8 @@ input.search-button {
 
 // Left nav-bar Filter Section
 div.callout.filter-container {
+  display: flex;
+  flex-direction: column;
   background-color: #F7F9FB;
   padding: 20px;
   margin-top: 20px;
@@ -82,12 +84,12 @@ input.checkbox-input {
   margin-left: 10px;
 }
 
-
 // Campground Tiles container
 
-.flex-index {
+.campground-tile-container {
   display: flex;
   background-color: #F7F9FB;
+  padding: 20px;
 }
 
 .index-scrollable {
@@ -100,44 +102,4 @@ input.checkbox-input {
 /* Hide scrollbar for Chrome, Safari and Opera */
 .index-scrollable::-webkit-scrollbar {
   display: none;
-}
-
-// Campground Tiles
-div.campground-tile {
-  margin: 10px;
-}
-
-div.card {
-  min-height: 350px;
-  min-width: 200px;
-  max-width: 300px;
-  max-height: 350px;
-  text-align: center;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px #101419;
-}
-
-img.tile-image {
-  max-height: 200px;
-  overflow: hidden;
-}
-
-div.card h6 {
-  font-weight: 600;
-  padding-top: 10px;
-  }
-
-div.card p {
-  text-align: left;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-div.card a {
-  text-decoration: underline;
-  color: #476C9B
-}
-
-div.card a:hover {
-  color: #984447;
 }

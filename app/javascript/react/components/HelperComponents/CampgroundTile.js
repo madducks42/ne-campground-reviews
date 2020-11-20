@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const CampgroundIndexTile = (props) => {
+const CampgroundTile = (props) => {
   let tileImage
 
   if (props.name == 'Bear Brook State Park') {
@@ -29,7 +29,7 @@ const CampgroundIndexTile = (props) => {
   return (
     <div className='campground-tile'>
       <div className='card'>
-        <img className='tile-image' src={tileImage} />
+        <img className='tile-image' src={tileImage} alt="Campground" />
         <div className='card-section'>
           <h5><Link to={`/campgrounds/${props.id}`}>{props.name}</Link></h5>
           <h6>{props.location}</h6>
@@ -40,7 +40,7 @@ const CampgroundIndexTile = (props) => {
   )
 }
 
-export default CampgroundIndexTile
+export default CampgroundTile
 
 
 
