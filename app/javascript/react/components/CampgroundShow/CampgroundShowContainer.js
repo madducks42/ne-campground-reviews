@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import _ from "lodash";
+// import _ from "lodash";
 
 import ImagesTile from "./ShowComponents/ImagesTile";
 import DescriptionTile from "./ShowComponents/DescriptionTile";
@@ -9,12 +9,14 @@ import AmenitiesTile from "./ShowComponents/AmenitiesTile";
 import OpenWeatherTile from "./ShowComponents/OpenWeatherTile";
 import ReviewForm from "./ReviewForm";
 import ReviewsContainer from "./ShowComponents/ReviewsContainer";
+import ErrorList from '../ErrorList'
 
 const CampgroundShowContainer = (props) => {
   const [campground, setCampground] = useState({});
   const [reviews, setReviews] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
   const [userIsAdmin, setUserIsAdmin] = useState({});
+  const [errors, setErrors] = useState({})
   const [weather, setWeather] = useState({
     name: "",
     description: "",
@@ -184,10 +186,27 @@ const CampgroundShowContainer = (props) => {
 
   return (
     <div className="grid-container full flex-column">
+      <ErrorList errors={errors} />
       <div className="show-container">
+        <h1 className="center-text">{campground.name}</h1>
         <div className="grid-x grid-margin-x">
-          <div className="cell auto">
-            <ImagesTile />
+          <div className="cell full flex-row">
+            <div className="amenities-container callout">
+              <AmenitiesTile
+                key={campground.id}
+                campgroundLink={campground.campground_link}
+                dogsAllowed={campground.dogs_allowed}
+                electricHookups={campground.electronic_hookups}
+                waterHookups={campground.water_hookups}
+                potableWater={campground.potable_water}
+                dumpStation={campground.dump_station}
+                bathrooms={campground.bathrooms}
+                showers={campground.showers}
+              />
+            </div>
+            <div>
+              <ImagesTile />
+            </div>
           </div>
         </div>
         <div className="grid-x grid-margin-x">
@@ -207,19 +226,6 @@ const CampgroundShowContainer = (props) => {
           </div>
           <div className="map-container">
             <MapTile />
-          </div>
-          <div className="amenities-container">
-            <AmenitiesTile
-              key={campground.id}
-              campgroundLink={campground.campground_link}
-              dogsAllowed={campground.dogs_allowed}
-              electricHookups={campground.electronic_hookups}
-              waterHookups={campground.water_hookups}
-              potableWater={campground.potable_water}
-              dumpStation={campground.dump_station}
-              bathrooms={campground.bathrooms}
-              showers={campground.showers}
-            />
           </div>
         </div>
         {currentUser.role === "admin" && (

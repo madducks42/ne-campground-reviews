@@ -1,46 +1,41 @@
 .top-bar {
   display: flex;
-  background-color: #F7F9FB;
+  background-color: #476C9B;
 }
 
 .top-bar-left {
   display: flex;
   width: 50px;
-  background-color: #F7F9FB;
+  background-color: #476C9B;
 }
 
 .top-bar-right {
   display: flex;
   flex-direction: row;
-  background-color: #F7F9FB;
+  background-color: #476C9B;
   font-size: 1.4rem;
 }
 
-.menu-text {
-  background-color: #F7F9FB;
-}
-
 .menu-title a {
-  background-color: #F7F9FB;
   font-family: 'Source Serif Pro', serif;
-  color:  #476C9B;
-  font-weight: 400;
+  color:  #f7f9fb;
+  font-weight: 800;
   font-size: 3vw;
-}
-
-ul.menu.nav-flex {
-  background-color: #F7F9FB;
+  margin-left: 5px;
 }
 
 img.logo {
   width: 100px;
   height: auto;
-  background-color: #F7F9FB;
+  border-radius: 50px;
 }
 
-li {
-  background-color: #F7F9FB;
-  font-size: 1.8rem;
+ul.dropdown.menu {
+  background-color: #476C9B;
+}
+
+.dropdown.menu li {
+  background-color: #476C9B;
 }
 
 .nav-flex {
@@ -49,40 +44,23 @@ li {
   justify-items: flex-start;
 }
 
-input.size {
-  font-size: 1.8rem;
-  height: 40px;
-}
-
 div#example-menu.top-bar {
   border-bottom: 5px black solid;
 }
 
-a::after {
-  margin: -5px;
+.dropdown.menu > li.is-active > a {
+  color: #f7f9fb;
 }
 
-.devise-links {
+.header-nav-buttons {
   display: inline-flex;
   align-items: center;
   font-size: 1.8rem;
-  height: 40px;
-  width: fit-content;
-  border-radius: 2px;
-  background-color: #984447;
-  color: #F7F9FB;
+  color: #f7f9fb;
   margin-left: 10px;
   margin-right: 5px;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
 }
 
-.devise-links:hover, a.devise-links.focus {
-  background-color: #ED9905;
-  color: #fefefe;
-}
-
-a.devise-links {
-  padding: 10px;
-  display: inline-flex;
-  align-items: center;
+.header-nav-buttons:hover {
+  font-weight: 800;
 }
