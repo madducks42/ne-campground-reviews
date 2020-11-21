@@ -9,14 +9,15 @@ import AmenitiesTile from "./ShowComponents/AmenitiesTile";
 import OpenWeatherTile from "./ShowComponents/OpenWeatherTile";
 import ReviewForm from "./ReviewForm";
 import ReviewsContainer from "./ShowComponents/ReviewsContainer";
-import ErrorList from '../ErrorList'
+import ErrorList from "../ErrorList";
 
 const CampgroundShowContainer = (props) => {
   const [campground, setCampground] = useState({});
   const [reviews, setReviews] = useState([]);
+  const [favorite, setFavorite] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [userIsAdmin, setUserIsAdmin] = useState({});
-  const [errors, setErrors] = useState({})
+  const [errors, setErrors] = useState({});
   const [weather, setWeather] = useState({
     name: "",
     description: "",
@@ -47,6 +48,7 @@ const CampgroundShowContainer = (props) => {
         setCampground(body);
         setReviews(body.reviews);
         setUserIsAdmin(body.userIsAdmin);
+        setFavorite(body.isFavorite);
         if (body.currentUser != null) {
           setCurrentUser(body.currentUser);
         }
@@ -184,6 +186,16 @@ const CampgroundShowContainer = (props) => {
     averageRatingMessage = "No ratings yet.";
   }
 
+  let favoriteIcon = "";
+  let favoriteMessage = "";
+  if (favorite === true) {
+    favoriteIcon = "fas fa-heart favorite has-tip top";
+    favoriteMessage = "Campground marked as favorite"
+  } else {
+    favoriteIcon = "fas fa-heart not-favorite has-tip top";
+    favoriteMessage = "Mark campground as favorite"
+  }
+
   return (
     <div className="grid-container full flex-column">
       <ErrorList errors={errors} />
@@ -191,18 +203,30 @@ const CampgroundShowContainer = (props) => {
         <h1 className="center-text">{campground.name}</h1>
         <div className="grid-x grid-margin-x">
           <div className="cell full flex-row">
-            <div className="amenities-container callout">
-              <AmenitiesTile
-                key={campground.id}
-                campgroundLink={campground.campground_link}
-                dogsAllowed={campground.dogs_allowed}
-                electricHookups={campground.electronic_hookups}
-                waterHookups={campground.water_hookups}
-                potableWater={campground.potable_water}
-                dumpStation={campground.dump_station}
-                bathrooms={campground.bathrooms}
-                showers={campground.showers}
-              />
+            <div className="amenities-container">
+              <div>
+                <AmenitiesTile
+                  key={campground.id}
+                  campgroundLink={campground.campground_link}
+                  dogsAllowed={campground.dogs_allowed}
+                  electricHookups={campground.electronic_hookups}
+                  waterHookups={campground.water_hookups}
+                  potableWater={campground.potable_water}
+                  dumpStation={campground.dump_station}
+                  bathrooms={campground.bathrooms}
+                  showers={campground.showers}
+                />
+              </div>
+              <div>
+                <i
+                  className={`${favoriteIcon}`}
+                  data-tooltip
+                  aria-haspopup="true"
+                  data-click-open="false"
+                  data-disable-hover="false"
+                  title={`${favoriteMessage}`}
+                ></i>
+              </div>
             </div>
             <div>
               <ImagesTile />

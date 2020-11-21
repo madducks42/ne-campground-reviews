@@ -55,7 +55,7 @@ const AmenitiesTile = (props) => {
     <div>
       <h3>General Info:</h3>
         <ul>
-          <li><a href={props.campgroundLink} target="_blank">Official Website</a></li>
+          <li><a href={props.campgroundLink} target="_blank" rel="noreferrer">Official Website</a></li>
           <li>Dogs Allowed - {dogsAllowedStatus}</li>
           <li>Electric Hookups - {electricHookupsStatus}</li>
           <li>Water Hookups - {waterHookupsStatus}</li>

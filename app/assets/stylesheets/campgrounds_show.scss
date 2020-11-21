@@ -5,11 +5,19 @@
 
 // Amenities Section Style
 .amenities-container {
+  display: flex;
+  flex-direction: column;
   background-color: #F7F9FB;
   min-width: fit-content;
   padding: 20px;
-  // border-radius: 10px;
-  // box-shadow: 2px 2px 10px #101419;
+  border-top: 1px solid #ADB5BD;
+  border-left: 1px solid #ADB5BD;
+  border-bottom: 1px solid #ADB5BD;
+}
+
+.amenities-container div:last-of-type {
+  margin-top: auto;
+  text-align: center;
 }
 
 .amenities-container ul {
@@ -137,6 +145,18 @@ button#delete-review.button {
 
 button.delete-button.button {
   margin-left: 5px;
+}
+
+// Icons
+
+.fas.fa-heart.not-favorite {
+  font-size: 4rem;
+  color: #ADB5BD;
+}
+
+.fas.fa-heart.favorite {
+  font-size: 4rem;
+  color: #984447;
 }
 
 // Responsive Design Section
