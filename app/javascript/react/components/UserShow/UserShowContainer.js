@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import UserShowTile from "./UserShowTile";
 import UserReviewTile from "./UserReviewTile";
-import CampgroundIndexTile from "../CampgroundIndex/CampgroundIndexTile";
+import CampgroundTile from "../HelperComponents/CampgroundTile";
 
 const UserShowContainer = (props) => {
   const [userInfo, setUserInfo] = useState({
@@ -46,7 +46,7 @@ const UserShowContainer = (props) => {
 
   let campgroundTiles = userFavorites.map((campground) => {
     return (
-      <CampgroundIndexTile
+      <CampgroundTile
         key={campground.id}
         id={campground.id}
         name={campground.name}

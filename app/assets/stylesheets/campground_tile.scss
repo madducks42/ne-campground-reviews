@@ -1,0 +1,41 @@
+// Campground Tiles
+div.campground-tile {
+  margin: 10px;
+}
+
+div.card {
+  // min-height: 350px;
+  // min-width: 200px;
+  // max-width: 300px;
+  // max-height: 350px;
+  height: 350px;
+  width: 300px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #101419;
+}
+
+img.tile-image {
+  max-height: 200px;
+  overflow: hidden;
+}
+
+div.card h6 {
+  font-weight: 600;
+  padding-top: 10px;
+  }
+
+div.card p {
+  text-align: left;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+div.card a {
+  text-decoration: underline;
+  color: #476C9B
+}
+
+div.card a:hover {
+  color: #984447;
+}
