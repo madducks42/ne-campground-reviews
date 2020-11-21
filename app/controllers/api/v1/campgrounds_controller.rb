@@ -27,6 +27,15 @@ class Api::V1::CampgroundsController < ApiController
     render json: Campground.find(params[:id]), serializer: CampgroundShowSerializer
   end
 
+  def create
+    campground = Campground.new(campground_params)
+    if campground.save
+      render json: campground
+    else
+      render json: { errors: campground.errors.full_messages }
+    end 
+  end
+
   def edit
     render json: Campground.find(params[:id]), serializer: CampgroundUpdateSerializer
   end
@@ -40,15 +49,6 @@ class Api::V1::CampgroundsController < ApiController
       render json: { errors: campground.errors.full_messages }
     end 
     
-  end
-
-  def create
-    campground = Campground.new(campground_params)
-    if campground.save
-      render json: campground
-    else
-      render json: { errors: campground.errors.full_messages }
-    end 
   end
 
   def destroy

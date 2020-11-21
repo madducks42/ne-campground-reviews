@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,900;1,200;1,300;1,400;1,600;1,900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/e961c52d73.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class='content'>
@@ -48,8 +49,7 @@
       <h3>&copy; NE Campground Reviews</h3>
     </div>
 
-  <%= javascript_include_tag 'application' %>
-  <%# <%= javascript_include_tag 'application', 'lightbox' %> 
+  <%= javascript_include_tag 'application' %> 
   
   <%- if Rails.env.development? || Rails.env.test? -%> 
     <%= javascript_tag do %>
