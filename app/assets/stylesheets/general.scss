@@ -1,118 +1,138 @@
+// Color Scheme
 .color-scheme-white {
-  color: #F7F9FB;
+  color: #f7f9fb;
 }
+
 .color-scheme-black {
   color: #101419;
 }
+
 .color-scheme-red {
   color: #984447;
 }
+
 .color-scheme-medium-blue {
-  color: #476C9B;
+  color: #476c9b;
 }
+
 .color-scheme-green {
-  color: #98B9AB;
+  color: #98b9ab;
 }
+
 .color-scheme-yellow {
-  color: #ED9905;
+  color: #ed9905;
 }
 
 .color-scheme-purple {
-  color: #413C58;
-}
-.color-scheme-light-blue {
-  color: #ADD9F4;
+  color: #413c58;
 }
 
+// General Page Setup
 html {
   font-size: 62.5%;
   height: 100%;
   position: relative;
   margin: 0px;
+  width: 100%;
 }
 
 body {
-  background-color: #F7F9FB;
-  font-family: 'Source Serif Pro', serif;
+  background-color: #476C9B;
+  font-family: "Source Serif Pro", serif;
   font-size: 1.4rem;
   color: #101419;
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
 }
 
 .content {
   flex: 1 0 auto;
+  width: 100%;
 }
 
+.grid-container.full {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+// General Font Style
 h1 {
   font-size: 2.8rem;
-  font-family: 'Source Serif Pro', serif;
+  font-family: "Source Serif Pro", serif;
 }
 
 h2 {
   font-size: 2.6rem;
-  font-family: 'Source Serif Pro', serif;
+  font-family: "Source Serif Pro", serif;
 }
 
 h3 {
   font-size: 2.4rem;
-  font-family: 'Source Serif Pro', serif;
+  font-family: "Source Serif Pro", serif;
 }
 
 h4 {
   font-size: 2.2rem;
-  font-family: 'Source Serif Pro', serif;
+  font-family: "Source Serif Pro", serif;
 }
 
 h5 {
-  font-size: 2.0rem;
-  font-family: 'Source Serif Pro', serif;
+  font-size: 2rem;
+  font-family: "Source Serif Pro", serif;
 }
 
 h6 {
   font-size: 1.8rem;
   font-weight: 800;
-  font-family: 'Source Serif Pro', serif;
+  font-family: "Source Serif Pro", serif;
 }
 
 a {
-  font-family: 'Source Serif Pro', serif;
+  font-family: "Source Serif Pro", serif;
   font-size: 1.8rem;
-  color: #F7F9FB;
+  color: #f7f9fb;
 }
 
 a:hover {
-  color: #F7F9FB;
+  color: #f7f9fb;
   text-decoration: underline;
 }
 
-.center-text {
-  text-align: center;
+li {
+  font-family: "Source Serif Pro", serif;
+  font-size: 1.8rem;
 }
 
 // Button styles
-.button, .button:active {
-  font-family: 'Source Serif Pro', serif;
+.button,
+.button:active {
+  font-family: "Source Serif Pro", serif;
   font-size: 1.8rem;
-  margin: 0px;
+
+  margin: 5px 0px 0px 0px;
   padding: 10px;
   height: 40px;
   width: fit-content;
   border-radius: 2px;
   background-color: #984447;
-  color: #F7F9FB;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out
+  color: #f7f9fb;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
 }
 
 .button:hover {
-  background-color: #ED9905;
-  color: #F7F9FB;
-  font-family: 'Source Serif Pro', serif;
+  background-color: #ed9905;
+  color: #f7f9fb;
+  font-family: "Source Serif Pro", serif;
   font-size: 1.8rem;
 }
 
-// Admin related links (i.e. Update/Delete Campground)
+.button:focus {
+  background-color: #984447;
+}
+
+// Admin Related Links (i.e. Update/Delete Campground)
 div.grid-x.grid-margin-x.admin-flex {
   display: flex;
   justify-content: center;
@@ -120,7 +140,7 @@ div.grid-x.grid-margin-x.admin-flex {
 }
 
 a.admin-link {
-  font-family: 'Source Serif Pro', serif;
+  font-family: "Source Serif Pro", serif;
   font-size: 1.8rem;
   margin-left: 10px;
   padding: 10px;
@@ -128,14 +148,14 @@ a.admin-link {
   width: fit-content;
   border-radius: 2px;
   background-color: #984447;
-  color: #F7F9FB;
+  color: #f7f9fb;
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
 }
 
 a.admin-link:hover {
-  background-color: #ED9905;
-  color: #F7F9FB;
-  font-family: 'Source Serif Pro', serif;
+  background-color: #ed9905;
+  color: #f7f9fb;
+  font-family: "Source Serif Pro", serif;
   font-size: 1.8rem;
 }
 
@@ -147,9 +167,9 @@ a.admin-link:hover {
 }
 
 // Generic Flexblox Style
-
 .flex-row {
   display: flex;
+  justify-content: center;
   width: 100%;
 }
 
@@ -157,4 +177,19 @@ a.admin-link:hover {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+// Reusuable General Settings
+.center-text {
+  text-align: center;
+}
+
+.callout {
+  // background-color: #F7F9FB;
+  border: 1px solid #ADB5BD;
+  margin: 0px;
+}
+
+// Responsive Design Section
+@media screen and (max-width: 640px){
 }

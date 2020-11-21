@@ -72,7 +72,7 @@ const CampgroundIndexContainer = () => {
 
   return (
     <div className="grid-container full">
-      <div className="grid-x grid-margin-x">
+      <div className="grid-x">
         <div className="cell small-6 medium-4 large-3 left-nav-bar">
           <ul className="menu left-nav-bar nav-flex">
             <CampgroundSearchBar />

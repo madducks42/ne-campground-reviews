@@ -9,26 +9,27 @@
 </head>
 <body>
   <div class='content'>
-    <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
-      <button class="menu-icon" type="button" data-toggle="example-menu"></button>
-      <div class="title-bar-title">Menu</div>
-    </div>
-
     <div class="top-bar" id="example-menu">
       <div class="top-bar-left">
-        <ul class="menu nav-flex">
-          <img class="logo" src='/images/logo.png'>
-          <div class="menu-title"><a href="/">Campground Reviews</a></div>
-        </ul>
+        <img class="logo" src='/images/logo.png'>
+        <div class="menu-title"><a href="/">NE Campground Reviews</a></div>
       </div>
       <div class="top-bar-right">
-        <ul class="menu">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="has-submenu menu-hover">
+            <a class="header-nav-buttons" href="#0">Menu</a>
+            <ul class="submenu menu vertical" data-submenu>
+              <li><a href="#0">One</a></li>
+              <li><a href="#0">Two</a></li>
+              <li><a href="#0">Three</a></li>
+            </ul>
+          </li>
           <%- if current_user -%>
-            <li><%= link_to 'Profile', user_path(current_user), class: 'devise-links' %></li>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'devise-links' %></li>
+            <li><%= link_to 'Profile', user_path(current_user), class: 'header-nav-buttons' %></li>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'header-nav-buttons' %></li>
           <%- else -%>
-            <li><%= link_to 'Sign In', new_user_session_path, class: 'devise-links' %></li>
-            <li><%= link_to 'Sign Up', new_user_registration_path, class: 'devise-links' %></li>
+            <li><%= link_to 'Sign In', new_user_session_path, class: 'header-nav-buttons' %></li>
+            <li><%= link_to 'Sign Up', new_user_registration_path, class: 'header-nav-buttons' %></li>
           <%- end -%>
         </ul>
       </div>
@@ -44,7 +45,7 @@
 
     </div>
     <div class="footer">
-      <h3>&copy; Campground Reviews</h3>
+      <h3>&copy; NE Campground Reviews</h3>
     </div>
 
   <%= javascript_include_tag 'application' %>

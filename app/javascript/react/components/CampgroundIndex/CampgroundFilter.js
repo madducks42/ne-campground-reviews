@@ -15,10 +15,10 @@ const CampgroundFilter = (props) => {
     bathrooms: false,
     showers: false
   });
-  
+
   useEffect(() => {
     props.filterCampgrounds(filterItems);
-  }, [filterItems]); // Only re-run the effect if count changes
+  }, [filterItems]); 
 
   const handleInputChange = (event) => {
     const target = event.target;
@@ -49,8 +49,8 @@ const CampgroundFilter = (props) => {
   }
   
     return (
-      <div className='callout filter-container'>
-        <h2>Filter By Location:</h2>
+      <div className='filter-container'>
+        <h2>Display Only:</h2>
         <div className='filter-items'>  
           <label className='checkbox-label'>
             MA:
@@ -98,7 +98,7 @@ const CampgroundFilter = (props) => {
               onChange={handleInputChange} />
           </label>
         </div>
-        <h2>Filter By Amenities:</h2>
+        <br />
         <div className='filter-items'>  
           <label className='checkbox-label'>
             Dogs Allowed:
