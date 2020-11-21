@@ -16,8 +16,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       post 'campgrounds/search', to: 'campgrounds#search'
       post 'campgrounds/filter', to: 'campgrounds#filter'
+      post 'users/favorite', to: 'users#favorite'
       
-      resources :users, only: [:show]
+      resources :users, only: [:show, :destroy]
       resources :campgrounds, only: [:index, :show, :create, :edit, :update, :destroy] do
         resources :reviews, only: [:create]
         resources :campground_images, only: [:create, :edit, :update, :destroy]

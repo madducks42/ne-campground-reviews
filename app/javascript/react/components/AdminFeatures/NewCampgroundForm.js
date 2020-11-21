@@ -4,7 +4,7 @@ import _ from 'lodash'
 
 import ErrorList from '../ErrorList'
 
-const NewCampgroundForm = (props) => {
+const NewCampgroundForm = () => {
   let defaultFields = {
     name: '',
     caption: '',
@@ -100,7 +100,7 @@ const NewCampgroundForm = (props) => {
             name='name'
             id='name'
             type='text'
-            onChange={handleChange}
+            onBlur={handleChange}
             value={newCampground.name}
             className='campground-form'
           />
@@ -111,7 +111,7 @@ const NewCampgroundForm = (props) => {
             name='caption'
             id='caption'
             type='text'
-            onChange={handleChange}
+            onBlur={handleChange}
             value={newCampground.caption}
             className='campground-form'
           />
@@ -122,14 +122,14 @@ const NewCampgroundForm = (props) => {
             name='description'
             id='description'
             type='text'
-            onChange={handleChange}
+            onBlur={handleChange}
             value={newCampground.description}
             className='campground-form'
           />
         </label>
         <label>
           Location:
-          <select className='campground-form' name='location' value={newCampground.location} onChange={handleChange}>
+          <select className='campground-form' name='location' value={newCampground.location} onBlur={handleChange}>
             <option className='campground-form' value={null}>--</option>
             <option className='campground-form' value='Vermont'>Vermont</option>
             <option className='campground-form' value='Massachusetts'>Massachusetts</option>
@@ -144,14 +144,14 @@ const NewCampgroundForm = (props) => {
             name='campground_link'
             id='campground_link'
             type='text'
-            onChange={handleChange}
+            onBlur={handleChange}
             value={newCampground.campground_link}
             className='campground-form'
           />
         </label>
         <label>
           Dogs Allowed:
-          <select className='campground-form' name='dogs_allowed' value={newCampground.dogs_allowed} onChange={handleChange}>
+          <select className='campground-form' name='dogs_allowed' value={newCampground.dogs_allowed} onBlur={handleChange}>
             <option className='campground-form' value={null}>--</option>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
@@ -159,7 +159,7 @@ const NewCampgroundForm = (props) => {
         </label>
         <label>
           Electric Hookups:
-          <select className='campground-form' name='electric_hookups' value={newCampground.electric_hookups} onChange={handleChange}>
+          <select className='campground-form' name='electric_hookups' value={newCampground.electric_hookups} onBlur={handleChange}>
             <option className='campground-form' value={null}>--</option>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
@@ -167,7 +167,7 @@ const NewCampgroundForm = (props) => {
         </label>
         <label>
           Water Hookups:
-          <select className='campground-form' name='water_hookups' value={newCampground.water_hookups} onChange={handleChange}>
+          <select className='campground-form' name='water_hookups' value={newCampground.water_hookups} onBlur={handleChange}>
             <option className='campground-form' value={null}>--</option>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
@@ -175,7 +175,7 @@ const NewCampgroundForm = (props) => {
         </label>
         <label>
           Potable Water:
-          <select className='campground-form' name='potable_water' value={newCampground.potable_water} onChange={handleChange}>
+          <select className='campground-form' name='potable_water' value={newCampground.potable_water} onBlur={handleChange}>
             <option className='campground-form' value={null}>--</option>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
@@ -183,7 +183,7 @@ const NewCampgroundForm = (props) => {
         </label>
         <label>
           Dump Station:
-          <select className='campground-form' name='dump_station' value={newCampground.dump_station} onChange={handleChange}>
+          <select className='campground-form' name='dump_station' value={newCampground.dump_station} onBlur={handleChange}>
             <option className='campground-form' value={null}>--</option>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
@@ -191,7 +191,7 @@ const NewCampgroundForm = (props) => {
         </label>
         <label>
           Bathrooms:
-          <select className='campground-form' name='bathrooms' value={newCampground.bathrooms} onChange={handleChange}>
+          <select className='campground-form' name='bathrooms' value={newCampground.bathrooms} onBlur={handleChange}>
             <option className='campground-form' value={null}>--</option>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>
@@ -199,7 +199,7 @@ const NewCampgroundForm = (props) => {
         </label>
         <label>
           Showers:
-          <select className='campground-form' name='showers' value={newCampground.showers} onChange={handleChange}>
+          <select className='campground-form' name='showers' value={newCampground.showers} onBlur={handleChange}>
             <option className='campground-form' value={null}>--</option>
             <option className='campground-form' value={true}>Yes</option>
             <option className='campground-form' value={false}>No</option>

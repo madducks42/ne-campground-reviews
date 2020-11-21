@@ -190,11 +190,50 @@ const CampgroundShowContainer = (props) => {
   let favoriteMessage = "";
   if (favorite === true) {
     favoriteIcon = "fas fa-heart favorite has-tip top";
-    favoriteMessage = "Campground marked as favorite"
+    favoriteMessage = "Campground marked as favorite";
   } else {
     favoriteIcon = "fas fa-heart not-favorite has-tip top";
-    favoriteMessage = "Mark campground as favorite"
+    favoriteMessage = "Mark campground as favorite";
   }
+
+  let favoriteInfo = {};
+  const onClickFavoriteHandler = (event) => {
+    event.preventDefault();
+    favoriteInfo = {
+      campgroundID: event.currentTarget.id,
+      favoriteStatus: event.currentTarget.value,
+    };
+    setCampgroundFavorite(favoriteInfo);
+  };
+
+  const setCampgroundFavorite = (payload) => {
+    fetch(`/api/v1/users/favorite`, {
+      credentials: "same-origin",
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then((body) => {
+        if (body.favoriteCampground === true) {
+          setFavorite(true)
+        } else if (body.favoriteCampground === false) {
+          setFavorite(false)
+        }
+      })
+      .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  };
 
   return (
     <div className="grid-container full flex-column">
@@ -218,14 +257,27 @@ const CampgroundShowContainer = (props) => {
                 />
               </div>
               <div>
-                <i
+                <button
+                  type="button"
+                  value={`${favorite}`}
+                  id={`${campground.id}`}
                   className={`${favoriteIcon}`}
                   data-tooltip
                   aria-haspopup="true"
                   data-click-open="false"
                   data-disable-hover="false"
                   title={`${favoriteMessage}`}
-                ></i>
+                  onClick={onClickFavoriteHandler}
+                ></button>
+                {/* <i
+                  className={`${favoriteIcon}`}
+                  data-tooltip
+                  aria-haspopup="true"
+                  data-click-open="false"
+                  data-disable-hover="false"
+                  title={`${favoriteMessage}`}
+                  onClick={onClickFavoriteHandler}
+                ></i> */}
               </div>
             </div>
             <div>
