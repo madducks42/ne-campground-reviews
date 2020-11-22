@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const UserReviewTile = (props) => {
   // debugger;
   return (
-    <div className="callout">
+    <div className="review-tile-container">
       <h2>
         <Link
           className="campround-link"

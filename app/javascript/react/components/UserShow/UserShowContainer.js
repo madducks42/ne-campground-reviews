@@ -11,6 +11,7 @@ const UserShowContainer = (props) => {
     lastName: "",
     username: "",
     email: "",
+    accountCreated: "",
   });
   const [userReviews, setUserReviews] = useState([]);
   const [userFavorites, setUserFavorites] = useState([]);
@@ -35,6 +36,7 @@ const UserShowContainer = (props) => {
           lastName: body.last_name,
           username: body.username,
           email: body.email,
+          accountCreated: body.accountCreated,
         });
 
         setUserReviews(body.reviews);
@@ -57,7 +59,7 @@ const UserShowContainer = (props) => {
   });
 
   let userReviewsArray = [];
-  let reviewMessage = "Here are the reviews you've posted so far!";
+  let reviewMessage = "Your Reviews:";
 
   if (userReviews) {
     userReviewsArray = userReviews.map((review) => {
@@ -77,16 +79,18 @@ const UserShowContainer = (props) => {
   }
 
   return (
-    <div className="grid-container show-style">
+    <div className="grid-container full show-style">
       <div className="user-show-container">
         <UserShowTile userInfo={userInfo} />
-      </div>
-      <h2 className="center-text">Favorite Campgrounds</h2>
-      <div className="user-favorites-container">{campgroundTiles}</div>
-      <h2 className="center-text">{reviewMessage}</h2>
-      <div className="user-reviews-container">
-        <br />
-        {userReviewsArray}
+        <div className="user-favorites-container callout">
+          <h2 className="center-text">Favorite Campgrounds</h2>
+          <div className="flex-row">{campgroundTiles}</div>
+        </div>
+        <h2 className="center-text">{reviewMessage}</h2>
+        <div className="user-reviews-container">
+          <br />
+          {userReviewsArray}
+        </div>
       </div>
     </div>
   );

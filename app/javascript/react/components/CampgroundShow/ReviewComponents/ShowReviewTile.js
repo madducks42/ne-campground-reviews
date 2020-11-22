@@ -1,5 +1,5 @@
-import React from 'react'
-import _ from 'lodash'
+import React from "react";
+import _ from "lodash";
 
 const ShowReviewTile = (props) => {
   let buttonChangeGroup = null;
@@ -9,7 +9,7 @@ const ShowReviewTile = (props) => {
       <>
         <button
           type="button"
-          value='Edit'
+          value="Edit"
           className="button"
           id="edit-review"
           onClick={props.onEditClickHandler}
@@ -29,7 +29,7 @@ const ShowReviewTile = (props) => {
   }
 
   return (
-    <div className='callout'>
+    <div className="callout">
       <h6>{props.review.title}</h6>
       <p>{props.review.body}</p>
       <p>Rating: {props.review.rating}</p>
@@ -38,4 +38,4 @@ const ShowReviewTile = (props) => {
   );
 };
 
-export default ShowReviewTile
+export default ShowReviewTile;
