@@ -27,7 +27,7 @@ class ReviewSerializer < ActiveModel::Serializer
   end
 
   def userIsOwner
-    if current_user.id == object.user_id
+    if current_user && current_user.id == object.user_id
       return true
     else 
       return false
