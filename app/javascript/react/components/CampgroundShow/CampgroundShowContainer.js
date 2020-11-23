@@ -269,15 +269,6 @@ const CampgroundShowContainer = (props) => {
                   title={`${favoriteMessage}`}
                   onClick={onClickFavoriteHandler}
                 ></button>
-                {/* <i
-                  className={`${favoriteIcon}`}
-                  data-tooltip
-                  aria-haspopup="true"
-                  data-click-open="false"
-                  data-disable-hover="false"
-                  title={`${favoriteMessage}`}
-                  onClick={onClickFavoriteHandler}
-                ></i> */}
               </div>
             </div>
             <div>
@@ -325,8 +316,8 @@ const CampgroundShowContainer = (props) => {
         </div>
         <div className="grid-x grid-margin-x reviews-container">
           <div className="cell">
-            <h2>Average User Rating: {averageRatingMessage}</h2>
-            <h2>User Reviews: {noReviewsMessage}</h2>
+            <h2>Average Member Rating: {averageRatingMessage}</h2>
+            <h2>Member Reviews: {noReviewsMessage}</h2>
             <ReviewsContainer
               reviews={reviews}
               userIsAdmin={userIsAdmin}

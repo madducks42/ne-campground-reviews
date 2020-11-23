@@ -12,7 +12,6 @@ has_many :reviews
 has_many :campgrounds, through: :favorites
 
 def account_created
-  # binding.pry
   return object.created_at.strftime("%B %Y")
 end
 

@@ -1,9 +1,7 @@
 import React from "react";
-import _ from "lodash";
 
 const ShowReviewTile = (props) => {
   let buttonChangeGroup = null;
-
   if (props.review.userIsAdmin) {
     buttonChangeGroup = (
       <>
@@ -29,11 +27,16 @@ const ShowReviewTile = (props) => {
   }
 
   return (
-    <div className="callout">
-      <h6>{props.review.title}</h6>
-      <p>{props.review.body}</p>
-      <p>Rating: {props.review.rating}</p>
-      {buttonChangeGroup}
+    <div className="callout review-tile">
+      <h5>{props.review.title}</h5>
+      <div className="callout">
+        <p>{props.review.body}</p>
+        <br />
+        <p>Rating: {props.review.rating}</p>
+        <br />
+      </div>
+        <p>Created by {props.review.ownerUsername} on {props.review.reviewCreated}</p>
+        {buttonChangeGroup}
     </div>
   );
 };
