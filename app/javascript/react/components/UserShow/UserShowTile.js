@@ -11,6 +11,9 @@ const UserShowTile = (props) => {
         <strong>Full Name:</strong>  {props.userInfo.firstName} {props.userInfo.lastName}
       </h4>
       <h4><strong>Email:</strong>  {props.userInfo.email}</h4>
+      <h4>
+        <strong>Member Since:</strong>  {props.userInfo.accountCreated}
+      </h4>
     </div>
   );
 };

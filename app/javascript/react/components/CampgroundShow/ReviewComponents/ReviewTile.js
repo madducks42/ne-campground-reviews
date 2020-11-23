@@ -7,21 +7,21 @@ const ReviewTile = (props) => {
   const [showEditTile, setShowEditTile] = useState(false);
   const [showDeleteTile, setShowDeleteTile] = useState(false);
 
-  const onEditClickHandler = (event) => {
+  const onEditClickHandler = () => {
     setShowEditTile(true);
     setShowDeleteTile(false);
   };
 
-  const onDeleteClickHandler = (event) => {
+  const onDeleteClickHandler = () => {
     setShowDeleteTile(true);
     setShowEditTile(false);
   };
 
-  const onDiscardClickHandler = (event) => {
+  const onDiscardClickHandler = () => {
     setShowEditTile(false);
   };
 
-  const onCancelDeleteClickHandler = (event) => {
+  const onCancelDeleteClickHandler = () => {
     setShowDeleteTile(false);
   };
 
@@ -30,8 +30,8 @@ const ReviewTile = (props) => {
     props.editReview(formPayLoad);
   };
 
-  const onConfirmDeleteClickHandler = (event) => {
-    props.deleteReview(event);
+  const onConfirmDeleteClickHandler = () => {
+    props.deleteReview();
   };
 
   let displayTile = null;

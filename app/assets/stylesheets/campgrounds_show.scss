@@ -126,6 +126,10 @@ div.grid-x.grid-margin-x.reviews-container {
   border-radius: 10px;
 }
 
+.callout.review-tile {
+  margin-bottom: 20px;
+}
+
 //Errors
 div.callout.alert, div.callout.alert li {
   background-color: #984447;
@@ -135,7 +139,7 @@ div.callout.alert, div.callout.alert li {
 .paragraph-format {
   white-space: pre-wrap;
   font-family: 'Source Serif Pro', serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 // Buttons
