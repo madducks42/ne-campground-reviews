@@ -10,13 +10,12 @@ import ReviewForm from "./ReviewForm";
 import ReviewsContainer from "./ShowComponents/ReviewsContainer";
 import ErrorList from "../ErrorList";
 
-import getCampgroundData from "./FetchComponents/CampgroundData";
-import addNewReview from "./FetchComponents/AddNewReview";
+import { getCampgroundData } from "./FetchComponents/CampgroundData";
+import { addNewReviewFetch } from "./FetchComponents/ReviewFetches";
 
 const CampgroundShowContainer = (props) => {
   const id = props.match.params.id;
 
-  const [newReview, setNewReview] = useState(false);
   const [campground, setCampground] = useState({});
   const [reviews, setReviews] = useState([]);
   const [favorite, setFavorite] = useState(false);
@@ -62,48 +61,14 @@ const CampgroundShowContainer = (props) => {
     });
   }, []);
 
-  const newReviewData = (reviewReceived) => {
-    setNewReview(reviewReceived);
+  const addNewReview = (newReview) => {
+    addNewReviewFetch(newReview);
+    if (newReview.errors) {
+      setErrors(newReview.errors);
+    } else {
+      setReviews([...reviews, newReview]);
+    }
   };
-
-  if (newReview === true) {
-    addNewReview().then((body) => {
-      if (body.errors) {
-        setErrors(body.errors);
-      } else {
-        setReviews([...reviews, body]);
-      }
-    });
-  }
-
-  // const addNewReview = (formData) => {
-  //   fetch(`/api/v1/campgrounds/${id}/reviews`, {
-  //     method: "POST",
-  //     body: JSON.stringify(formData),
-  //     credentials: "same-origin",
-  //     headers: {
-  //       Accept: "application/json",
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         return response.json();
-  //       } else {
-  //         let errorMessage = `${response.status} (${response.statusText})`,
-  //           error = new Error(errorMessage);
-  //         throw error;
-  //       }
-  //     })
-  //     .then((body) => {
-  //       if (body.errors) {
-  //         setErrors(body.errors);
-  //       } else {
-  //         setReviews([...reviews, body]);
-  //       }
-  //     })
-  //     .catch((error) => console.error(`Error in fetch: ${error.message}`));
-  // };
 
   const editReview = (payload) => {
     const campgroundId = payload.campgroundId;
@@ -183,7 +148,7 @@ const CampgroundShowContainer = (props) => {
       <ReviewForm
         addNewReview={addNewReview}
         id={id}
-        newReviewData={newReviewData}
+        // newReviewData={newReviewData}
       />
     );
   }
