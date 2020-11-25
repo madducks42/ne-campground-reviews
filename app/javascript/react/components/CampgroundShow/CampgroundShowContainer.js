@@ -11,6 +11,8 @@ import ReviewForm from "./ReviewForm";
 import ReviewsContainer from "./ShowComponents/ReviewsContainer";
 import ErrorList from "../ErrorList";
 
+import getCampgroundData from './FetchComponents/CampgroundData'
+
 const CampgroundShowContainer = (props) => {
   const [campground, setCampground] = useState({});
   const [reviews, setReviews] = useState([]);
@@ -34,17 +36,8 @@ const CampgroundShowContainer = (props) => {
 
   useEffect(() => {
     let id = props.match.params.id;
-    fetch(`/api/v1/campgrounds/${id}`)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then((body) => {
+    getCampgroundData(id)
+      .then(body => {
         setCampground(body);
         setReviews(body.reviews);
         setUserIsAdmin(body.userIsAdmin);
@@ -66,8 +59,7 @@ const CampgroundShowContainer = (props) => {
           date: body.weather.date,
         });
       })
-      .catch((error) => console.error(`Error in fetch: ${error.message}`));
-  }, []);
+  },[])
 
   const addNewReview = (formData) => {
     fetch(`/api/v1/campgrounds/${props.match.params.id}/reviews`, {
