@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import _ from "lodash";
 import ErrorList from '../ErrorList'
 
 const ReviewForm = (props) => {
@@ -6,7 +7,8 @@ const ReviewForm = (props) => {
     title: '',
     body: '',
     rating: '',
-    image: ''
+    image: '',
+    id: props.id
   });
 
   const [errors, setErrors] = useState({})
@@ -37,6 +39,7 @@ const ReviewForm = (props) => {
   const handleSubmit = event => {
     event.preventDefault();
     if (validForSubmission()) {
+      props.newReviewData(true)
       props.addNewReview(newReview);
       setNewReview({
         title: '',
@@ -72,7 +75,7 @@ const ReviewForm = (props) => {
       </label>
       <label>
           Rating:
-          <select className='campground-form' name='rating' value={newReview.rating} onChange={handleChange}>
+          <select className='campground-form' name='rating' value={newReview.rating} onChange={handleChange}onBlur={handleChange}>
             <option className='campground-form' value={null}>--</option>
             <option className='campground-form' value='1'>1</option>
             <option className='campground-form' value='2'>2</option>

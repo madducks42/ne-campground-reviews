@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import _ from "lodash";
 
 import ImagesTile from "./ShowComponents/ImagesTile";
 import DescriptionTile from "./ShowComponents/DescriptionTile";
@@ -11,9 +10,13 @@ import ReviewForm from "./ReviewForm";
 import ReviewsContainer from "./ShowComponents/ReviewsContainer";
 import ErrorList from "../ErrorList";
 
-import getCampgroundData from './FetchComponents/CampgroundData'
+import getCampgroundData from "./FetchComponents/CampgroundData";
+import addNewReview from "./FetchComponents/AddNewReview";
 
 const CampgroundShowContainer = (props) => {
+  const id = props.match.params.id;
+
+  const [newReview, setNewReview] = useState(false);
   const [campground, setCampground] = useState({});
   const [reviews, setReviews] = useState([]);
   const [favorite, setFavorite] = useState(false);
@@ -35,60 +38,72 @@ const CampgroundShowContainer = (props) => {
   });
 
   useEffect(() => {
-    let id = props.match.params.id;
-    getCampgroundData(id)
-      .then(body => {
-        setCampground(body);
-        setReviews(body.reviews);
-        setUserIsAdmin(body.userIsAdmin);
-        setFavorite(body.isFavorite);
-        if (body.currentUser != null) {
-          setCurrentUser(body.currentUser);
-        }
-        setWeather({
-          name: body.name,
-          description: body.weather.description,
-          icon: body.weather.icon,
-          conditions: body.weather.conditions,
-          currentTemp: body.weather.temp,
-          highTemp: body.weather.high,
-          lowTemp: body.weather.low,
-          humidity: body.weather.humidity,
-          wind: body.weather.wind,
-          location: body.weather.location,
-          date: body.weather.date,
-        });
-      })
-  },[])
+    getCampgroundData(id).then((body) => {
+      setCampground(body);
+      setReviews(body.reviews);
+      setUserIsAdmin(body.userIsAdmin);
+      setFavorite(body.isFavorite);
+      if (body.currentUser != null) {
+        setCurrentUser(body.currentUser);
+      }
+      setWeather({
+        name: body.name,
+        description: body.weather.description,
+        icon: body.weather.icon,
+        conditions: body.weather.conditions,
+        currentTemp: body.weather.temp,
+        highTemp: body.weather.high,
+        lowTemp: body.weather.low,
+        humidity: body.weather.humidity,
+        wind: body.weather.wind,
+        location: body.weather.location,
+        date: body.weather.date,
+      });
+    });
+  }, []);
 
-  const addNewReview = (formData) => {
-    fetch(`/api/v1/campgrounds/${props.match.params.id}/reviews`, {
-      method: "POST",
-      body: JSON.stringify(formData),
-      credentials: "same-origin",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then((body) => {
-        if (body.errors) {
-          setErrors(body.errors);
-        } else {
-          setReviews([...reviews, body]);
-        }
-      })
-      .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  const newReviewData = (reviewReceived) => {
+    setNewReview(reviewReceived);
   };
+
+  if (newReview === true) {
+    addNewReview().then((body) => {
+      if (body.errors) {
+        setErrors(body.errors);
+      } else {
+        setReviews([...reviews, body]);
+      }
+    });
+  }
+
+  // const addNewReview = (formData) => {
+  //   fetch(`/api/v1/campgrounds/${id}/reviews`, {
+  //     method: "POST",
+  //     body: JSON.stringify(formData),
+  //     credentials: "same-origin",
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         return response.json();
+  //       } else {
+  //         let errorMessage = `${response.status} (${response.statusText})`,
+  //           error = new Error(errorMessage);
+  //         throw error;
+  //       }
+  //     })
+  //     .then((body) => {
+  //       if (body.errors) {
+  //         setErrors(body.errors);
+  //       } else {
+  //         setReviews([...reviews, body]);
+  //       }
+  //     })
+  //     .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  // };
 
   const editReview = (payload) => {
     const campgroundId = payload.campgroundId;
@@ -164,7 +179,13 @@ const CampgroundShowContainer = (props) => {
 
   let reviewForm;
   if (campground.userSignedIn) {
-    reviewForm = <ReviewForm addNewReview={addNewReview} />;
+    reviewForm = (
+      <ReviewForm
+        addNewReview={addNewReview}
+        id={id}
+        newReviewData={newReviewData}
+      />
+    );
   }
 
   let noReviewsMessage = "";
@@ -219,9 +240,9 @@ const CampgroundShowContainer = (props) => {
       })
       .then((body) => {
         if (body.favoriteCampground === true) {
-          setFavorite(true)
+          setFavorite(true);
         } else if (body.favoriteCampground === false) {
-          setFavorite(false)
+          setFavorite(false);
         }
       })
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
