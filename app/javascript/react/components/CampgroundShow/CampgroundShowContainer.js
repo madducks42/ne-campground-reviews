@@ -11,7 +11,10 @@ import ReviewsContainer from "./ShowComponents/ReviewsContainer";
 import ErrorList from "../ErrorList";
 
 import { getCampgroundData } from "./FetchComponents/CampgroundData";
-import { addNewReviewFetch } from "./FetchComponents/ReviewFetches";
+import {
+  addNewReviewFetch,
+  editedReviewFetch,
+} from "./FetchComponents/ReviewFetches";
 
 const CampgroundShowContainer = (props) => {
   const id = props.match.params.id;
@@ -70,40 +73,18 @@ const CampgroundShowContainer = (props) => {
     }
   };
 
-  const editReview = (payload) => {
-    const campgroundId = payload.campgroundId;
-    const reviewId = payload.reviewId;
-    fetch(`/api/v1/campgrounds/${campgroundId}/reviews/${reviewId}`, {
-      credentials: "same-origin",
-      method: "PATCH",
-      body: JSON.stringify(payload),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then((updatedReview) => {
-        if (!updatedReview.errors) {
-          let reviewIndex = reviews.findIndex(
-            (review) => review.id === updatedReview.id
-          );
-          let tempReviews = [...reviews];
-          tempReviews.splice(reviewIndex, 1, updatedReview);
-          setReviews(tempReviews);
-        } else if (updatedReview.errors) {
-          setErrors(updatedReview.errors);
-        }
-      })
-      .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  const editReview = (editedReview) => {
+    editedReviewFetch(editedReview);
+    if (editedReview.errors) {
+      setErrors(editedReview.errors);
+    } else {
+      let reviewIndex = reviews.findIndex(
+        (review) => review.id === editedReview.id
+      );
+      let tempReviews = [...reviews];
+      tempReviews.splice(reviewIndex, 1, editedReview);
+      setReviews(tempReviews);
+    }
   };
 
   const deleteReview = (payload) => {
