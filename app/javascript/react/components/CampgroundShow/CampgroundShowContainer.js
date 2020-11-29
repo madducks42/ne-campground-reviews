@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import _ from "lodash";
 
 import ImagesTile from "./ShowComponents/ImagesTile";
 import DescriptionTile from "./ShowComponents/DescriptionTile";
@@ -11,13 +10,24 @@ import ReviewForm from "./ReviewForm";
 import ReviewsContainer from "./ShowComponents/ReviewsContainer";
 import ErrorList from "../ErrorList";
 
+import { getCampgroundData } from "./FetchComponents/CampgroundData";
+import {
+  addNewReviewFetch,
+  editedReviewFetch,
+  deleteReviewFetch,
+} from "./FetchComponents/ReviewFetches";
+import { setCampgroundFavFetch } from "./FetchComponents/UserFetches";
+
 const CampgroundShowContainer = (props) => {
+  const id = props.match.params.id;
+
   const [campground, setCampground] = useState({});
   const [reviews, setReviews] = useState([]);
   const [favorite, setFavorite] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [userIsAdmin, setUserIsAdmin] = useState({});
   const [errors, setErrors] = useState({});
+  const [signInError, setSignInError] = useState("");
   const [weather, setWeather] = useState({
     name: "",
     description: "",
@@ -33,150 +43,79 @@ const CampgroundShowContainer = (props) => {
   });
 
   useEffect(() => {
-    let id = props.match.params.id;
-    fetch(`/api/v1/campgrounds/${id}`)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then((body) => {
-        setCampground(body);
-        setReviews(body.reviews);
-        setUserIsAdmin(body.userIsAdmin);
-        setFavorite(body.isFavorite);
-        if (body.currentUser != null) {
-          setCurrentUser(body.currentUser);
-        }
-        setWeather({
-          name: body.name,
-          description: body.weather.description,
-          icon: body.weather.icon,
-          conditions: body.weather.conditions,
-          currentTemp: body.weather.temp,
-          highTemp: body.weather.high,
-          lowTemp: body.weather.low,
-          humidity: body.weather.humidity,
-          wind: body.weather.wind,
-          location: body.weather.location,
-          date: body.weather.date,
-        });
-      })
-      .catch((error) => console.error(`Error in fetch: ${error.message}`));
+    getCampgroundData(id).then((body) => {
+      setCampground(body);
+      setReviews(body.reviews);
+      setUserIsAdmin(body.userIsAdmin);
+      setFavorite(body.isFavorite);
+      if (body.currentUser != null) {
+        setCurrentUser(body.currentUser);
+      }
+      setWeather({
+        name: body.name,
+        description: body.weather.description,
+        icon: body.weather.icon,
+        conditions: body.weather.conditions,
+        currentTemp: body.weather.temp,
+        highTemp: body.weather.high,
+        lowTemp: body.weather.low,
+        humidity: body.weather.humidity,
+        wind: body.weather.wind,
+        location: body.weather.location,
+        date: body.weather.date,
+      });
+    });
   }, []);
 
-  const addNewReview = (formData) => {
-    fetch(`/api/v1/campgrounds/${props.match.params.id}/reviews`, {
-      method: "POST",
-      body: JSON.stringify(formData),
-      credentials: "same-origin",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then((body) => {
-        if (body.errors) {
-          setErrors(body.errors);
-        } else {
-          setReviews([...reviews, body]);
-        }
-      })
-      .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  const addNewReview = (newReview) => {
+    addNewReviewFetch(newReview);
+    if (newReview.errors) {
+      setErrors(newReview.errors);
+    } else {
+      setReviews([...reviews, newReview]);
+    }
   };
 
-  const editReview = (payload) => {
-    const campgroundId = payload.campgroundId;
-    const reviewId = payload.reviewId;
-    fetch(`/api/v1/campgrounds/${campgroundId}/reviews/${reviewId}`, {
-      credentials: "same-origin",
-      method: "PATCH",
-      body: JSON.stringify(payload),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then((updatedReview) => {
-        if (!updatedReview.errors) {
-          let reviewIndex = reviews.findIndex(
-            (review) => review.id === updatedReview.id
-          );
-          let tempReviews = [...reviews];
-          tempReviews.splice(reviewIndex, 1, updatedReview);
-          setReviews(tempReviews);
-        } else if (updatedReview.errors) {
-          setErrors(updatedReview.errors);
-        }
-      })
-      .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  const editReview = (editedReview) => {
+    editedReviewFetch(editedReview);
+    if (editedReview.errors) {
+      setErrors(editedReview.errors);
+    } else {
+      let reviewIndex = reviews.findIndex(
+        (review) => review.id === editedReview.id
+      );
+      let tempReviews = [...reviews];
+      tempReviews.splice(reviewIndex, 1, editedReview);
+      setReviews(tempReviews);
+    }
   };
 
-  const deleteReview = (payload) => {
-    const campgroundId = payload.campgroundId;
-    const reviewId = payload.reviewId;
-
-    fetch(`/api/v1/campgrounds/${campgroundId}/reviews/${reviewId}`, {
-      credentials: "same-origin",
-      method: "DELETE",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then((removeReview) => {
-        if (!removeReview.errors) {
-          let reviewIndex = reviews.findIndex(
-            (review) => review.id === removeReview.id
-          );
-          let tempReviews = [...reviews];
-          tempReviews.splice(reviewIndex, 1);
-          setReviews(tempReviews);
-        } else if (removeReview.errors) {
-          setErrors(removeReview.errors);
-        }
-      })
-      .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  const deleteReview = (deletedReview) => {
+    deleteReviewFetch(deletedReview);
+    if (deletedReview.errors) {
+      setErrors(deletedReview.errors);
+    } else {
+      let reviewIndex = reviews.findIndex(
+        (review) => review.id === deletedReview.id
+      );
+      let tempReviews = [...reviews];
+      tempReviews.splice(reviewIndex, 1, deletedReview);
+      setReviews(tempReviews);
+    }
   };
 
   let reviewForm;
   if (campground.userSignedIn) {
-    reviewForm = <ReviewForm addNewReview={addNewReview} />;
+    reviewForm = (
+      <ReviewForm
+        addNewReview={addNewReview}
+        id={id}
+        // newReviewData={newReviewData}
+      />
+    );
   }
 
   let noReviewsMessage = "";
-
   if (reviews.length === 0) {
     noReviewsMessage = "No reviews yet.";
   }
@@ -205,34 +144,16 @@ const CampgroundShowContainer = (props) => {
     };
     setCampgroundFavorite(favoriteInfo);
   };
-
-  const setCampgroundFavorite = (payload) => {
-    fetch(`/api/v1/users/favorite`, {
-      credentials: "same-origin",
-      method: "POST",
-      body: JSON.stringify(payload),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then((body) => {
-        if (body.favoriteCampground === true) {
-          setFavorite(true)
-        } else if (body.favoriteCampground === false) {
-          setFavorite(false)
-        }
-      })
-      .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  
+  const setCampgroundFavorite = async (favorite) => {
+    favorite = await setCampgroundFavFetch(favorite);
+    if (favorite === true) {
+      setFavorite(true);
+    } else if (favorite === false) {
+      setFavorite(false);
+    } else {
+      setSignInError("You must be signed in to add favorites")
+    }
   };
 
   return (
@@ -256,7 +177,7 @@ const CampgroundShowContainer = (props) => {
                   showers={campground.showers}
                 />
               </div>
-              <div>
+              <div className="flex-column">
                 <button
                   type="button"
                   value={`${favorite}`}
@@ -269,6 +190,7 @@ const CampgroundShowContainer = (props) => {
                   title={`${favoriteMessage}`}
                   onClick={onClickFavoriteHandler}
                 ></button>
+                {signInError}
               </div>
             </div>
             <div>
