@@ -14,7 +14,9 @@ import { getCampgroundData } from "./FetchComponents/CampgroundData";
 import {
   addNewReviewFetch,
   editedReviewFetch,
+  deleteReviewFetch,
 } from "./FetchComponents/ReviewFetches";
+import { setCampgroundFavFetch } from "./FetchComponents/UserFetches";
 
 const CampgroundShowContainer = (props) => {
   const id = props.match.params.id;
@@ -25,6 +27,7 @@ const CampgroundShowContainer = (props) => {
   const [currentUser, setCurrentUser] = useState({});
   const [userIsAdmin, setUserIsAdmin] = useState({});
   const [errors, setErrors] = useState({});
+  const [signInError, setSignInError] = useState("");
   const [weather, setWeather] = useState({
     name: "",
     description: "",
@@ -87,40 +90,18 @@ const CampgroundShowContainer = (props) => {
     }
   };
 
-  const deleteReview = (payload) => {
-    const campgroundId = payload.campgroundId;
-    const reviewId = payload.reviewId;
-
-    fetch(`/api/v1/campgrounds/${campgroundId}/reviews/${reviewId}`, {
-      credentials: "same-origin",
-      method: "DELETE",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then((removeReview) => {
-        if (!removeReview.errors) {
-          let reviewIndex = reviews.findIndex(
-            (review) => review.id === removeReview.id
-          );
-          let tempReviews = [...reviews];
-          tempReviews.splice(reviewIndex, 1);
-          setReviews(tempReviews);
-        } else if (removeReview.errors) {
-          setErrors(removeReview.errors);
-        }
-      })
-      .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  const deleteReview = (deletedReview) => {
+    deleteReviewFetch(deletedReview);
+    if (deletedReview.errors) {
+      setErrors(deletedReview.errors);
+    } else {
+      let reviewIndex = reviews.findIndex(
+        (review) => review.id === deletedReview.id
+      );
+      let tempReviews = [...reviews];
+      tempReviews.splice(reviewIndex, 1, deletedReview);
+      setReviews(tempReviews);
+    }
   };
 
   let reviewForm;
@@ -135,7 +116,6 @@ const CampgroundShowContainer = (props) => {
   }
 
   let noReviewsMessage = "";
-
   if (reviews.length === 0) {
     noReviewsMessage = "No reviews yet.";
   }
@@ -164,34 +144,16 @@ const CampgroundShowContainer = (props) => {
     };
     setCampgroundFavorite(favoriteInfo);
   };
-
-  const setCampgroundFavorite = (payload) => {
-    fetch(`/api/v1/users/favorite`, {
-      credentials: "same-origin",
-      method: "POST",
-      body: JSON.stringify(payload),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then((body) => {
-        if (body.favoriteCampground === true) {
-          setFavorite(true);
-        } else if (body.favoriteCampground === false) {
-          setFavorite(false);
-        }
-      })
-      .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  
+  const setCampgroundFavorite = async (favorite) => {
+    favorite = await setCampgroundFavFetch(favorite);
+    if (favorite === true) {
+      setFavorite(true);
+    } else if (favorite === false) {
+      setFavorite(false);
+    } else {
+      setSignInError("You must be signed in to add favorites")
+    }
   };
 
   return (
@@ -215,7 +177,7 @@ const CampgroundShowContainer = (props) => {
                   showers={campground.showers}
                 />
               </div>
-              <div>
+              <div className="flex-column">
                 <button
                   type="button"
                   value={`${favorite}`}
@@ -228,6 +190,7 @@ const CampgroundShowContainer = (props) => {
                   title={`${favoriteMessage}`}
                   onClick={onClickFavoriteHandler}
                 ></button>
+                {signInError}
               </div>
             </div>
             <div>

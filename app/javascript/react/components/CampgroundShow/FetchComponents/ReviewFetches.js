@@ -32,7 +32,7 @@ export const editedReviewFetch = (editedReview) => {
   const campgroundId = editedReview.campgroundId;
   const reviewId = editedReview.reviewId;
   return fetch(`/api/v1/campgrounds/${campgroundId}/reviews/${reviewId}`, {
-    method: "POST",
+    method: "PATCH",
     body: JSON.stringify(editedReview),
     credentials: "same-origin",
     headers: {
@@ -55,6 +55,38 @@ export const editedReviewFetch = (editedReview) => {
         return editedReview.errors;
       } else {
         return editedReview;
+      }
+    })
+    .catch((error) => console.error(`Error in fetch: ${error.message}`));
+};
+
+export const deleteReviewFetch = (deletedReview) => {
+  const campgroundId = deletedReview.campgroundId;
+  const reviewId = deletedReview.reviewId;
+  return fetch(`/api/v1/campgrounds/${campgroundId}/reviews/${reviewId}`, {
+    method: "DELETE",
+    body: JSON.stringify(deletedReview),
+    credentials: "same-origin",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`;
+        let error = new Error(errorMessage);
+        throw error;
+      }
+    })
+    .then((response) => response.json())
+    .then((deletedReview) => {
+      if (deletedReview.errors) {
+        return deletedReview.errors;
+      } else {
+        return deletedReview;
       }
     })
     .catch((error) => console.error(`Error in fetch: ${error.message}`));
