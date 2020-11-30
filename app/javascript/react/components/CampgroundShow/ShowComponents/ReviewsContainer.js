@@ -9,6 +9,7 @@ const ReviewsContainer = (props) => {
         key={review.id}
         review={review}
         userIsAdmin={review.userIsAdmin}
+        userIsOwner={review.UserIsOwner}
         editReview={props.editReview}
         deleteReview={props.deleteReview}
       />

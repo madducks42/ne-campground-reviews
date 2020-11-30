@@ -90,8 +90,10 @@ const CampgroundShowContainer = (props) => {
     }
   };
 
-  const deleteReview = (deletedReview) => {
-    deleteReviewFetch(deletedReview);
+  const deleteReview = async (deletedReview) => {
+    debugger
+    deletedReview = await deleteReviewFetch(deletedReview);
+    debugger
     if (deletedReview.errors) {
       setErrors(deletedReview.errors);
     } else {

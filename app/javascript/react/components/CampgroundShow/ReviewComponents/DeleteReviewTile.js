@@ -3,6 +3,7 @@ import React from "react";
 const DeleteReviewTile = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
+    debugger
     let formPayLoad = { 
       reviewId: props.review.id,
       campgroundId: props.review.campground.id, 

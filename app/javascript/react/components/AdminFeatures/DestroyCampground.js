@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Redirect } from "react-router-dom"
-import ErrorList from '../ErrorList'
-import _ from 'lodash'
 
 const DestroyCampground = (props) => {
   const [currentCampground, setCurrentCampground] = useState({});
   const [shouldRedirect, setShouldRedirect] = useState(false);
 
   useEffect(() => {
+    debugger
     let id = props.match.params.id
     fetch(`/api/v1/campgrounds/${id}`)
     .then(response => {
@@ -15,7 +14,7 @@ const DestroyCampground = (props) => {
         return response.json()
       } else {
         let errorMessage = `${response.status} (${response.statusText})`,
-        error = new Errror(errorMessage)
+        error = new Error(errorMessage)
         throw error
       }
     })
@@ -26,6 +25,7 @@ const DestroyCampground = (props) => {
   }, []);
   
   const onClickDelete = event => {
+    debugger
     event.preventDefault()
     let id = props.match.params.id
     fetch(`/api/v1/campgrounds/${id}`, {
