@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import ErrorList from '../ErrorList'
 import { Redirect } from "react-router-dom"
+import _ from 'lodash'
+
+import ErrorList from "../HelperComponents/ErrorList"
 
 const UpdateCampgroundForm = (props) => {
   let defaultFields = {
@@ -30,7 +32,7 @@ const UpdateCampgroundForm = (props) => {
         return response.json()
       } else {
         let errorMessage = `${response.status} (${response.statusText})`,
-        error = new Errror(errorMessage)
+        error = new Error(errorMessage)
         throw error
       }
     })

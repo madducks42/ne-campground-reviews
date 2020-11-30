@@ -8,7 +8,7 @@ import AmenitiesTile from "./ShowComponents/AmenitiesTile";
 import OpenWeatherTile from "./ShowComponents/OpenWeatherTile";
 import ReviewForm from "./ReviewForm";
 import ReviewsContainer from "./ShowComponents/ReviewsContainer";
-import ErrorList from "../ErrorList";
+import ErrorList from "../HelperComponents/ErrorList";
 
 import { getCampgroundData } from "./FetchComponents/CampgroundData";
 import {

@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   get '/campgrounds/:id/update', to: 'homes#authenticated'
   get '/campgrounds/:id/addimages', to: 'homes#authenticated'
   get '/campgrounds/:id', to: 'homes#index'
+
   get '/users/:id', to: "homes#authenticated"
+
+  get '/aboutus', to: "homes#index"
   
   resources :users
 
