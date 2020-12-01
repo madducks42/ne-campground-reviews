@@ -1,71 +1,62 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+
 import MattressUpgrade from "./CamperMods/MattressUpgrade";
+import UnderBedStorage from "./CamperMods/UnderBedStorage";
 const CamperModsContainer = () => {
-  const [selectedSections, setSelectedSections] = useState([]);
   const sectionsData = [
     {
-      title: "Mattress Upgrade",
+      key: 0,
       id: "mattressUpgrade",
+      title: "Mattress Upgrade",
       body: (
         <div>
-          <p>Mattress Upgrade Section</p>
+          <MattressUpgrade />
         </div>
       ),
     },
     {
-      title: "Speaker Upgrade",
+      key: 1,
       id: "speakerUpgrade",
+      title: "Speaker Upgrade",
       body: (
         <div>
-          <p>Mattress Upgrade Section</p>
+          <UnderBedStorage />
         </div>
       ),
     },
   ];
-
-  // useEffect(() => {
-  //   setSelectedSections([])
-  // }, [//something needs to go here]);
-
+  const [visibility, setVisibility] = useState({
+    mattressUpgrade: false,
+    speakerUpgrade: false,
+  });
   const onClickHandler = (event) => {
     event.preventDefault();
-    let newSections;
     const id = event.currentTarget.id;
-    if (selectedSections.includes(id)) {
-      newSections = selectedSections.splice(selectedSections.indexOf(id, 1));
-      setSelectedSections(newSections);
-    } else {
-      newSections = selectedSections.push(id);
-      setSelectedSections(newSections);
-    }
-    console.log(selectedSections);
+    console.log(id);
+    setVisibility({
+      ...visibility,
+      [id]: !visibility[id],
+    });
   };
-  const sections = sectionsData.map((section) => {
-    const minusIcon = "fas fa-minus-square";
-    const plusIcon = "fas fa-plus-square";
-    if (selectedSections.includes(section.id)) {
+  const sectionsOutput = sectionsData.map((section) => {
+    if (visibility[section.id]) {
       return (
-        <div className="flex-row">
-          <h3>{section.title}</h3>
-          <button
-            type="button"
-            id={section.id}
-            className={minusIcon}
-            onClick={onClickHandler}
-          ></button>
-          {section.body}
+        <div className="callout">
+          <div className="flex-row" key={section.key}><h3>{section.title}</h3>
+            <button type="button" id={section.id} onClick={onClickHandler} className="fas fa-minus-square">
+            </button>
+          </div>
+          <div>
+            {section.body}
+          </div>
         </div>
       );
     } else {
       return (
-        <div className="flex-row">
+        <div className="flex-row callout" key={section.key}>
           <h3>{section.title}</h3>
-          <button
-            type="button"
-            id={section.id}
-            className={plusIcon}
-            onClick={onClickHandler}
-          ></button>
+          <button type="button" id={section.id} onClick={onClickHandler} className="fas fa-plus-square">
+          </button>
         </div>
       );
     }
@@ -77,7 +68,7 @@ const CamperModsContainer = () => {
         As much as we love the Wolf Pup (aka the &apos;Gray Ghost&apos;), there
         are some things that we tweaked...
       </p>
-      {sections}
+      {sectionsOutput}
     </div>
   );
 };
