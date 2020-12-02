@@ -37,7 +37,7 @@ html {
 }
 
 body {
-  background-color: #476C9B;
+  background-color: #f7f9fb;
   font-family: "Source Serif Pro", serif;
   font-size: 1.4rem;
   color: #101419;
@@ -85,14 +85,13 @@ h5 {
 }
 
 h6 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: "Source Serif Pro", serif;
 }
 
 p {
   font-family: "Source Serif Pro", serif;
   font-size: 1.8rem;
-
 }
 
 a {
@@ -196,10 +195,25 @@ a.admin-link:hover {
 
 .callout {
   // background-color: #F7F9FB;
-  border: 1px solid #ADB5BD;
+  border: 1px solid #adb5bd;
   margin: 0px;
 }
 
 // Responsive Design Section
-@media screen and (max-width: 640px){
+@media screen and (min-width: 1025px){
+  .grid-container {
+    max-width: 70%;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 641px) {
+  .grid-container {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .grid-container {
+    max-width: 90%;
+  }
 }

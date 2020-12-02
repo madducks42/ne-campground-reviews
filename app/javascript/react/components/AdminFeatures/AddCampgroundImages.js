@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import Dropzone from 'react-dropzone'
 import { Redirect } from "react-router-dom"
-import _ from 'lodash'
-import ErrorList from '../ErrorList'
+import ErrorList from "../HelperComponents/ErrorList"
 
 const AddCampgroundImages = (props) => {
   const [campgroundImages, setCampgroundImages] = useState([])
@@ -64,7 +63,7 @@ const AddCampgroundImages = (props) => {
             <section>
               <div className='dropzone-box' {...getRootProps()}>
                 <input {...getInputProps()} />
-                <p>Drag 'n' drop some files here, or click to select files</p>
+                <p>Drag and drop some files here, or click to select files</p>
               </div>
             </section>
           )}

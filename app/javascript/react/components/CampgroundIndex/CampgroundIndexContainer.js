@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import CampgroundSearchBar from "./CampgroundSearchBar";
 import CampgroundFilter from "./CampgroundFilter";
 import CampgroundTile from "../HelperComponents/CampgroundTile";
-import ErrorList from "../ErrorList";
+import ErrorList from "../HelperComponents/ErrorList";
 
 const CampgroundIndexContainer = () => {
   const [campgrounds, setCampgrounds] = useState([]);

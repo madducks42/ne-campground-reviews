@@ -3,7 +3,7 @@ import React from 'react'
 const ImagesTile = () => {
   
   return (
-    <div className="lightbox-container">
+    <div className="lightbox-container-show">
       <a href="/images/sample-gallery/image-1.jpg" data-lightbox="carousel" data-title="Campground Images">
         <img className ="galleryimage" src="/images/sample-gallery/image-1.jpg" alt="Campground"/>
       </a>
