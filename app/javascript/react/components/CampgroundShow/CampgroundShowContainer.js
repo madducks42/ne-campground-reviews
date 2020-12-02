@@ -90,10 +90,8 @@ const CampgroundShowContainer = (props) => {
     }
   };
 
-  const deleteReview = async (deletedReview) => {
-    debugger
-    deletedReview = await deleteReviewFetch(deletedReview);
-    debugger
+  const deleteReview = (deletedReview) => {
+    deleteReviewFetch(deletedReview);
     if (deletedReview.errors) {
       setErrors(deletedReview.errors);
     } else {
@@ -108,13 +106,7 @@ const CampgroundShowContainer = (props) => {
 
   let reviewForm;
   if (campground.userSignedIn) {
-    reviewForm = (
-      <ReviewForm
-        addNewReview={addNewReview}
-        id={id}
-        // newReviewData={newReviewData}
-      />
-    );
+    reviewForm = <ReviewForm addNewReview={addNewReview} id={id} />;
   }
 
   let noReviewsMessage = "";
@@ -146,7 +138,7 @@ const CampgroundShowContainer = (props) => {
     };
     setCampgroundFavorite(favoriteInfo);
   };
-  
+
   const setCampgroundFavorite = async (favorite) => {
     favorite = await setCampgroundFavFetch(favorite);
     if (favorite === true) {
@@ -154,7 +146,7 @@ const CampgroundShowContainer = (props) => {
     } else if (favorite === false) {
       setFavorite(false);
     } else {
-      setSignInError("You must be signed in to add favorites")
+      setSignInError("You must be signed in to add favorites");
     }
   };
 

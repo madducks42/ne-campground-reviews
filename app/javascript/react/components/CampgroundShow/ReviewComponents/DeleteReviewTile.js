@@ -3,13 +3,12 @@ import React from "react";
 const DeleteReviewTile = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    debugger
-    let formPayLoad = { 
+    let deletedReview = { 
       reviewId: props.review.id,
       campgroundId: props.review.campground.id, 
       review: props.review 
     };
-    props.deleteReview(formPayLoad);
+    props.deleteReview(deletedReview);
   };
 
   return (
