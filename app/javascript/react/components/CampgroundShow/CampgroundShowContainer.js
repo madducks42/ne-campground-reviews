@@ -67,17 +67,17 @@ const CampgroundShowContainer = (props) => {
     });
   }, []);
 
-  const addNewReview = (newReview) => {
-    addNewReviewFetch(newReview);
-    if (newReview.errors) {
-      setErrors(newReview.errors);
+  const addNewReview = async (newReview) => {
+    const addedReview = await addNewReviewFetch(newReview);
+    if (addedReview.errors) {
+      setErrors(addedReview.errors);
     } else {
-      setReviews([...reviews, newReview]);
+      setReviews([...reviews, addedReview]);
     }
   };
 
-  const editReview = (editedReview) => {
-    editedReviewFetch(editedReview);
+  const editReview = async (reviewToEdit) => {
+    const editedReview = await editedReviewFetch(reviewToEdit);
     if (editedReview.errors) {
       setErrors(editedReview.errors);
     } else {
@@ -90,8 +90,9 @@ const CampgroundShowContainer = (props) => {
     }
   };
 
-  const deleteReview = (deletedReview) => {
-    deleteReviewFetch(deletedReview);
+  const deleteReview = async (reviewToDelete) => {
+    debugger
+    const deletedReview = await deleteReviewFetch(reviewToDelete);
     if (deletedReview.errors) {
       setErrors(deletedReview.errors);
     } else {

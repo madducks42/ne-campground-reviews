@@ -30,8 +30,8 @@ const ReviewTile = (props) => {
     props.editReview(formPayLoad);
   };
 
-  const onConfirmDeleteClickHandler = () => {
-    props.deleteReview();
+  const onConfirmDeleteClickHandler = (reviewToDelete) => {
+    props.deleteReview(reviewToDelete);
   };
 
   let displayTile = null;
