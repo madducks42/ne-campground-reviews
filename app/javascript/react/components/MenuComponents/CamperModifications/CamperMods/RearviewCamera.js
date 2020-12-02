@@ -19,7 +19,7 @@ const RearviewCamera = () => {
         wired and wireless. Given the relatively short trailer, and the fact
         that I don&apos;t need <em>perfect</em> video here, I decided to go for
         the easier installation, and chose wireless. After shopping around, I
-        landed on
+        landed on{" "}
         <a
           href="https://www.amazon.com/gp/product/B07Q2GJGHS/"
           target="_blank"
@@ -38,7 +38,7 @@ const RearviewCamera = () => {
         don&apos;t use the outlet, so hardwiring didn&apos;t make sense for me.
         I originally tried to just set the display on the dash, resting it on
         the &quot;foot&quot; that came with it, but it frequently fell over.
-        Again, I didn&apos;t want to attach it to the car, so I found
+        Again, I didn&apos;t want to attach it to the car, so I found{" "}
         <a
           href="https://www.amazon.com/gp/product/B000U5TUWE/"
           target="_blank"
@@ -93,14 +93,14 @@ const RearviewCamera = () => {
       <p>
         The slightly more challenging part is making sure its water tight. When
         I removed the running light, I saw that it was sealed to the camper wall
-        with some putty. I little research showed that its a product like
+        with some putty. I little research showed that its a product like{" "}
         <a
           href="https://www.amazon.com/gp/product/B0070O93HA/"
           target="_blank"
           rel="noreferrer"
         >
           this.
-        </a>
+        </a>{" "}
         And this is what I used to seal it all around the camera power wire.
         Stating the obvious, if you do this, run the wire out of the bottom edge
         of the light to ensure water doesn&apos;t run down the wire into the
@@ -113,21 +113,21 @@ const RearviewCamera = () => {
         In an attempt to improve this, I made two changes. The first, was I
         upgraded the antenna attached to the monitor. The antenna on the monitor
         and the camera were these little 6&quot; whip antennas. And I replaced
-        the camera antenna with
+        the camera antenna with{" "}
         <a
           href="https://www.amazon.com/gp/product/B00NVG5YZG/"
           target="_blank"
           rel="noreferrer"
         >
           this one from Amazon.
-        </a>
-        I also replaced the monitor antenna with
+        </a>{" "}
+        I also replaced the monitor antenna with{" "}
         <a
           href="https://www.amazon.com/gp/product/B07H57Q1B1/"
           target="_blank"
           rel="noreferrer"
         >
-          this one.
+          this one.{" "}
         </a>
         The goal here was to get the antenna outside of the car, and a little
         closer to the camera. Two comments about that antenna. It was supposed

@@ -7,14 +7,14 @@ const CabinetDoorLifter = () => {
         We tend to store food in the cabinets over the dining table. These
         cabinets swing up, which make them space-efficient. But its tough to dig
         around in the cabinet, and impossible to grab something with one hand.
-        So, in a common mod, we added
+        So, in a common mod, we added{" "}
         <a
           href="https://www.amazon.com/gp/product/B01H18I46K/"
           target="_blank"
           rel="noreferrer"
         >
           gas struts (lifters)
-        </a>
+        </a>{" "} 
         to hold the doors open.
       </p>
       <p>

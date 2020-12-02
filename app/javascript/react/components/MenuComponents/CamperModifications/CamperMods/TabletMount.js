@@ -22,35 +22,35 @@ const TabletMount = () => {
       </p>
       <div className="lightbox-container-mods">
         <a
-          href="https://s3.console.aws.amazon.com/s3/object/campground-reviews-production?region=us-east-1&prefix=CamperMods/tabletmount1.jpg"
+          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/tabletmount1.jpg"
           data-lightbox="tablet-mount"
           data-title="Tablet Mount"
         >
           <img
             className="galleryimage"
-            src="https://s3.console.aws.amazon.com/s3/object/campground-reviews-production?region=us-east-1&prefix=CamperMods/tabletmount1.jpg"
+            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/tabletmount1.jpg"
             alt="Tablet Mount"
           />
         </a>
         <a
-          href="https://s3.console.aws.amazon.com/s3/object/campground-reviews-production?region=us-east-1&prefix=CamperMods/tabletmount2.jpg"
+          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/tabletmount2.jpg"
           data-lightbox="tablet-mount"
           data-title="Tablet Mount"
         >
           <img
             className="galleryimage"
-            src="https://s3.console.aws.amazon.com/s3/object/campground-reviews-production?region=us-east-1&prefix=CamperMods/tabletmount2.jpg"
+            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/tabletmount2.jpg"
             alt="Tablet Mount"
           />
         </a>
         <a
-          href="https://s3.console.aws.amazon.com/s3/object/campground-reviews-production?region=us-east-1&prefix=CamperMods/tabletmount3.jpg"
+          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/tabletmount3.jpg"
           data-lightbox="tablet-mount"
           data-title="Tablet Mount"
         >
           <img
             className="galleryimage"
-            src="https://s3.console.aws.amazon.com/s3/object/campground-reviews-production?region=us-east-1&prefix=CamperMods/tabletmount3.jpg"
+            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/tabletmount3.jpg"
             alt="Tablet Mount"
           />
         </a>

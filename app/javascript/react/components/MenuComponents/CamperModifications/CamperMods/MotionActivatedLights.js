@@ -12,7 +12,7 @@ const MotionActivatedLights = () => {
         &quot;hands-free&quot; when we enter.
       </p>
       <p>
-        The key is a
+        The key is a{" "}
         <a
           href="https://www.amazon.com/gp/product/B00JLB0GM6/"
           target="_blank"
@@ -44,7 +44,7 @@ const MotionActivatedLights = () => {
         of the cabinet to get the wires opposite the door.
       </p>
       <p>
-        When I ordered the motion sensor, I also picked up some of
+        When I ordered the motion sensor, I also picked up some of{" "}
         <a
           href="https://www.amazon.com/gp/product/B071LQFQ17/"
           target="_blank"
@@ -58,7 +58,7 @@ const MotionActivatedLights = () => {
         the other end, basically repairing the circuit I spliced and returning
         normal operation. And that&apos;s actually how things are right now.
         Once I find a SPDT switch that matches the ones already in the camper
-        (probably something like
+        (probably something like{" "}
         <a
           href="https://www.amazon.com/gp/product/B002UC8MOM/"
           target="_blank"

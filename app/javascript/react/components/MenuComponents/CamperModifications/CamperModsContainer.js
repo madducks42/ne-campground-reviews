@@ -2,22 +2,22 @@ import React, { useState } from "react";
 
 import MattressUpgrade from "./CamperMods/MattressUpgrade";
 import UnderBedStorage from "./CamperMods/UnderBedStorage";
-import InsideSpeakerUpgrade from "./CamperMods/InsideSpeakerUpgrade"
-import Subwoofer from "./CamperMods/Subwoofer"
-import CabinetDoorLifter from "./CamperMods/CabinetDoorLifter"
-import UnderseatDoorLifter from "./CamperMods/UnderseatDoorLifter"
-import MotionActivatedLights from "./CamperMods/MotionActivatedLights"
-import PowerOutlet from "./CamperMods/PowerOutlet"
-import StabilizerJack from "./CamperMods/StabilizerJack"
-import CellBooster from "./CamperMods/CellBooster"
-import RearviewCamera from "./CamperMods/RearviewCamera"
-import Monitor from "./CamperMods/Monitor"
-import TabletMount from "./CamperMods/TabletMount"
-import SolarSuitcase from "./CamperMods/SolarSuitcase"
-import KeylessLockStorage from "./CamperMods/KeylessLockStorage"
-import Cupholders from "./CamperMods/Cupholders"
-import BatteryMonitor from "./CamperMods/BatteryMonitor"
-import ExternalSpeakers from "./CamperMods/ExternalSpeakers"
+import InsideSpeakerUpgrade from "./CamperMods/InsideSpeakerUpgrade";
+import Subwoofer from "./CamperMods/Subwoofer";
+import CabinetDoorLifter from "./CamperMods/CabinetDoorLifter";
+import UnderseatDoorLifter from "./CamperMods/UnderseatDoorLifter";
+import MotionActivatedLights from "./CamperMods/MotionActivatedLights";
+import PowerOutlet from "./CamperMods/PowerOutlet";
+import StabilizerJack from "./CamperMods/StabilizerJack";
+import CellBooster from "./CamperMods/CellBooster";
+import RearviewCamera from "./CamperMods/RearviewCamera";
+import Monitor from "./CamperMods/Monitor";
+import TabletMount from "./CamperMods/TabletMount";
+import SolarSuitcase from "./CamperMods/SolarSuitcase";
+import KeylessLockStorage from "./CamperMods/KeylessLockStorage";
+import Cupholders from "./CamperMods/Cupholders";
+import BatteryMonitor from "./CamperMods/BatteryMonitor";
+import ExternalSpeakers from "./CamperMods/ExternalSpeakers";
 
 const CamperModsContainer = () => {
   const sectionsData = [
@@ -217,22 +217,29 @@ const CamperModsContainer = () => {
   const sectionsOutput = sectionsData.map((section) => {
     if (visibility[section.id]) {
       return (
-        <div className="callout">
-          <div className="flex-row" key={section.key}><h3>{section.title}</h3>
-            <button type="button" id={section.id} onClick={onClickHandler} className="fas fa-minus-square">
-            </button>
+        <div className="camper-mods-section">
+          <div className="flex-row" key={section.key}>
+            <h3>{section.title}</h3>
+            <button
+              type="button"
+              id={section.id}
+              onClick={onClickHandler}
+              className="fas fa-minus-square mods-button"
+            ></button>
           </div>
-          <div>
-            {section.body}
-          </div>
+          <div>{section.body}</div>
         </div>
       );
     } else {
       return (
-        <div className="flex-row callout" key={section.key}>
+        <div className="flex-row camper-mods-section" key={section.key}>
           <h3>{section.title}</h3>
-          <button type="button" id={section.id} onClick={onClickHandler} className="fas fa-plus-square">
-          </button>
+          <button
+            type="button"
+            id={section.id}
+            onClick={onClickHandler}
+            className="fas fa-plus-square mods-button"
+          ></button>
         </div>
       );
     }
@@ -244,7 +251,7 @@ const CamperModsContainer = () => {
         As much as we love the Wolf Pup (aka the &apos;Gray Ghost&apos;), there
         are some things that we tweaked...
       </p>
-      {sectionsOutput}
+      <div className="camper-mods-container">{sectionsOutput}</div>
     </div>
   );
 };

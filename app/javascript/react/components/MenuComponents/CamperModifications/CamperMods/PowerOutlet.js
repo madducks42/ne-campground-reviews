@@ -39,7 +39,7 @@ const PowerOutlet = () => {
       <p>
         For the outlet, a quick search revealed that just about every outlet on
         Amazon has at least one reviewer talking about the outlet overheating
-        and melting. But I found
+        and melting. But I found{" "}
         <a
           href="https://www.amazon.com/gp/product/B00K0TQ94C/1"
           target="_blank" rel="noreferrer"
@@ -61,11 +61,11 @@ const PowerOutlet = () => {
       </p>
       <p>
         Lastly, since this thing is directly connected to the battery, I wanted
-        to include some short protection. I opted for this
+        to include some short protection. I opted for this{" "}
         <a href="https://www.amazon.com/gp/product/B07NSFHT2V/" target="_blank" rel="noreferrer">
           auto-reset 12V circuit breaker
         </a>
-        . This is the same style of
+        . This is the same style of{" "}
         <a href="Resources/Images/TrailerMods/powerjack1.jpg" target="_blank" rel="noreferrer">
           protection used by the RV manufacturer
         </a>
@@ -74,7 +74,7 @@ const PowerOutlet = () => {
       </p>
       <p>
         Wiring this up was pretty straight forward. The existing breaker and an
-        electrical box are located right behind the battery
+        electrical box are located right behind the battery{" "}
         <a href="Resources/Images/TrailerMods/powerjack3.jpg" target="_blank" rel="noreferrer">
           on the back of a frame rail
         </a>

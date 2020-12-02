@@ -5,7 +5,7 @@ const Subwoofer = () => {
     <div className="camper-mods-style">
       <p>
         Maddox teases me and says I add a subwoofer to everything. All this
-        because I added a
+        because I added a{" "}
         <a
           href="Resources/Images/TrailerMods/DeckSub.jpg"
           target="_blank"
@@ -25,7 +25,7 @@ const Subwoofer = () => {
         I wanted to keep the install simple, and I didn&apos;t need much power,
         and I certainly didn&apos;t want something that would drain the
         camper&apos;s batteries. So, after a bit of research I decided to go
-        with this little
+        with this little{" "}
         <a
           href="https://www.amazon.com/gp/product/B079PRCP9W/"
           target="_blank"

@@ -79,7 +79,7 @@ const BatteryMonitor = () => {
         in a new battery. And, to effectively keep track of how much power we
         have left in the current battery, we need to update the meter when we
         swap batteries (tell the meter how much power is in the new battery).
-        The
+        The{" "}
         <a
           href="https://www.amazon.com/Victron-Energy-MONITOR-VTBMV-S-BMV-712-Battery"
           target="_blank"

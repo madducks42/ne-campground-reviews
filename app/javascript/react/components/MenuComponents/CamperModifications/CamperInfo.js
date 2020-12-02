@@ -37,7 +37,7 @@ const CamperInfo = () => {
         larger than the little 15 year old Aliner. We did some research and
         realized that, while we wanted more space, we also wanted to make sure
         we kept it small enough so we could easily get into most campgrounds. We
-        thought through how weapos;d use it, and realized that James would soon
+        thought through how we&apos;d use it, and realized that James would soon
         want to bring friends on our trips. So, we needed beds for 4...
       </p>
       <p>

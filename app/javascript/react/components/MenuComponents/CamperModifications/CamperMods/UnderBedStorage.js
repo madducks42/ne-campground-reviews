@@ -72,7 +72,7 @@ const UnderBedStorage = () => {
           data-title="Underbed Storage"
         >
           <img
-            className="galleryimage"
+            className="galleryimage camper-mods-thumbnail"
             src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage1.jpg"
             alt="Underbed Storage"
           />
@@ -83,7 +83,7 @@ const UnderBedStorage = () => {
           data-title="Underbed Storage"
         >
           <img
-            className="galleryimage"
+            className="galleryimage camper-mods-thumbnail"
             src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage2.jpg"
             alt="Underbed Storage"
           />
@@ -94,7 +94,7 @@ const UnderBedStorage = () => {
           data-title="Underbed Storage"
         >
           <img
-            className="galleryimage"
+            className="galleryimage camper-mods-thumbnail"
             src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage3.jpg"
             alt="Underbed Storage"
           />
@@ -105,7 +105,7 @@ const UnderBedStorage = () => {
           data-title="Underbed Storage"
         >
           <img
-            className="galleryimage"
+            className="galleryimage camper-mods-thumbnail"
             src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage4.jpg"
             alt="Underbed Storage"
           />
@@ -116,7 +116,7 @@ const UnderBedStorage = () => {
           data-title="Underbed Storage"
         >
           <img
-            className="galleryimage"
+            className="galleryimage camper-mods-thumbnail"
             src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage5.jpg"
             alt="Underbed Storage"
           />

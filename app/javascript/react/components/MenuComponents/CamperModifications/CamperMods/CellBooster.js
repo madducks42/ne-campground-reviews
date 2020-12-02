@@ -85,7 +85,7 @@ const CellBooster = () => {
         models with the simple LED that helps you aim.
       </p>
       <p>
-        I ended up getting the
+        I ended up getting the{" "}
         <a
           href="https://www.amazon.com/gp/product/B0871SZQDW/"
           target="_blank"
@@ -93,7 +93,7 @@ const CellBooster = () => {
         >
           HiBoost Dot
         </a>
-        . I chose this one because:
+        . I chose this one because:</p>
         <ul>
           <li>
             It supported Verizon and T-Mobile (my carrier and Maddox&apos;s) to
@@ -114,13 +114,12 @@ const CellBooster = () => {
             this is probably the unit&apos;s biggest weakness.
           </li>
         </ul>
-      </p>
       <p>
         Once I had the booster, I had two things to figure out: power and the
         externa antenna mount (and aiming).
       </p>
       <p>
-        For power, I had an unused
+        For power, I had an unused{" "}
         <a
           href="https://www.amazon.com/gp/product/B019RKVMKU/"
           target="_blank"
@@ -150,7 +149,7 @@ const CellBooster = () => {
       <p>
         To secure the bottom of the mast I needed something that would hold it
         from sliding around, but let me rotate the mast easily for aiming. I
-        ended up using
+        ended up using{" "}
         <a
           href="Resources/Images/TrailerMods/PVCflange.jpg"
           target="_blank"

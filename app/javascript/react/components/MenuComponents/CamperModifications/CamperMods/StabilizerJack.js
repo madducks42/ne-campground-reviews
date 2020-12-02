@@ -10,7 +10,7 @@ const StabilizerJack = () => {
         they were bent up, tough to crank, and a lot of the paint flaked off
         (see the pics, below). I figured replacement would be straight forward,
         but given the price of a decent replacement, I decided to fix one first.
-        I ordered
+        I ordered{" "}
         <a
           href="https://www.amazon.com/gp/product/B003ZOJADQ/"
           target="_blank"
