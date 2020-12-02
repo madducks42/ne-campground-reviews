@@ -2,7 +2,7 @@ import React from "react";
 
 const UnderBedStorage = () => {
   return (
-    <div>
+    <div className="camper-mods-style">
       <p>
         This is one of my favorite mods. Most of the stuff listed here is pretty
         straight forward &quot;replace this with that&quot;, &quot;just order
@@ -27,7 +27,7 @@ const UnderBedStorage = () => {
         modfication I did had to look decent. I&apos;m &quot;handy&quot;, but
         not a great woodworker. So I started looking for some existing storage
         unit that was the right size and color for the task... Ikea to the
-        rescue!. Ikea has a dark brown TV stand called the &quot;BESTÅ&quot;. It
+        rescue!. Ikea has a <a href="https://www.ikea.com/us/en/p/besta-tv-unit-black-brown-90294512/" target="_blank" rel="noreferrer">dark brown TV stand</a> called the &quot;BESTÅ&quot;. It
         was exactly the right height and length, and you can choose the shelves,
         and/or drawers to put in it. The dark brown (the same
         &quot;Espresso&quot; dark brown Ikea uses for everything) matched the
@@ -65,6 +65,63 @@ const UnderBedStorage = () => {
         unit into the floor. And a few through the bed frame into the top of the
         storage unit. Then a few more nails into the paneling, and... done!
       </p>
+      <div className="lightbox-container-mods">
+        <a
+          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage1.jpg"
+          data-lightbox="underbed-storage"
+          data-title="Underbed Storage"
+        >
+          <img
+            className="galleryimage"
+            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage1.jpg"
+            alt="Underbed Storage"
+          />
+        </a>
+        <a
+          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage2.jpg"
+          data-lightbox="underbed-storage"
+          data-title="Underbed Storage"
+        >
+          <img
+            className="galleryimage"
+            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage2.jpg"
+            alt="Underbed Storage"
+          />
+        </a>
+        <a
+          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage3.jpg"
+          data-lightbox="underbed-storage"
+          data-title="Underbed Storage"
+        >
+          <img
+            className="galleryimage"
+            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage3.jpg"
+            alt="Underbed Storage"
+          />
+        </a>
+        <a
+          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage4.jpg"
+          data-lightbox="underbed-storage"
+          data-title="Underbed Storage"
+        >
+          <img
+            className="galleryimage"
+            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage4.jpg"
+            alt="Underbed Storage"
+          />
+        </a>
+        <a
+          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage5.jpg"
+          data-lightbox="underbed-storage"
+          data-title="Underbed Storage"
+        >
+          <img
+            className="galleryimage"
+            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage5.jpg"
+            alt="Underbed Storage"
+          />
+        </a>
+      </div>
     </div>
   );
 };
