@@ -1,0 +1,59 @@
+.camper-mods-style a {
+  color: #476c9b;
+  font-weight: bold;
+}
+
+.camper-mods-style a:hover {
+  color: #984447;
+}
+
+.camper-mods-style em {
+  color: #101419;
+  font-family: "Source Serif Pro", serif;
+  font-size: 1.8rem;
+}
+
+.camper-mods-container {
+  padding: 2rem;
+}
+
+.camper-mods-section {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: white;
+  border-bottom: 1px solid #ADB5BD;
+}
+
+.mods-button {
+  margin-left: 5px;
+}
+
+.fa-plus-square {
+  color: #984447;
+}
+
+.fa-minus-square {
+  color: #ed9905;
+}
+
+// Images Section
+
+.lightbox-container-mods {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 10px;
+  min-height: 200px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lightbox-container-mods a {
+  margin: 1rem;
+}
+
+.lightbox-container-mods img {
+  max-width: 300px;
+  max-height: auto;
+}
