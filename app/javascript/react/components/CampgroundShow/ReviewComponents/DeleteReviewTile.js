@@ -8,7 +8,6 @@ const DeleteReviewTile = (props) => {
       campgroundId: props.review.campground.id, 
       review: props.review 
     };
-    debugger
     props.deleteReview(deletedReview);
   };
 

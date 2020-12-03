@@ -61,7 +61,6 @@ export const editedReviewFetch = (editedReview) => {
 };
 
 export const deleteReviewFetch = (deletedReview) => {
-  debugger
   const campgroundId = deletedReview.campgroundId;
   const reviewId = deletedReview.reviewId;
   return fetch(`/api/v1/campgrounds/${campgroundId}/reviews/${reviewId}`, {

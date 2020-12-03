@@ -91,16 +91,16 @@ const CampgroundShowContainer = (props) => {
   };
 
   const deleteReview = async (reviewToDelete) => {
-    debugger
     const deletedReview = await deleteReviewFetch(reviewToDelete);
+
     if (deletedReview.errors) {
       setErrors(deletedReview.errors);
     } else {
       let reviewIndex = reviews.findIndex(
         (review) => review.id === deletedReview.id
-      );
+        );
       let tempReviews = [...reviews];
-      tempReviews.splice(reviewIndex, 1, deletedReview);
+      tempReviews.splice(reviewIndex, 1);
       setReviews(tempReviews);
     }
   };
