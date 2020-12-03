@@ -2,7 +2,7 @@ import React from "react";
 
 const ShowReviewTile = (props) => {
   let buttonChangeGroup = null;
-  if (props.review.userIsAdmin) {
+  if ((props.review.userIsAdmin) || (props.review.userIsOwner)) {
     buttonChangeGroup = (
       <>
         <button

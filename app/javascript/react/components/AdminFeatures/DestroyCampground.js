@@ -7,6 +7,7 @@ const DestroyCampground = (props) => {
   const [shouldRedirect, setShouldRedirect] = useState(false);
 
   useEffect(() => {
+    debugger
     let id = props.match.params.id
     fetch(`/api/v1/campgrounds/${id}`)
     .then(response => {
@@ -25,6 +26,7 @@ const DestroyCampground = (props) => {
   }, []);
   
   const onClickDelete = event => {
+    debugger
     event.preventDefault()
     let id = props.match.params.id
     fetch(`/api/v1/campgrounds/${id}`, {

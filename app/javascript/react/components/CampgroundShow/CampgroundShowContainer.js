@@ -67,17 +67,17 @@ const CampgroundShowContainer = (props) => {
     });
   }, []);
 
-  const addNewReview = (newReview) => {
-    addNewReviewFetch(newReview);
-    if (newReview.errors) {
-      setErrors(newReview.errors);
+  const addNewReview = async (newReview) => {
+    const addedReview = await addNewReviewFetch(newReview);
+    if (addedReview.errors) {
+      setErrors(addedReview.errors);
     } else {
-      setReviews([...reviews, newReview]);
+      setReviews([...reviews, addedReview]);
     }
   };
 
-  const editReview = (editedReview) => {
-    editedReviewFetch(editedReview);
+  const editReview = async (reviewToEdit) => {
+    const editedReview = await editedReviewFetch(reviewToEdit);
     if (editedReview.errors) {
       setErrors(editedReview.errors);
     } else {
@@ -90,29 +90,24 @@ const CampgroundShowContainer = (props) => {
     }
   };
 
-  const deleteReview = (deletedReview) => {
-    deleteReviewFetch(deletedReview);
+  const deleteReview = async (reviewToDelete) => {
+    const deletedReview = await deleteReviewFetch(reviewToDelete);
+
     if (deletedReview.errors) {
       setErrors(deletedReview.errors);
     } else {
       let reviewIndex = reviews.findIndex(
         (review) => review.id === deletedReview.id
-      );
+        );
       let tempReviews = [...reviews];
-      tempReviews.splice(reviewIndex, 1, deletedReview);
+      tempReviews.splice(reviewIndex, 1);
       setReviews(tempReviews);
     }
   };
 
   let reviewForm;
   if (campground.userSignedIn) {
-    reviewForm = (
-      <ReviewForm
-        addNewReview={addNewReview}
-        id={id}
-        // newReviewData={newReviewData}
-      />
-    );
+    reviewForm = <ReviewForm addNewReview={addNewReview} id={id} />;
   }
 
   let noReviewsMessage = "";
@@ -144,7 +139,7 @@ const CampgroundShowContainer = (props) => {
     };
     setCampgroundFavorite(favoriteInfo);
   };
-  
+
   const setCampgroundFavorite = async (favorite) => {
     favorite = await setCampgroundFavFetch(favorite);
     if (favorite === true) {
@@ -152,7 +147,7 @@ const CampgroundShowContainer = (props) => {
     } else if (favorite === false) {
       setFavorite(false);
     } else {
-      setSignInError("You must be signed in to add favorites")
+      setSignInError("You must be signed in to add favorites");
     }
   };
 

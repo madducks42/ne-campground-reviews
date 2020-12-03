@@ -30,8 +30,8 @@ const ReviewTile = (props) => {
     props.editReview(formPayLoad);
   };
 
-  const onConfirmDeleteClickHandler = () => {
-    props.deleteReview();
+  const onConfirmDeleteClickHandler = (reviewToDelete) => {
+    props.deleteReview(reviewToDelete);
   };
 
   let displayTile = null;
@@ -57,6 +57,7 @@ const ReviewTile = (props) => {
       <ShowReviewTile
         review={props.review}
         userIsAdmin={props.userIsAdmin}
+        userIsOwner={props.userIsOwner}
         onEditClickHandler={onEditClickHandler}
         onDeleteClickHandler={onDeleteClickHandler}
       />
