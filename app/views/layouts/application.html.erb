@@ -35,29 +35,28 @@
       </div>
     </div>
 
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
-  <%- end -%>
+    <%- flash.each do |key, value| -%>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
+    <%- end -%>
 
-  <%= yield %>
+    <%= yield %>
 
-    </div>
     <div class="footer">
       <h3>&copy; NE Campground Reviews</h3>
     </div>
 
-  <%= javascript_include_tag 'application' %> 
+    <%= javascript_include_tag 'application' %> 
   
-  <%- if Rails.env.development? || Rails.env.test? -%> 
-    <%= javascript_tag do %>
-      window.railsEnv = '<%= Rails.env %>'
+    <%- if Rails.env.development? || Rails.env.test? -%> 
+      <%= javascript_tag do %>
+        window.railsEnv = '<%= Rails.env %>'
+      <%- end -%>
     <%- end -%>
-  <%- end -%>
-  <%= javascript_pack_tag 'application' %>
-  
-  <%= yield :extra_footer %>
+    <%= javascript_pack_tag 'application' %>
+    
+    <%= yield :extra_footer %>
   
 </body>
 </html>

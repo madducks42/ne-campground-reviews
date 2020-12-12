@@ -30,16 +30,9 @@ const Monitor = () => {
         actually one inside over the queen bed, and another outside on the side
         of the camper. We only ever use the inside one. For power, I have a
         cable with the appropriate barrel connecter on one end and a cigarette
-        lighter plug on the other, which goes into the{" "}
-        <a
-          href="https://www.northeastcampingreviews.com/trailermods.html#12VPowerOutlet"
-          target="_blank"
-          rel="noreferrer"
-        >
-          power outlet
-        </a>
-        . My phone has a USB-C port, to the USB-C-to-HDMI adapter for my laptop
-        works perfectly to allow my phone to drive the monitor. This means I can
+        lighter plug on the other, which goes into the power outlet. My phone
+        has a USB-C port, to the USB-C-to-HDMI adapter for my laptop works
+        perfectly to allow my phone to drive the monitor. This means I can
         download Netflix shows to my phone for viewing on the monitor.
       </p>
       <p>

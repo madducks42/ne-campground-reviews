@@ -25,15 +25,8 @@ const ExternalSpeakers = () => {
       <p>
         As mentioned above, while I like music when camping, I&apos;m not
         looking to blast it. I&apos;m looking for quality sound at relatively
-        low volumes. And, also covered above,{" "}
-        <a
-          href="https://www.northeastcampingreviews.com/trailermods.html#Subwoofer"
-          target="_blank"
-          rel="noreferrer"
-        >
-          we have the sub-woofer
-        </a>{" "}
-        for when we want high fidelity.
+        low volumes. And, also covered above, we have the sub-woofer for when we
+        want high fidelity.
       </p>
       <p>
         So, this means I wasn&apos;t looking to spend a lot of money on high-end
@@ -47,23 +40,16 @@ const ExternalSpeakers = () => {
           Polk Audio DB522
         </a>
         . These may look familiar becuase they&apos;re the 5-1/4-inch version of
-        the{" "}
-        <a
-          href="https://www.northeastcampingreviews.com/trailermods.html#InsideSpeakers"
-          target="_blank"
-          rel="noreferrer"
-        >
-          speakers I put inside
-        </a>
-        . I probably could have gone with the same 6-1/2-inch version but I was
-        trying to make the swap as easy as possible, and those would definitely
-        require me to make a bigger hole in the wall. And, since we don&apos;t
-        need it loud, these should do. They are the same size as the originals,
-        and will definitely sound better. You can see from the pictures below,
-        they weren&apos;t very precise when they cut the holes for the original
-        speakers. It looks like they started with a (too-small) hole saw, then
-        free-handed a router to make the hole bigger. But, you can&apos;t see it
-        with the speakers in place, so I guess is doesn&apos;t matter.
+        the speakers I put inside. I probably could have gone with the same
+        6-1/2-inch version but I was trying to make the swap as easy as
+        possible, and those would definitely require me to make a bigger hole in
+        the wall. And, since we don&apos;t need it loud, these should do. They
+        are the same size as the originals, and will definitely sound better.
+        You can see from the pictures below, they weren&apos;t very precise when
+        they cut the holes for the original speakers. It looks like they started
+        with a (too-small) hole saw, then free-handed a router to make the hole
+        bigger. But, you can&apos;t see it with the speakers in place, so I
+        guess is doesn&apos;t matter.
       </p>
       <div className="lightbox-container-mods">
         <a

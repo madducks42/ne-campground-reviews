@@ -66,7 +66,7 @@ const PowerOutlet = () => {
           auto-reset 12V circuit breaker
         </a>
         . This is the same style of{" "}
-        <a href="Resources/Images/TrailerMods/powerjack1.jpg" target="_blank" rel="noreferrer">
+        <a href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/powerjack1.jpg" target="_blank" rel="noreferrer">
           protection used by the RV manufacturer
         </a>
         . It will protect the circuit, and I won&apos;t need to replace a fuse if I
@@ -75,7 +75,7 @@ const PowerOutlet = () => {
       <p>
         Wiring this up was pretty straight forward. The existing breaker and an
         electrical box are located right behind the battery{" "}
-        <a href="Resources/Images/TrailerMods/powerjack3.jpg" target="_blank" rel="noreferrer">
+        <a href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/powerjack3.jpg" target="_blank" rel="noreferrer">
           on the back of a frame rail
         </a>
         . The battery cable from the battery to the hot side of the existing

@@ -151,7 +151,7 @@ const CellBooster = () => {
         from sliding around, but let me rotate the mast easily for aiming. I
         ended up using{" "}
         <a
-          href="Resources/Images/TrailerMods/PVCflange.jpg"
+          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/PVCflange.jpg"
           target="_blank"
           rel="noreferrer"
         >

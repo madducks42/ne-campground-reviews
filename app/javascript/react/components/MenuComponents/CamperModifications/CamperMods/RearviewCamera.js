@@ -45,7 +45,7 @@ const RearviewCamera = () => {
           rel="noreferrer"
         >
           this weighted &quot;friction dash pad&quot;
-        </a>
+        </a>{" "}
         and I zip-tied the monitor base to this. Now I can just set the camera
         monitor on my dash and its completely stable, and easy to move. (See the
         pics below.)
