@@ -19,6 +19,7 @@
     "@rails/webpacker": "^5.2.1",
     "axios": "^0.21.0",
     "babel-loader": "^8.0.6",
+    "bulma": "^0.9.1",
     "lightbox2": "^2.11.3",
     "prop-types": "~15.6.0",
     "react": "^16.8.6",

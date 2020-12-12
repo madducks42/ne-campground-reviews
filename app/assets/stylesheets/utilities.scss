@@ -1,0 +1,29 @@
+.callout {
+  // border: 1px solid #adb5bd;
+  padding: 5px;
+  background-color: #BFC0C0;
+}
+
+// Generic Flexblox Style
+.flex-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.flex-row img {
+  margin: 5px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+// Button Styles
+
+.button:hover {
+  background-color: #ed9905;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+}

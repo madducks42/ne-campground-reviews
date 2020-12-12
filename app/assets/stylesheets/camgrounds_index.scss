@@ -1,78 +1,30 @@
-// Left nav-bar
+// Left Nav Bar
 .left-nav-bar {
-  background-color: #f7f9fb;
+  background-color:#f7f9fb;
   padding: 20px;
 }
 
-ul.menu.left-nav-bar {
-  display: flex;
-  flex-direction: row;
-  background-color: #f7f9fb;
-}
-
+// Search Section
 .search-container {
-  margin-left: 15px;
-  min-width: 90%;
-}
-
-label.nav-search, li.nav-search, h6.nav-search {
-  font-family: 'Source Serif Pro', serif;
-  font-size: 1.8rem;
-  color: #101419;
-}
-
-.nav-search li {
-  list-style: none;
-}
-
-.nav-search a {
-  color: #101419;
-}
-
-.nav-search a:hover {
-  color: #101419;
-  font-weight: 800;
-}
-
-input.search-field {
-  height: 40px;
-  width: 100%;
-  font-family: 'Source Serif Pro', serif;
-  font-size: 1.8rem;
-}
-
-input.nav-search-input {
-  height: 40px;
-  font-family: 'Source Serif Pro', serif;
-  font-size: 1.8rem;
-}
-
-// Left nav-bar Filter Section
-.filter-container {
   display: flex;
   flex-direction: column;
-  background-color: #F7F9FB;
-  padding: 20px;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  min-width: 150px;
 }
 
-div.menu.filter-section {
-  display: flex;
-  flex-direction: column;
+// Filter Section
+.checkbox-label {
+  font-size: 1.2rem;
 }
 
-label.checkbox-label {
-  font-family: 'Source Serif Pro', serif;
-  font-size: 1.8rem;
-}
-
-input.checkbox-input {
+.checkbox-input {
   margin-left: 10px;
 }
 
 // Campground Tiles container
 .campground-tile-container {
   display: flex;
+  flex-wrap: wrap;
   background-color: #F7F9FB;
   padding: 20px;
   border-left: 1px solid #ADB5BD;
