@@ -6,7 +6,7 @@ Devise was used to handle user authentication and authorization. By default all 
 
 This application also uses CarrierWave, ActiveRecord, and ReactDropzone. Images are stored in AWS S3 Cloud Storage.
 
-[See the deployed application on Heroku](https://ne-campground-reviews.herokuapp.com/)
+[See the deployed application here](https://necampgroundreviews.com/)
 
 [![Codeship Status for madducks42/ne-campground-reviews](https://app.codeship.com/projects/1c001202-d845-4589-9239-d063067aa4e9/status?branch=main)](https://app.codeship.com/projects/418979)
 
