@@ -90,17 +90,10 @@ const BatteryMonitor = () => {
         makes all of that easy.
       </p>
       <p>
-        Also, as mentioned above, we have the{" "}
-        <a
-          href="https://www.northeastcampingreviews.com/trailermods.html#Solar"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Solar Suitcase
-        </a>
-        . The Victron also measures Ah put back into the battery via charging.
-        Again, this is a critical feature if we&apos;re going to use solar and
-        keep track of the power left in a battery.
+        Also, as mentioned above, we have the Solar Suitcase. The Victron also
+        measures Ah put back into the battery via charging. Again, this is a
+        critical feature if we&apos;re going to use solar and keep track of the
+        power left in a battery.
       </p>
       <p>
         While on the topic of battery meters, one other point... to measure the

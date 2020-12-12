@@ -7,7 +7,7 @@ const Subwoofer = () => {
         Maddox teases me and says I add a subwoofer to everything. All this
         because I added a{" "}
         <a
-          href="Resources/Images/TrailerMods/DeckSub.jpg"
+          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/DeckSub.jpg"
           target="_blank"
           rel="noreferrer"
         >

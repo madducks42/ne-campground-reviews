@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const OpenWeatherTile = (props) => {
 
@@ -6,7 +6,7 @@ const OpenWeatherTile = (props) => {
     <div className="callout weather-container">
       <h1>Weather for {props.weather.date}</h1>
       <ul>
-        <li className='weather'><img src={`http://openweathermap.org/img/wn/${props.weather.icon}@2x.png`} /></li>
+        <li className='weather'><img src={`http://openweathermap.org/img/wn/${props.weather.icon}@2x.png`} alt= "current weather conditions"/></li>
         <li className='weather'>Conditions: {props.weather.conditions}</li>
         <li className='weather'>Current Temp: {Math.round(props.weather.currentTemp)}&deg;F</li>
         <li className='weather'>High Temp: {Math.round(props.weather.highTemp)}&deg;F</li>

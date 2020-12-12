@@ -7,6 +7,7 @@ const CamperInfo = () => {
       <a href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/CliffordAndTheGrayGhost-2019-06-11.jpg" data-lightbox="our-camper" data-title="Subaru Ascent w/ 2019 Wolf Pup">
           <img className ="galleryimage" src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/CliffordAndTheGrayGhost-2019-06-11.jpg" alt="Clifford and The Gray Ghost"/>
         </a>
+      < br/>
       <p>
         Maddox and I are both long-time tent campers. But, a while back, I
         realized that more <em>convenience</em> and <em>comfort</em> means we
@@ -29,6 +30,7 @@ const CamperInfo = () => {
       <a href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/AlinerOutside.jpg" data-lightbox="a-liner" data-title="Aliner Sport Trailer">
           <img className ="galleryimage" src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/AlinerOutside.jpg" alt="Aliner Sport Trailer"/>
         </a>
+      < br/>
       <p>
         As the family grew, in size and number, we found we had 2 adults, a
         rapidly growing tween (with friends), and a big hound. And our desire to
