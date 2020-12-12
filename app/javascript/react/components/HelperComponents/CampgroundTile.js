@@ -27,7 +27,7 @@ const CampgroundTile = (props) => {
   }
 
   return (
-    <div className="column is-one-third">
+    <div className="column mr-1 ml-1">
       <div className="card">
         <div className="card-image">
           <figure className="image is-4by3">
@@ -37,8 +37,8 @@ const CampgroundTile = (props) => {
         <div className="card-content">
           <div className="media">
             <div className="media-content">
-              <p className="title is-4">
-                {props.name}
+              <p className="card-title">
+                <Link to={`/campgrounds/${props.id}`}>{props.name}</Link>
               </p>
               <p className="subtitle is-6">{props.location}</p>
             </div>
@@ -51,16 +51,3 @@ const CampgroundTile = (props) => {
 };
 
 export default CampgroundTile;
-
-{
-  /* <div className='campground-tile'>
-      <div className='card'>
-        <img className='tile-image' src={tileImage} alt="Campground" />
-        <div className='card-section'>
-          <h5><Link to={`/campgrounds/${props.id}`}>{props.name}</Link></h5>
-          <h6>{props.location}</h6>
-          <p>{props.caption}</p>
-        </div>
-      </div>
-    </div> */
-}

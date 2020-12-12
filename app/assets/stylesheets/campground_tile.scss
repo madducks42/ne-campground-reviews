@@ -1,0 +1,17 @@
+// Campground Tiles Section
+.card {
+  min-width: 350px;
+  min-height: 350px;
+}
+
+.card-title {
+  color: #476c9b;
+}
+
+.card-title a {
+  font-size: 1.6rem;
+}
+.card-title a:hover {
+  color: #984447;
+  text-decoration: underline;
+}
