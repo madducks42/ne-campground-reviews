@@ -1,24 +1,97 @@
-// .show-container {
-//   padding: 20px 15% 20px 15%;
-//   background-color: #f7f9fb;
-// }
+// Amenities Section Style
+.amenities-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #F7F9FB;
+  min-width: fit-content;
+  padding: 20px;
+  border: 1px solid #ADB5BD;
+}
 
-// // Amenities Section Style
-// .amenities-container {
-//   display: flex;
-//   flex-direction: column;
-//   background-color: #F7F9FB;
-//   min-width: fit-content;
-//   padding: 20px;
-//   border-top: 1px solid #ADB5BD;
-//   border-left: 1px solid #ADB5BD;
-//   border-bottom: 1px solid #ADB5BD;
-// }
+.amenities-container div:last-of-type {
+  margin-top: auto;
+  text-align: center;
+}
 
-// .amenities-container div:last-of-type {
-//   margin-top: auto;
-//   text-align: center;
-// }
+// Icons
+.fas.fa-heart.not-favorite {
+  font-size: 4rem;
+  color: #ADB5BD;
+}
+
+.fas.fa-heart.favorite {
+  font-size: 4rem;
+  color: #984447;
+}
+
+.paragraph-format {
+  white-space: pre-wrap;
+}
+
+// Map Section Style
+.info-container {
+  background-color: #413C58;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 10px;
+}
+.map-container {
+  max-width: 600px;
+}
+
+// Weather Style
+.callout.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F7F9FB;
+  min-width: fit-content;
+  border-radius: 5px;
+  padding: 20px 40px 20px 40px;
+  box-shadow: 2px 2px 10px #101419;
+}
+
+li.weather img {
+  padding-left: 20px;
+}
+
+// Review Form Section
+.reviews-container {
+  color: #F7F9FB;
+}
+
+form.new-review-form.callout {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
+  border-radius: 10px;
+}
+
+form.new-review-form.callout label, form.new-review-form.callout input {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.8rem;
+}
+
+// Reviews Section
+.reviews-container {
+  background-color: #476C9B;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.callout.review-tile {
+  background-color: #f7f9fb;
+  color: #101419;
+  margin: 10px;
+  padding: 20px;
+}
+
+.review-content {
+  border-top: 1px solid #ADB5BD;
+  border-bottom: 1px solid #ADB5BD;
+  padding: 20px;
+}
 
 // .amenities-container ul {
 //   list-style: none;
@@ -136,12 +209,6 @@
 //   border-radius: 5px;
 // }
 
-// .paragraph-format {
-//   white-space: pre-wrap;
-//   font-family: 'Source Serif Pro', serif;
-//   font-size: 1.8rem;
-// }
-
 // // Buttons
 // button#delete-review.button {
 //   margin-left: 5px;
@@ -151,17 +218,6 @@
 //   margin-left: 5px;
 // }
 
-// // Icons
-
-// .fas.fa-heart.not-favorite {
-//   font-size: 4rem;
-//   color: #ADB5BD;
-// }
-
-// .fas.fa-heart.favorite {
-//   font-size: 4rem;
-//   color: #984447;
-// }
 
 // // Responsive Design Section
 // @media screen and (max-width: 640px){

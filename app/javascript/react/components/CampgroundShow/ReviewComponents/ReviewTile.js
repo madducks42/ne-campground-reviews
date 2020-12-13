@@ -64,7 +64,7 @@ const ReviewTile = (props) => {
     );
   }
 
-  return <div>{displayTile}</div>;
+  return <div className="callout review-tile">{displayTile}</div>;
 };
 
 export default ReviewTile;
