@@ -93,6 +93,16 @@ form.new-review-form.callout label, form.new-review-form.callout input {
   padding: 20px;
 }
 
+form.new-review-form.callout {
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+button#delete-review.button {
+  margin-left: 5px;
+}
+
 // .amenities-container ul {
 //   list-style: none;
 // }
