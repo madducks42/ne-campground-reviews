@@ -16,15 +16,16 @@
  */
 
 // Header Overrides
-$navbar-background-color:#3A7CA5;
+$navbar-background-color: #476c9b;
 $navbar-height: 10rem;
 $navbar-item-img-max-height: 8rem;
-$navbar-item-color: #E8EDDF;
-$navbar-item-hover-color: #E8EDDF;
-$navbar-item-hover-background-color: #EF8354;
+$navbar-item-color: #f7f9fb;
+$navbar-item-hover-color: #f7f9fb;
+$navbar-item-hover-background-color: #ed9905;
+$navbar-dropdown-background-color: #476c9b;
 
 // Footer Overrides
-$footer-background-color: #3A7CA5;
+$footer-background-color: #476c9b;
 $footer-color: true;
 $footer-padding: 2rem;
 
@@ -56,9 +57,6 @@ $button-hover-border-color: #ed9905;
 $button-text-hover-color:#f7f9fb;
 
 // Spacing Overrides
-$spacing-shortcuts: ("margin": "mg");
-// $spacing-horizontal: "h";
-// $spacing-vertical: null;
-// $spacing-values: ("small": 10px, "medium": 30px, "large": 60px);
+// $spacing-shortcuts: ("margin": "mg");
 
  @import "bulma";

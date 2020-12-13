@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require lightbox
+//= require navmenu
 // require_tree .
 
 

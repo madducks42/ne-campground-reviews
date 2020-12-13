@@ -13,60 +13,38 @@
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
         <img src="/images/logo.png" width="112" height="28">
-        <h1>NE Campground Reviews</h1>
       </a>
 
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="nav-menu">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navmenu">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <div id="nav-menu" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item">
-          Home
-        </a>
-
-        <a class="navbar-item">
-          Documentation
-        </a>
+    <div id="nav-links" class="navbar-menu">
+      <div class="navbar-end">
 
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
-            More
+            Menu
           </a>
-
           <div class="navbar-dropdown">
-            <a class="navbar-item">
-              About
-            </a>
-            <a class="navbar-item">
-              Jobs
-            </a>
-            <a class="navbar-item">
+            <%= link_to 'About Us', aboutus_url, class: 'navbar-item' %>
+            <%= link_to 'Our Camper', camper_url, class: 'navbar-item' %>
+            <a class="navbar-item" href="mailto:maddoxgrey42@gmail.com">
               Contact
             </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item">
-              Report an issue
-            </a>
           </div>
         </div>
-      </div>
+        <%- if current_user -%>
+            <%= link_to 'Profile', user_path(current_user), class: 'navbar-item' %>
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'navbar-item' %>
+          <%- else -%>
+            <%= link_to 'Sign In', new_user_session_path, class: 'navbar-item' %>
+            <%= link_to 'Sign Up', new_user_registration_path, class: 'navbar-item' %>
+          <%- end -%>
 
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary">
-              <strong>Sign up</strong>
-            </a>
-            <a class="button is-light">
-              Log in
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   </nav>
@@ -82,8 +60,6 @@
   <footer class="has-text-centered footer">
     <h3>&copy; NE Campground Reviews</h3>
   </footer>
-    
-  <%= javascript_include_tag 'application' %> 
   
   <%- if Rails.env.development? || Rails.env.test? -%> 
     <%= javascript_tag do %>
@@ -91,6 +67,7 @@
     <%- end -%>
   <%- end -%>
   <%= javascript_pack_tag 'application' %>
+  <%= javascript_include_tag 'application' %> 
   
   <%= yield :extra_footer %>
    
