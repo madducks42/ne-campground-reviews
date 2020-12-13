@@ -3,7 +3,7 @@ import React from "react";
 const TabletMount = () => {
   return (
     <div className="camper-mods-style">
-      <p>
+      <p className="is-size-7 mb-4">
         On the first few trips, we used the iPad for a little video
         entertainment before bed. We&apos;d lay in bed and prop it up on a
         pillow. It would fall over every few minutes, and be uncomfortable to

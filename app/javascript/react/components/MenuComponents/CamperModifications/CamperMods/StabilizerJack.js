@@ -3,7 +3,7 @@ import React from "react";
 const StabilizerJack = () => {
   return (
     <div>
-      <p>
+      <p className="is-size-7 mb-4">
         On our third or fourth trip with the Gray Ghost, I was backing it into a
         campsite in the dark. The ground was uneven, and I ended up catching the
         two front stabilizer jacks on the ground. While mostly still functional,

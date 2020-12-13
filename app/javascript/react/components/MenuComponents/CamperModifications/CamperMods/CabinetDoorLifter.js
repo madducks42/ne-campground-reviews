@@ -3,7 +3,7 @@ import React from "react";
 const CabinetDoorLifter = () => {
   return (
     <div className="camper-mods-style">
-      <p>
+      <p className="is-size-7 mb-4">
         We tend to store food in the cabinets over the dining table. These
         cabinets swing up, which make them space-efficient. But its tough to dig
         around in the cabinet, and impossible to grab something with one hand.
@@ -17,7 +17,7 @@ const CabinetDoorLifter = () => {
         </a>{" "} 
         to hold the doors open.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         There are two tricks to this mod, finding the right strut, and the
         installation itself. Struts vary in size (length) and power. Size is key
         to ensuring the fit, and power is important to ensure the door stays
@@ -25,7 +25,7 @@ const CabinetDoorLifter = () => {
         lb, 10 inch struts, and they worked perfectly. They&apos;re strong
         enough to hold the door open, but still easy to close.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         The slightly more challenging part was the actual installation. If your
         cabinets are solid wood, then you don&apos;t have much to worry about.
         The doors on our cabinets are solid wood (thanks to the Black Label

@@ -3,7 +3,7 @@ import React from "react";
 const ExternalSpeakers = () => {
   return (
     <div className="camper-mods-style">
-      <p>
+      <p className="is-size-7 mb-4">
         I&apos;d been wanting to upgrade the external speakers since we got the
         trailer. The sound was soft, and muted, and didn&apos;t sound good at
         low volumes. But, we rarely use those speakers (partly because of the
@@ -22,13 +22,13 @@ const ExternalSpeakers = () => {
         each, which explains the poor sound and short life. But, more
         importantly, it gave me an excuse to upgrade the external speakers.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         As mentioned above, while I like music when camping, I&apos;m not
         looking to blast it. I&apos;m looking for quality sound at relatively
         low volumes. And, also covered above, we have the sub-woofer for when we
         want high fidelity.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         So, this means I wasn&apos;t looking to spend a lot of money on high-end
         components. Cost, water-resistance, size, and brand name (and some
         experience) led me to choose a pair of{" "}

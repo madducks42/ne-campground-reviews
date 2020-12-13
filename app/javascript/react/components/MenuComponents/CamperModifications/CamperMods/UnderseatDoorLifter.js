@@ -3,12 +3,12 @@ import React from "react";
 const UnderseatDoorLifter = () => {
   return (
     <div className="camper-mods-style">
-      <p>
+      <p className="is-size-7 mb-4">
         This is very similar to the overhead cabinet door lifter mod. But
         instead of holding cabinet doors open, struts are used to hold the lid
         to the under- seat storage open.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         Here I used
         <a
           href="https://www.amazon.com/gp/product/B06VY2GVB9/"
@@ -24,7 +24,7 @@ const UnderseatDoorLifter = () => {
         rope through a hole in the lid serves as a &quot;handle&quot; to make
         lifting the lead easier.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         This mod makes this storage space a lot more usable. We typically store
         food in reuable grocery bags (fit perfectly) and the kitchen utensil
         &quot;jar&quot; here during travel.

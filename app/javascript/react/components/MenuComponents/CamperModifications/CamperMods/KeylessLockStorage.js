@@ -3,7 +3,7 @@ import React from "react";
 const KeylessLockStorage = () => {
   return (
     <div className="camper-mods-style">
-      <p>
+      <p className="is-size-7 mb-4">
         This is another really easy mod. I replaced the keyed &quot;cam
         lock&quot; with a combination lock for the outer hatch door that
         accesses the under-bed storage.{" "}
@@ -28,7 +28,7 @@ const KeylessLockStorage = () => {
         there&apos;s a combination lock there. This cover feels a little cheap
         and brittle, so I&apos;m not expecting it to last very long.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         Assuming this lock lasts, I&apos;ll likely replace the cam lock on the
         outdoor shower door as this lock sticks a lot.
       </p>
