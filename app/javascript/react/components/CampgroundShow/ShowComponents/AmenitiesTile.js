@@ -1,71 +1,76 @@
-import React from 'react'
+import React from "react";
 
 const AmenitiesTile = (props) => {
-  let dogsAllowedStatus
-  let electricHookupsStatus
-  let waterHookupsStatus
-  let potableWaterStatus
-  let dumpStationStatus
-  let bathroomsStatus
-  let showersStatus
+  let dogsAllowedStatus;
+  let electricHookupsStatus;
+  let waterHookupsStatus;
+  let potableWaterStatus;
+  let dumpStationStatus;
+  let bathroomsStatus;
+  let showersStatus;
 
   if (props.dogsAllowed == true) {
-    dogsAllowedStatus = "Yes"
+    dogsAllowedStatus = "Yes";
   } else {
-    dogsAllowedStatus = "No"
+    dogsAllowedStatus = "No";
   }
 
   if (props.electricHookups == true) {
-    electricHookupsStatus = "Yes"
+    electricHookupsStatus = "Yes";
   } else {
-    electricHookupsStatus = "No"
+    electricHookupsStatus = "No";
   }
 
   if (props.waterHookups == true) {
-    waterHookupsStatus = "Yes"
+    waterHookupsStatus = "Yes";
   } else {
-    waterHookupsStatus = "No"
+    waterHookupsStatus = "No";
   }
 
   if (props.potableWater == true) {
-    potableWaterStatus = "Yes"
+    potableWaterStatus = "Yes";
   } else {
-    potableWaterStatus = "No"
+    potableWaterStatus = "No";
   }
 
   if (props.dumpStation == true) {
-    dumpStationStatus = "Yes"
+    dumpStationStatus = "Yes";
   } else {
-    dumpStationStatus = "No"
+    dumpStationStatus = "No";
   }
 
   if (props.bathrooms == true) {
-    bathroomsStatus = "Yes"
+    bathroomsStatus = "Yes";
   } else {
-    bathroomsStatus = "No"
+    bathroomsStatus = "No";
   }
 
   if (props.showers == true) {
-    showersStatus = "Yes"
+    showersStatus = "Yes";
   } else {
-    showersStatus = "No"
+    showersStatus = "No";
   }
 
   return (
     <div>
-      <h3>General Info:</h3>
-        <ul>
-          <li><a href={props.campgroundLink} target="_blank" rel="noreferrer">Official Website</a></li>
-          <li>Dogs Allowed - {dogsAllowedStatus}</li>
-          <li>Electric Hookups - {electricHookupsStatus}</li>
-          <li>Water Hookups - {waterHookupsStatus}</li>
-          <li>Potable Water - {potableWaterStatus}</li>
-          <li>Dump Station - {dumpStationStatus}</li>
-          <li>Bathrooms - {bathroomsStatus}</li>
-          <li>Showers - {showersStatus}</li>
-        </ul>
+      <h3 className="is-size-4">General Info:</h3>
+      <ul>
+        <li>
+          <a href={props.campgroundLink} target="_blank" rel="noreferrer">
+            Official Website
+          </a>
+        </li>
+        <li>Dogs Allowed - {dogsAllowedStatus}</li>
+        <li>Electric Hookups - {electricHookupsStatus}</li>
+        <li>Water Hookups - {waterHookupsStatus}</li>
+        <li>Potable Water - {potableWaterStatus}</li>
+        <li>Dump Station - {dumpStationStatus}</li>
+        <li>Bathrooms - {bathroomsStatus}</li>
+        <li>Showers - {showersStatus}</li>
+      </ul>
+      <br />
     </div>
-  )
-}
+  );
+};
 
-export default AmenitiesTile
+export default AmenitiesTile;

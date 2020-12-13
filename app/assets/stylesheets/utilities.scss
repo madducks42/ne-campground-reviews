@@ -1,0 +1,57 @@
+.callout {
+  border: 1px solid #adb5bd;
+  padding: 5px;
+  // background-color: #BFC0C0;
+}
+
+// Generic Flexblox Style
+.flex-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+.flex-row img {
+  margin: 5px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+// Button Styles
+.button:hover {
+  background-color: #ed9905;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+}
+
+// Admin Links
+.columns.admin-flex {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+a.admin-link {
+  // font-family: "Source Serif Pro", serif;
+  font-size: 1.4rem;
+  margin-left: 10px;
+  padding: 10px;
+  // height: 40px;
+  width: fit-content;
+  border-radius: 2px;
+  background-color: #984447;
+  color: #f7f9fb;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+}
+
+a.admin-link:hover {
+  background-color: #ed9905;
+  color: #f7f9fb;
+  // font-family: "Source Serif Pro", serif;
+  font-size: 1.4rem;
+}

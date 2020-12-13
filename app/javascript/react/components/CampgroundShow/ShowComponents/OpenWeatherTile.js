@@ -4,7 +4,7 @@ const OpenWeatherTile = (props) => {
 
   return (
     <div className="callout weather-container">
-      <h1>Weather for {props.weather.date}</h1>
+      <h5 className="is-size-5">Weather for {props.weather.date}</h5>
       <ul>
         <li className='weather'><img src={`http://openweathermap.org/img/wn/${props.weather.icon}@2x.png`} alt= "current weather conditions"/></li>
         <li className='weather'>Conditions: {props.weather.conditions}</li>

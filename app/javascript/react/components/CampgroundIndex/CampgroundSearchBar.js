@@ -59,22 +59,24 @@ class CampgroundSearchBar extends Component {
     return (
       <div className="search-container">
         <form onSubmit={this.handleSubmit}>
-          <label className="nav-search">
-            <input
-              className="search-field"
-              type="text"
-              name="searchString"
-              value={this.state.searchString}
-              onChange={this.handleChange}
-            />
-          </label>
-
-          <input className="button" type="submit" value="Search" />
+          <div className="field has-addons">
+            <div className="control">
+              <input
+                className="input search-field"
+                type="text"
+                placeholder="Search Campgrounds"
+                name="searchString"
+                value={this.state.searchString}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="control">
+              <input className="button" type="submit" value="Search" />
+            </div>
+          </div>
         </form>
         <div className="nav-search">
-          {isResultsAvailable && (
-            <h6 className="nav-search">Search Results:</h6>
-          )}
+          {isResultsAvailable && (<h6 className="nav-search">Search Results:</h6>)}
         </div>
         <ul className="nav-search">{campgrounds}</ul>
       </div>

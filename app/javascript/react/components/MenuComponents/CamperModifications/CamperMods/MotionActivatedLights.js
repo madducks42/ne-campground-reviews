@@ -3,7 +3,7 @@ import React from "react";
 const MotionActivatedLights = () => {
   return (
     <div className="camper-mods-style">
-      <p>
+      <p className="is-size-7 mb-4">
         This is another of my favorites. More often than not, we&apos;re camping
         on batteries. And while we do have 4 of them, we try to make each one
         last. So, that means turning off lights when we&apos;re not using them.
@@ -11,7 +11,7 @@ const MotionActivatedLights = () => {
         (common during dinner prep, for example), but it also turns them on
         &quot;hands-free&quot; when we enter.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         The key is a{" "}
         <a
           href="https://www.amazon.com/gp/product/B00JLB0GM6/"
@@ -32,7 +32,7 @@ const MotionActivatedLights = () => {
         powered), but just the other ceiling light went out. That was good
         enough.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         This light is located right in front of the stereo head unit mounted in
         the overhead storage. This was convenient because I wanted to mount the
         motion sensor on that cabinet, right in front of the entry door. So, I
@@ -43,7 +43,7 @@ const MotionActivatedLights = () => {
         cabinet, it was easy to staple it along the upper, inside of the front
         of the cabinet to get the wires opposite the door.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         When I ordered the motion sensor, I also picked up some of{" "}
         <a
           href="https://www.amazon.com/gp/product/B071LQFQ17/"
@@ -76,14 +76,14 @@ const MotionActivatedLights = () => {
         switch that could toggle between &quot;Off&quot;, &quot;On&quot;, and
         &quot;Motion Sensor&quot;.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         Also, I read some less-than-great reviews of the motion sensor but its
         worked <em>perfectly</em> for us. You can adjust the sensativity (to
         motion), and we&apos;ve got ours set to it can detect you as you step up
         to the screen door from the outside. Literally, you hit the steps and
         the lights come on!
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         You can also adjust the amount of time the lights stay on after the last
         motion was detected. So, ours stay on for about 5 min, then go off. But
         if you keep moving (or move at least once every 5 min) they stay on.

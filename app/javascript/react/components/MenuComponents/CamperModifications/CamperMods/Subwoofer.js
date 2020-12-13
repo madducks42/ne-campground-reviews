@@ -3,7 +3,7 @@ import React from "react";
 const Subwoofer = () => {
   return (
     <div className="camper-mods-style">
-      <p>
+      <p className="is-size-7 mb-4">
         Maddox teases me and says I add a subwoofer to everything. All this
         because I added a{" "}
         <a
@@ -15,13 +15,13 @@ const Subwoofer = () => {
         </a>
         (And it sounds <em>amazing </em>, btw). Anyway...
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         So, even after the upgrade of the interior speakers in the Wolf Pup,
         there was still very little low end. Again, we&apos;re <em>not</em>{" "}
         cranking music for the entire campground. But, I like decent sound, even
         at very low volumes. So, I added a small sub to the camper.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         I wanted to keep the install simple, and I didn&apos;t need much power,
         and I certainly didn&apos;t want something that would drain the
         camper&apos;s batteries. So, after a bit of research I decided to go
@@ -41,7 +41,7 @@ const Subwoofer = () => {
         on as an extra reminder to turn it off during quiet hours or when not in
         use.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         Installation was pretty easy. I ran power and signal from the back of
         the Furion head unit to the sub, which I located under the bed right by
         the access hatch. Finding a signal for the sub was easy as the head unit
@@ -52,7 +52,7 @@ const Subwoofer = () => {
         we can simply open the exterior hatch, and swing the sub into the
         opening.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         I don&apos;t use it as much as I thought I would. Again, we work hard
         not to disturb other campers. But, when I do use it, it makes a world of
         difference in the sound, even at low volumes.

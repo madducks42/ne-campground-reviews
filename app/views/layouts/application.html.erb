@@ -1,62 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CampgroundReviews</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NE Campground Reviews</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,900;1,200;1,300;1,400;1,600;1,900&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/e961c52d73.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class='content'>
-    <div class="top-bar" id="example-menu">
-      <div class="top-bar-left">
-        <img class="logo" src='/images/logo.png'>
-        <div class="menu-title"><a href="/">NE Campground Reviews</a></div>
-      </div>
-      <div class="top-bar-right">
-        <ul class="dropdown menu" data-dropdown-menu>
-          <li class="has-submenu menu-hover">
-            <a class="header-nav-buttons" href="#0">Menu</a>
-            <ul class="submenu menu vertical" data-submenu>
-              <li><%= link_to 'About Us', aboutus_url %></li>
-              <li><%= link_to 'Our Camper', camper_url %></li>
-            </ul>
-          </li>
-          <%- if current_user -%>
-            <li><%= link_to 'Profile', user_path(current_user), class: 'header-nav-buttons' %></li>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'header-nav-buttons' %></li>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item logo" href="/">
+        <img src="/images/logo.png">
+      </a>
+      <a class="navbar-item logo-name" href="/">
+        <img src="/images/logo-name.png">
+      </a>
+
+      <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+    </div>
+
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-end">
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link is-arrowless">
+            Menu
+          </a>
+          <div class="navbar-dropdown">
+            <%= link_to 'About Us', aboutus_url, class: 'navbar-item' %>
+            <%= link_to 'Our Camper', camper_url, class: 'navbar-item' %>
+            <a class="navbar-item" href="mailto:maddoxgrey42@gmail.com">
+              Contact
+            </a>
+          </div>
+        </div>
+        <%- if current_user -%>
+            <%= link_to 'Profile', user_path(current_user), class: 'navbar-item' %>
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'navbar-item' %>
           <%- else -%>
-            <li><%= link_to 'Sign In', new_user_session_path, class: 'header-nav-buttons' %></li>
-            <li><%= link_to 'Sign Up', new_user_registration_path, class: 'header-nav-buttons' %></li>
+            <%= link_to 'Sign In', new_user_session_path, class: 'navbar-item' %>
+            <%= link_to 'Sign Up', new_user_registration_path, class: 'navbar-item' %>
           <%- end -%>
-        </ul>
+
       </div>
     </div>
+  </nav>
 
-    <%- flash.each do |key, value| -%>
-      <div class="flash flash-<%= key %>">
-        <%= value %>
-      </div>
-    <%- end -%>
-
-    <%= yield %>
-
-    <div class="footer">
-      <h3>&copy; NE Campground Reviews</h3>
+  <%- flash.each do |key, value| -%>
+    <div class="flash flash-<%= key %>">
+      <%= value %>
     </div>
+  <%- end -%>
 
-    <%= javascript_include_tag 'application' %> 
+  <%= yield %>
+
+  <footer class="has-text-centered footer">
+    <h3>&copy; NE Campground Reviews</h3>
+  </footer>
   
-    <%- if Rails.env.development? || Rails.env.test? -%> 
-      <%= javascript_tag do %>
-        window.railsEnv = '<%= Rails.env %>'
-      <%- end -%>
+  <%- if Rails.env.development? || Rails.env.test? -%> 
+    <%= javascript_tag do %>
+      window.railsEnv = '<%= Rails.env %>'
     <%- end -%>
-    <%= javascript_pack_tag 'application' %>
-    
-    <%= yield :extra_footer %>
+  <%- end -%>
+
+  <%= javascript_pack_tag 'application' %>
+  <%= javascript_include_tag 'application' %>
   
+  
+  <%= yield :extra_footer %>
+   
 </body>
 </html>

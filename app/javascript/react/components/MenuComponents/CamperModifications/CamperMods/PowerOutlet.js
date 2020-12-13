@@ -3,13 +3,13 @@ import React from "react";
 const PowerOutlet = () => {
   return (
     <div className="camper-mods-style">
-      <p>
+      <p className="is-size-7 mb-4">
         I&apos;d been thinking about adding a 12 volt power outlet (a &quot;cigarette
         lighter&quot; style jack) for a while. I wasn&apos;t sure what I&apos;d use it for
         (there are USB jacks all over the place) but I knew some day the need
         would come. And it did.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         When it became clear that working from home was a long-term thing during
         the summer of 2020, Maddox tried to book as many campsites as possible.
         My company&apos;s vacation policy is pretty great, but it was clear that I&apos;d
@@ -20,11 +20,11 @@ const PowerOutlet = () => {
         while, so I needed an outlet up to the task (lots of stories of cheap
         sockets melting out there).
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         With this mod I had a few concerns... primarily not killing the battery,
         and not starting a fire.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         I thought about putting some sort of battery alarm in, but the camper
         came with a voltmeter gauge built-in, and it does a good job of letting
         me know the state of the battery. I tend to watch it closely when I&apos;m
@@ -32,11 +32,11 @@ const PowerOutlet = () => {
         recharge via the
         solar setup.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         The &quot;not starting a fire&quot; requirement primarily meant the components had
         to be up to the task, and a little protection needed to be installed.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         For the outlet, a quick search revealed that just about every outlet on
         Amazon has at least one reviewer talking about the outlet overheating
         and melting. But I found{" "}
@@ -49,7 +49,7 @@ const PowerOutlet = () => {
         with an all-metal body, and a fair amount of air-space around it to keep
         it cool.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         Next up was the wire. I really just wanted to make sure that, like the
         outlet, the wiring was up to the task. Primarily meaning weather-proof,
         and thick enough to keep cool under load. For cost and performance, I
@@ -59,7 +59,7 @@ const PowerOutlet = () => {
         wire. While the wire is outdoor rated, its also tucked into the existing
         wireloom where exposed to the elements.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         Lastly, since this thing is directly connected to the battery, I wanted
         to include some short protection. I opted for this{" "}
         <a href="https://www.amazon.com/gp/product/B07NSFHT2V/" target="_blank" rel="noreferrer">
@@ -72,7 +72,7 @@ const PowerOutlet = () => {
         . It will protect the circuit, and I won&apos;t need to replace a fuse if I
         do overload it.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         Wiring this up was pretty straight forward. The existing breaker and an
         electrical box are located right behind the battery{" "}
         <a href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/powerjack3.jpg" target="_blank" rel="noreferrer">
@@ -91,7 +91,7 @@ const PowerOutlet = () => {
         what it was originally sealed with), and then I had my fault-protected
         hot wire inside the cabin.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         For esthetics, and ease, I mounted the outlet under the bed as well, to
         the back side of the
         storage unit I installed. Its out of the way,

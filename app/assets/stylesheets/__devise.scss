@@ -1,10 +1,9 @@
-div.grid-container {
-  margin-top: 20px;
-}
+
 
 div.devise-bg.callout {
   background-color: #476C9B;
   padding: 30px;
+  margin-top: 10px;
 }
 
 div.field {
@@ -14,6 +13,11 @@ div.field {
 // Add extra space above password field on create account
 input#user_password.devise-new-password {
   margin-top: 10px;
+}
+
+input.devise-form {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 h2.devise-style {
@@ -40,7 +44,7 @@ label.devise-style, label.devise-style em {
   font-family: 'Source Serif Pro', serif;
   font-size: 1.8rem;
   color: #F7F9FB;
-  margin: 0px;
+  margin-bottom: 15px;
 }
 
 // Message about password requirements

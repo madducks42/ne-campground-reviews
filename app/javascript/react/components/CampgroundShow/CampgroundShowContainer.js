@@ -152,12 +152,12 @@ const CampgroundShowContainer = (props) => {
   };
 
   return (
-    <div className="grid-container full flex-column">
+    <div className="container">
       <ErrorList errors={errors} />
-      <div className="show-container">
-        <h1 className="center-text">{campground.name}</h1>
-        <div className="grid-x grid-margin-x">
-          <div className="cell full flex-row">
+      <div className="mb-6">
+        <h1 className="has-text-centered is-size-1 has-text-weight-semibold font-red mb-6 mt-6">{campground.name}</h1>
+        <div className="columns">
+          <div className="column">
             <div className="amenities-container">
               <div>
                 <AmenitiesTile
@@ -173,8 +173,8 @@ const CampgroundShowContainer = (props) => {
                 />
               </div>
               <div className="flex-column">
-                <button
-                  type="button"
+                <i
+                  type="input"
                   value={`${favorite}`}
                   id={`${campground.id}`}
                   className={`${favoriteIcon}`}
@@ -184,17 +184,20 @@ const CampgroundShowContainer = (props) => {
                   data-disable-hover="false"
                   title={`${favoriteMessage}`}
                   onClick={onClickFavoriteHandler}
-                ></button>
+                  onKeyDown={onClickFavoriteHandler}
+                  role="button"
+                  tabIndex={0}
+                ></i>
                 {signInError}
               </div>
             </div>
-            <div>
-              <ImagesTile />
-            </div>
+          </div>
+          <div className="column">
+            <ImagesTile />
           </div>
         </div>
-        <div className="grid-x grid-margin-x">
-          <div className="cell auto description-tile">
+        <div className="columns">
+          <div className="column">
             <DescriptionTile
               key={campground.id}
               campgroundLink={campground.campground_link}
@@ -204,16 +207,16 @@ const CampgroundShowContainer = (props) => {
             />
           </div>
         </div>
-        <div className="grid-x grid-margin-x info-container">
-          <div className="weather-container">
+        <div className="columns info-container">
+          <div className="column is-narrow">
             <OpenWeatherTile key={campground.id} weather={weather} />
           </div>
-          <div className="map-container">
+          <div className=" column map-container">
             <MapTile />
           </div>
         </div>
         {currentUser.role === "admin" && (
-          <div className="grid-x grid-margin-x admin-flex">
+          <div className="columns admin-flex">
             <Link
               className="admin-link"
               to={`/campgrounds/${campground.id}/update`}
@@ -228,13 +231,13 @@ const CampgroundShowContainer = (props) => {
             </Link>
           </div>
         )}
-        <div className="grid-x grid-margin-x">
-          <div className="cell">{reviewForm}</div>
+        <div className="columns">
+          <div className="column">{reviewForm}</div>
         </div>
-        <div className="grid-x grid-margin-x reviews-container">
-          <div className="cell">
-            <h2>Average Member Rating: {averageRatingMessage}</h2>
-            <h2>Member Reviews: {noReviewsMessage}</h2>
+        <div className="columns reviews-container">
+          <div className="column">
+            <h2 className="is-size-4">Average Member Rating: {averageRatingMessage}</h2>
+            <h2 className="is-size-4">Member Reviews: {noReviewsMessage}</h2>
             <ReviewsContainer
               reviews={reviews}
               userIsAdmin={userIsAdmin}

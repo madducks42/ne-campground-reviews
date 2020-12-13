@@ -1,0 +1,62 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require_lightbox
+ */
+
+// Header Overrides
+$navbar-background-color: #476c9b;
+$navbar-height: 10rem;
+$navbar-item-img-max-height: 8rem;
+$navbar-item-color: #f7f9fb;
+$navbar-item-hover-color: #f7f9fb;
+$navbar-item-hover-background-color: #ed9905;
+$navbar-dropdown-background-color: #476c9b;
+
+// Footer Overrides
+$footer-background-color: #476c9b;
+$footer-color: true;
+$footer-padding: 2rem;
+
+// Font Overrides
+$is-family-primary: "Source Serif Pro";
+$is-family-secondary: serif;
+$size-1: 3rem;
+$size-2: 2.5rem;
+$size-3: 2.25rem;
+$size-4: 2rem;
+$size-5: 1.5rem;
+$size-6: 1.25rem;
+$size-7: 1.1rem;
+
+// Button Overrides
+$button-text-color:#f7f9fb;
+$button-color:#f7f9fb;
+$button-background-color: #984447;
+$button-border-color: #984447;
+
+// Button Active/Focus Overrides
+$button-hover-color: #f7f9fb;
+$button-focus-color: #f7f9fb;
+$button-focus-border-color: #984447;
+$button-focus-box-shadow-size: 0 0 0 0em;
+
+// Button Hover Overrides
+$button-hover-border-color: #ed9905;
+$button-text-hover-color:#f7f9fb;
+
+// Spacing Overrides
+// $spacing-shortcuts: ("margin": "mg");
+
+ @import "bulma";

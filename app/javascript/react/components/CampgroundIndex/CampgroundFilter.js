@@ -49,9 +49,9 @@ const CampgroundFilter = (props) => {
   }
   
     return (
-      <div className='filter-container'>
-        <h2>Display Only:</h2>
-        <div className='filter-items'>  
+      <div className='flex-column mt-4'>
+        <h5 className="is-size-5">Display Campgrounds In:</h5>
+        <div className='flex-column'>  
           <label className='checkbox-label'>
             MA:
             <input
@@ -98,8 +98,8 @@ const CampgroundFilter = (props) => {
               onChange={handleInputChange} />
           </label>
         </div>
-        <br />
-        <div className='filter-items'>  
+        <h5 className="is-size-5 mt-4">Display Campgrounds With:</h5>
+        <div className='flex-column'>  
           <label className='checkbox-label'>
             Dogs Allowed:
             <input
@@ -164,7 +164,7 @@ const CampgroundFilter = (props) => {
               onChange={handleInputChange} />
           </label>
         </div>
-        <input className='button' type='button' value='Reset Filter' onClick={handleReset} />
+        <input className='button mt-4' type='button' value='Reset Filter' onClick={handleReset} />
       </div>
     );
   }

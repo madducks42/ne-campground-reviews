@@ -79,14 +79,14 @@ const UserShowContainer = (props) => {
   }
 
   return (
-    <div className="grid-container full show-style">
+    <div className="container">
       <div className="user-show-container">
         <UserShowTile userInfo={userInfo} />
         <div className="user-favorites-container callout">
-          <h2 className="center-text">Favorite Campgrounds</h2>
+          <h2 className="has-centered-text">Favorite Campgrounds</h2>
           <div className="flex-row">{campgroundTiles}</div>
         </div>
-        <h2 className="center-text">{reviewMessage}</h2>
+        <h2 className="has-centered-text">{reviewMessage}</h2>
         <div className="user-reviews-container">
           <br />
           {userReviewsArray}

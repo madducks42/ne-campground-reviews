@@ -17,8 +17,8 @@ const ReviewsContainer = (props) => {
   });
 
   return (
-    <div>
-      <ul>{reviewsArray}</ul>
+    <div className="flex-column">
+      {reviewsArray}
     </div>
   );
 };

@@ -217,37 +217,45 @@ const CamperModsContainer = () => {
   const sectionsOutput = sectionsData.map((section) => {
     if (visibility[section.id]) {
       return (
-        <div className="camper-mods-section">
-          <div className="flex-row" key={section.key}>
-            <h3>{section.title}</h3>
-            <button
-              type="button"
+        <div className="camper-mods-section" key={section.key}>
+          <div className="flex-row">
+            <h4 className="is-size-4">{section.title}</h4>
+            <i
+              type="input"
               id={section.id}
               onClick={onClickHandler}
+              onKeyDown={onClickHandler}
+              role="button"
+              tabIndex="0"
               className="fas fa-minus-square mods-button"
-            ></button>
+            ></i>
           </div>
           <div>{section.body}</div>
         </div>
       );
     } else {
       return (
-        <div className="flex-row camper-mods-section" key={section.key}>
-          <h3>{section.title}</h3>
-          <button
-            type="button"
-            id={section.id}
-            onClick={onClickHandler}
-            className="fas fa-plus-square mods-button"
-          ></button>
+        <div className="camper-mods-section" key={section.key}>
+          <div className="flex-row">
+            <h4 className="is-size-4">{section.title}</h4>
+            <i
+              type="input"
+              id={section.id}
+              onClick={onClickHandler}
+              onKeyDown={onClickHandler}
+              role="button"
+              tabIndex="0"
+              className="fas fa-plus-square mods-button"
+            ></i>
+          </div>
         </div>
       );
     }
   });
   return (
     <div>
-      <h1>Camper Modifications</h1>
-      <p>
+      <h1 className="is-size-1 font-red has-text-centered has-text-weight-semibold mt-6">Camper Modifications</h1>
+      <p className="is-size-7 mt-4">
         As much as we love the Wolf Pup (aka the &apos;Gray Ghost&apos;), there
         are some things that we tweaked...
       </p>

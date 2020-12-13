@@ -12,10 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
 //= require lightbox
+//= require navmenu
 // require_tree .
 
-$(function(){ $(document).foundation(); });
 
 

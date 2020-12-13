@@ -3,7 +3,7 @@ import React from "react";
 const SolarSuitcase = () => {
   return (
     <div className="camper-mods-style">
-      <p>
+      <p className="is-size-7 mb-4">
         As mentioned above, more often than not, we&apos;re at sites without
         power. So, we primarily rely on a few car batteries that we swap in when
         one goes flat. But, we&apos;d rather not swap batteries and realize that
@@ -24,7 +24,7 @@ const SolarSuitcase = () => {
         includes everything you need (the panels, the charge controller, and the
         battery hook-up cable).
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         After buying this setup, I tried it out on a few trips. The panels
         successfully replenished the power we use in 24 hours throughout a
         single sunny day (assuming about 8 hours in direct, bright sun). That
@@ -34,14 +34,14 @@ const SolarSuitcase = () => {
         longer than 5 or 6 days with no external power along the way, we might
         have a problem.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         This setup is expandable, meaning that I could add another pair of
         panels to this existing controller, doubling the power generation
         capability. As tempting as this is, we haven&apos;t needed it yet, and
         juggling twice as many panels isn&apos;t appealing. So, I&apos;m not
         doing this soon.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         One other tweak I eventally made to this system was to pick up this{" "}
         <a
           href="https://www.amazon.com/gp/product/B00N80C5BQ/"

@@ -3,8 +3,8 @@ import React from "react";
 const CamperMisc = () => {
   return (
     <div className="flex-column">
-      <h1>Miscellaneous</h1>
-      <p>
+      <h1 className="is-size-1 font-red has-text-centered has-text-weight-semibold mt-6">Miscellaneous</h1>
+      <p className="is-size-7">
         These aren&apos;t really mods, but they&apos;re useful things we&apos;ve
         added to our camper....
       </p>
@@ -21,6 +21,7 @@ const CamperMisc = () => {
           produces white or orange-ish light (easier on the eyes) and is
           rechargeable via the plentiful USB ports.
         </li>
+        <br/>
         <li>
           <a
             href="https://www.amazon.com/gp/product/B085HCJLLQ/"
@@ -32,6 +33,7 @@ const CamperMisc = () => {
           goose-neck makes it great for shared, indirect ligth over the larger
           bed.
         </li>
+        <br/>
         <li>
           <a
             href="https://www.amazon.com/gp/product/B07KR4JNCS/"
@@ -43,6 +45,7 @@ const CamperMisc = () => {
           awning before rolling it up, or... whatever. So I found this little
           ladder, super light, and fits easily into either of the storage bays.
         </li>
+        <br/>
         <li>
           <a
             href="https://www.amazon.com/gp/product/B07F8N2H98"
@@ -66,6 +69,7 @@ const CamperMisc = () => {
           </a>{" "}
           which should perform better.
         </li>
+        <br/>
         <li>
           <a
             href="https://www.amazon.com/gp/product/B003FOOY32/"
@@ -85,6 +89,7 @@ const CamperMisc = () => {
           suitcase, and the cell booster, I should be able work from just about
           anywhere.
         </li>
+        <br/>
         <li>
           <a
             href="https://www.amazon.com/gp/product/B015SY3WKM/"
@@ -96,6 +101,7 @@ const CamperMisc = () => {
           water that has been in the holding tank for a few days. With its
           built-in filter, it makes a noticable difference.
         </li>
+        <br/>
         <li>
           <a
             href="https://www.amazon.com/gp/product/B00339C3FA"
@@ -122,6 +128,7 @@ const CamperMisc = () => {
           up over a picnic table next to the trailer if we&apos;re expecting
           rain (yes, the roof blocks the rain) or if its a buggy area.
         </li>
+        <br/>
       </ul>
     </div>
   );

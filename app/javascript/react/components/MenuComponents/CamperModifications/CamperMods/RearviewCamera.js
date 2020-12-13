@@ -3,18 +3,18 @@ import React from "react";
 const RearviewCamera = () => {
   return (
     <div className="camper-mods-style">
-      <p>
+      <p className="is-size-7 mb-4">
         I don&apos;t have a ton of experience towing, so I knew I wanted to make
         it as easy on myself as possible. So I knew that adding a rear view
         camera was going to happen.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         I did a bit of research and found that, like so many things, you can
         find cheap (less expensive) options, and you can pay a fortune. I tend
         to be sort of cheap, figuring that I can hack an &quot;ok&quot; product
         into being a &quot;good&quot; product. Especially electronics.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         For backup/rear-view cameras, there are two main &quot;flavors&quot;:
         wired and wireless. Given the relatively short trailer, and the fact
         that I don&apos;t need <em>perfect</em> video here, I decided to go for
@@ -32,7 +32,7 @@ const RearviewCamera = () => {
         to see that the camera body was die-cast metal and not plastic that
         would crack in the elements after a few months.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         The display unit simply plugs into the cigarette outlet in your car. You
         could hardwire it, but I stash mine away when I&apos;m not towing, and I
         don&apos;t use the outlet, so hardwiring didn&apos;t make sense for me.
@@ -50,11 +50,11 @@ const RearviewCamera = () => {
         monitor on my dash and its completely stable, and easy to move. (See the
         pics below.)
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         The next step in the installation is the camera, itself. There are two
         parts to this: attaching the camera to the camper, and the wiring.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         The camera isn&apos;t too heavy, so I just drilled <em>small</em>
         holes in the back of the camper, filled them with silicone caulk and
         screwed the camera bracket to the wall. I mounted it relatively high on
@@ -65,7 +65,7 @@ const RearviewCamera = () => {
         up above the camper would get me a stronger signal, as opposed to having
         to travel through or around the camper.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         For the wiring... I took the easy approach. Some people have written up
         articles about how they drilled into the cabin and found a power source
         in there. Instead, I opted to tap into the power for the running lights
@@ -73,7 +73,7 @@ const RearviewCamera = () => {
         consumption of the camera to ensure I wouldn&apos;t overload anything,
         but in the end I just tried it out, and it worked great.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         Now, when the lights are on, the camera is on. And honestly, this has
         saved me a few times. Sometimes I&apos;ll hook the camper to the tow
         vehicle while prepping to hit the road, but I&apos;ll intentionally not
@@ -85,12 +85,12 @@ const RearviewCamera = () => {
         before driving away, its very clear that its not getting power (because
         I haven&apos;t plugged the trailer into the car).
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         Tapping into the power is really easy. Remove the running light,
         identify the + and - wire (mine were marked, but use a tester, if
         needed), splice in the camera wiring. Easy.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         The slightly more challenging part is making sure its water tight. When
         I removed the running light, I saw that it was sealed to the camper wall
         with some putty. I little research showed that its a product like{" "}
@@ -106,7 +106,7 @@ const RearviewCamera = () => {
         of the light to ensure water doesn&apos;t run down the wire into the
         camper (learn about drip loops). So far, no problems.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         All-in-all, the installation went fine. And the camera worked pretty
         well. Occaisionally, the video would freeze. Best I could tell this was
         due to interference from other signals (rarely happened on the highway).

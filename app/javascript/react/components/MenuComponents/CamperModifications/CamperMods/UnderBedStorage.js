@@ -3,13 +3,13 @@ import React from "react";
 const UnderBedStorage = () => {
   return (
     <div className="camper-mods-style">
-      <p>
+      <p className="is-size-7 mb-4">
         This is one of my favorite mods. Most of the stuff listed here is pretty
         straight forward &quot;replace this with that&quot;, &quot;just order
         this and bolt it on&quot;, or you can find three YouTube videos showing
         you what to do. Not this one.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         It started out as a place to put shoes. Mostly because the family would
         come in for the night, and everyone would leave their shoes in front of
         the door in case they were needed for a bathroom break while half
@@ -21,7 +21,7 @@ const UnderBedStorage = () => {
         things under there (chairs, screen tent, etc), there was still plenty of
         room.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         At this point we&apos;d had the Gray Ghost for just about a year. So, it
         wasn&apos;t brand new, but its still in pretty nice shape. So, what ever
         modfication I did had to look decent. I&apos;m &quot;handy&quot;, but
@@ -34,14 +34,14 @@ const UnderBedStorage = () => {
         interior of the camper enough so it doesn&apos;t stand out, and almost
         looks original.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         I decided to set it up with one shelf and a short drawer on one side,
         and a deeper drawer on the other. But the internal configuration is easy
         to change (and you buy all those parts separately. The shelf is perfect
         for flip-flops, and sneakers. And so it the short drawer. So far
         we&apos;ve used the deeper one for beverage storage.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         Honestly, the hardest part was finding the right piece of furniture to
         put in there. Once I got it home (and assembled it), the next step was
         to remove the &quot;paneling&quot; on the side of the bed (see the first
@@ -52,7 +52,7 @@ const UnderBedStorage = () => {
         relied on the storage unit carrying the weight (its pretty solid) but I
         also put new supports in either side of the storage unit.
       </p>
-      <p>
+      <p className="is-size-7 mb-4">
         With the &quot;framing&quot; in place, I layed the paneling on the
         ground (face down) and put the storage unit (also face down) on top of
         it. I traced the unit onto the back of the paneling and very

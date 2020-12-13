@@ -27,15 +27,15 @@ const ShowReviewTile = (props) => {
   }
 
   return (
-    <div className="callout review-tile">
-      <h5>{props.review.title}</h5>
-      <div className="callout">
-        <p>{props.review.body}</p>
+    <div>
+      <h5 className="font-red is-size-5 has-text-weight-semibold">{props.review.title}</h5>
+      <div className="review-content">
+        <p className="is-size-7">{props.review.body}</p>
         <br />
-        <p>Rating: {props.review.rating}</p>
+        <p className="is-size-7">Rating: {props.review.rating}</p>
         <br />
       </div>
-        <p>Created by {props.review.ownerUsername} on {props.review.reviewCreated}</p>
+        <p className="is-size-7">Created by {props.review.ownerUsername} on {props.review.reviewCreated}</p>
         {buttonChangeGroup}
     </div>
   );

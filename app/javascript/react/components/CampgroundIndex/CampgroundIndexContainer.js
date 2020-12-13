@@ -71,21 +71,19 @@ const CampgroundIndexContainer = () => {
   };
 
   return (
-    <div className="grid-container full">
-      <div className="grid-x">
-        <div className="cell small-6 medium-4 large-3 left-nav-bar">
-          <ul className="menu left-nav-bar nav-flex">
-            <CampgroundSearchBar />
-          </ul>
-          <div className="menu filter-section">
+    <div className="columns">
+      <div className="column is-narrow color-bg-white">
+        <div className="left-nav-bar">
+          <CampgroundSearchBar />
+          <div className="flex-column">
             <ErrorList errors={errors} />
             <CampgroundFilter filterCampgrounds={filterCampgrounds} />
           </div>
         </div>
-        <div className="cell small-6 medium-8 large-9">
-          <div className="grid-x grid-margin-x campground-tile-container index-scrollable">
-            {campgroundTiles}
-          </div>
+      </div>
+      <div className="column color-bg-white">
+        <div className="container campground-tile-container index-scrollable">
+          {campgroundTiles}
         </div>
       </div>
     </div>

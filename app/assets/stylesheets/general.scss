@@ -1,30 +1,30 @@
 // Color Scheme
-.color-scheme-white {
-  color: #f7f9fb;
+.color-bg-white {
+  background-color: #f7f9fb;
 }
 
-.color-scheme-black {
-  color: #101419;
+.color-bg-black {
+  background-color: #101419;
 }
 
-.color-scheme-red {
-  color: #984447;
+.color-bg-red {
+  background-color: #984447;
 }
 
-.color-scheme-medium-blue {
-  color: #476c9b;
+.color-bg-blue {
+  background-color: #476c9b;
 }
 
-.color-scheme-green {
-  color: #98b9ab;
+.color-bg-green {
+  background-color: #98b9ab;
 }
 
-.color-scheme-yellow {
-  color: #ed9905;
+.color-bg-yellow {
+  background-color: #ed9905;
 }
 
-.color-scheme-purple {
-  color: #413c58;
+.color-bg-purple {
+  background-color: #413c58;
 }
 
 // General Page Setup
@@ -37,183 +37,18 @@ html {
 }
 
 body {
-  background-color: #f7f9fb;
+  background-color: white;
   font-family: "Source Serif Pro", serif;
   font-size: 1.4rem;
   color: #101419;
-  display: flex;
-  flex-direction: column;
   height: 100%;
   width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .content {
   flex: 1 0 auto;
   width: 100%;
-}
-
-.grid-container.full {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-// General Font Style
-h1 {
-  font-size: 2.8rem;
-  font-family: "Source Serif Pro", serif;
-}
-
-h2 {
-  font-size: 2.6rem;
-  font-family: "Source Serif Pro", serif;
-}
-
-h3 {
-  font-size: 2.4rem;
-  font-family: "Source Serif Pro", serif;
-}
-
-h4 {
-  font-size: 2.2rem;
-  font-family: "Source Serif Pro", serif;
-}
-
-h5 {
-  font-size: 2rem;
-  font-weight: 800;
-  font-family: "Source Serif Pro", serif;
-}
-
-h6 {
-  font-size: 1.8rem;
-  font-family: "Source Serif Pro", serif;
-}
-
-p {
-  font-family: "Source Serif Pro", serif;
-  font-size: 1.8rem;
-}
-
-a {
-  font-family: "Source Serif Pro", serif;
-  font-size: 1.8rem;
-  color: #f7f9fb;
-}
-
-a:hover {
-  color: #f7f9fb;
-  text-decoration: underline;
-}
-
-li {
-  font-family: "Source Serif Pro", serif;
-  font-size: 1.8rem;
-}
-
-// Button styles
-.button,
-.button:active {
-  font-family: "Source Serif Pro", serif;
-  font-size: 1.8rem;
-
-  margin: 5px 0px 0px 0px;
-  padding: 10px;
-  height: 40px;
-  width: fit-content;
-  border-radius: 2px;
-  background-color: #984447;
-  color: #f7f9fb;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
-}
-
-.button:hover {
-  background-color: #ed9905;
-  color: #f7f9fb;
-  font-family: "Source Serif Pro", serif;
-  font-size: 1.8rem;
-}
-
-.button:focus {
-  background-color: #984447;
-}
-
-// Admin Related Links (i.e. Update/Delete Campground)
-div.grid-x.grid-margin-x.admin-flex {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-a.admin-link {
-  font-family: "Source Serif Pro", serif;
-  font-size: 1.8rem;
-  margin-left: 10px;
-  padding: 10px;
-  height: 40px;
-  width: fit-content;
-  border-radius: 2px;
-  background-color: #984447;
-  color: #f7f9fb;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
-}
-
-a.admin-link:hover {
-  background-color: #ed9905;
-  color: #f7f9fb;
-  font-family: "Source Serif Pro", serif;
-  font-size: 1.8rem;
-}
-
-// Dropzone Style
-.dropzone-box {
-  border: #101419 2px dotted;
-  padding: 20px;
-  margin-bottom: 5px;
-}
-
-// Generic Flexblox Style
-.flex-row {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-// Reusuable General Settings
-.center-text {
-  text-align: center;
-}
-
-.has-tip {
-  border-bottom: none;
-}
-
-.callout {
-  // background-color: #F7F9FB;
-  border: 1px solid #adb5bd;
-  margin: 0px;
-}
-
-// Responsive Design Section
-@media screen and (min-width: 1025px){
-  .grid-container {
-    max-width: 70%;
-  }
-}
-
-@media screen and (max-width: 1024px) and (min-width: 641px) {
-  .grid-container {
-    max-width: 80%;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .grid-container {
-    max-width: 90%;
-  }
 }
