@@ -1,5 +1,41 @@
+form.new-campground-form.callout {
+  border-radius: 10px;
+  background-color: #476C9B;
+  color: #F7F9FB;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: auto;
+  width: 100%;
+}
+
+form.new-campground-form.callout input {
+  width: 100%;
+  height: auto;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 1.2rem;
+}
+
+form.new-campground-form.callout textarea {
+  width: 100%;
+  min-height: 300px;
+  font-size: 1.2rem;
+}
+
+select.campground-form {
+  width: min-content;
+  padding: 5px;
+  font-size: 1.2rem;
+}
+
+// button.button {
+//   min-width: 40px;
+// }
+
 // form.new-campground-form.callout {
-//   font-family: 'Source Serif Pro', serif;
+//   display: flex;
+//   flex-direction: column;
 //   font-size: 1.6rem;
 //   border-radius: 10px;
 //   background-color: #476C9B;
@@ -8,25 +44,21 @@
 // }
 
 // form.new-campground-form.callout label {
-//   font-family: 'Source Serif Pro', serif;
 //   font-size: 1.6rem;
 //   color: #F7F9FB;
 // }
 
 // form.new-campground-form.callout input {
-//   font-family: 'Source Serif Pro', serif;
 //   font-size: 1.6rem;
 // }
 
 // textarea#description.campground-form {
 //   min-height: 400px;
 //   max-height: 500px;
-//   font-family: 'Source Serif Pro', serif;
 //   font-size: 1.6rem;
 // }
 
 // select.campground-form {
-//   font-family: 'Source Serif Pro', serif;
 //   font-size: 1.6rem;
 // }
 
