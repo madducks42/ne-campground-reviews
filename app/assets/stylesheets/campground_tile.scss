@@ -1,7 +1,12 @@
 // Campground Tiles Section
 .card {
-  min-width: 350px;
-  min-height: 350px;
+  width: 25rem;
+  height: 30rem;
+}
+
+.card img {
+  width: 25rem;
+  overflow: hidden;
 }
 
 .card-title {

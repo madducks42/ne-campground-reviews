@@ -27,7 +27,7 @@ const CampgroundTile = (props) => {
   }
 
   return (
-    <div className="column mr-1 ml-1">
+    <div className="mr-2 ml-2 mt-2 mb-2">
       <div className="card">
         <div className="card-image">
           <figure className="image is-4by3">
