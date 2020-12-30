@@ -51,11 +51,11 @@ const ReviewForm = (props) => {
 
   return (
     <form onSubmit={handleSubmit} className="new-review-form callout">
-      <h3>Leave A Review!</h3>
+      <h3 className="is-size-3 mb-3">Leave A Review!</h3>
       <ErrorList errors={errors} />
       <div className="field">
-        <label className="label">Title
-          <div className="control">
+        <label className="label" htmlFor="title">Title</label>
+          <div className="control mb-6">
             <input
               className="input"
               type="text"
@@ -66,12 +66,11 @@ const ReviewForm = (props) => {
               value={newReview.title}
             />
           </div>
-        </label>
       </div>
 
       <div className="field">
-        <label className="label">Body
-          <div className="control">
+        <label className="label" htmlFor="body">Review</label>
+          <div className="control mb-6">
             <textarea
               className="textarea"
               placeholder="Add Review Body"
@@ -81,11 +80,10 @@ const ReviewForm = (props) => {
               value={newReview.body}
             ></textarea>
           </div>
-        </label>
       </div>
 
       <div className="field">
-        <label className="label">Rating
+        <label className="label" htmlFor="rating">Rating</label>
           <div className="control">
             <div className="select">
               <select
@@ -116,7 +114,6 @@ const ReviewForm = (props) => {
               </select>
             </div>
           </div>
-        </label>
       </div>
 
       <div className="field is-grouped">
