@@ -32,5 +32,5 @@ Rails.application.routes.draw do
     end
   end
   
-  get '*page', to: 'homes#index'
+  # get '*page', to: 'homes#index'
 end
