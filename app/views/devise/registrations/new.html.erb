@@ -6,36 +6,38 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.label :email, class: 'devise-style' %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'devise-form' %>
+        <%= f.label :email, class: 'label' %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input' %>
       </div>
 
       <div class="field">
-        <%= f.label :password, class: 'devise-style' %>
+        <%= f.label :password, class: 'label' %>
         <% if @minimum_password_length %>
+        <br/>
+        <br/>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password", class: 'devise-new-password devise-form' %>
+        <%= f.password_field :password, autocomplete: "new-password", class: 'devise-new-password input' %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation, class: 'devise-style' %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'devise-form' %>
+        <%= f.label :password_confirmation, class: 'label' %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input' %>
       </div>
 
       <div class="field">
-        <%= f.label :username, class: 'devise-style' %><br />
-        <%= f.text_field :username, autofocus: true, autocomplete: "username", class: 'devise-form' %>
+        <%= f.label :username, class: 'label' %><br />
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", class: 'input' %>
       </div>
 
       <div class="field">
-        <%= f.label :first_name, class: 'devise-style' %><br />
-        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: 'devise-form' %>
+        <%= f.label :first_name, class: 'label' %><br />
+        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: 'input' %>
       </div>
 
       <div class="field">
-        <%= f.label :last_name, class: 'devise-style' %><br />
-        <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: 'devise-form' %>
+        <%= f.label :last_name, class: 'label' %><br />
+        <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: 'input' %>
       </div>
 
       <div class="actions">
