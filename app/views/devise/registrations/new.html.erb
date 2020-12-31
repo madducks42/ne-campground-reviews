@@ -13,6 +13,8 @@
       <div class="field">
         <%= f.label :password, class: 'label' %>
         <% if @minimum_password_length %>
+        <br/>
+        <br/>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "new-password", class: 'devise-new-password input' %>
