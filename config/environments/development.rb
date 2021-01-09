@@ -36,6 +36,20 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  # Setup mailer
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+
+  config.action_mailer.smtp_settings = {
+  :user_name => ENV["MAILER_USER_NAME"],
+  :password => ENV["MAILER_PASSWORD"],
+  :address => ENV["MAILER_SMTP"],
+  :domain => ENV["MAILER_SMTP"],
+  :port => '2525',
+  :authentication => :cram_md5
+}
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -61,13 +75,3 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
 end
-
-# config.action_mailer.delivery_method = :smtp
-# config.action_mailer.smtp_settings = {
-#   :user_name => '3e5acc73bdeaed',
-#   :password => '37e846670294fb',
-#   :address => 'smtp.mailtrap.io',
-#   :domain => 'smtp.mailtrap.io',
-#   :port => '2525',
-#   :authentication => :cram_md5
-# }

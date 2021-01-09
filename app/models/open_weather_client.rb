@@ -13,7 +13,6 @@ class OpenWeatherClient
         message: parsed_weather['message']
       }
     else
-      # binding.pry
       return {
         conditions: parsed_weather['weather'][0]['main'],
         icon: parsed_weather['weather'][0]['icon'],
