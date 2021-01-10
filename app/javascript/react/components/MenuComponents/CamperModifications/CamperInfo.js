@@ -63,7 +63,7 @@ const CamperInfo = () => {
       <p className="is-size-7 mb-4">
         This all added up to the
         <a
-          href="https://www.northeastcampingreviews.com/Resources/Images/TrailerMods/2019wolfpupbrochure.pdf"
+          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/2019wolfpupbrochure.pdf"
           target="_blank"
           rel="noreferrer"
         >
