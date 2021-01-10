@@ -30,7 +30,7 @@
       <div class="navbar-end">
 
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link is-arrowless">
+          <a class="navbar-link">
             Menu
           </a>
           <div class="navbar-dropdown">
@@ -54,7 +54,7 @@
   </nav>
 
   <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
+    <div class="mb-6 flash flash-<%= key %>">
       <%= value %>
     </div>
   <%- end -%>
@@ -62,7 +62,7 @@
   <%= yield %>
 
   <footer class="has-text-centered footer">
-    <h3>&copy; NE Campground Reviews</h3>
+    <h5 class="is-size-5">&copy; NE Campground Reviews</h5>
   </footer>
   
   <%= javascript_include_tag 'application' %> 
