@@ -28,7 +28,7 @@ Devise.setup do |config|  config.secret_key = Rails.application.secret_key_base
   config.mailer_sender = 'donotreply@campgroundreviews.com'
 
   # Configure the class responsible to send e-mails.
-  config.mailer = 'UserMailer'
+  config.mailer = 'Devise::Mailer'
 
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
