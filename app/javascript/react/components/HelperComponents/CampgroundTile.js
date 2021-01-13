@@ -38,7 +38,7 @@ const CampgroundTile = (props) => {
           <div className="media">
             <div className="media-content">
               <p className="card-title">
-                <Link to={`/campgrounds/${props.id}`}>{props.name}</Link>
+                <Link className="font-red" to={`/campgrounds/${props.id}`}>{props.name}</Link>
               </p>
               <p className="subtitle is-6">{props.location}</p>
             </div>
