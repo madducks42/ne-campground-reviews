@@ -52,12 +52,12 @@ const CamperInfo = () => {
       <p className="is-size-7 mb-4">
         As the family grew, in size and number, we found we had 2 adults, a
         rapidly growing tween (with friends), and a big hound. And our desire to
-        camp only grew. So around the end of 2018 camping season, we started
+        camp only grew. So around the end of the 2018 camping season, we started
         talking about a new camper. Something a little more modern, and a little
-        larger than the little 15 year old Aliner. We did some research and
+        larger than the tiny 15 year old Aliner. We did some research and
         realized that, while we wanted more space, we also wanted to make sure
-        we kept it small enough so we could easily get into most campgrounds. We
-        thought through how we&apos;d use it, and realized that James would soon
+        we kept it small enough that it would be under the length restrictions of the state and national parks in our area. We
+        thought through how we&apos;d use it, and realized that the kid would soon
         want to bring friends on our trips. So, we needed beds for 4...
       </p>
       <p className="is-size-7 mb-4">
@@ -77,7 +77,7 @@ const CamperInfo = () => {
       <div className="content">
         <ul>
           <li>
-            Total length under 20ft (common cut-off length for smaller sites)
+            Total length under 20ft (common cut-off length for the parks in our area)
           </li>
           <li>Queen size (almost) bed, enough room for 2 adults</li>
           <li>Bunk beds for the kid and a friend</li>
@@ -116,7 +116,7 @@ const CamperInfo = () => {
       </div>
       <p className="is-size-7 mb-4">
         And I&apos;m not gonna lie, the asthetic impact of the fiberglass body
-        and rimless windows was a pretty big factor in our choice to go with the
+        and rimless windows were a pretty big factor in our choice to go with the
         upgrade.
       </p>
       <div className="lightbox-container-mods">
@@ -146,8 +146,7 @@ const CamperInfo = () => {
         </a>
       </div>
       <p className="is-size-7">
-        But, there were also a few practical upgrades with the Black Label trim
-        level:
+        But, there were also a few practical upgrades with the Black Label level:
       </p>
       <div className="content">
         <ul>
