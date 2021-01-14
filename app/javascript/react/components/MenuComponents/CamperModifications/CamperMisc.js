@@ -41,7 +41,7 @@ const CamperMisc = () => {
           >
             Ladder
           </a>{" "}
-          - Everyone so often you need to get on the roof, or wipe down the
+          - Every once in a while you need to get on the roof, or wipe down the
           awning before rolling it up, or... whatever. So I found this little
           ladder, super light, and fits easily into either of the storage bays.
         </li>
@@ -111,7 +111,7 @@ const CamperMisc = () => {
           </a>{" "}
           - The bugs love me. And James. We step out of the car when we get to a
           camp site (often around dusk), and the first thing we have to do is
-          apply bug spray, or they chow on us. Interestling, they don&apos;t
+          apply bug spray, or they chow on us. Interestingly, they don&apos;t
           seem to bother Maddox much (too bitter?). Anyway... in addition to
           being extra-tasty to mosquitos, we also often camp near water. So,
           we&apos;re always prepared with bug spray, <em>and</em> this screen
