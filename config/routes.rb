@@ -22,11 +22,13 @@ Rails.application.routes.draw do
       post 'campgrounds/filter', to: 'campgrounds#filter'
       post 'users/favorite', to: 'users#favorite'
       
-      resources :users, only: [:show, :destroy]
+      # get 'users/admin_view' to: 'users#admin_view'
+      
+      resources :users, only: [:index, :show, :destroy]
+
       resources :campgrounds, only: [:index, :show, :create, :edit, :update, :destroy] do
-        resources :reviews, only: [:create]
+        resources :reviews, only: [:create] #this might be duplicate
         resources :campground_images, only: [:create, :edit, :update, :destroy]
-        
         resources :reviews, only: [:show, :create, :update, :destroy]
       end
     end
