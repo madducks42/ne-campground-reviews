@@ -1,3 +1,16 @@
+// Margin All Around
+.m-sm {
+  margin: 1rem;
+}
+
+.m-md {
+  margin: 2rem;
+}
+
+.m-lg {
+  margin: 3rem;
+}
+
 // Margin Top
 .mt {
   margin-top: 0px;
@@ -112,6 +125,19 @@
 
 .ml-6 {
   margin-left: 1.5rem;
+}
+
+// Padding All Around
+.p-sm {
+  padding: 1rem;
+}
+
+.p-md {
+  padding: 2rem;
+}
+
+.p-lg {
+  padding: 3rem;
 }
 
 // Padding Top

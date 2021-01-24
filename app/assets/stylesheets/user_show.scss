@@ -5,6 +5,9 @@
 .user-show-container {
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
+  max-width: fit-content;
+  min-width: 600px;
   align-items: center;
   margin-left: 20%;
   margin-right: 20%;
@@ -13,7 +16,7 @@
 .user-info-container {
   display: flex;
   flex-direction: column;
-  background-color: #98B9AB;
+  background-color: #b6dfe8;
   color: #101419;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -33,7 +36,7 @@
 .user-reviews-container {
   display: flex;
   flex-direction: column;
-  background-color: #476C9B;
+  background-color: #476c9b;
   color: #101419;
   padding: 20px 20px 40px 20px;
   margin-bottom: 20px;
@@ -62,5 +65,5 @@
 .campround-link:hover {
   background-color: inherit;
   font-weight: bold;
-  color: #ED9905;
+  color: #dc602e;
 }

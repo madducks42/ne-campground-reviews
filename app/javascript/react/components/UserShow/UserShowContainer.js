@@ -4,7 +4,7 @@ import UserShowTile from "./UserShowTile";
 import UserReviewTile from "./UserReviewTile";
 import CampgroundTile from "../HelperComponents/CampgroundTile";
 import UserMemberTile from "../UserShow/UserMemberTile";
-import UserAdminTile from "../UserShow/UserAdminTile"
+import UserAdminTile from "../UserShow/UserAdminTile";
 
 const UserShowContainer = (props) => {
   const [userInfo, setUserInfo] = useState({
@@ -14,7 +14,7 @@ const UserShowContainer = (props) => {
     username: "",
     email: "",
     accountCreated: "",
-    userIsAdmin: ""
+    userIsAdmin: "",
   });
   const [userReviews, setUserReviews] = useState([]);
   const [userFavorites, setUserFavorites] = useState([]);
@@ -40,7 +40,7 @@ const UserShowContainer = (props) => {
           username: body.username,
           email: body.email,
           accountCreated: body.accountCreated,
-          userIsAdmin: body.userIsAdmin
+          userIsAdmin: body.userIsAdmin,
         });
 
         setUserReviews(body.reviews);
@@ -83,7 +83,7 @@ const UserShowContainer = (props) => {
   }
 
   let userDisplayTile = null;
-  let userIsAdmin = userInfo.userIsAdmin
+  let userIsAdmin = userInfo.userIsAdmin;
 
   if (userIsAdmin === false) {
     userDisplayTile = (
@@ -91,22 +91,21 @@ const UserShowContainer = (props) => {
         campgroundTiles={campgroundTiles}
         reviewMessage={reviewMessage}
         userReviewsArray={userReviewsArray}
-
       />
     );
   } else if (userIsAdmin === true) {
-    userDisplayTile = (
-      <UserAdminTile
-        
-      />
-    );
-}
+    userDisplayTile = <UserAdminTile />;
+  }
 
   return (
     <div className="container">
-      <div className="user-show-container">
-        <UserShowTile userInfo={userInfo} />
-        {userDisplayTile}
+      <div className="columns is-centered">
+        <div className="column is-narrow">
+          <UserShowTile userInfo={userInfo} />
+        </div>
+      </div>
+      <div className="columns is-centered">
+        <div className="column is-full">{userDisplayTile}</div>
       </div>
     </div>
   );
