@@ -3,7 +3,7 @@ import React from "react";
 const UserShowTile = (props) => {
   return (
     <div className="user-info-container">
-      <h1 className='is-size-1'>User Profile:</h1>
+      <h1 className='is-size-1'>Member Information:</h1>
       <br />
       <h5 className='is-size-5'>
         <strong>Username:</strong> {props.userInfo.username}

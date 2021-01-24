@@ -1,22 +1,50 @@
 // Campground Tiles Section
-.card {
-  width: 25rem;
-  height: 30rem;
-}
-
-.card img {
-  width: 25rem;
-  overflow: hidden;
-}
-
 .card-title {
   color: #476c9b;
 }
 
 .card-title a {
-  font-size: 1.6rem;
-}
-.card-title a:hover {
-  color: #984447;
   text-decoration: underline;
+}
+
+.card-title a:hover {
+  color: #ed9905;
+  text-decoration: underline;
+}
+
+// Responsive Tile
+@media screen and (min-width: 641px){
+  .card {
+    width: 28em;
+    height: 34em;
+  }
+  
+  .card img {
+    width: 25em;
+    max-height: 20em;
+    overflow: hidden;
+  }
+
+  .card-title a {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .card {
+    width: 20em;
+    height: 30em;
+  }
+  
+  .card img {
+    width: 15em;
+    max-height: 15em;
+    overflow: hidden;
+  }
+
+  .card-title a {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
 }

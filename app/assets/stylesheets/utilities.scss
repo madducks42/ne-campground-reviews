@@ -1,15 +1,13 @@
 .callout {
   border: 1px solid #adb5bd;
   padding: 5px;
-  // background-color: #BFC0C0;
 }
 
 // Generic Flexblox Style
 .flex-row {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
-  align-items: center;
 }
 
 .flex-row img {
@@ -37,11 +35,9 @@
 }
 
 a.admin-link {
-  // font-family: "Source Serif Pro", serif;
   font-size: 1.4rem;
   margin-left: 10px;
   padding: 10px;
-  // height: 40px;
   width: fit-content;
   border-radius: 2px;
   background-color: #984447;
@@ -52,6 +48,12 @@ a.admin-link {
 a.admin-link:hover {
   background-color: #dc602e;
   color: #f7f9fb;
-  // font-family: "Source Serif Pro", serif;
   font-size: 1.4rem;
+}
+
+// HR Style
+hr.style-one {
+  height: 12px;
+  border: 0;
+  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
 }

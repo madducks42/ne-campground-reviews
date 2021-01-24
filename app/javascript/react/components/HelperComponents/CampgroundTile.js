@@ -43,7 +43,10 @@ const CampgroundTile = (props) => {
               <p className="subtitle is-6">{props.location}</p>
             </div>
           </div>
-          <div className="content">{props.caption}</div>
+          <div className="content">
+            <p>{props.caption}</p>
+            < br />
+          </div>
         </div>
       </div>
     </div>

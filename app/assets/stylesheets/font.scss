@@ -4,7 +4,11 @@ h1, h2, h3, h4, h5, h6, p, a, li {
 }
 
 li {
-  font-size: 1.1rem;
+  font-size: 1.3em;
+}
+
+p {
+  font-size: 1.3em;
 }
 
 .font-white {
@@ -34,14 +38,3 @@ li {
 .font-purple {
   color: #413c58;
 }
-
-// a {
-//     font-family: "Source Serif Pro", serif;
-//     font-size: 1.8rem;
-//     color: #f7f9fb;
-// }
-  
-// a:hover {
-//     color: #f7f9fb;
-//     text-decoration: underline;
-// }
