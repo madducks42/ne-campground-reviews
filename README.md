@@ -18,9 +18,9 @@ This application also uses CarrierWave, ActiveRecord, and ReactDropzone. Images 
 
 ## Run Locally
 The setup steps expect the following tools/versions:
-- Ruby 2.6.5
-- Rails 5.2.4.4
-- PostgreSQL 13
+- Ruby 2.7.2
+- Rails 6.1.0
+- PostgreSQL 13.1
 
 ###### Clone the Repo
 ```
@@ -28,7 +28,7 @@ git clone
 ```
 ###### Install Dependencies
 ```
-npm install 
+yarn install 
 ```
 ```
 bundle install 
@@ -49,7 +49,7 @@ bundle exec rspec
 ###### Start the Rails server and webpack-dev-server
 ```
 bundle exec rails s
-npm run start
+yarn run start
 ```
 
 ###### The application can be accessed locally at <http://localhost:3000>
