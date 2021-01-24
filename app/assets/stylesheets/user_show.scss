@@ -26,13 +26,19 @@
   max-width: fit-content;
 }
 
-.user-favorites-container {
+.user-container {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 2em;
 }
 
+.user-container h2 {
+  text-align: center;
+  color: #101419;
+  font-weight: 800;
+}
+
+// Reviews Style
 .user-reviews-container {
   display: flex;
   flex-direction: column;
@@ -49,21 +55,49 @@
   font-weight: 400;
 }
 
-.review-tile-container {
-  background-color: #f7f9fb;
-  padding: 20px;
-  margin-bottom: 10px;
-}
-
-.campround-link {
+.review-link {
   background-color: inherit;
-  color: #984447;
+  color: #f7f9fb;
   font-weight: bold;
   font-size: 2.4rem;
 }
 
-.campround-link:hover {
+.review-link:hover {
   background-color: inherit;
   font-weight: bold;
   color: #dc602e;
 }
+
+.review-tile-container {
+  background-color: #476c9b;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.review-content {
+  background-color: #f7f9fb;
+}
+
+.review-callout {
+  border-top: 1px solid #ADB5BD;
+  border-bottom: 1px solid #ADB5BD;
+  padding: 1em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+// Responsive Tile
+@media screen and (min-width: 641px){
+  .user-info-container {
+    min-width: 600px;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .user-info-container {
+    min-width: fit-content;
+  }
+}
+
+
+

@@ -4,18 +4,17 @@ import { Link } from "react-router-dom";
 const UserReviewTile = (props) => {
   return (
     <div className="review-tile-container">
-      <h2>
-        <Link
-          className="campround-link"
-          to={`/campgrounds/${props.campgroundID}`}
-        >
+      <h3>
+        <Link className="review-link" to={`/campgrounds/${props.campgroundID}`}>
           {props.campgroundName}
         </Link>
-      </h2>
-      <div className="callout">
-        <h4>{props.title}</h4>
-        <p>{props.body}</p>
-        Rating: {props.rating}
+      </h3>
+      <div className="review-content">
+        <h6 className="is-size-6 font-red has-text-weight-semibold">{props.title}</h6>
+        <div className="review-callout">
+          <p>{props.body}</p>
+        </div>
+        <p>Rating: {props.rating}</p>
       </div>
     </div>
   );

@@ -63,7 +63,7 @@ const UserShowContainer = (props) => {
   });
 
   let userReviewsArray = [];
-  let reviewMessage = "Your Reviews:";
+  let reviewMessage = "~ Your Reviews ~";
 
   if (userReviews) {
     userReviewsArray = userReviews.map((review) => {
@@ -104,6 +104,7 @@ const UserShowContainer = (props) => {
           <UserShowTile userInfo={userInfo} />
         </div>
       </div>
+      <hr className="style-one" />
       <div className="columns is-centered">
         <div className="column is-full">{userDisplayTile}</div>
       </div>
@@ -112,3 +113,4 @@ const UserShowContainer = (props) => {
 };
 
 export default UserShowContainer;
+
