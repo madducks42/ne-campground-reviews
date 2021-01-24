@@ -21,7 +21,7 @@ $navbar-height: 10rem;
 $navbar-item-img-max-height: 8rem;
 $navbar-item-color: #f7f9fb;
 $navbar-item-hover-color: #f7f9fb;
-$navbar-item-hover-background-color: #ed9905;
+$navbar-item-hover-background-color: #dc602e;
 $navbar-dropdown-background-color: #476c9b;
 $link: #f7f9fb;
 
@@ -57,7 +57,12 @@ $button-focus-box-shadow-size: 0 0 0 0em;
 $button-hover-border-color: #ed9905;
 $button-text-hover-color:#f7f9fb;
 
-// Spacing Overrides
-// $spacing-shortcuts: ("margin": "mg");
+// Table Overrides
+$table-head-background-color: #e8eaee;
+$table-body-background-color: #f7f9fb;
+$table-cell-padding: 1em;
+$table-row-hover-background-color: #b6dfe8;
+$table-row-hover-color: #f7f9fb;
+
 
  @import "bulma";

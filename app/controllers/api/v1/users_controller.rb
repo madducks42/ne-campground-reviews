@@ -1,5 +1,6 @@
 class Api::V1::UsersController < ApiController
   # before_action :authorize_user, except: [:index, :show]
+  
   def show
     render json: User.find(params[:id]), serializer: UserShowSerializer
   end
@@ -26,6 +27,10 @@ class Api::V1::UsersController < ApiController
     elsif
       render json: {favoriteCampground: nil}
     end
+  end
+
+  def index
+    render json: User.all, each_serializer: AdminUserSerializer
   end
 
 end

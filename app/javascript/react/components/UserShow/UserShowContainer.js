@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import UserShowTile from "./UserShowTile";
 import UserReviewTile from "./UserReviewTile";
 import CampgroundTile from "../HelperComponents/CampgroundTile";
+import UserMemberTile from "../UserShow/UserMemberTile";
+import UserAdminTile from "../UserShow/UserAdminTile";
 
 const UserShowContainer = (props) => {
   const [userInfo, setUserInfo] = useState({
@@ -12,6 +14,7 @@ const UserShowContainer = (props) => {
     username: "",
     email: "",
     accountCreated: "",
+    userIsAdmin: "",
   });
   const [userReviews, setUserReviews] = useState([]);
   const [userFavorites, setUserFavorites] = useState([]);
@@ -37,6 +40,7 @@ const UserShowContainer = (props) => {
           username: body.username,
           email: body.email,
           accountCreated: body.accountCreated,
+          userIsAdmin: body.userIsAdmin,
         });
 
         setUserReviews(body.reviews);
@@ -78,19 +82,30 @@ const UserShowContainer = (props) => {
     reviewMessage = "You have not posted any reviews yet.";
   }
 
+  let userDisplayTile = null;
+  let userIsAdmin = userInfo.userIsAdmin;
+
+  if (userIsAdmin === false) {
+    userDisplayTile = (
+      <UserMemberTile
+        campgroundTiles={campgroundTiles}
+        reviewMessage={reviewMessage}
+        userReviewsArray={userReviewsArray}
+      />
+    );
+  } else if (userIsAdmin === true) {
+    userDisplayTile = <UserAdminTile />;
+  }
+
   return (
     <div className="container">
-      <div className="user-show-container">
-        <UserShowTile userInfo={userInfo} />
-        <div className="user-favorites-container callout">
-          <h2 className="has-centered-text is-size-2">Favorite Campgrounds</h2>
-          <div className="flex-row">{campgroundTiles}</div>
+      <div className="columns is-centered">
+        <div className="column is-narrow">
+          <UserShowTile userInfo={userInfo} />
         </div>
-        <h2 className="has-centered-text is-size-2">{reviewMessage}</h2>
-        <div className="user-reviews-container">
-          <br />
-          {userReviewsArray}
-        </div>
+      </div>
+      <div className="columns is-centered">
+        <div className="column is-full">{userDisplayTile}</div>
       </div>
     </div>
   );
