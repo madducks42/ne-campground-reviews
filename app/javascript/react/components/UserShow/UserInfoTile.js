@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserShowTile = (props) => {
+const UserInfoTile = (props) => {
   return (
     <div className="user-info-container">
       <h1 className='is-size-1'>Member Information:</h1>
@@ -24,4 +24,4 @@ const UserShowTile = (props) => {
   );
 };
 
-export default UserShowTile;
+export default UserInfoTile;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 const UsersInfoTile = (props) => {
   
@@ -38,7 +39,7 @@ const UsersInfoTile = (props) => {
         <td>{accountCreated}</td>
         <td>{favorites}</td>
         <td>{reviews}</td>
-        <td>Edit</td>
+        <td><Link className="button" to={`/users/${id}`} >Edit</Link></td>
         <td>Delete</td>
       </tr>
     </tbody>

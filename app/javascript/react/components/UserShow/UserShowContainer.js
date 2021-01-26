@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import UserShowTile from "./UserShowTile";
+import UserInfoTile from "./UserInfoTile";
 import UserReviewTile from "./UserReviewTile";
 import CampgroundTile from "../HelperComponents/CampgroundTile";
 import UserMemberTile from "../UserShow/UserMemberTile";
@@ -93,15 +93,23 @@ const UserShowContainer = (props) => {
         userReviewsArray={userReviewsArray}
       />
     );
-  } else if (userIsAdmin === true) {
+  } else if ((userIsAdmin === true) && (userInfo.userID == props.match.params.id)) {
     userDisplayTile = <UserAdminTile />;
+  } else if ((userIsAdmin === true) && (userInfo.userID != props.match.params.id)) {
+    userDisplayTile = (
+      <UserMemberTile
+        campgroundTiles={campgroundTiles}
+        reviewMessage={reviewMessage}
+        userReviewsArray={userReviewsArray}
+      />
+    );
   }
 
   return (
     <div className="container">
       <div className="columns is-centered">
         <div className="column is-narrow">
-          <UserShowTile userInfo={userInfo} />
+          <UserInfoTile userInfo={userInfo} />
         </div>
       </div>
       <hr className="style-one" />
