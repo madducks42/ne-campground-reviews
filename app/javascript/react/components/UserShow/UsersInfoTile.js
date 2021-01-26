@@ -39,7 +39,7 @@ const UsersInfoTile = (props) => {
         <td>{accountCreated}</td>
         <td>{favorites}</td>
         <td>{reviews}</td>
-        <td><Link className="button" to={`/users/${id}`} >Edit</Link></td>
+        <td><Link className="button" to={`/users/${id}/admin`} >Edit</Link></td>
         <td>Delete</td>
       </tr>
     </tbody>

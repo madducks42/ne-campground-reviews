@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-import UserInfoTile from "./UserInfoTile";
+import { getUserData } from "./UserShowFetches/UserData"
 import UserReviewTile from "./UserReviewTile";
 import CampgroundTile from "../HelperComponents/CampgroundTile";
 import UserMemberTile from "../UserShow/UserMemberTile";
 import UserAdminTile from "../UserShow/UserAdminTile";
+import AdminViewUserTile from "../UserShow/AdminViewUserTile";
 
 const UserShowContainer = (props) => {
   const [userInfo, setUserInfo] = useState({
@@ -21,33 +22,19 @@ const UserShowContainer = (props) => {
 
   useEffect(() => {
     let id = props.match.params.id;
-    fetch(`/api/v1/users/${id}`)
-      .then((response) => {
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then((response) => response.json())
-      .then((body) => {
-        setUserInfo({
-          userID: body.id,
-          firstName: body.first_name,
-          lastName: body.last_name,
-          username: body.username,
-          email: body.email,
-          accountCreated: body.accountCreated,
-          userIsAdmin: body.userIsAdmin,
-        });
-
-        setUserReviews(body.reviews);
-
-        setUserFavorites(body.campgrounds);
-      })
-      .catch((error) => console.error(`Error in fetch: ${error.message}`));
+    getUserData(id).then((body) => {
+      setUserInfo({
+        userID: body.id,
+        firstName: body.first_name,
+        lastName: body.last_name,
+        username: body.username,
+        email: body.email,
+        accountCreated: body.accountCreated,
+        userIsAdmin: body.userIsAdmin,
+      });
+      setUserReviews(body.reviews);
+      setUserFavorites(body.campgrounds);
+    });
   }, []);
 
   let campgroundTiles = userFavorites.map((campground) => {
@@ -88,16 +75,18 @@ const UserShowContainer = (props) => {
   if (userIsAdmin === false) {
     userDisplayTile = (
       <UserMemberTile
+        userInfo={userInfo}
         campgroundTiles={campgroundTiles}
         reviewMessage={reviewMessage}
         userReviewsArray={userReviewsArray}
       />
     );
-  } else if ((userIsAdmin === true) && (userInfo.userID == props.match.params.id)) {
-    userDisplayTile = <UserAdminTile />;
-  } else if ((userIsAdmin === true) && (userInfo.userID != props.match.params.id)) {
+  } else if (userIsAdmin === true && userInfo.userID == props.match.params.id) {
+    userDisplayTile = <UserAdminTile userInfo={userInfo} />;
+  } else if (userIsAdmin === true && userInfo.userID != props.match.params.id) {
     userDisplayTile = (
-      <UserMemberTile
+      <AdminViewUserTile
+        userInfo={userInfo}
         campgroundTiles={campgroundTiles}
         reviewMessage={reviewMessage}
         userReviewsArray={userReviewsArray}
@@ -108,12 +97,6 @@ const UserShowContainer = (props) => {
   return (
     <div className="container">
       <div className="columns is-centered">
-        <div className="column is-narrow">
-          <UserInfoTile userInfo={userInfo} />
-        </div>
-      </div>
-      <hr className="style-one" />
-      <div className="columns is-centered">
         <div className="column is-full">{userDisplayTile}</div>
       </div>
     </div>
@@ -122,3 +105,34 @@ const UserShowContainer = (props) => {
 
 export default UserShowContainer;
 
+
+// useEffect(() => {
+  //   let id = props.match.params.id;
+  //   fetch(`/api/v1/users/${id}`)
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         return response;
+  //       } else {
+  //         let errorMessage = `${response.status} (${response.statusText})`,
+  //           error = new Error(errorMessage);
+  //         throw error;
+  //       }
+  //     })
+  //     .then((response) => response.json())
+  //     .then((body) => {
+  //       setUserInfo({
+  //         userID: body.id,
+  //         firstName: body.first_name,
+  //         lastName: body.last_name,
+  //         username: body.username,
+  //         email: body.email,
+  //         accountCreated: body.accountCreated,
+  //         userIsAdmin: body.userIsAdmin,
+  //       });
+
+  //       setUserReviews(body.reviews);
+
+  //       setUserFavorites(body.campgrounds);
+  //     })
+  //     .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  // }, []);
