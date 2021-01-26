@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class='is-size-2'>Update Your Information:</h2>
+  <h2 class='is-size-2'>Update Account Information:</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -50,12 +50,18 @@
       <%= f.password_field :current_password, autocomplete: "current-password", class: 'input' %>
     </div>
 
-    <div class='flex-row'>
+    <div class="flex-row">
       <div class="actions">
-        <%= f.submit "Update", class: 'button mr-3 mb-6'  %>
+        <%= f.submit "Update", class: "button" %>
       </div>
-      <%= button_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'button' %>
+      <%= link_to "Cancel", :back, class:"button ml-3" %>
     </div>
   <% end %>
+
+  <div class="callout mt-6 mb-6 p-md">
+    <h6 class="font-red is-size-6 has-text-weight-bold mb-4">Delete Account</h6>
+    <p class="is-size-7 mb-4">Please be sure you want to delete your account. Once an account has been deleted it cannot be recovered!</p>
+    <%= button_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"button" %>
+  </div>
 
 </div>

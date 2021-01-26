@@ -273,6 +273,7 @@ user_5 =
     first_name: 'Maddox',
     last_name: 'Grey',
     email: 'maddoxgrey42+admin@gmail.com',
+    username: 'maddoxgrey42+admin',
     password: 'password',
     role: 'admin'
   )
