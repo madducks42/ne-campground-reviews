@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'
 
 import { getUserData } from "./UserShowFetches/UserData"
 import UserInfoTile from "../UserShow/UserInfoTile"
@@ -17,6 +18,7 @@ const AdminViewUserTile = (props) => {
   });
   const [userReviews, setUserReviews] = useState([]);
   const [userFavorites, setUserFavorites] = useState([]);
+  const [currentUserID, setCurrentUserID] = useState();
 
   useEffect(() => {
     let id = props.match.params.id;
@@ -32,6 +34,7 @@ const AdminViewUserTile = (props) => {
       });
       setUserReviews(body.reviews);
       setUserFavorites(body.campgrounds);
+      setCurrentUserID(body.currentUser.id)
     });
   }, []);
 
@@ -72,6 +75,7 @@ const AdminViewUserTile = (props) => {
       <div className="user-container">
       <div className="columns is-centered">
         <div className="column is-narrow">
+          <Link className="button" to={`/users/${currentUserID}`} >Return to Admin Profile</Link>
           <UserInfoTile userInfo={userInfo} />
         </div>
       </div>

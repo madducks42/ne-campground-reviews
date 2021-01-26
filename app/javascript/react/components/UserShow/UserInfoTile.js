@@ -19,7 +19,7 @@ const UserInfoTile = (props) => {
         <strong>Member Since:</strong> {props.userInfo.accountCreated}
       </h5>
       <br />
-      <a className='button' href="/users/edit">Change Email or Password</a>
+      <a className='button' href="/users/edit">Update Your Information</a>
     </div>
   );
 };
