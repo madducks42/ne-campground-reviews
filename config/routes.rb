@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'homes#index'
-  devise_for :users
+  devise_for :users, :path_prefix => 'd'
 
   get '/campgrounds', to: 'homes#index'
   get '/campgrounds/new', to: 'homes#authenticated'
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get '/users/:id', to: "homes#authenticated"
   get '/users/:id/admin', to: "homes#authenticated"
+  get '/users/:id/admin/edit', to: "homes#authenticated"
 
   get '/aboutus', to: "homes#index"
   get '/camper', to: "homes#index"

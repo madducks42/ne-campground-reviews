@@ -15,6 +15,7 @@ const AdminViewUserTile = (props) => {
     email: "",
     accountCreated: "",
     userIsAdmin: "",
+    userIsCurrentUser: ""
   });
   const [userReviews, setUserReviews] = useState([]);
   const [userFavorites, setUserFavorites] = useState([]);
@@ -23,6 +24,12 @@ const AdminViewUserTile = (props) => {
   useEffect(() => {
     let id = props.match.params.id;
     getUserData(id).then((body) => {
+      let isCurrentUser = null
+      if (body.id === body.currentUser.id) {
+        isCurrentUser = true
+      } else {
+        isCurrentUser = false
+      };
       setUserInfo({
         userID: body.id,
         firstName: body.first_name,
@@ -31,6 +38,7 @@ const AdminViewUserTile = (props) => {
         email: body.email,
         accountCreated: body.accountCreated,
         userIsAdmin: body.userIsAdmin,
+        userIsCurrentUser: isCurrentUser
       });
       setUserReviews(body.reviews);
       setUserFavorites(body.campgrounds);
