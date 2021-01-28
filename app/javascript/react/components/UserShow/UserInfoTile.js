@@ -3,9 +3,10 @@ import React from "react";
 const UserInfoTile = (props) => {
 
   let editPath = null;
+  let id = props.userInfo.userID;
 
   if ((props.userInfo.userIsAdmin === true) && (props.userInfo.userIsCurrentUser === false))  {
-    editPath = "/users/:id/admin/edit"
+    editPath = `/users/${id}/admin/edit`
   } else {
     editPath = "/d/users/edit"
   }

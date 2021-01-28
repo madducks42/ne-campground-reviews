@@ -1,12 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const AdminEditUser = (props) => {
-  let defaultFields = {
-    first_name: "",
-    last_name: "",
+  const [userInfo, setUserInfo] = useState({
+    userID: "",
+    firstName: "",
+    lastName: "",
     username: "",
     email: "",
     role: "",
+  });
+
+  useEffect(() => {
+    let id = props.match.params.id;
+    fetch(`/api/v1/users/${id}`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then((body) => {
+        setUserInfo({
+          userID: body.id,
+          firstName: body.first_name,
+          lastName: body.last_name,
+          username: body.username,
+          email: body.email,
+          role: body.role,
+        });
+      })
+      .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  }, []);
+
+  const handleChange = (event) => {
+    setUserInfo({
+      ...userInfo,
+      [event.currentTarget.name]: event.currentTarget.value,
+    });
   };
 
   return (
@@ -15,7 +49,14 @@ const AdminEditUser = (props) => {
         <label className="label">
           First Name:
           <div className="control">
-            <input className="input" type="text" placeholder="e.g Alex Smith" />
+            <input
+              className="input"
+              type="text"
+              name="firstName"
+              value={userInfo.firstName}
+              onChange={handleChange}
+              onBlur={handleChange}
+            />
           </div>
         </label>
       </div>
@@ -27,7 +68,10 @@ const AdminEditUser = (props) => {
             <input
               className="input"
               type="text"
-              placeholder="e.g. alexsmith@gmail.com"
+              name="lastName"
+              value={userInfo.lastName}
+              onChange={handleChange}
+              onBlur={handleChange}
             />
           </div>
         </label>
@@ -40,7 +84,10 @@ const AdminEditUser = (props) => {
             <input
               className="input"
               type="text"
-              placeholder="e.g. alexsmith@gmail.com"
+              name="username"
+              value={userInfo.username}
+              onChange={handleChange}
+              onBlur={handleChange}
             />
           </div>
         </label>
@@ -53,7 +100,10 @@ const AdminEditUser = (props) => {
             <input
               className="input"
               type="email"
-              placeholder="e.g. alexsmith@gmail.com"
+              name="email"
+              value={userInfo.email}
+              onChange={handleChange}
+              onBlur={handleChange}
             />
           </div>
         </label>
@@ -66,8 +116,9 @@ const AdminEditUser = (props) => {
             <select
               className=""
               name="role"
-              // value={updatedCampground.dogs_allowed}
-              // onChange={handleChange}
+              value={userInfo.role}
+              onChange={handleChange}
+              onBlur={handleChange}
             >
               <option className="" value={true}>
                 Member
@@ -88,7 +139,6 @@ const AdminEditUser = (props) => {
           <button className="button">Cancel</button>
         </div>
       </div>
-
     </div>
   );
 };
