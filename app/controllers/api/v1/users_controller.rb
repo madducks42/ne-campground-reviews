@@ -33,4 +33,34 @@ class Api::V1::UsersController < ApiController
     render json: User.all, each_serializer: AdminUserSerializer
   end
 
+  # Not sure if this is needed?
+  def edit
+    # binding.pry
+    render json: User.find(params[:id])
+  end
+
+  def update
+    user = User.find(params[:id])
+
+    if user.update(user_params)
+      render json: user
+    else
+      render json: { errors: user.errors.full_messages }
+    end 
+  end
+
+  def destroy
+    binding.pry
+    user = User.find(params[:id])
+    if user.destroy
+      render json: {destroyed: true}
+    end
+  end
+
+  protected
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :username, :email, :role)
+  end
+
 end

@@ -9,6 +9,7 @@ attributes  :id,
             :userIsAdmin
 
 attribute :account_created, key: :accountCreated
+attribute :current_user, key: :currentUser
 
 has_many :reviews
 has_many :campgrounds, through: :favorites

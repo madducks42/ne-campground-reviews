@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import UserInfoTile from "../UserShow/UserInfoTile";
 import UsersInfoTile from "./UsersInfoTile";
 
-const UserAdminTile = () => {
+const UserAdminTile = (props) => {
   const [usersInfo, setUsersInfo] = useState([]);
 
   useEffect(() => {
@@ -34,7 +35,13 @@ const UserAdminTile = () => {
 
   return (
     <div>
-      <h1 className ="is-size-5 has-text-centered mb-4">Current Members</h1>
+      <div className="columns is-centered">
+        <div className="column is-narrow">
+          <UserInfoTile userInfo={props.userInfo} />
+        </div>
+      </div>
+      <hr className="style-one" />
+      <h1 className="is-size-5 has-text-centered mb-4">Current Members</h1>
       <div className="table-container mb-6">
         <table className="table is-fullwidth is-hoverable">
           <thead>

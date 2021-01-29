@@ -1,6 +1,16 @@
 import React from "react";
 
-const UserShowTile = (props) => {
+const UserInfoTile = (props) => {
+
+  let editPath = null;
+  let id = props.userInfo.userID;
+
+  if ((props.userInfo.userIsAdmin === true) && (props.userInfo.userIsCurrentUser === false))  {
+    editPath = `/users/${id}/admin/edit`
+  } else {
+    editPath = "/d/users/edit"
+  }
+  
   return (
     <div className="user-info-container">
       <h1 className='is-size-1'>Member Information:</h1>
@@ -19,9 +29,9 @@ const UserShowTile = (props) => {
         <strong>Member Since:</strong> {props.userInfo.accountCreated}
       </h5>
       <br />
-      <a className='button' href="/users/edit">Change Email or Password</a>
+      <a className='button' href={editPath}>Update Account Information</a>
     </div>
   );
 };
 
-export default UserShowTile;
+export default UserInfoTile;

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'homes#index'
-  devise_for :users
+  devise_for :users, :path_prefix => 'd'
 
   get '/campgrounds', to: 'homes#index'
   get '/campgrounds/new', to: 'homes#authenticated'
@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get '/campgrounds/:id', to: 'homes#index'
 
   get '/users/:id', to: "homes#authenticated"
+  get '/users/:id/admin', to: "homes#authenticated"
+  get '/users/:id/admin/edit', to: "homes#authenticated"
+  get '/users/:id/admin/delete', to: "homes#authenticated"
 
   get '/aboutus', to: "homes#index"
   get '/camper', to: "homes#index"
@@ -24,7 +27,7 @@ Rails.application.routes.draw do
       
       # get 'users/admin_view' to: 'users#admin_view'
       
-      resources :users, only: [:index, :show, :destroy]
+      resources :users, only: [:index, :show, :edit, :update, :destroy]
 
       resources :campgrounds, only: [:index, :show, :create, :edit, :update, :destroy] do
         resources :reviews, only: [:create] #this might be duplicate

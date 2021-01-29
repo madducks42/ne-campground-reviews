@@ -23,9 +23,5 @@ attribute :current_user, key: :currentUser
       return true
     end
   end
-
-  # def currentUser
-  #   current_user
-  # end
   
 end

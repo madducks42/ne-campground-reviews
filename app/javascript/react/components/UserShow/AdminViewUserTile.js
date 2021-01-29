@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'
 
-import { getUserData } from "./UserShowFetches/UserData";
+import { getUserData } from "./UserShowFetches/UserData"
+import UserInfoTile from "../UserShow/UserInfoTile"
 import UserReviewTile from "./UserReviewTile";
 import CampgroundTile from "../HelperComponents/CampgroundTile";
-import UserMemberTile from "../UserShow/UserMemberTile";
-import UserAdminTile from "../UserShow/UserAdminTile";
-import AdminViewUserTile from "../UserShow/AdminViewUserTile";
 
-const UserShowContainer = (props) => {
+const AdminViewUserTile = (props) => {
   const [userInfo, setUserInfo] = useState({
     userID: "",
     firstName: "",
@@ -16,10 +15,11 @@ const UserShowContainer = (props) => {
     email: "",
     accountCreated: "",
     userIsAdmin: "",
-    userIsCurrentUser: "",
+    userIsCurrentUser: ""
   });
   const [userReviews, setUserReviews] = useState([]);
   const [userFavorites, setUserFavorites] = useState([]);
+  const [currentUserID, setCurrentUserID] = useState();
 
   useEffect(() => {
     let id = props.match.params.id;
@@ -38,10 +38,11 @@ const UserShowContainer = (props) => {
         email: body.email,
         accountCreated: body.accountCreated,
         userIsAdmin: body.userIsAdmin,
-        userIsCurrentUser: isCurrentUser,
+        userIsCurrentUser: isCurrentUser
       });
       setUserReviews(body.reviews);
       setUserFavorites(body.campgrounds);
+      setCurrentUserID(body.currentUser.id)
     });
   }, []);
 
@@ -58,7 +59,7 @@ const UserShowContainer = (props) => {
   });
 
   let userReviewsArray = [];
-  let reviewMessage = "~ Your Reviews ~";
+  let reviewMessage = "~ User's Reviews ~";
 
   if (userReviews) {
     userReviewsArray = userReviews.map((review) => {
@@ -74,40 +75,33 @@ const UserShowContainer = (props) => {
       );
     });
   } else {
-    reviewMessage = "You have not posted any reviews yet.";
-  }
-
-  let userDisplayTile = null;
-  let userIsAdmin = userInfo.userIsAdmin;
-
-  if (userIsAdmin === false) {
-    // if current user is not an admin
-    userDisplayTile = (
-      <UserMemberTile
-        // currentUserID={currentUserID}
-        userInfo={userInfo}
-        campgroundTiles={campgroundTiles}
-        reviewMessage={reviewMessage}
-        userReviewsArray={userReviewsArray}
-      />
-    );
-  } else if (userIsAdmin === true && userInfo.userID == props.match.params.id) {
-    // if current user is an admin & is viewing their profile
-    userDisplayTile = <UserAdminTile userInfo={userInfo} />;
-  } else if (userIsAdmin === true && userInfo.userID != props.match.params.id) {
-    userDisplayTile = (
-      // if current user is an admin & is viewing another user's profile
-      <AdminViewUserTile />
-    );
+    reviewMessage = "User has not posted any reviews yet.";
   }
 
   return (
-    <div className="container">
+    <div className="flex-column">
+      <div className="user-container">
       <div className="columns is-centered">
-        <div className="column is-full">{userDisplayTile}</div>
+        <div className="column is-narrow">
+          <Link className="button" to={`/users/${currentUserID}`} >Return to Admin Profile</Link>
+          <UserInfoTile userInfo={userInfo} />
+        </div>
+      </div>
+        <h2 className="has-centered-text is-size-2">
+          ~ Favorite Campgrounds ~
+        </h2>
+        <div className="flex-row">{campgroundTiles}</div>
+      </div>
+      <hr className="style-one" />
+      <div className="user-container">
+        <h2 className="has-centered-text is-size-2">{reviewMessage}</h2>
+        <div className="flex-row">
+          <br />
+          {userReviewsArray}
+        </div>
       </div>
     </div>
   );
 };
 
-export default UserShowContainer;
+export default AdminViewUserTile;
