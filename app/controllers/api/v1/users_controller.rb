@@ -35,7 +35,7 @@ class Api::V1::UsersController < ApiController
 
   # Not sure if this is needed?
   def edit
-    binding.pry
+    # binding.pry
     render json: User.find(params[:id])
   end
 
@@ -43,14 +43,16 @@ class Api::V1::UsersController < ApiController
     binding.pry
     user = User.find(params[:id])
     
-    if params[:user][:password].blank?
-      params[:user].delete(:password)
-      params[:user].delete(:password_confirmation)
-    end
+    # if params[:user][:password].blank?
+    #   params[:user].delete(:password)
+    #   params[:user].delete(:password_confirmation)
+    # end
 
     if user.update(user_params)
+      # binding.pry
       render json: user
     else
+      # binding.pry
       render json: { errors: user.errors.full_messages }
     end 
   end
@@ -58,7 +60,7 @@ class Api::V1::UsersController < ApiController
   protected
 
   def user_params
-    params.require(:user).permit([:first_name, :last_name, :username, :email, :role])
+    params.require(:user).permit(:first_name, :last_name, :username, :email, :role)
   end
 
 end

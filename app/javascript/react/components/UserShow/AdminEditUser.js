@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import _ from "lodash";
 
@@ -7,9 +6,9 @@ import ErrorList from "../HelperComponents/ErrorList";
 
 const AdminEditUser = (props) => {
   const [userInfo, setUserInfo] = useState({
-    userID: "",
-    firstName: "",
-    lastName: "",
+    user_id: "",
+    first_name: "",
+    last_name: "",
     username: "",
     email: "",
     role: "",
@@ -32,9 +31,9 @@ const AdminEditUser = (props) => {
       })
       .then((body) => {
         setUserInfo({
-          userID: body.id,
-          firstName: body.first_name,
-          lastName: body.last_name,
+          user_id: body.id,
+          first_name: body.first_name,
+          last_name: body.last_name,
           username: body.username,
           email: body.email,
           role: body.role,
@@ -65,7 +64,6 @@ const AdminEditUser = (props) => {
       })
       .then((response) => response.json())
       .then((body) => {
-        debugger
         if (body.errors) {
           setErrors(body.errors);
         } else {
@@ -84,7 +82,7 @@ const AdminEditUser = (props) => {
 
   const validForSubmission = () => {
     let submitErrors = {};
-    const requiredFields = ["firstName", "lastName", "username", "email"];
+    const requiredFields = ["first_name", "last_name", "username", "email"];
     requiredFields.forEach((field) => {
       if (
         userInfo[field].trim() === "" ||
@@ -125,8 +123,8 @@ const AdminEditUser = (props) => {
               <input
                 className="input"
                 type="text"
-                name="firstName"
-                value={userInfo.firstName}
+                name="first_name"
+                value={userInfo.first_name}
                 onChange={handleChange}
                 onBlur={handleChange}
               />
@@ -141,8 +139,8 @@ const AdminEditUser = (props) => {
               <input
                 className="input"
                 type="text"
-                name="lastName"
-                value={userInfo.lastName}
+                name="last_name"
+                value={userInfo.last_name}
                 onChange={handleChange}
                 onBlur={handleChange}
               />
