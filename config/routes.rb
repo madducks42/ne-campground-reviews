@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/users/:id', to: "homes#authenticated"
   get '/users/:id/admin', to: "homes#authenticated"
   get '/users/:id/admin/edit', to: "homes#authenticated"
+  get '/users/:id/admin/delete', to: "homes#authenticated"
 
   get '/aboutus', to: "homes#index"
   get '/camper', to: "homes#index"

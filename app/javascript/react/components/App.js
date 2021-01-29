@@ -9,9 +9,10 @@ import UpdateCampgroundForm from "./AdminFeatures/UpdateCampgroundForm";
 import DestroyCampground from "./AdminFeatures/DestroyCampground";
 import UserShowContainer from "./UserShow/UserShowContainer";
 import AboutUs from "./MenuComponents/AboutUs";
-import CamperContainer from "./MenuComponents/CamperModifications/CamperContainer"
+import CamperContainer from "./MenuComponents/CamperModifications/CamperContainer";
 import AdminViewUserTile from "./UserShow/AdminViewUserTile";
-import AdminEditUser from "./UserShow/AdminEditUser"
+import AdminEditUser from "./UserShow/AdminEditUser";
+import AdminDeleteUser from "./UserShow/AdminDeleteUser";
 
 export const App = () => {
   return (
@@ -43,6 +44,11 @@ export const App = () => {
         <Route exact path="/users/:id" component={UserShowContainer} />
         <Route exact path="/users/:id/admin" component={AdminViewUserTile} />
         <Route exact path="/users/:id/admin/edit" component={AdminEditUser} />
+        <Route
+          exact
+          path="/users/:id/admin/delete"
+          component={AdminDeleteUser}
+        />
         <Route exact path="/aboutus" component={AboutUs} />
         <Route exact path="/camper" component={CamperContainer} />
       </Switch>

@@ -20,7 +20,6 @@ const UserShowContainer = (props) => {
   });
   const [userReviews, setUserReviews] = useState([]);
   const [userFavorites, setUserFavorites] = useState([]);
-  // const [currentUserID, setCurrentUserID] = useState();
 
   useEffect(() => {
     let id = props.match.params.id;
@@ -43,7 +42,6 @@ const UserShowContainer = (props) => {
       });
       setUserReviews(body.reviews);
       setUserFavorites(body.campgrounds);
-      // setCurrentUserID(body.currentUser.id);
     });
   }, []);
 
@@ -99,13 +97,7 @@ const UserShowContainer = (props) => {
   } else if (userIsAdmin === true && userInfo.userID != props.match.params.id) {
     userDisplayTile = (
       // if current user is an admin & is viewing another user's profile
-      <AdminViewUserTile
-      // currentUserID={currentUserID}
-      // userInfo={userInfo}
-      // campgroundTiles={campgroundTiles}
-      // reviewMessage={reviewMessage}
-      // userReviewsArray={userReviewsArray}
-      />
+      <AdminViewUserTile />
     );
   }
 
@@ -119,34 +111,3 @@ const UserShowContainer = (props) => {
 };
 
 export default UserShowContainer;
-
-// useEffect(() => {
-//   let id = props.match.params.id;
-//   fetch(`/api/v1/users/${id}`)
-//     .then((response) => {
-//       if (response.ok) {
-//         return response;
-//       } else {
-//         let errorMessage = `${response.status} (${response.statusText})`,
-//           error = new Error(errorMessage);
-//         throw error;
-//       }
-//     })
-//     .then((response) => response.json())
-//     .then((body) => {
-//       setUserInfo({
-//         userID: body.id,
-//         firstName: body.first_name,
-//         lastName: body.last_name,
-//         username: body.username,
-//         email: body.email,
-//         accountCreated: body.accountCreated,
-//         userIsAdmin: body.userIsAdmin,
-//       });
-
-//       setUserReviews(body.reviews);
-
-//       setUserFavorites(body.campgrounds);
-//     })
-//     .catch((error) => console.error(`Error in fetch: ${error.message}`));
-// }, []);

@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :reviews
-  has_many :favorites
+  has_many :reviews, dependent: :delete_all
+  has_many :favorites, dependent: :delete_all
   has_many :campgrounds, through: :favorites
 
   validates :first_name, presence: true

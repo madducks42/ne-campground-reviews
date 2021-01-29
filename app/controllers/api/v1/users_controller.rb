@@ -40,21 +40,21 @@ class Api::V1::UsersController < ApiController
   end
 
   def update
-    binding.pry
     user = User.find(params[:id])
-    
-    # if params[:user][:password].blank?
-    #   params[:user].delete(:password)
-    #   params[:user].delete(:password_confirmation)
-    # end
 
     if user.update(user_params)
-      # binding.pry
       render json: user
     else
-      # binding.pry
       render json: { errors: user.errors.full_messages }
     end 
+  end
+
+  def destroy
+    binding.pry
+    user = User.find(params[:id])
+    if user.destroy
+      render json: {destroyed: true}
+    end
   end
 
   protected

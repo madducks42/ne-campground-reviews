@@ -35,15 +35,25 @@ class ReviewSerializer < ActiveModel::Serializer
   end
 
   def ownerName
-    user = User.find_by(id: object.user_id)
-    owner_name = user.first_name + " " +  user.last_name
+    if 
+      User.find_by(id: object.user_id) != nil
+        user = User.find_by(id: object.user_id)
+        owner_name = user.first_name + " " +  user.last_name
+    else
+      owner_name = "No longer a member"
+    end
 
     return owner_name
   end
 
   def ownerUsername
-    user = User.find_by(id: object.user_id)
-    owner_username = user.username
+    if 
+      User.find_by(id: object.user_id) != nil
+        user = User.find_by(id: object.user_id)
+        owner_username = user.username
+    else
+      owner_username = "No longer a member"
+    end
     
     return owner_username
   end
