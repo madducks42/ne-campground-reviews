@@ -6,7 +6,7 @@ import ErrorList from "../HelperComponents/ErrorList"
 const AddCampgroundImages = (props) => {
   const [campgroundImages, setCampgroundImages] = useState([])
   const [shouldRedirect, setShouldRedirect] = useState(false)
-
+  const [errors, setErrors] = useState({});
   
   const addImages = (newImages) => {
     
@@ -24,7 +24,8 @@ const AddCampgroundImages = (props) => {
     .then(response => response.json())
     .then(body => {
       if (body.errors) {
-        // handle errors
+        setShouldRedirect(false)
+        setErrors(body.errors)
       } else {
         setShouldRedirect(true)
       }
@@ -47,17 +48,17 @@ const AddCampgroundImages = (props) => {
     event.preventDefault();
     let body = new FormData()
     campgroundImages.forEach((image) => {
-      body.append('name', image)    
+      body.append('image', image)    
     })
     addImages(body);
     setCampgroundImages([])
   };
 
   return (
-    <div className='grid-container wrapper'>
-        <h4>Add images</h4>
+    <div className='container'>
+        <h4 className="is-size-4 mt-6">Add Images</h4>
         <form onSubmit={handleSubmit}>
-        {/* <ErrorList errors={errors} /> */}
+        <ErrorList errors={errors} />
           <Dropzone onDrop={handleFileUpload} multiple={true}>
           {({getRootProps, getInputProps}) => (
             <section>
@@ -69,7 +70,7 @@ const AddCampgroundImages = (props) => {
           )}
           </Dropzone>
           <div>
-            <h6>Uploaded Images:</h6>
+            <h6 className="is-size-6">Uploaded Images:</h6>
             <ul>
             {campgroundImages.map(campgroundImage => (
               <li key={campgroundImage.id}>{campgroundImage.name}</li>
@@ -77,7 +78,7 @@ const AddCampgroundImages = (props) => {
           </ul>
           </div>
           <div className='button-group'>
-            <input className='button' type='submit' value='Submit' />
+            <input className='button mt-6' type='submit' value='Submit' />
           </div>
         </form>
     </div>

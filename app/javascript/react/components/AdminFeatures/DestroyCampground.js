@@ -5,6 +5,7 @@ import ErrorList from "../HelperComponents/ErrorList"
 const DestroyCampground = (props) => {
   const [currentCampground, setCurrentCampground] = useState({});
   const [shouldRedirect, setShouldRedirect] = useState(false);
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     let id = props.match.params.id
@@ -48,7 +49,8 @@ const DestroyCampground = (props) => {
     .then(body => {
       if (body.destroyed === true) {
         setShouldRedirect(true)
-      } 
+      } else
+      setErrors(body.errors)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   };
@@ -58,7 +60,8 @@ const DestroyCampground = (props) => {
   }
 
   return (
-    <div className='grid-container wrapper'>
+    <div className='container'>
+      <ErrorList errors={errors} />
       <h4>Are you sure you want to delete {currentCampground.name}?</h4>
       <div>
           <input onClick={onClickDelete} className='button' type='submit' value='Delete Campground' />
