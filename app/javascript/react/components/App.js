@@ -3,10 +3,10 @@ import { Route, Switch, BrowserRouter } from "react-router-dom";
 
 import CampgroundIndexContainer from "./CampgroundIndex/CampgroundIndexContainer";
 import CampgroundShowContainer from "./CampgroundShow/CampgroundShowContainer";
-import AddCampgroundImages from "./AdminFeatures/AddCampgroundImages";
-import NewCampgroundForm from "./AdminFeatures/NewCampgroundForm";
-import UpdateCampgroundForm from "./AdminFeatures/UpdateCampgroundForm";
-import DestroyCampground from "./AdminFeatures/DestroyCampground";
+import ManageCampgroundImages from "./CampgroundAdminFeatures/ManageCampgroundImages";
+import NewCampgroundForm from "./CampgroundAdminFeatures/NewCampgroundForm";
+import UpdateCampgroundForm from "./CampgroundAdminFeatures/UpdateCampgroundForm";
+import DestroyCampground from "./CampgroundAdminFeatures/DestroyCampground";
 import UserShowContainer from "./UserShow/UserShowContainer";
 import AboutUs from "./MenuComponents/AboutUs";
 import CamperContainer from "./MenuComponents/CamperModifications/CamperContainer";
@@ -38,8 +38,8 @@ export const App = () => {
         />
         <Route
           exact
-          path="/campgrounds/:id/addimages"
-          component={AddCampgroundImages}
+          path="/campgrounds/:id/images"
+          component={ManageCampgroundImages}
         />
         <Route exact path="/users/:id" component={UserShowContainer} />
         <Route exact path="/users/:id/admin" component={AdminViewUserTile} />
