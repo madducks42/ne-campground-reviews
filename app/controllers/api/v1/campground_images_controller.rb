@@ -1,4 +1,5 @@
 class Api::V1::CampgroundImagesController < ApiController
+  skip_before_action :verify_authenticity_token, only: [:create, :update]
 
   def create
     campground_image = CampgroundImage.new(image_params)
