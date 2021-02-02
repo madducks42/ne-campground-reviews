@@ -9,8 +9,7 @@ const AddCampgroundImages = (props) => {
   const [errors, setErrors] = useState({});
   
   const addImages = (newImages) => {
-    
-    let id = props.match.params.id
+    let id = props.currentCampgroundID
 
     fetch(`/api/v1/campgrounds/${id}/campground_images`, {
       method: 'POST',

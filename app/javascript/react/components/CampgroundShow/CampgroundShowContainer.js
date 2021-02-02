@@ -98,7 +98,7 @@ const CampgroundShowContainer = (props) => {
     } else {
       let reviewIndex = reviews.findIndex(
         (review) => review.id === deletedReview.id
-        );
+      );
       let tempReviews = [...reviews];
       tempReviews.splice(reviewIndex, 1);
       setReviews(tempReviews);
@@ -155,7 +155,9 @@ const CampgroundShowContainer = (props) => {
     <div className="container">
       <ErrorList errors={errors} />
       <div className="mb-6">
-        <h1 className="has-text-centered is-size-1 has-text-weight-semibold font-red mb-6 mt-6">{campground.name}</h1>
+        <h1 className="has-text-centered is-size-1 has-text-weight-semibold font-red mb-6 mt-6">
+          {campground.name}
+        </h1>
         <div className="columns">
           <div className="column">
             <div className="amenities-container">
@@ -194,6 +196,19 @@ const CampgroundShowContainer = (props) => {
           </div>
           <div className="column">
             <ImagesTile />
+            {currentUser.role === "admin" && (
+              <div className="columns admin-flex">
+                <Link
+                  className="admin-link"
+                  to={{
+                    pathname:`/campgrounds/${campground.id}/images`,
+                    state:{campgroundID: campground.id}
+                  }} 
+                >
+                  Manage Images
+                </Link>
+              </div>
+            )}
           </div>
         </div>
         <div className="columns">
@@ -236,7 +251,9 @@ const CampgroundShowContainer = (props) => {
         </div>
         <div className="columns reviews-container">
           <div className="column">
-            <h2 className="is-size-4">Average Member Rating: {averageRatingMessage}</h2>
+            <h2 className="is-size-4">
+              Average Member Rating: {averageRatingMessage}
+            </h2>
             <h2 className="is-size-4">Member Reviews: {noReviewsMessage}</h2>
             <ReviewsContainer
               reviews={reviews}
