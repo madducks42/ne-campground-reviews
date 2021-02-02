@@ -10,6 +10,12 @@ class Api::V1::CampgroundImagesController < ApiController
     end
   end
 
+  def show
+    binding.pry
+    render json: Campground.find(params[:id]), serializer: CampgroundImageSerializer
+  end
+
+
   def image_params
     params.permit([:image, :campground_id])
   end

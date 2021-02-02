@@ -28,10 +28,10 @@ Rails.application.routes.draw do
       # get 'users/admin_view' to: 'users#admin_view'
       
       resources :users, only: [:index, :show, :edit, :update, :destroy]
+      resources :campground_images, only: [:index, :show, :create, :edit, :update, :destroy]
 
       resources :campgrounds, only: [:index, :show, :create, :edit, :update, :destroy] do
-        resources :reviews, only: [:create] #this might be duplicate
-        resources :campground_images, only: [:create, :edit, :update, :destroy]
+        # resources :campground_images, only: [:index, :create, :edit, :update, :destroy]
         resources :reviews, only: [:show, :create, :update, :destroy]
       end
     end
