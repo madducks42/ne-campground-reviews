@@ -1,18 +1,22 @@
 class CampgroundImageSerializer < ActiveModel::Serializer
-  has_many :campground_images
-  has_many :reviews
+  # has_many :campground_images
+  # has_many :reviews
 
-  # attributes  :id
-              # :campground_images_array
+  attribute  :images_info, key: :imagesInfo
 
-#   def campground_images_array
-#     # binding.pry
-#     image_array = []
+  def images_info
+    image_array = []
+    i = 0
 
-#     image_info = {:name => object.campground_images.first.image.identifier, :url => object.campground_images.first.image.path}
-#     image_array.push(image_info)
+    while i < object.campground_images.length do
+      image_info = {:id => object.campground_images[i].id,:name => object.campground_images[i].image.identifier, :url => object.campground_images[i].image.path}
+      
+      image_array.push(image_info)
 
-#     return image_array
-#   end
+      i += 1
+    end
+
+    return image_array
+  end
 
 end

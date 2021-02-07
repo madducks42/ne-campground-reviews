@@ -22,7 +22,7 @@ class CampgroundShowSerializer < ActiveModel::Serializer
   attribute :current_user, key: :currentUser
 
   has_many :reviews
-  has_many :campground_images
+  # has_many :campground_images
   has_many :favorites
   has_many :users, through: :favorites
 
