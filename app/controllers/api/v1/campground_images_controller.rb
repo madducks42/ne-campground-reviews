@@ -4,10 +4,6 @@ class Api::V1::CampgroundImagesController < ApiController
   def create
     # binding.pry
     new_image = CampgroundImage.new(image_params)
-
-    # campground = Campground.find(params[:campground_id])
-    # new_image = CampgroundImage.new(image_params)
-    # new_image.campground = campground 
     
     if new_image.save
       # binding.pry
@@ -18,10 +14,10 @@ class Api::V1::CampgroundImagesController < ApiController
 
   end
 
-  def index
-    # binding.pry
-    render json: Campground.find(params[:campground_id]), serializer: CampgroundImageSerializer
-  end
+  # def index
+  #   # binding.pry
+  #   render json: Campground.find(params[:campground_id]), serializer: CampgroundImageSerializer
+  # end
 
   def image_params
     params.permit([:image, :campground_id])
