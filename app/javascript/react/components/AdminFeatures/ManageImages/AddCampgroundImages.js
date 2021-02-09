@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Dropzone from 'react-dropzone'
 import { Redirect } from "react-router-dom"
-import ErrorList from "../HelperComponents/ErrorList"
+import ErrorList from "../../HelperComponents/ErrorList"
 
 const AddCampgroundImages = (props) => {
   const [campgroundImages, setCampgroundImages] = useState([])
@@ -17,7 +17,8 @@ const AddCampgroundImages = (props) => {
       credentials: 'same-origin',
       headers: {
         "Accept": "application/json",
-        "Accept": "image/jpeg"
+        // eslint-disable-next-line no-dupe-keys
+        "Accept": "image/jpeg" 
       }
     })
     .then(response => response.json())
@@ -77,7 +78,7 @@ const AddCampgroundImages = (props) => {
           </ul>
           </div>
           <div className='button-group'>
-            <input className='button mt-6' type='submit' value='Submit' />
+            <input className='button mt-6 mb-6' type='submit' value='Submit' />
           </div>
         </form>
     </div>

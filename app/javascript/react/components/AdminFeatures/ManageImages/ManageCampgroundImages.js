@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 // import { Redirect } from "react-router-dom";
 
-import ImageTiles from "../CampgroundAdminFeatures/ImageTiles";
-import AddCampgroundImages from "../CampgroundAdminFeatures/AddCampgroundImages";
+import ImageTiles from "./ImageTiles";
+import AddCampgroundImages from "./AddCampgroundImages";
 // import ErrorList from "../HelperComponents/ErrorList"
 
 const ManageCampgroundImages = (props) => {
@@ -30,8 +30,6 @@ const ManageCampgroundImages = (props) => {
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }, []);
 
-  // debugger
-
   let imageTiles = campgroundImages.map((image) => {
     return <ImageTiles key={image.id} name={image.name} url={image.url} />;
   });
@@ -39,7 +37,7 @@ const ManageCampgroundImages = (props) => {
   return (
     <div className="container mt-6">
       <h1 className="is-size-1">Manage Campground Images</h1>
-      {imageTiles}
+      <div className="flex-row">{imageTiles}</div>
       <AddCampgroundImages currentCampgroundID={currentCampgroundID} />
     </div>
   );

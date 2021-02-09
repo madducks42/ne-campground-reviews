@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import UserInfoTile from "../UserShow/UserInfoTile";
+import UserInfoTile from "../../UserShow/UserInfoTile";
 import UsersInfoTile from "./UsersInfoTile";
 
 const UserAdminTile = (props) => {

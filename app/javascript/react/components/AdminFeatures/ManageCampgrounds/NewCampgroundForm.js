@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import _ from "lodash";
 
-import ErrorList from "../HelperComponents/ErrorList";
+import ErrorList from "../../HelperComponents/ErrorList";
 
 const NewCampgroundForm = () => {
   let defaultFields = {

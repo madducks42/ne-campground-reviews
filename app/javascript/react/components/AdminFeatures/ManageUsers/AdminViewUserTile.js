@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 
-import { getUserData } from "./UserShowFetches/UserData"
-import UserInfoTile from "../UserShow/UserInfoTile"
-import UserReviewTile from "./UserReviewTile";
-import CampgroundTile from "../HelperComponents/CampgroundTile";
+import { getUserData } from "../../UserShow/UserShowFetches/UserData"
+import UserInfoTile from "../../UserShow/UserInfoTile"
+import UserReviewTile from "../../UserShow/UserReviewTile";
+import CampgroundTile from "../../HelperComponents/CampgroundTile";
 
 const AdminViewUserTile = (props) => {
   const [userInfo, setUserInfo] = useState({
