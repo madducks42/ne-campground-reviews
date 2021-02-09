@@ -22,7 +22,8 @@ const AddCampgroundImages = (props) => {
       }
     })
     .then(response => response.json())
-    .then(body => {
+      .then(body => {
+      debugger
       if (body.errors) {
         setShouldRedirect(false)
         setErrors(body.errors)

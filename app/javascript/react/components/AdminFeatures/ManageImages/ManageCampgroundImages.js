@@ -37,7 +37,7 @@ const ManageCampgroundImages = (props) => {
   return (
     <div className="container mt-6">
       <h1 className="is-size-1">Manage Campground Images</h1>
-      <div className="flex-row">{imageTiles}</div>
+      {/* <div className="flex-row">{imageTiles}</div> */}
       <AddCampgroundImages currentCampgroundID={currentCampgroundID} />
     </div>
   );
