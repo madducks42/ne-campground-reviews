@@ -4,8 +4,8 @@ import { getUserData } from "./UserShowFetches/UserData";
 import UserReviewTile from "./UserReviewTile";
 import CampgroundTile from "../HelperComponents/CampgroundTile";
 import UserMemberTile from "../UserShow/UserMemberTile";
-import UserAdminTile from "../UserShow/UserAdminTile";
-import AdminViewUserTile from "../UserShow/AdminViewUserTile";
+import UserAdminTile from "../AdminFeatures/ManageUsers/UserAdminTile";
+import AdminViewUserTile from "../AdminFeatures/ManageUsers/AdminViewUserTile";
 
 const UserShowContainer = (props) => {
   const [userInfo, setUserInfo] = useState({

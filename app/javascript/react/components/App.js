@@ -3,16 +3,16 @@ import { Route, Switch, BrowserRouter } from "react-router-dom";
 
 import CampgroundIndexContainer from "./CampgroundIndex/CampgroundIndexContainer";
 import CampgroundShowContainer from "./CampgroundShow/CampgroundShowContainer";
-import ManageCampgroundImages from "./CampgroundAdminFeatures/ManageCampgroundImages";
-import NewCampgroundForm from "./CampgroundAdminFeatures/NewCampgroundForm";
-import UpdateCampgroundForm from "./CampgroundAdminFeatures/UpdateCampgroundForm";
-import DestroyCampground from "./CampgroundAdminFeatures/DestroyCampground";
+import ManageCampgroundImages from "./AdminFeatures/ManageImages/ManageCampgroundImages";
+import NewCampgroundForm from "./AdminFeatures/ManageCampgrounds/NewCampgroundForm";
+import UpdateCampgroundForm from "./AdminFeatures/ManageCampgrounds/UpdateCampgroundForm";
+import DestroyCampground from "./AdminFeatures/ManageCampgrounds/DestroyCampground";
 import UserShowContainer from "./UserShow/UserShowContainer";
 import AboutUs from "./MenuComponents/AboutUs";
 import CamperContainer from "./MenuComponents/CamperModifications/CamperContainer";
-import AdminViewUserTile from "./UserShow/AdminViewUserTile";
-import AdminEditUser from "./UserShow/AdminEditUser";
-import AdminDeleteUser from "./UserShow/AdminDeleteUser";
+import AdminViewUserTile from "./AdminFeatures/ManageUsers/AdminViewUserTile";
+import AdminEditUser from "./AdminFeatures/ManageUsers/AdminEditUser";
+import AdminDeleteUser from "./AdminFeatures/ManageUsers/AdminDeleteUser";
 
 export const App = () => {
   return (
