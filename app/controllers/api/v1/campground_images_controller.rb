@@ -1,19 +1,23 @@
 class Api::V1::CampgroundImagesController < ApiController
   skip_before_action :verify_authenticity_token, only: [:create, :update]
 
+  def index
+    campground = Campground.find(params[:campground_id])
+    images = campground.campground_images
+
+    render json: images
+  end
+
   def create
-    campground_image = CampgroundImage.new(image_params)
-    if campground_image.save
-      render json: campground_image
+    new_image = CampgroundImage.new(image_params)
+    
+    if new_image.save
+      render json: new_image
     else
-      render json: { errors: campground_image.errors.full_messages }
+      render json: { errors: new_image.errors.full_messages }
     end
-  end
 
-  def show
-    render json: Campground.find(params[:id]), serializer: CampgroundImageSerializer
   end
-
 
   def image_params
     params.permit([:image, :campground_id])

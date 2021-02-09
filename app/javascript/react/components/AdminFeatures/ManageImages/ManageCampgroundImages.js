@@ -9,9 +9,9 @@ const ManageCampgroundImages = (props) => {
   const [campgroundImages, setCampgroundImages] = useState([]);
 
   let currentCampgroundID = props.match.params.id;
-
+  // api/v1/campgrounds/:campground_id/campground_images
   useEffect(() => {
-    fetch(`/api/v1/campground_images/${currentCampgroundID}`)
+    fetch(`/api/v1/campgrounds/${currentCampgroundID}/campground_images`)
       .then((response) => {
         if (response.ok) {
           return response;
@@ -25,13 +25,13 @@ const ManageCampgroundImages = (props) => {
         return response.json();
       })
       .then((body) => {
-        setCampgroundImages(body.imagesInfo);
+        setCampgroundImages(body);
       })
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }, []);
 
   let imageTiles = campgroundImages.map((image) => {
-    return <ImageTiles key={image.id} name={image.name} url={image.url} />;
+    return <ImageTiles key={image.id} url={image.image.url} />;
   });
 
   return (
