@@ -33,6 +33,7 @@ gem 'launchy'
 gem 'rspec-rails', '~> 4.0', '>= 4.0.2'
 gem 'factory_bot_rails', '~> 6.1'
 gem 'capybara', '~> 3.35', '>= 3.35.3'
+gem 'faker', '~> 2.16'
 end
 
 group :test do

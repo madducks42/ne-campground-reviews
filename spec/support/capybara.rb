@@ -1,7 +1,8 @@
 require 'capybara/rspec'
 
 RSpec.configure do |config|
-
+  config.include Warden::Test::Helpers
+  
   config.use_transactional_fixtures = false
 
   config.before(:suite) do
