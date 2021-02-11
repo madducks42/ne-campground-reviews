@@ -49,7 +49,7 @@ RSpec.describe Api::V1::CampgroundsController, type: :controller do
 
   describe 'GET #show' do
     it 'should return the name, description, location, amenities, and reviews of an individual campground on its own show page' do 
-      VCR.use_cassette('open_weather') do
+      VCR.use_cassette('open_weather', :record => :new_episodes) do
         get :show, params: {id: campground_1.id}
         
         returned_response = JSON.parse(response.body)
