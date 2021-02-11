@@ -23,7 +23,8 @@ RSpec.describe Api::V1::CampgroundsController, type: :controller do
     user: user_1 
   )}
   
-  describe 'GET#index' do
+  # campgrounds_controller - def index
+  describe 'GET #index' do
     it 'return a successful status and content type of json' do
       get :index
         expect(response.status).to eq 200
@@ -44,14 +45,15 @@ RSpec.describe Api::V1::CampgroundsController, type: :controller do
       end
     end
     
-    describe 'GET#campground' do
-    it 'should return the name, description, location, amenities, and reviews of an individual campground on its own show page' do
+    # campgrounds_controller - def index
+    describe 'GET #show' do
+    it 'should return the name, description, location, amenities, and reviews of an individual campground on its own show page', :vcr do
       get :show, params: {id: campground_1.id}
       returned_response = JSON.parse(response.body)
       
       expect(response.status).to eq 200
       expect(response.content_type).to eq 'application/json; charset=utf-8'
-
+      
       expect(returned_response['name']).to eq campground_1.name
       expect(returned_response['description']).to eq campground_1.description
       expect(returned_response['location']).to eq campground_1.location

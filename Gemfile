@@ -34,10 +34,12 @@ gem 'rspec-rails', '~> 4.0', '>= 4.0.2'
 gem 'factory_bot_rails', '~> 6.1'
 gem 'capybara', '~> 3.35', '>= 3.35.3'
 gem 'faker', '~> 2.16'
+gem 'vcr', '~> 6.0'
 end
 
 group :test do
 gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
+gem 'webmock', '~> 3.11', '>= 3.11.2'
 end
 
 group :development do
