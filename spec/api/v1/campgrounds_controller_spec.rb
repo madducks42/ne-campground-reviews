@@ -46,9 +46,18 @@ RSpec.describe Api::V1::CampgroundsController, type: :controller do
       expect(returned_response[1]['location']).to eq campground_2.location
     end
   end
-    
+  
+  # describe 'OpenWeatherApiClient' do
+  #   describe 'weather_api' do
+  #     it "returns correctly some data", :vcr do
+  #       get :show, params: {id: campground_1.id}
+  #     returned_response = JSON.parse(response.body)
+  #     end
+  #   end
+  # end
+
   describe 'GET #show' do
-    it 'should return the name, description, location, amenities, and reviews of an individual campground on its own show page', :vcr do
+    it 'should return the name, description, location, amenities, and reviews of an individual campground on its own show page', VCR.insert_cassette("open_weather") do
       get :show, params: {id: campground_1.id}
       returned_response = JSON.parse(response.body)
     
