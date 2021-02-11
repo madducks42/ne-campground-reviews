@@ -27,33 +27,34 @@ RSpec.describe Api::V1::CampgroundsController, type: :controller do
   describe 'GET #index' do
     it 'return a successful status and content type of json' do
       get :index
-        expect(response.status).to eq 200
-        expect(response.content_type).to eq 'application/json; charset=utf-8'
+
+      expect(response.status).to eq 200
+      expect(response.content_type).to eq 'application/json; charset=utf-8'
     end
 
     it 'should return the campground names, descriptions, locations and amentities from the database' do
       get :index 
-        returned_response = JSON.parse(response.body)
-        expect(returned_response.length).to eq 2
-        
-        expect(returned_response[0]['name']).to eq campground_1.name
-        expect(returned_response[0]['caption']).to eq campground_1.caption
-        expect(returned_response[0]['location']).to eq campground_1.location
-        expect(returned_response[1]['name']).to eq campground_2.name
-        expect(returned_response[1]['caption']).to eq campground_2.caption
-        expect(returned_response[1]['location']).to eq campground_2.location
-      end
+
+      returned_response = JSON.parse(response.body)
+      expect(returned_response.length).to eq 2
+      
+      expect(returned_response[0]['name']).to eq campground_1.name
+      expect(returned_response[0]['caption']).to eq campground_1.caption
+      expect(returned_response[0]['location']).to eq campground_1.location
+      expect(returned_response[1]['name']).to eq campground_2.name
+      expect(returned_response[1]['caption']).to eq campground_2.caption
+      expect(returned_response[1]['location']).to eq campground_2.location
     end
+  end
     
-    # campgrounds_controller - def index
-    describe 'GET #show' do
+  describe 'GET #show' do
     it 'should return the name, description, location, amenities, and reviews of an individual campground on its own show page', :vcr do
       get :show, params: {id: campground_1.id}
       returned_response = JSON.parse(response.body)
-      
+    
       expect(response.status).to eq 200
       expect(response.content_type).to eq 'application/json; charset=utf-8'
-      
+
       expect(returned_response['name']).to eq campground_1.name
       expect(returned_response['description']).to eq campground_1.description
       expect(returned_response['location']).to eq campground_1.location
@@ -71,4 +72,5 @@ RSpec.describe Api::V1::CampgroundsController, type: :controller do
       expect(returned_response['reviews'][0]['rating']).to eq campground_1.reviews[0]['rating']
     end
   end
+
 end
