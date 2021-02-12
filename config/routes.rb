@@ -23,6 +23,10 @@ Rails.application.routes.draw do
     namespace :v1 do
       post 'campgrounds/search', to: 'campgrounds#search'
       post 'campgrounds/filter', to: 'campgrounds#filter'
+      # post 'campgrounds/weather', to: 'campgrounds#weather'
+
+      get 'campgrounds/:id/weather', to: 'campgrounds#weather'
+
       post 'users/favorite', to: 'users#favorite'
       
       # get 'users/admin_view' to: 'users#admin_view'
