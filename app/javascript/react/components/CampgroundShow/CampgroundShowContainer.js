@@ -17,6 +17,7 @@ import {
   deleteReviewFetch,
 } from "./FetchComponents/ReviewFetches";
 import { setCampgroundFavFetch } from "./FetchComponents/UserFetches";
+import { getWeatherData } from "./FetchComponents/WeatherData";
 
 const CampgroundShowContainer = (props) => {
   const id = props.match.params.id;
@@ -51,18 +52,22 @@ const CampgroundShowContainer = (props) => {
       if (body.currentUser != null) {
         setCurrentUser(body.currentUser);
       }
+    });
+  }, []);
+
+  useEffect(() => {
+    getWeatherData(id).then((body) => {
       setWeather({
-        name: body.name,
-        description: body.weather.description,
-        icon: body.weather.icon,
-        conditions: body.weather.conditions,
-        currentTemp: body.weather.temp,
-        highTemp: body.weather.high,
-        lowTemp: body.weather.low,
-        humidity: body.weather.humidity,
-        wind: body.weather.wind,
-        location: body.weather.location,
-        date: body.weather.date,
+        description: body.description,
+        icon: body.icon,
+        conditions: body.conditions,
+        currentTemp: body.temp,
+        highTemp: body.high,
+        lowTemp: body.low,
+        humidity: body.humidity,
+        wind: body.wind,
+        location: body.location,
+        date: body.date,
       });
     });
   }, []);
@@ -201,9 +206,9 @@ const CampgroundShowContainer = (props) => {
                 <Link
                   className="admin-link"
                   to={{
-                    pathname:`/campgrounds/${campground.id}/images`,
-                    state:{campgroundID: campground.id}
-                  }} 
+                    pathname: `/campgrounds/${campground.id}/images`,
+                    state: { campgroundID: campground.id },
+                  }}
                 >
                   Manage Images
                 </Link>

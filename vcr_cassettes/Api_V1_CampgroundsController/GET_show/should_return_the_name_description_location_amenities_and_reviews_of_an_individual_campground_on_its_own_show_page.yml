@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=56f5c7f386715529ee0626c1b7263afa&units=imperial&zip=12847
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Thu, 11 Feb 2021 02:22:20 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '464'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?units=imperial&zip=12847"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-74.4662,"lat":43.9477},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04n"}],"base":"stations","main":{"temp":12,"feels_like":5.34,"temp_min":12,"temp_max":12,"pressure":1019,"humidity":81},"visibility":3999,"wind":{"speed":1.28,"deg":212},"clouds":{"all":100},"dt":1613010140,"sys":{"type":3,"id":2011767,"country":"US","sunrise":1612958628,"sunset":1612995632},"timezone":-18000,"id":0,"name":"Long
+        Lake","cod":200}'
+  recorded_at: Thu, 11 Feb 2021 02:22:20 GMT
+recorded_with: VCR 6.0.0

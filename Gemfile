@@ -27,7 +27,19 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+gem 'pry-rails'
+gem 'dotenv-rails'
+gem 'launchy'
+gem 'rspec-rails', '~> 4.0', '>= 4.0.2'
+gem 'factory_bot_rails', '~> 6.1'
+gem 'capybara', '~> 3.35', '>= 3.35.3'
+gem 'faker', '~> 2.16'
+gem 'vcr', '~> 6.0'
+end
 
+group :test do
+gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
+gem 'webmock', '~> 3.11', '>= 3.11.2'
 end
 
 group :development do
@@ -40,19 +52,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'pry-rails', group: [:development, :test]
 gem 'jquery-rails'
-gem 'dotenv-rails', group: [:development, :test]
-gem 'rspec-rails', '3.8.2', group: [:development, :test]
-gem 'capybara', group: [:development, :test]
-gem 'launchy', group: [:development, :test]
-gem 'factory_bot', group: [:development, :test]
-gem 'database_cleaner', group: [:development, :test]
-gem 'valid_attribute', group: [:development, :test]
-gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'devise'
 gem 'webpacker', '~> 3.3'
-
 gem 'faraday'
 gem 'active_model_serializers'
 gem 'activemodel-serializers-xml'

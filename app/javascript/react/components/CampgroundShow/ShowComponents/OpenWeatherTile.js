@@ -13,7 +13,6 @@ const OpenWeatherTile = (props) => {
         <li className='weather'>Low Temp: {Math.round(props.weather.lowTemp)}&deg;F</li>
         <li className='weather'>Humidity: {Math.round(props.weather.humidity)}%</li>
         <li className='weather'>Wind: {Math.round(props.weather.wind)}mph</li>
-        
       </ul>
     </div>
   )

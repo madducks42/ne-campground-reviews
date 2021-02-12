@@ -15,8 +15,7 @@ class CampgroundShowSerializer < ActiveModel::Serializer
               :showers, 
               :userSignedIn, 
               :userIsAdmin,
-              :isFavorite,
-              :weather
+              :isFavorite
               
   attribute :average_rating, key: :averageRating
   attribute :current_user, key: :currentUser
@@ -25,13 +24,6 @@ class CampgroundShowSerializer < ActiveModel::Serializer
   # has_many :campground_images
   has_many :favorites
   has_many :users, through: :favorites
-
-  def weather
-    client = OpenWeatherClient.new(object.zip_code)
-    weather = client.format_weather_api_response
-
-    return weather
-  end
   
   def userSignedIn
     if !current_user
@@ -55,10 +47,6 @@ class CampgroundShowSerializer < ActiveModel::Serializer
     end
     return favorite_campground
   end
-
-  # def userIsOwner
-  #   current_user == object.user
-  # end
 
   def userIsAdmin
     if current_user.nil?
