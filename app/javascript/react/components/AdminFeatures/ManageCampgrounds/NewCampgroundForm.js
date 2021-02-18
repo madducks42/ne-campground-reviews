@@ -10,6 +10,7 @@ const NewCampgroundForm = () => {
     caption: "",
     description: "",
     location: "",
+    zip_code: "",
     campground_link: "",
     dogs_allowed: undefined,
     electric_hookups: undefined,
@@ -177,6 +178,22 @@ const NewCampgroundForm = () => {
                       New York
                     </option>
                   </select>
+                </div>
+              </label>
+            </div>
+
+            <div className="field">
+              <label className="label">
+                Zip Code:
+                <div className="control">
+                  <input
+                    name="zip_code"
+                    id="zip_code"
+                    type="text"
+                    onChange={handleChange}
+                    value={newCampground.zip_code}
+                    className="campground-form"
+                  />
                 </div>
               </label>
             </div>

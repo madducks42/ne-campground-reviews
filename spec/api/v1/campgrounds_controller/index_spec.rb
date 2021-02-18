@@ -23,8 +23,7 @@ RSpec.describe Api::V1::CampgroundsController, type: :controller do
     user: user_1 
   )}
   
-  # campgrounds_controller - def index
-  describe 'GET #index' do
+  describe 'GET#index' do
     it 'return a successful status and content type of json' do
       get :index
 

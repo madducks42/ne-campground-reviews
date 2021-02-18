@@ -29,7 +29,6 @@ class Api::V1::CampgroundsController < ApiController
 
   def create
     campground = Campground.new(campground_params)
-    
     if campground.save
       render json: campground
     else
@@ -118,10 +117,6 @@ class Api::V1::CampgroundsController < ApiController
   def campground_params
     params.require(:campground).permit([:name, :caption, :description, :location, :zip_code, :campground_link, :dogs_allowed, :electric_hookups, :water_hookups, :potable_water, :dump_station, :bathrooms, :showers])
   end
-
-  # def weather_params
-  #   params.permit(id)
-  # end
 
   def authorize_user
     if !user_signed_in? || !current_user.admin?
