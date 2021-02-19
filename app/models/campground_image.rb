@@ -1,6 +1,7 @@
 class CampgroundImage < ApplicationRecord
+  belongs_to :image
   belongs_to :campground
-  mount_uploader :image, CampgroundImageUploader
 
   validates :image, presence: true
+  validates :campground, presence: true
 end

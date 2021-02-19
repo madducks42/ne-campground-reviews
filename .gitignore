@@ -39,3 +39,6 @@ yarn-debug.log*
 
 # Mac related file
 .DS_Store
+
+# Ignore application configuration
+/config/application.yml

@@ -60,8 +60,11 @@ gem 'active_model_serializers'
 gem 'activemodel-serializers-xml'
 gem 'mongo_mapper'
 gem 'bson_ext'
-gem "carrierwave"
-gem "fog-aws"
 gem 'lightbox2-rails'
 gem 'prettier'
 gem "bulma-rails", "~> 0.8.0"
+gem 'carrierwave', '~> 2.1', '>= 2.1.1'
+gem 'carrierwave-aws', '~> 1.5'
+gem 'mini_magick', '~> 4.11'
+gem 'aws-sdk-rails', '~> 3.6'
+gem 'figaro', '~> 1.2'
