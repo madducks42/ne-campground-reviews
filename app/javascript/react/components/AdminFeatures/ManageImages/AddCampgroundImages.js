@@ -11,7 +11,7 @@ const AddCampgroundImages = (props) => {
   const addImages = (newImages) => {
     let id = props.currentCampgroundID
 
-    fetch(`/api/v1/campgrounds/${id}/campground_images`, {
+    fetch(`/api/v1/campgrounds/${id}/images`, {
       method: 'POST',
       body: newImages,
       credentials: 'same-origin',

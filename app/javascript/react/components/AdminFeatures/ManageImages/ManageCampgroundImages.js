@@ -9,9 +9,8 @@ const ManageCampgroundImages = (props) => {
   const [campgroundImages, setCampgroundImages] = useState([]);
 
   let currentCampgroundID = props.match.params.id;
-  // api/v1/campgrounds/:campground_id/campground_images
   useEffect(() => {
-    fetch(`/api/v1/campgrounds/${currentCampgroundID}/campground_images`)
+    fetch(`/api/v1/campgrounds/${currentCampgroundID}/images`)
       .then((response) => {
         if (response.ok) {
           return response;

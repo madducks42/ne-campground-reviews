@@ -34,7 +34,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :show, :edit, :update, :destroy]
 
       resources :campgrounds, only: [:index, :show, :create, :edit, :update, :destroy] do
-        resources :campground_images, only: [ :index, :create]
+        resources :images, only: [ :index, :create]
         resources :reviews, only: [:show, :create, :update, :destroy]
       end
     end
