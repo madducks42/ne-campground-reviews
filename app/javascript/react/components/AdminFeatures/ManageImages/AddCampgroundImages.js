@@ -1,17 +1,15 @@
 import React, { useState } from 'react'
 import Dropzone from 'react-dropzone'
-import { Redirect } from "react-router-dom"
 import ErrorList from "../../HelperComponents/ErrorList"
 
 const AddCampgroundImages = (props) => {
   const [campgroundImages, setCampgroundImages] = useState([])
-  const [shouldRedirect, setShouldRedirect] = useState(false)
   const [errors, setErrors] = useState({});
   
   const addImages = (newImages) => {
     let id = props.currentCampgroundID
 
-    fetch(`/api/v1/campgrounds/${id}/campground_images`, {
+    fetch(`/api/v1/campgrounds/${id}/images`, {
       method: 'POST',
       body: newImages,
       credentials: 'same-origin',
@@ -24,17 +22,10 @@ const AddCampgroundImages = (props) => {
     .then(response => response.json())
       .then(body => {
       if (body.errors) {
-        setShouldRedirect(false)
         setErrors(body.errors)
-      } else {
-        setShouldRedirect(true)
-      }
+      } 
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
-  
-  if (shouldRedirect) {
-    return <Redirect to='/campgrounds' />
   }
 
   const handleFileUpload = (acceptedFiles) => {
