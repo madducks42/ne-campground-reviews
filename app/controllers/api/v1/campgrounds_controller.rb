@@ -41,7 +41,6 @@ class Api::V1::CampgroundsController < ApiController
   end
 
   def edit
-
     render json: Campground.find(params[:id]), serializer: CampgroundUpdateSerializer
 
   end

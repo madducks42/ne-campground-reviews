@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-// import { Redirect } from "react-router-dom";
 
 import ImageTiles from "./ImageTiles";
 import AddCampgroundImages from "./AddCampgroundImages";
-// import ErrorList from "../HelperComponents/ErrorList"
+import { addNewImageFetch } from "../FetchComponents/AddNewImageFetch"
+import { deleteImageFetch } from "../FetchComponents/DeleteImageFetch"
+import ErrorList from "../../HelperComponents/ErrorList"
 
 const ManageCampgroundImages = (props) => {
   const [campgroundImages, setCampgroundImages] = useState([]);
+  const [errors, setErrors] = useState({});
 
   let currentCampgroundID = props.match.params.id;
   useEffect(() => {
@@ -29,6 +31,30 @@ const ManageCampgroundImages = (props) => {
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }, []);
 
+  const addNewImage = async (newImage) => {
+    const addImage = await addNewImageFetch(newImage);
+    if (addImage.errors) {
+      setErrors(addImage.errors);
+    } else {
+      setCampgroundImages([...campgroundImages, addImage]);
+    }
+  };
+
+  const deleteImage = async (imageToDelete) => {
+    const deletedImage = await deleteImageFetch(imageToDelete);
+
+    if (deletedImage.errors) {
+      setErrors(deletedImage.errors);
+    } else {
+      let imagesIndex = campgroundImages.findIndex(
+        (image) => image.id === deletedImage.id
+      );
+      let tempImages = [...campgroundImages];
+      tempImages.splice(imagesIndex, 1);
+      setCampgroundImages(tempImages);
+    }
+  };
+
   let imageTiles = campgroundImages.map((image) => {
     return (
       <ImageTiles
@@ -36,6 +62,7 @@ const ManageCampgroundImages = (props) => {
         id={image.id}
         url={image.image.url}
         campgroundId={currentCampgroundID}
+        deleteImage={deleteImage}
       />
     );
   });
@@ -43,11 +70,9 @@ const ManageCampgroundImages = (props) => {
   return (
     <div className="container mt-6">
       <h1 className="is-size-1">Manage Campground Images</h1>
+      <ErrorList errors={errors} />
       <div className="flex-row">{imageTiles}</div>
-      <div>
-        <h4 className="is-size-6 has-text-centered">Refresh page after adding or deleting images. (I know that sucks I&apos;ll fix it someday)</h4>
-      </div>
-      <AddCampgroundImages currentCampgroundID={currentCampgroundID} />
+      <AddCampgroundImages currentCampgroundID={currentCampgroundID} addNewImage={addNewImage} />
     </div>
   );
 };

@@ -1,32 +1,8 @@
 import React, { useState } from 'react'
 import Dropzone from 'react-dropzone'
-import ErrorList from "../../HelperComponents/ErrorList"
 
 const AddCampgroundImages = (props) => {
   const [campgroundImages, setCampgroundImages] = useState([])
-  const [errors, setErrors] = useState({});
-  
-  const addImages = (newImages) => {
-    let id = props.currentCampgroundID
-
-    fetch(`/api/v1/campgrounds/${id}/images`, {
-      method: 'POST',
-      body: newImages,
-      credentials: 'same-origin',
-      headers: {
-        "Accept": "application/json",
-        // eslint-disable-next-line no-dupe-keys
-        "Accept": "image/jpeg" 
-      }
-    })
-    .then(response => response.json())
-      .then(body => {
-      if (body.errors) {
-        setErrors(body.errors)
-      } 
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
 
   const handleFileUpload = (acceptedFiles) => {
     setCampgroundImages([
@@ -37,11 +13,14 @@ const AddCampgroundImages = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    let body = new FormData()
+    let body = []
+    let data = new FormData()
     campgroundImages.forEach((image) => {
-      body.append('image', image)    
+      data.append('image', image)    
     })
-    addImages(body);
+    body.push(data)
+    body.push(props.currentCampgroundID)
+    props.addNewImage(body);
     setCampgroundImages([])
   };
 
@@ -49,7 +28,6 @@ const AddCampgroundImages = (props) => {
     <div className='container'>
         <h4 className="is-size-4 mt-6">Add Images</h4>
         <form onSubmit={handleSubmit}>
-        <ErrorList errors={errors} />
           <Dropzone onDrop={handleFileUpload} multiple={true}>
           {({getRootProps, getInputProps}) => (
             <section>
