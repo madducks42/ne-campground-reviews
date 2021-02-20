@@ -36,7 +36,7 @@ const ImageTiles = (props) => {
   return (
     <div className="m-sm">
       <img className="image-sm" src={url} alt="Campground" />
-      <div>
+      <div className="has-text-centered">
         <input onClick={onClickDelete} className='button' type='submit' value='Delete' />
       </div>
     </div>
