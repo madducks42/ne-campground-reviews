@@ -64,7 +64,7 @@ const AddCampgroundImages = (props) => {
             <h6 className="is-size-6">Uploaded Images:</h6>
             <ul>
             {campgroundImages.map(campgroundImage => (
-              <li key={campgroundImage.id}>{campgroundImage.id}</li>
+              <li key={campgroundImage.id}>{campgroundImage.name}</li>
             ))}
           </ul>
           </div>
