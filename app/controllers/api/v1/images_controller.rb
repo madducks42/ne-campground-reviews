@@ -19,7 +19,28 @@ class Api::V1::ImagesController < ApiController
 
   end
 
+  def destroy
+    # binding.pry
+    image = Image.find(params[:id])
+
+    if image.destroy
+      render json: {destroyed: true}
+    end
+  end
+
+  # def destroy
+  #   campground = Campground.find(params[:id])
+
+  #   if campground.destroy
+  #     render json: {destroyed: true}
+  #   end
+
+  # end
+
+  protected
+
   def image_params
     params.permit([:image, :campground_id])
   end
+
 end

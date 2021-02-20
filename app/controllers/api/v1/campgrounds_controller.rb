@@ -19,14 +19,17 @@ class Api::V1::CampgroundsController < ApiController
     {js: 'maine', ruby: 'Maine'}
   ]
 
+  # INDEX /campgrounds
   def index
     render json: Campground.all
   end
   
+  # SHOW /campgrounds/1
   def show
     render json: Campground.find(params[:id]), serializer: CampgroundShowSerializer
   end
 
+  # CREATE /campgrounds/new
   def create
     campground = Campground.new(campground_params)
     if campground.save

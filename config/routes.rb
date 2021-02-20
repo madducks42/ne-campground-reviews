@@ -29,12 +29,10 @@ Rails.application.routes.draw do
 
       post 'users/favorite', to: 'users#favorite'
       
-      # get 'users/admin_view' to: 'users#admin_view'
-      
       resources :users, only: [:index, :show, :edit, :update, :destroy]
 
       resources :campgrounds, only: [:index, :show, :create, :edit, :update, :destroy] do
-        resources :images, only: [ :index, :create]
+        resources :images, only: [ :index, :create, :destroy]
         resources :reviews, only: [:show, :create, :update, :destroy]
       end
     end

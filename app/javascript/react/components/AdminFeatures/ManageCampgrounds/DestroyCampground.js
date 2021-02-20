@@ -64,8 +64,8 @@ const DestroyCampground = (props) => {
       <ErrorList errors={errors} />
       <h4>Are you sure you want to delete {currentCampground.name}?</h4>
       <div>
-          <input onClick={onClickDelete} className='button' type='submit' value='Delete Campground' />
-        </div>
+        <input onClick={onClickDelete} className='button' type='submit' value='Delete Campground' />
+      </div>
     </div>
   )
 }

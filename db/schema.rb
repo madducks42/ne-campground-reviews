@@ -15,6 +15,12 @@ ActiveRecord::Schema.define(version: 2021_02_19_204448) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "campground_images", force: :cascade do |t|
+    t.string "image", null: false
+    t.bigint "campground_id", null: false
+    t.index ["campground_id"], name: "index_campground_images_on_campground_id"
+  end
+
   create_table "campgrounds", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false

@@ -30,13 +30,23 @@ const ManageCampgroundImages = (props) => {
   }, []);
 
   let imageTiles = campgroundImages.map((image) => {
-    return <ImageTiles key={image.id} url={image.image.url} />;
+    return (
+      <ImageTiles
+        key={image.id}
+        id={image.id}
+        url={image.image.url}
+        campgroundId={currentCampgroundID}
+      />
+    );
   });
 
   return (
     <div className="container mt-6">
       <h1 className="is-size-1">Manage Campground Images</h1>
       <div className="flex-row">{imageTiles}</div>
+      <div>
+        <h4 className="is-size-6 has-text-centered">Refresh page after adding or deleting images. (I know that sucks I&apos;ll fix it someday)</h4>
+      </div>
       <AddCampgroundImages currentCampgroundID={currentCampgroundID} />
     </div>
   );
