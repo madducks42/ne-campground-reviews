@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Dropzone from 'react-dropzone'
-// import ErrorList from "../../HelperComponents/ErrorList"
 
 const AddCampgroundImages = (props) => {
   const [campgroundImages, setCampgroundImages] = useState([])
@@ -29,7 +28,6 @@ const AddCampgroundImages = (props) => {
     <div className='container'>
         <h4 className="is-size-4 mt-6">Add Images</h4>
         <form onSubmit={handleSubmit}>
-        {/* <ErrorList errors={errors} /> */}
           <Dropzone onDrop={handleFileUpload} multiple={true}>
           {({getRootProps, getInputProps}) => (
             <section>
