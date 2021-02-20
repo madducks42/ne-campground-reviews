@@ -3,10 +3,12 @@ import React, { useEffect, useState } from "react";
 
 import ImageTiles from "./ImageTiles";
 import AddCampgroundImages from "./AddCampgroundImages";
+import { addNewImageFetch } from "../FetchComponents/AddNewImageFetch"
 // import ErrorList from "../HelperComponents/ErrorList"
 
 const ManageCampgroundImages = (props) => {
   const [campgroundImages, setCampgroundImages] = useState([]);
+  const [errors, setErrors] = useState({});
 
   let currentCampgroundID = props.match.params.id;
   useEffect(() => {
@@ -29,6 +31,15 @@ const ManageCampgroundImages = (props) => {
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }, []);
 
+  const addNewImage = async (newImage) => {
+    const addImage = await addNewImageFetch(newImage);
+    if (addImage.errors) {
+      setErrors(addImage.errors);
+    } else {
+      setCampgroundImages([...campgroundImages, addImage]);
+    }
+  };
+
   let imageTiles = campgroundImages.map((image) => {
     return (
       <ImageTiles
@@ -47,7 +58,7 @@ const ManageCampgroundImages = (props) => {
       <div>
         <h4 className="is-size-6 has-text-centered">Refresh page after adding or deleting images. (I know that sucks I&apos;ll fix it someday)</h4>
       </div>
-      <AddCampgroundImages currentCampgroundID={currentCampgroundID} />
+      <AddCampgroundImages currentCampgroundID={currentCampgroundID} addNewImage={addNewImage} />
     </div>
   );
 };
