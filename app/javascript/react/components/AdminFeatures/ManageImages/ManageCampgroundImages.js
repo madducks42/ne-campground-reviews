@@ -30,7 +30,14 @@ const ManageCampgroundImages = (props) => {
   }, []);
 
   let imageTiles = campgroundImages.map((image) => {
-    return <ImageTiles key={image.id} url={image.image.url} />;
+    return (
+      <ImageTiles
+        key={image.id}
+        id={image.id}
+        url={image.image.url}
+        campgroundId={currentCampgroundID}
+      />
+    );
   });
 
   return (
