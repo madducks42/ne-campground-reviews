@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import ImageTiles from "./ImageTiles";
 import AddCampgroundImages from "./AddCampgroundImages";
 import { addNewImageFetch } from "../FetchComponents/AddNewImageFetch"
+import { deleteImageFetch } from "../FetchComponents/DeleteImageFetch"
 // import ErrorList from "../HelperComponents/ErrorList"
 
 const ManageCampgroundImages = (props) => {
@@ -40,6 +41,21 @@ const ManageCampgroundImages = (props) => {
     }
   };
 
+  const deleteImage = async (imageToDelete) => {
+    const deletedImage = await deleteImageFetch(imageToDelete);
+
+    if (deletedImage.errors) {
+      setErrors(deletedImage.errors);
+    } else {
+      let imagesIndex = campgroundImages.findIndex(
+        (image) => image.id === deletedImage.id
+      );
+      let tempImages = [...campgroundImages];
+      tempImages.splice(imagesIndex, 1);
+      setCampgroundImages(tempImages);
+    }
+  };
+
   let imageTiles = campgroundImages.map((image) => {
     return (
       <ImageTiles
@@ -47,6 +63,7 @@ const ManageCampgroundImages = (props) => {
         id={image.id}
         url={image.image.url}
         campgroundId={currentCampgroundID}
+        deleteImage={deleteImage}
       />
     );
   });
