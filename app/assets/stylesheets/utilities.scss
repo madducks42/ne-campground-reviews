@@ -1,6 +1,15 @@
 .callout {
+  background-color: #f7f9fb;
   border: 1px solid #adb5bd;
   padding: 2rem;
+}
+
+.border-top {
+  border-top: 5px solid #101419;
+}
+
+.border-bottom {
+  border-bottom: 5px solid #101419;
 }
 
 .dropzone-box {
@@ -29,6 +38,10 @@
 }
 
 // Button Styles
+.button {
+  font-size: 1.2em;
+}
+
 .button:hover {
   background-color: #dc602e;
   transition: background-color 0.25s ease-out, color 0.25s ease-out;

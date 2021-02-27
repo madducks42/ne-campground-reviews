@@ -73,12 +73,11 @@ const CampgroundIndexContainer = () => {
 
   return (
     <div>
-      <section className="hero is-link is-fullheight-with-navbar">
+      <section className="hero is-link is-fullheight-with-navbar border-bottom">
         <div className="hero-body landing-image"></div>
-      </section>
-      
+      </section>  
       <WelcomeMessage />
-      <div className="columns">
+      <div className="columns border-top">
         <div className="column is-narrow color-bg-white">
           <div className="left-nav-bar">
             <CampgroundSearchBar />

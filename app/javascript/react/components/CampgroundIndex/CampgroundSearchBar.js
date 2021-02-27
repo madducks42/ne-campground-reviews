@@ -59,7 +59,7 @@ class CampgroundSearchBar extends Component {
     return (
       <div className="search-container">
         <form onSubmit={this.handleSubmit}>
-          <div className="field has-addons">
+          <div className="field is-small">
             <div className="control">
               <input
                 className="input search-field"
@@ -71,7 +71,7 @@ class CampgroundSearchBar extends Component {
               />
             </div>
             <div className="control">
-              <input className="button" type="submit" value="Search" />
+              <input className="button search-button" type="submit" value="Search" />
             </div>
           </div>
         </form>
