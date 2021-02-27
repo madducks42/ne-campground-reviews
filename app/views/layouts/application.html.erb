@@ -66,13 +66,13 @@
   </footer>
   
   <%= javascript_include_tag 'application' %> 
+  <%= javascript_pack_tag 'application' %>
   
   <%- if Rails.env.development? || Rails.env.test? -%> 
     <%= javascript_tag do %>
       window.railsEnv = '<%= Rails.env %>'
     <%- end -%>
   <%- end -%>
-  <%= javascript_pack_tag 'application' %>
   
   <%= yield :extra_footer %>
    
