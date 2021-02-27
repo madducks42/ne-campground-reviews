@@ -1,5 +1,5 @@
 class Api::V1::CampgroundsController < ApiController
-  before_action :authorize_user, except: [:index, :show, :search, :filter]
+  before_action :authorize_user, except: [:index, :show, :search, :filter, :weather]
   
   AMENITIES = [
     {js: 'dogsAllowed', ruby: 'dogs_allowed'},
@@ -105,11 +105,10 @@ class Api::V1::CampgroundsController < ApiController
   end
 
   def weather
-    
     campground = Campground.find(params[:id])
     client = OpenWeatherClient.new(campground.zip_code)
     weather = client.format_weather_api_response
-
+    
     render json: weather, each_serializer: CampgroundWeatherSerializer
 
   end
