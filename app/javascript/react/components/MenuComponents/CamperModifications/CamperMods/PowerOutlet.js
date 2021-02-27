@@ -55,9 +55,8 @@ const PowerOutlet = () => {
         and thick enough to keep cool under load. For cost and performance, I
         ended up using outdoor rated 12-2 wire from the big-box hardware store.
         The wire is only 10 feet long, and even if the laptop charger is pulling
-        the full 90W its capable of, that&apos;s no where near the capacity of the
-        wire. While the wire is outdoor rated, its also tucked into the existing
-        wireloom where exposed to the elements.
+        the full 90W it's capable of, that&apos;s no where near the capacity of the
+        wire. While the wire is outdoor rated, where exposed to the elements it's also tucked into the existing wireloom.
       </p>
       <p className="is-size-7 mb-4">
         Lastly, since this thing is directly connected to the battery, I wanted
@@ -66,7 +65,7 @@ const PowerOutlet = () => {
           auto-reset 12V circuit breaker
         </a>
         . This is the same style of{" "}
-        <a href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/powerjack1.jpg" target="_blank" rel="noreferrer">
+        <a href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/powerjack1.jpg" target="_blank" rel="noreferrer">
           protection used by the RV manufacturer
         </a>
         . It will protect the circuit, and I won&apos;t need to replace a fuse if I
@@ -75,7 +74,7 @@ const PowerOutlet = () => {
       <p className="is-size-7 mb-4">
         Wiring this up was pretty straight forward. The existing breaker and an
         electrical box are located right behind the battery{" "}
-        <a href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/powerjack3.jpg" target="_blank" rel="noreferrer">
+        <a href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/powerjack3.jpg" target="_blank" rel="noreferrer">
           on the back of a frame rail
         </a>
         . The battery cable from the battery to the hot side of the existing
@@ -94,7 +93,7 @@ const PowerOutlet = () => {
       <p className="is-size-7 mb-4">
         For esthetics, and ease, I mounted the outlet under the bed as well, to
         the back side of the
-        storage unit I installed. Its out of the way,
+        storage unit I installed. It's out of the way,
         but easily accessible.
       </p>
     </div>

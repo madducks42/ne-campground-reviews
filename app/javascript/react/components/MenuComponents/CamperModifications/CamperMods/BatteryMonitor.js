@@ -6,10 +6,10 @@ const BatteryMonitor = () => {
       <p className="is-size-7 mb-4">
         The &quot;Black Label&quot; package on the Gray Ghost came with a
         &quot;battery minder&quot;, also known as a voltmeter. While it gives
-        you a vague indication of the state of your battery, its mostly along
+        you a vague indication of the state of your battery, it's mostly along
         the lines of OK, Almost Not OK, and Not OK. You have to turn off just
         about anything using the battery to get a decent reading and even then
-        its not very precise. Note, the gauge works as intended, but voltage
+        it's not very precise. Note, the gauge works as intended, but voltage
         (alone) doesn&apos;t tell you all you want to know about the state of a
         battery.
       </p>

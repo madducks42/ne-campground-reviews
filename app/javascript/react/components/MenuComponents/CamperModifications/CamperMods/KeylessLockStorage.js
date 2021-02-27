@@ -12,7 +12,7 @@ const KeylessLockStorage = () => {
           target="_blank"
           rel="noreferrer"
         >
-          This cam combinaton lock
+          This cam combination lock
         </a>{" "}
         was a drop-in replacement for the keyed lock on our storage hatch. It
         saves us from having to hunt down the keys whenever we want something
@@ -34,79 +34,79 @@ const KeylessLockStorage = () => {
       </p>
       <div className="lightbox-container-mods">
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/hatchlock01.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/hatchlock01.jpg"
           data-lightbox="keyless-lock-storage"
           data-title="Keyless Lock Storage"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/hatchlock01.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/hatchlock01.jpg"
             alt="Keyless Lock Storage"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/hatchlock02.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/hatchlock02.jpg"
           data-lightbox="keyless-lock-storage"
           data-title="Keyless Lock Storage"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/hatchlock02.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/hatchlock02.jpg"
             alt="Keyless Lock Storage"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/hatchlock03.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/hatchlock03.jpg"
           data-lightbox="keyless-lock-storage"
           data-title="Keyless Lock Storage"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/hatchlock03.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/hatchlock03.jpg"
             alt="Keyless Lock Storage"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/hatchlock04.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/hatchlock04.jpg"
           data-lightbox="keyless-lock-storage"
           data-title="Keyless Lock Storage"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/hatchlock04.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/hatchlock04.jpg"
             alt="Keyless Lock Storage"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/hatchlock05.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/hatchlock05.jpg"
           data-lightbox="keyless-lock-storage"
           data-title="Keyless Lock Storage"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/hatchlock05.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/hatchlock05.jpg"
             alt="Keyless Lock Storage"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/hatchlock06.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/hatchlock06.jpg"
           data-lightbox="keyless-lock-storage"
           data-title="Keyless Lock Storage"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/hatchlock06.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/hatchlock06.jpg"
             alt="Keyless Lock Storage"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/hatchlock07.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/hatchlock07.jpg"
           data-lightbox="keyless-lock-storage"
           data-title="Keyless Lock Storage"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/hatchlock07.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/hatchlock07.jpg"
             alt="Keyless Lock Storage"
           />
         </a>

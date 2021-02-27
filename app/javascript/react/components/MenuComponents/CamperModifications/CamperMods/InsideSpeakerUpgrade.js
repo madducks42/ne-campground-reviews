@@ -7,7 +7,7 @@ const InsideSpeakerUpgrade = () => {
         We like music. A lot. Our whole house is wired for sound. Bedrooms,
         kitchen, living room, playroom, a bathroom, and even the deck (complete
         with subwoofer). And while we don&apos;t blast our tunes while camping,
-        its still nice to have decent sound.
+        it's still nice to have decent sound.
       </p>
       <p className="is-size-7 mb-4">
         The Wolf Pup came with a sound system which included radio, bluetooth
@@ -56,13 +56,13 @@ const InsideSpeakerUpgrade = () => {
       </p>
       <div className="lightbox-container-mods">
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/insidespeaker1.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/insidespeaker1.jpg"
           data-lightbox="inside-speakers"
           data-title="Inside Speaker Upgrade"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/insidespeaker1.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/insidespeaker1.jpg"
             alt="Inside Speaker Upgrade"
           />
         </a>

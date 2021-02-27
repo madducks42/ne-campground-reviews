@@ -20,7 +20,7 @@ const SolarSuitcase = () => {
         >
           Renogy 100 watt, two panel solar suitcase
         </a>
-        . The nice thing about this setup is that its all self contained, and
+        . The nice thing about this setup is that it's all self contained, and
         includes everything you need (the panels, the charge controller, and the
         battery hook-up cable).
       </p>
@@ -28,9 +28,9 @@ const SolarSuitcase = () => {
         After buying this setup, I tried it out on a few trips. The panels
         successfully replenished the power we use in 24 hours throughout a
         single sunny day (assuming about 8 hours in direct, bright sun). That
-        said, its tough to keep anything on most campsites in bright sun all
+        said, it's tough to keep anything on most campsites in bright sun all
         day. And rarely do we have sunny days every day in a trip. But, we have
-        multiple batteries, so its not a problem. But if we ever try a trip
+        multiple batteries, so it's not a problem. But if we ever try a trip
         longer than 5 or 6 days with no external power along the way, we might
         have a problem.
       </p>
@@ -42,7 +42,7 @@ const SolarSuitcase = () => {
         doing this soon.
       </p>
       <p className="is-size-7 mb-4">
-        One other tweak I eventally made to this system was to pick up this{" "}
+        One other tweak I eventually made to this system was to pick up this{" "}
         <a
           href="https://www.amazon.com/gp/product/B00N80C5BQ/"
           target="_blank"

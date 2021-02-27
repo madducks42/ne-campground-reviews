@@ -47,7 +47,7 @@ const RearviewCamera = () => {
           this weighted &quot;friction dash pad&quot;
         </a>{" "}
         and I zip-tied the monitor base to this. Now I can just set the camera
-        monitor on my dash and its completely stable, and easy to move. (See the
+        monitor on my dash and it's completely stable, and easy to move. (See the
         pics below.)
       </p>
       <p className="is-size-7 mb-4">
@@ -82,7 +82,7 @@ const RearviewCamera = () => {
         disconnect the house power from the camper, but I don&apos;t always
         remember to connect the camper wiring to the car. BUT, because the
         camera works off the trailer lights, when I go to turn the camera on
-        before driving away, its very clear that its not getting power (because
+        before driving away, it's very clear that it's not getting power (because
         I haven&apos;t plugged the trailer into the car).
       </p>
       <p className="is-size-7 mb-4">
@@ -91,9 +91,9 @@ const RearviewCamera = () => {
         needed), splice in the camera wiring. Easy.
       </p>
       <p className="is-size-7 mb-4">
-        The slightly more challenging part is making sure its water tight. When
+        The slightly more challenging part is making sure it's water tight. When
         I removed the running light, I saw that it was sealed to the camper wall
-        with some putty. I little research showed that its a product like{" "}
+        with some putty. A little research showed that it's a product like{" "}
         <a
           href="https://www.amazon.com/gp/product/B0070O93HA/"
           target="_blank"
@@ -108,7 +108,7 @@ const RearviewCamera = () => {
       </p>
       <p className="is-size-7 mb-4">
         All-in-all, the installation went fine. And the camera worked pretty
-        well. Occaisionally, the video would freeze. Best I could tell this was
+        well. Occasionally, the video would freeze. Best I could tell this was
         due to interference from other signals (rarely happened on the highway).
         In an attempt to improve this, I made two changes. The first, was I
         upgraded the antenna attached to the monitor. The antenna on the monitor
@@ -140,57 +140,57 @@ const RearviewCamera = () => {
       </p>
       <div className="lightbox-container-mods">
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/camera1.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/camera1.jpg"
           data-lightbox="rearview-camera"
           data-title="Rearview Camera"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/camera1.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/camera1.jpg"
             alt="Rearview Camera"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/camera2.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/camera2.jpg"
           data-lightbox="rearview-camera"
           data-title="Rearview Camera"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/camera2.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/camera2.jpg"
             alt="Rearview Camera"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/camera3.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/camera3.jpg"
           data-lightbox="rearview-camera"
           data-title="Rearview Camera"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/camera3.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/camera3.jpg"
             alt="Rearview Camera"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/camera4.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/camera4.jpg"
           data-lightbox="rearview-camera"
           data-title="Rearview Camera"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/camera4.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/camera4.jpg"
             alt="Rearview Camera"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/camera5.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/camera5.jpg"
           data-lightbox="rearview-camera"
           data-title="Rearview Camera"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/camera5.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/camera5.jpg"
             alt="Rearview Camera"
           />
         </a>

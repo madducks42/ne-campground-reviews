@@ -15,15 +15,20 @@
  *= require_lightbox
  */
 
+ // Body Overrides
+//  $body-background-color: #476c9b;
+
 // Header Overrides
-$navbar-background-color: #476c9b;
+$navbar-background-color: #f7f9fb;
 $navbar-height: 10rem;
 $navbar-item-img-max-height: 8rem;
-$navbar-item-color: #f7f9fb;
-$navbar-item-hover-color: #f7f9fb;
-$navbar-item-hover-background-color: #dc602e;
-$navbar-dropdown-background-color: #476c9b;
-$link: #f7f9fb;
+$navbar-item-color: #476c9b;
+$navbar-item-hover-color: #984447;
+$navbar-item-hover-background-color: #f7f9fb;
+$navbar-dropdown-background-color: #f7f9fb;
+$navbar-dropdown-item-hover-color: #984447;
+$link: #476c9b;
+$navbar-dropdown-item-hover-background-color: #f7f9fb;
 
 // Footer Overrides
 $footer-background-color: #476c9b;

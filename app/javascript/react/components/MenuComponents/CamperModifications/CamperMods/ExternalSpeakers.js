@@ -8,7 +8,7 @@ const ExternalSpeakers = () => {
         trailer. The sound was soft, and muted, and didn&apos;t sound good at
         low volumes. But, we rarely use those speakers (partly because of the
         sound quality, I&apos;m sure), so it didn&apos;t make sense to spend
-        money on the upgrade. Well, when we pulled the camper out of storge this
+        money on the upgrade. Well, when we pulled the camper out of storage this
         spring, one of the outside speakers sound really distorted, and the
         other sounded slightly distorted. A little research turned up that{" "}
         <a
@@ -39,7 +39,7 @@ const ExternalSpeakers = () => {
         >
           Polk Audio DB522
         </a>
-        . These may look familiar becuase they&apos;re the 5-1/4-inch version of
+        . These may look familiar because they&apos;re the 5-1/4-inch version of
         the speakers I put inside. I probably could have gone with the same
         6-1/2-inch version but I was trying to make the swap as easy as
         possible, and those would definitely require me to make a bigger hole in
@@ -53,46 +53,46 @@ const ExternalSpeakers = () => {
       </p>
       <div className="lightbox-container-mods">
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/ExternalSpeakers-1.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/ExternalSpeakers-1.jpg"
           data-lightbox="external-speakers"
           data-title="External Speakers"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/ExternalSpeakers-1.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/ExternalSpeakers-1.jpg"
             alt="External Speakers"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/ExternalSpeakers-2.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/ExternalSpeakers-2.jpg"
           data-lightbox="external-speakers"
           data-title="External Speakers"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/ExternalSpeakers-2.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/ExternalSpeakers-2.jpg"
             alt="External Speakers"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/ExternalSpeakers-3.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/ExternalSpeakers-3.jpg"
           data-lightbox="external-speakers"
           data-title="External Speakers"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/ExternalSpeakers-3.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/ExternalSpeakers-3.jpg"
             alt="External Speakers"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/ExternalSpeakers-4.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/ExternalSpeakers-4.jpg"
           data-lightbox="external-speakers"
           data-title="External Speakers"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/ExternalSpeakers-4.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/ExternalSpeakers-4.jpg"
             alt="External Speakers"
           />
         </a>

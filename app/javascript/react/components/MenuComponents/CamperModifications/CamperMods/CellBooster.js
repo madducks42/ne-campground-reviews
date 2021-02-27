@@ -47,7 +47,7 @@ const CellBooster = () => {
           </li>
           <li>
             The ones designed for mobile use an omni-directional antenna. This is
-            an antenna that doesn&apos;t have a front or back, and recieves a signal
+            an antenna that doesn&apos;t have a front or back, and receives a signal
             equally well from any direction... but not necessarily &quot;well&quot;. The
             other type of antenna, the ones used by most non-mobile systems is
             directional, and must be pointed at the cell tower your boosting (not
@@ -60,10 +60,10 @@ const CellBooster = () => {
             the internal antenna).
           </li>
           <li>
-            Most (all?) boosters require significant distance/seperation between
+            Most (all?) boosters require significant distance/separation between
             the antennas so that the receiving antenna doesn&apos;t pick up the signal
             from the local antenna and create a feedback loop. The stronger the
-            booster, the more seperation required. And verticle seperation is best
+            booster, the more separation required. And vertical separation is best
             (mounting the receiving one up high, like on a roof).
           </li>
         </ul>
@@ -119,7 +119,7 @@ const CellBooster = () => {
       </div>
       <p className="is-size-7 mb-4">
         Once I had the booster, I had two things to figure out: power and the
-        externa antenna mount (and aiming).
+        external antenna mount (and aiming).
       </p>
       <p className="is-size-7 mb-4">
         For power, I had an unused{" "}
@@ -154,7 +154,7 @@ const CellBooster = () => {
         from sliding around, but let me rotate the mast easily for aiming. I
         ended up using{" "}
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/PVCflange.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/PVCflange.jpg"
           target="_blank"
           rel="noreferrer"
         >
@@ -188,46 +188,46 @@ const CellBooster = () => {
       </p>
       <div className="lightbox-container-mods">
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cellrepeaterv1-1.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cellrepeaterv1-1.jpg"
           data-lightbox="cell-bungee-cords"
           data-title="Cell Tower Setup"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cellrepeaterv1-1.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cellrepeaterv1-1.jpg"
             alt="Cell Tower Setup"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cellrepeaterv2-1.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cellrepeaterv2-1.jpg"
           data-lightbox="cell-bungee-cords"
           data-title="Cell Tower Setup"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cellrepeaterv2-1.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cellrepeaterv2-1.jpg"
             alt="Cell Tower Setup"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cellrepeaterv2-2.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cellrepeaterv2-2.jpg"
           data-lightbox="cell-bungee-cords"
           data-title="Cell Tower Setup"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cellrepeaterv2-2.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cellrepeaterv2-2.jpg"
             alt="Cell Tower Setup"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cellrepeaterv2-3.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cellrepeaterv2-3.jpg"
           data-lightbox="cell-bungee-cords"
           data-title="Cell Tower Setup"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cellrepeaterv2-3.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cellrepeaterv2-3.jpg"
             alt="Cell Tower Setup"
           />
         </a>
@@ -235,7 +235,7 @@ const CellBooster = () => {
       <p className="is-size-7 mb-4">So, that&apos;s the set up... but how does it work?</p>
       <p className="is-size-7 mb-4">
         First... aiming the thing. The app does a good job showing you the
-        strength of the signal its picking up... with a minor exception. The
+        strength of the signal it's picking up... with a minor exception. The
         signal strength gauge in the app isn&apos;t updated in real-time. So you need
         to adjust the angle and wait about 5 seconds to see a response on the
         gauge. And a degree or two can make a meaningful difference. 5 seconds
@@ -249,9 +249,9 @@ const CellBooster = () => {
         have to find the right balance between the two.
       </p>
       <p className="is-size-7 mb-4">
-        Once the recieving antenna is set up, we need to set up the
+        Once the receiving antenna is set up, we need to set up the
         local/transmitting antenna. As I mentioned above, this antenna is pretty
-        weak, and has very little range. So I tend to move it around a lot (its
+        weak, and has very little range. So I tend to move it around a lot (it's
         on a 30&apos; coax cable) to position it near wherever I&apos;m working. And
         proximity of the phone to the local antenna makes a big difference in
         connection speed. I may get almost no signal 10 feet away, but 3 or 4
@@ -261,7 +261,7 @@ const CellBooster = () => {
         Since I&apos;m mostly using this setup for internet access, I tend to turn on
         the hotspot on my phone, which has pretty good range, and then put the
         phone right next to the local antenna. This lets me move around easily,
-        work where I want, and still keep a decent signal. But its a bit
+        work where I want, and still keep a decent signal. But it's a bit
         annoying if I actually want to use the phone.
       </p>
       <p className="is-size-7 mb-4">

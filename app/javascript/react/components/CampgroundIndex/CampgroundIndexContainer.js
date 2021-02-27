@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import CampgroundSearchBar from "./CampgroundSearchBar";
 import CampgroundFilter from "./CampgroundFilter";
 import CampgroundTile from "../HelperComponents/CampgroundTile";
+import WelcomeMessage from "./WelcomeMessage";
 import ErrorList from "../HelperComponents/ErrorList";
 
 const CampgroundIndexContainer = () => {
@@ -71,19 +72,25 @@ const CampgroundIndexContainer = () => {
   };
 
   return (
-    <div className="columns">
-      <div className="column is-narrow color-bg-white">
-        <div className="left-nav-bar">
-          <CampgroundSearchBar />
-          <div className="flex-column">
-            <ErrorList errors={errors} />
-            <CampgroundFilter filterCampgrounds={filterCampgrounds} />
+    <div>
+      <section className="hero is-link is-fullheight-with-navbar border-bottom">
+        <div className="hero-body landing-image"></div>
+      </section>  
+      <WelcomeMessage />
+      <div className="columns border-top">
+        <div className="column is-narrow color-bg-white">
+          <div className="left-nav-bar">
+            <CampgroundSearchBar />
+            <div className="flex-column">
+              <ErrorList errors={errors} />
+              <CampgroundFilter filterCampgrounds={filterCampgrounds} />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="column color-bg-white">
-        <div className="container campground-tile-container index-scrollable">
-          {campgroundTiles}
+        <div className="column color-bg-white">
+          <div className="container campground-tile-container index-scrollable">
+            {campgroundTiles}
+          </div>
         </div>
       </div>
     </div>
