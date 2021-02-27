@@ -23,8 +23,8 @@ const UnderBedStorage = () => {
       </p>
       <p className="is-size-7 mb-4">
         At this point we&apos;d had the Gray Ghost for just about a year. So, it
-        wasn&apos;t brand new, but its still in pretty nice shape. So, what ever
-        modfication I did had to look decent. I&apos;m &quot;handy&quot;, but
+        wasn&apos;t brand new, but it's still in pretty nice shape. So, what ever
+        modification I did had to look decent. I&apos;m &quot;handy&quot;, but
         not a great woodworker. So I started looking for some existing storage
         unit that was the right size and color for the task... Ikea to the
         rescue!. Ikea has a <a href="https://www.ikea.com/us/en/p/besta-tv-unit-black-brown-90294512/" target="_blank" rel="noreferrer">dark brown TV stand</a> called the &quot;BESTÅ&quot;. It
@@ -49,7 +49,7 @@ const UnderBedStorage = () => {
         lifted it was easy enough to push it out from the back. With the
         paneling off, I had to remove a bed frame support in the middle of the
         area I was going to put the storage unit in. I probably could have
-        relied on the storage unit carrying the weight (its pretty solid) but I
+        relied on the storage unit carrying the weight (it's pretty solid) but I
         also put new supports in either side of the storage unit.
       </p>
       <p className="is-size-7 mb-4">
@@ -67,57 +67,57 @@ const UnderBedStorage = () => {
       </p>
       <div className="lightbox-container-mods">
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage1.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/underbedstorage1.jpg"
           data-lightbox="underbed-storage"
           data-title="Underbed Storage"
         >
           <img
             className="galleryimage camper-mods-thumbnail"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage1.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/underbedstorage1.jpg"
             alt="Underbed Storage"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage2.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/underbedstorage2.jpg"
           data-lightbox="underbed-storage"
           data-title="Underbed Storage"
         >
           <img
             className="galleryimage camper-mods-thumbnail"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage2.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/underbedstorage2.jpg"
             alt="Underbed Storage"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage3.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/underbedstorage3.jpg"
           data-lightbox="underbed-storage"
           data-title="Underbed Storage"
         >
           <img
             className="galleryimage camper-mods-thumbnail"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage3.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/underbedstorage3.jpg"
             alt="Underbed Storage"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage4.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/underbedstorage4.jpg"
           data-lightbox="underbed-storage"
           data-title="Underbed Storage"
         >
           <img
             className="galleryimage camper-mods-thumbnail"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage4.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/underbedstorage4.jpg"
             alt="Underbed Storage"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage5.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/underbedstorage5.jpg"
           data-lightbox="underbed-storage"
           data-title="Underbed Storage"
         >
           <img
             className="galleryimage camper-mods-thumbnail"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/underbedstorage5.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/underbedstorage5.jpg"
             alt="Underbed Storage"
           />
         </a>

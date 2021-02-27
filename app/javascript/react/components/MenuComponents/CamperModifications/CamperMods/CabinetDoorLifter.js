@@ -5,7 +5,7 @@ const CabinetDoorLifter = () => {
     <div className="camper-mods-style">
       <p className="is-size-7 mb-4">
         We tend to store food in the cabinets over the dining table. These
-        cabinets swing up, which make them space-efficient. But its tough to dig
+        cabinets swing up, which make them space-efficient. But it's tough to dig
         around in the cabinet, and impossible to grab something with one hand.
         So, in a common mod, we added{" "}
         <a
@@ -33,19 +33,19 @@ const CabinetDoorLifter = () => {
         the pressure from the strut when closing will rip the screws out of
         particle board. So, I mounted a short piece of 2x2 to the back of the
         cabinet face (stained to match the cabinets) and mounted the lower end
-        of the struct to that. Note that the 2x2 is resting on the bottom of the
+        of the structure to that. Note that the 2x2 is resting on the bottom of the
         cabinet to help absorb the constant downward pressure when the cabinet
         is closed.
       </p>
       <div className="lightbox-container-mods">
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/lifter1.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/lifter1.jpg"
           data-lightbox="cabinet-door-lifter"
           data-title="Cabinet Door Lifter"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/lifter1.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/lifter1.jpg"
             alt="Cabinet Door Lifter"
           />
         </a>

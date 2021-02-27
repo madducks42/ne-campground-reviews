@@ -16,41 +16,41 @@ const TabletMount = () => {
           this tablet mount
         </a>
         . It holds just about any size tablet, and even my phone, at just about
-        any angle. Its easy to mount and you can easily take down the majority
-        of the mount, leaving just the mounting plate, without any tools if its
+        any angle. It's easy to mount and you can easily take down the majority
+        of the mount, leaving just the mounting plate, without any tools if it's
         in the way.
       </p>
       <div className="lightbox-container-mods">
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/tabletmount1.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/tabletmount1.jpg"
           data-lightbox="tablet-mount"
           data-title="Tablet Mount"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/tabletmount1.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/tabletmount1.jpg"
             alt="Tablet Mount"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/tabletmount2.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/tabletmount2.jpg"
           data-lightbox="tablet-mount"
           data-title="Tablet Mount"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/tabletmount2.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/tabletmount2.jpg"
             alt="Tablet Mount"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/tabletmount3.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/tabletmount3.jpg"
           data-lightbox="tablet-mount"
           data-title="Tablet Mount"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/tabletmount3.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/tabletmount3.jpg"
             alt="Tablet Mount"
           />
         </a>

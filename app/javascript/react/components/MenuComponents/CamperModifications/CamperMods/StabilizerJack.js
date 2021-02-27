@@ -18,34 +18,34 @@ const StabilizerJack = () => {
         >
           this as a replacement
         </a>
-        . Its defintiely heavier-duty than the original. Installation
+        . It's definitely heavier-duty than the original. Installation
         wasn&apos;t hard, but it didn&apos;t just bolt right in in-place of the
         original. Two of the four mounting holes lined up, but I had to drill
         the other two. This jack didn&apos;t come with mounting hardware, but I
         had a few grade-5 bolts just the right size laying around. Bolted it
-        right in. And its definitely more solid than the original. At some
+        right in. And it's definitely more solid than the original. At some
         point, I&apos;ll replace the other less-bent one.
       </p>
       <div className="lightbox-container-mods">
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/jack1.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/jack1.jpg"
           data-lightbox="stabilizer-jack"
           data-title="Stabilizer Jack Upgrades"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/jack1.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/jack1.jpg"
             alt="Stabilizer Jack Upgrades"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/jack2.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/jack2.jpg"
           data-lightbox="stabilizer-jack"
           data-title="Stabilizer Jack Upgrades"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/jack2.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/jack2.jpg"
             alt="Stabilizer Jack Upgrades"
           />
         </a>

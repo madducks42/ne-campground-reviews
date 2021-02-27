@@ -31,57 +31,57 @@ const Cupholders = () => {
       </p>
       <div className="lightbox-container-mods">
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cupholders01.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cupholders01.jpg"
           data-lightbox="cupholders"
           data-title="Cupholders"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cupholders01.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cupholders01.jpg"
             alt="Cupholders"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cupholders02.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cupholders02.jpg"
           data-lightbox="cupholders"
           data-title="Cupholders"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cupholders02.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cupholders02.jpg"
             alt="Cupholders"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cupholders03.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cupholders03.jpg"
           data-lightbox="cupholders"
           data-title="Cupholders"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cupholders03.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cupholders03.jpg"
             alt="Cupholders"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cupholders04.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cupholders04.jpg"
           data-lightbox="cupholders"
           data-title="Cupholders"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cupholders04.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cupholders04.jpg"
             alt="Cupholders"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cupholders05.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cupholders05.jpg"
           data-lightbox="cupholders"
           data-title="Cupholders"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/cupholders05.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/cupholders05.jpg"
             alt="Cupholders"
           />
         </a>

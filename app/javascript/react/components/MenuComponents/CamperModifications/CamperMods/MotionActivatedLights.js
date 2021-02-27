@@ -78,7 +78,7 @@ const MotionActivatedLights = () => {
       </p>
       <p className="is-size-7 mb-4">
         Also, I read some less-than-great reviews of the motion sensor but its
-        worked <em>perfectly</em> for us. You can adjust the sensativity (to
+        worked <em>perfectly</em> for us. You can adjust the sensitivity (to
         motion), and we&apos;ve got ours set to it can detect you as you step up
         to the screen door from the outside. Literally, you hit the steps and
         the lights come on!
@@ -91,24 +91,24 @@ const MotionActivatedLights = () => {
       </p>
       <div className="lightbox-container-mods">
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/motionsensor1.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/motionsensor1.jpg"
           data-lightbox="motion-lights"
           data-title="Motion Sensor Ceiling Lights"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/motionsensor1.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/motionsensor1.jpg"
             alt="Motion Sensor Ceiling Lights"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/motionsensor2.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/motionsensor2.jpg"
           data-lightbox="motion-lights"
           data-title="Motion Sensor Ceiling Lights"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/motionsensor2.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/motionsensor2.jpg"
             alt="Motion Sensor Ceiling Lights"
           />
         </a>

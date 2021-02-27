@@ -7,7 +7,7 @@ const Subwoofer = () => {
         Maddox teases me and says I add a subwoofer to everything. All this
         because I added a{" "}
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/DeckSub.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/DeckSub.jpg"
           target="_blank"
           rel="noreferrer"
         >
@@ -47,7 +47,7 @@ const Subwoofer = () => {
         the access hatch. Finding a signal for the sub was easy as the head unit
         has an unused subwoofer output. I mounted the sub on a hinged piece of
         wood just inside the exterior access hatch for the under-bed storage.
-        The idea is that its tucked away, pointing into the camper most of the
+        The idea is that it's tucked away, pointing into the camper most of the
         time. But if we ever do want to use the sub with the external speakers,
         we can simply open the exterior hatch, and swing the sub into the
         opening.
@@ -59,46 +59,46 @@ const Subwoofer = () => {
       </p>
       <div className="lightbox-container-mods">
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/sub1.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/sub1.jpg"
           data-lightbox="subwoofer"
           data-title="Subwoofer"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/sub1.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/sub1.jpg"
             alt="Subwoofer"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/sub2.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/sub2.jpg"
           data-lightbox="subwoofer"
           data-title="Subwoofer"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/sub2.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/sub2.jpg"
             alt="Subwoofer"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/sub3.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/sub3.jpg"
           data-lightbox="subwoofer"
           data-title="Subwoofer"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/sub3.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/sub3.jpg"
             alt="Subwoofer"
           />
         </a>
         <a
-          href="https://campground-reviews-production.s3.amazonaws.com/CamperMods/sub4.jpg"
+          href="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/sub4.jpg"
           data-lightbox="subwoofer"
           data-title="Subwoofer"
         >
           <img
             className="galleryimage"
-            src="https://campground-reviews-production.s3.amazonaws.com/CamperMods/sub4.jpg"
+            src="https://campground-reviews-prod.s3.amazonaws.com/CamperMods/sub4.jpg"
             alt="Subwoofer"
           />
         </a>
