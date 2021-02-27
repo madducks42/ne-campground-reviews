@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import CampgroundSearchBar from "./CampgroundSearchBar";
 import CampgroundFilter from "./CampgroundFilter";
 import CampgroundTile from "../HelperComponents/CampgroundTile";
-import AboutUs from "./AboutUs"
+import WelcomeMessage from "./WelcomeMessage";
 import ErrorList from "../HelperComponents/ErrorList";
 
 const CampgroundIndexContainer = () => {
@@ -73,12 +73,11 @@ const CampgroundIndexContainer = () => {
 
   return (
     <div>
-      <section class="hero is-link is-fullheight-with-navbar">
-        <div class="hero-body landing-image">
-          <p class="title">Fullheight hero with navbar</p>
-        </div>
+      <section className="hero is-link is-fullheight-with-navbar">
+        <div className="hero-body landing-image"></div>
       </section>
-      {/* <AboutUs /> */}
+      
+      <WelcomeMessage />
       <div className="columns">
         <div className="column is-narrow color-bg-white">
           <div className="left-nav-bar">
