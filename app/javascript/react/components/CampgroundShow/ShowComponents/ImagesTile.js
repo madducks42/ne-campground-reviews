@@ -1,18 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import Image from "./Image";
-// import { getImageData } from "../FetchComponents/ImageData";
 
 const ImagesTile = (props) => {
-  // debugger
-
-  // let imageData = [];
-  // imageData = props.images.map((image) => {
-  //   return image.image.url;
-  // });
-
+// debugger
   const urls = props.images.map((image) => {
-    // debugger
     return (
       <Image
         key={image.id}
@@ -26,13 +18,13 @@ const ImagesTile = (props) => {
     <div className="lightbox-container-show">
       <a
         href={props.firstImage}
-        data-lightbox="carousel"
-        data-title="Campground Images"
+        data-lightbox={props.campgroundName}
+        data-title={props.campgroundName}
       >
         <img className="galleryimage" src={props.firstImage} alt="Campground" />
       </a>
       {urls}
-      <p>(click on image to view more)</p>
+      <p className="has-text-centered">(click on image to view more)</p>
     </div>
   );
 };
