@@ -16,6 +16,7 @@ import {
   editedReviewFetch,
   deleteReviewFetch,
 } from "./FetchComponents/ReviewFetches";
+import { getImageData } from "./FetchComponents/ImageData";
 import { setCampgroundFavFetch } from "./FetchComponents/UserFetches";
 import { getWeatherData } from "./FetchComponents/WeatherData";
 
@@ -23,6 +24,8 @@ const CampgroundShowContainer = (props) => {
   const id = props.match.params.id;
 
   const [campground, setCampground] = useState({});
+  const [firstImage, setFirstImage] = useState();
+  const [images, setImages] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [favorite, setFavorite] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
@@ -69,6 +72,14 @@ const CampgroundShowContainer = (props) => {
         location: body.location,
         date: body.date,
       });
+    });
+  }, []);
+
+  useEffect(() => {
+    getImageData(id).then((body) => {
+      setFirstImage(body[0].image.url)
+      body.shift()
+      setImages(body)
     });
   }, []);
 
@@ -200,7 +211,11 @@ const CampgroundShowContainer = (props) => {
             </div>
           </div>
           <div className="column">
-            <ImagesTile />
+            <ImagesTile
+              campgroundName={campground.name}
+              firstImage={firstImage}
+              images={images}
+            />
             {currentUser.role === "admin" && (
               <div className="columns admin-flex">
                 <Link
