@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const Image = (props) => {
   const urlString = props.url
@@ -18,12 +18,14 @@ const Image = (props) => {
     title = "Green Lakes State Park"
   }  else if (urlString.includes("LittleRiver")) {
     title = "Little River State Park"
-  }  else if (urlString.includes("MohawkTrail")) {
+  }  else if (urlString.includes("Mohawk")) {
     title = "Mohawk Trail State Forest"
   }  else if (urlString.includes("Savoy")) {
     title = "Savoy State Forest"
   }  else if (urlString.includes("MountGreylock")) {
     title = "Mount Greylock State Park"
+  } else if (urlString.includes("Pawtuckaway")) {
+    title = "Pawtuckaway State Park"
   }
 
   return (

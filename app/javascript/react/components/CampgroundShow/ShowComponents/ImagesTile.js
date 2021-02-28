@@ -3,7 +3,6 @@ import React from "react";
 import Image from "./Image";
 
 const ImagesTile = (props) => {
-// debugger
   const urls = props.images.map((image) => {
     return (
       <Image
