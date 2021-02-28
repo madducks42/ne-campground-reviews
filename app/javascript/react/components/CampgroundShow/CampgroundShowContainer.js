@@ -16,7 +16,7 @@ import {
   editedReviewFetch,
   deleteReviewFetch,
 } from "./FetchComponents/ReviewFetches";
-// import { getImageData } from "./FetchComponents/ImageData";
+import { getImageData } from "./FetchComponents/ImageData";
 import { setCampgroundFavFetch } from "./FetchComponents/UserFetches";
 import { getWeatherData } from "./FetchComponents/WeatherData";
 
@@ -24,7 +24,8 @@ const CampgroundShowContainer = (props) => {
   const id = props.match.params.id;
 
   const [campground, setCampground] = useState({});
-  const [campgroundImages, setCampgroundImages] = useState([]);
+  const [firstImage, setFirstImage] = useState();
+  const [images, setImages] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [favorite, setFavorite] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
@@ -75,23 +76,11 @@ const CampgroundShowContainer = (props) => {
   }, []);
 
   useEffect(() => {
-    fetch(`/api/v1/campgrounds/${id}/images`)
-      .then((response) => {
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status}(${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then((response) => {
-        return response.json();
-      })
-      .then((body) => {
-        setCampgroundImages(body);
-      })
-      .catch((error) => console.error(`Error in fetch: ${error.message}`));
+    getImageData(id).then((body) => {
+      setFirstImage(body[0].image.url)
+      body.shift()
+      setImages(body)
+    });
   }, []);
 
   const addNewReview = async (newReview) => {
@@ -223,8 +212,9 @@ const CampgroundShowContainer = (props) => {
           </div>
           <div className="column">
             <ImagesTile
-              campgroundImages={campgroundImages}
               campgroundName={campground.name}
+              firstImage={firstImage}
+              images={images}
             />
             {currentUser.role === "admin" && (
               <div className="columns admin-flex">

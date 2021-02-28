@@ -6,28 +6,32 @@ import Image from "./Image";
 const ImagesTile = (props) => {
   // debugger
 
-  let imageData = [];
-  imageData = props.campgroundImages.map((image) => {
-    return image.image.url;
+  // let imageData = [];
+  // imageData = props.images.map((image) => {
+  //   return image.image.url;
+  // });
+
+  const urls = props.images.map((image) => {
+    // debugger
+    return (
+      <Image
+        key={image.id}
+        id={image.id}
+        url={image.image.url}
+      />
+    );
   });
 
   return (
     <div className="lightbox-container-show">
       <a
-        href={imageData[0]}
+        href={props.firstImage}
         data-lightbox="carousel"
         data-title="Campground Images"
       >
-        <img className="galleryimage" src={imageData[0]} alt="Campground" />
+        <img className="galleryimage" src={props.firstImage} alt="Campground" />
       </a>
-      <Image image={imageData[1]} />
-      <Image image={imageData[2]} />
-      {/* <Image image={imageData[3]} /> */}
-      {/* <Image image={imageData[4]} /> */}
-      {/* <Image image={imageData[5]} /> */}
-      {/* <Image image={imageData[6]} /> */}
-      {/* <Image image={imageData[7]}/> */}
-      
+      {urls}
       <p>(click on image to view more)</p>
     </div>
   );
